@@ -194,15 +194,10 @@ export const LogReader = new class {
 		return Chat.toTimestamp(new Date()).slice(0, 10);
 	}
 	isMonth(text: string) {
-		return /^[0-9]{4}-(?:0[0-9]|1[0-2])$/.test(text);
+		return /[0-9]{4}-[0-9]{2}/.test(text);
 	}
 	isDay(text: string) {
-		// yes, this exactly matches JavaScript's built-in validation for `new Date`
-		// 02-31? oh yeah that's just the 3rd of March
-		// 02-32? invalid date
-		// which makes this a pretty useful function for validating that `nextDay`
-		// won't crash on the input text.
-		return /^[0-9]{4}-(?:0[0-9]|1[0-2])-(?:[0-2][0-9]|3[0-1])$/.test(text);
+		return /[0-9]{4}-[0-9]{2}-[0-9]{2}/.test(text);
 	}
 	async findBattleLog(tier: ID, number: number): Promise<string[] | null> {
 		// binary search!
@@ -1169,7 +1164,7 @@ export class RipgrepLogSearcher extends Searcher {
 			const [name, text] = rawLine.split(sep);
 			let line = LogViewer.renderLine(text, 'all');
 			if (!line || name.includes('today')) return null;
-			// gets rid of some edge cases / duplicates
+				 // gets rid of some edge cases / duplicates
 			let date = name.replace(`logs/chat/${roomid}${toID(month) === 'all' ? '' : `/${month}`}`, '').slice(9);
 			if (searchRegex.test(rawLine)) {
 				if (++exactMatches > limit) return null;
@@ -1198,6 +1193,7 @@ export class RipgrepLogSearcher extends Searcher {
 	}
 	async searchLinecounts(room: RoomID, month: string, user?: ID) {
 		// don't need to check if logs exist since ripgrepSearchMonth does that
+		// eslint-disable-next-line no-useless-escape
 		const regexString = user ? `\\|c\\|${this.constructUserRegex(user)}\\|` : `\\|c\\|`;
 		const args: string[] = user ? ['--count'] : [];
 		const {results: rawResults} = await this.ripgrepSearchMonth({
@@ -1408,8 +1404,8 @@ export const pages: Chat.PageTable = {
 		if (isNaN(new Date(date).getTime())) {
 			return this.errorReply(`Invalid date.`);
 		}
-		if (!LogReader.isMonth(date)) {
-			return this.errorReply(`You must specify an exact month - both a year and a month.`);
+		if (!/[0-9]{4}-[0-9]{2}/.test(date)) {
+			return this.errorReply(`You must specify a full date - both a year and a month.`);
 		}
 		this.title = `[Log Stats] ${date}`;
 		return LogSearcher.runLinecountSearch(this, room ? room.roomid : args[2] as RoomID, date, toID(target));
@@ -1701,11 +1697,7 @@ export const commands: Chat.ChatCommands = {
 			atLeastOne = true;
 		}
 		if (i > 20) buf = `<details class="readmore">${buf}</details>`;
-		if (!atLeastOne) buf = `<br />None found.`;
-
-		if (this.pmTarget?.isStaff || room?.roomid === 'staff') {
-			this.runBroadcast();
-		}
+		if (!atLeastOne) buf = `None found.`;
 
 		return this.sendReplyBox(
 			Utils.html`<strong>Chat messages in the battle '${roomid}'` +

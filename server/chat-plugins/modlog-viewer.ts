@@ -228,7 +228,7 @@ export const commands: Chat.ChatCommands = {
 		const onlyPunishments = cmd.startsWith('pl') || cmd.startsWith('punishlog');
 		let lines;
 		const possibleParam = cmd.slice(2);
-		const targets = target.split(',').map(f => f.trim()).filter(Boolean);
+		const targets = target.split(',');
 		const search: ModlogSearch = {note: [], user: [], ip: [], action: [], actionTaker: []};
 
 		switch (possibleParam) {
@@ -245,7 +245,7 @@ export const commands: Chat.ChatCommands = {
 			if (!value) {
 				// If no specific parameter is specified, we should search all fields
 				value = param.trim();
-				if (i === 0 && value) {
+				if (i === 0 && targets.length > 1) {
 					// they might mean a roomid, as per the old format of /modlog
 					param = 'room';
 				} else {
@@ -318,6 +318,7 @@ export const commands: Chat.ChatCommands = {
 	modloghelp() {
 		this.sendReplyBox(
 			`<code>/modlog [comma-separated list of parameters]</code>: searches the moderator log, defaulting to the current room unless specified otherwise.<br />` +
+			`If an unnamed parameter is specified, <code>/modlog</code> will search all fields at once.<br />` +
 			`You can replace the <code>=</code> in a parameter with a <code>!=</code> to exclude entries that match that parameter.<br />` +
 			`<details><summary><strong>Parameters</strong></summary>` +
 			`<ul>` +

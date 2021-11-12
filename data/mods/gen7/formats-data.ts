@@ -529,7 +529,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		doublesTier: "(DUU)",
 	},
 	farfetchd: {
-		randomBattleMoves: ["bravebird", "knockoff", "leafblade", "return", "swordsdance"],
+		randomBattleMoves: ["bravebird", "knockoff", "leafblade", "return", "roost", "swordsdance"],
 		randomDoubleBattleMoves: ["bravebird", "knockoff", "leafblade", "protect", "return", "swordsdance"],
 		tier: "(PU)",
 		doublesTier: "(DUU)",
@@ -2486,7 +2486,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "LC",
 	},
 	gastrodon: {
-		randomBattleMoves: ["earthquake", "icebeam", "recover", "scald", "toxic"],
+		randomBattleMoves: ["clearsmog", "earthquake", "icebeam", "recover", "scald", "toxic"],
 		randomDoubleBattleMoves: ["earthpower", "icywind", "muddywater", "protect", "recover", "scald"],
 		tier: "PU",
 		doublesTier: "DOU",

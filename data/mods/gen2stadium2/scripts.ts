@@ -270,6 +270,7 @@ export const Scripts: ModdedBattleScriptsData = {
 
 			// We check the category and typing to calculate later on the damage
 			move.category = this.battle.getCategory(move);
+			if (!move.defensiveCategory) move.defensiveCategory = move.category;
 			// '???' is typeless damage: used for Struggle and Confusion etc
 			if (!move.type) move.type = '???';
 			const type = move.type;
@@ -328,13 +329,12 @@ export const Scripts: ModdedBattleScriptsData = {
 				level = move.allies[0].level;
 			}
 
-			const attacker = move.overrideOffensivePokemon === 'target' ? target : source;
-			const defender = move.overrideDefensivePokemon === 'source' ? source : target;
-
-			const isPhysical = move.category === 'Physical';
-			const atkType: StatIDExceptHP = move.overrideOffensiveStat || (isPhysical ? 'atk' : 'spa');
-			const defType: StatIDExceptHP = move.overrideDefensiveStat || (isPhysical ? 'def' : 'spd');
-
+			let attacker = source;
+			const defender = target;
+			if (move.useTargetOffensive) attacker = target;
+			let atkType: StatIDExceptHP = (move.category === 'Physical') ? 'atk' : 'spa';
+			const defType: StatIDExceptHP = (move.defensiveCategory === 'Physical') ? 'def' : 'spd';
+			if (move.useSourceDefensiveAsOffensive) atkType = defType;
 			let unboosted = false;
 			let noburndrop = false;
 
@@ -347,7 +347,7 @@ export const Scripts: ModdedBattleScriptsData = {
 					noburndrop = true;
 				}
 			}
-
+			// Get stats now.
 			let attack = attacker.getStat(atkType, unboosted, noburndrop);
 			let defense = defender.getStat(defType, unboosted);
 
@@ -364,7 +364,6 @@ export const Scripts: ModdedBattleScriptsData = {
 				// The attack drop from the burn is only applied when attacker's attack level is higher than defender's defense level.
 				attack = attacker.getStat(atkType, true, true);
 			}
-
 			if (move.ignoreDefensive) {
 				this.battle.debug('Negating (sp)def boost/penalty.');
 				defense = target.getStat(defType, true, true);

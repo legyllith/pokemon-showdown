@@ -1,0 +1,48 @@
+
+Error: read ECONNRESET
+    at Pipe.onStreamRead (node:internal/stream_base_commons:220:20)
+    at Pipe.callbackTrampoline (node:internal/async_hooks:130:17)
+
+Error: read ECONNRESET
+    at Pipe.onStreamRead (node:internal/stream_base_commons:220:20)
+    at Pipe.callbackTrampoline (node:internal/async_hooks:130:17)
+
+Error: read ECONNRESET
+    at Pipe.onStreamRead (node:internal/stream_base_commons:220:20)
+    at Pipe.callbackTrampoline (node:internal/async_hooks:130:17)
+
+Error: read ECONNRESET
+    at Pipe.onStreamRead (node:internal/stream_base_commons:220:20)
+    at Pipe.callbackTrampoline (node:internal/async_hooks:130:17)
+
+Error: read ECONNRESET
+    at Pipe.onStreamRead (node:internal/stream_base_commons:220:20)
+    at Pipe.callbackTrampoline (node:internal/async_hooks:130:17)
+
+Error: write EPIPE
+    at ChildProcess.target._send (node:internal/child_process:846:20)
+    at ChildProcess.target.send (node:internal/child_process:719:19)
+    at Worker.send (node:internal/cluster/worker:46:10)
+    at RawSubprocessStream._write (/home/jerem_n49/Ludimon/lib/process-manager.ts:91:24)
+    at RawSubprocessStream.write (/home/jerem_n49/Ludimon/lib/streams.ts:836:15)
+    at _class.socketSend (/home/jerem_n49/Ludimon/server/sockets.ts:98:22)
+    at Connection.send (/home/jerem_n49/Ludimon/server/users.ts:263:11)
+    at GlobalRoomState.handleConnect (/home/jerem_n49/Ludimon/server/rooms.ts:1576:14)
+    at Object.socketConnect (/home/jerem_n49/Ludimon/server/users.ts:1621:2)
+    at _class.onSpawn (/home/jerem_n49/Ludimon/server/sockets.ts:34:11)
+
+Error: read ECONNRESET
+    at Pipe.onStreamRead (node:internal/stream_base_commons:220:20)
+    at Pipe.callbackTrampoline (node:internal/async_hooks:130:17)
+
+Error: read ECONNRESET
+    at Pipe.onStreamRead (node:internal/stream_base_commons:220:20)
+    at Pipe.callbackTrampoline (node:internal/async_hooks:130:17)
+
+Error: read ECONNRESET
+    at Pipe.onStreamRead (node:internal/stream_base_commons:220:20)
+    at Pipe.callbackTrampoline (node:internal/async_hooks:130:17)
+
+Error: read ECONNRESET
+    at Pipe.onStreamRead (node:internal/stream_base_commons:220:20)
+    at Pipe.callbackTrampoline (node:internal/async_hooks:130:17)
