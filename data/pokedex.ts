@@ -17145,4 +17145,17 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		eggGroups: ["Undiscovered"],
 		gen: 5,
 	},
+	panbu: {
+		num: 17001,
+		name: "Panbu",
+		types: ["Grass"],
+		genderRatio: {M: 0.875, F: 0.125},
+		baseStats: {hp: 50, atk: 70, def: 50, spa: 35, spd: 35, spe: 60},
+		abilities: {0: "Overgrow", H: "Chlorophyll"},
+		heightm: 0.7,
+		weightkg: 6.9,
+		color: "Green",
+		evos: ["Ivysaur"],
+		eggGroups: ["Monster", "Grass"],
+	},
 };
