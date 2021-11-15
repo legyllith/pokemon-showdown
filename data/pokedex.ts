@@ -17146,7 +17146,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		gen: 5,
 	},
 	panbu: {
-		num: 17001,
+		num: 1801,
 		name: "Panbu",
 		types: ["Grass"],
 		genderRatio: {M: 0.875, F: 0.125},
