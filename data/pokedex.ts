@@ -17159,7 +17159,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		eggGroups: ["Monster", "Grass"],
 	},
 	flabebetradessar: {
-		num: 669,
+		num: 1819,
 		name: "Tradessarian Flabe\u0301be\u0301",
 		types: ["Fairy"],
 		gender: "F",
