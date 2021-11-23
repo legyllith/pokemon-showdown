@@ -6489,4 +6489,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	panbu: {
 		tier: "OU",
 	},
+	flabebetradessar: {
+		tier: "OU",
+	},
 };

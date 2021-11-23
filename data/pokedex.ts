@@ -17158,4 +17158,17 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		evos: ["Ivysaur"],
 		eggGroups: ["Monster", "Grass"],
 	},
+	flabebetradessar: {
+		num: 669,
+		name: "Tradessarian Flabe\u0301be\u0301",
+		types: ["Fairy"],
+		gender: "F",
+		baseStats: {hp: 44, atk: 38, def: 79, spa: 61, spd: 39, spe: 42},
+		abilities: {0: "Hidden Bloom", H: "Symbiosis"},
+		heightm: 0.1,
+		weightkg: 0.1,
+		color: "White",
+		evos: ["Floette"],
+		eggGroups: ["Fairy"],
+	},
 };
