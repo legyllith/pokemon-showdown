@@ -1736,7 +1736,7 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 
 		activate: "  [POKEMON] extends [MOVE] by 2 turns!",
 	},
-	HiddenBloom: {
+	hiddenbloom: {
 		name: "Hidden Bloom",
 		shortDesc: "At the end of each turn up attack special by 1 if no status activ.",
 	},
