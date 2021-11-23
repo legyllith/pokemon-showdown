@@ -4497,7 +4497,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				this.boost({spa: 1});
 			}
 		},
-		name: "hidden bloom",
+		name: "Hidden Bloom",
 		rating: 4.5,
 		num: 2000,
 	},
