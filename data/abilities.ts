@@ -4489,4 +4489,16 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 3,
 		num: -4,
 	},
+	HiddenBloom: {
+		onResidualOrder: 28,
+		onResidualSubOrder: 2,
+		onResidual(pokemon) {
+			if (pokemon.activeTurns && !pokemon.status) {
+				this.boost({spa: 1});
+			}
+		},
+		name: "hidden bloom",
+		rating: 4.5,
+		num: 2000,
+	},
 };
