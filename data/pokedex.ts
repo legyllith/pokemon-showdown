@@ -17160,7 +17160,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	},
 	flabebetradessar: {
 		num: 1819,
-		name: "test",
+		name: "test2",
 		types: ["Grass"],
 		genderRatio: {M: 0.875, F: 0.125},
 		baseStats: {hp: 50, atk: 70, def: 50, spa: 35, spd: 35, spe: 60},
