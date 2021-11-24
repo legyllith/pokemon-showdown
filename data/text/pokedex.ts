@@ -3677,4 +3677,7 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	panbu: {
 		name: "panbu",
 	},
+	flabebetradessar: {
+		name: "test2",
+	},
 };
