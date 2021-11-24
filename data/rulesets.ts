@@ -1820,7 +1820,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 			}
 		},
 	},
-	grassyTerrain: {
+	grassyterrain: {
 		effectType: 'Rule',
 		name: 'Grassy Terrain',
 		desc: 'The fight start on Grassy Terrain',
