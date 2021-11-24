@@ -1823,9 +1823,9 @@ export const Rulesets: {[k: string]: FormatData} = {
 	testyterrain: {
 		effectType: 'Rule',
 		name: 'Testy Terrain',
-		desc: 'The fight start on Grassy Terrain',
+		desc: 'The fight start on Testy Terrain',
 		onBegin() {
-			this.field.setTerrain('testyterrain');
+			this.field.setTerrain('testyterrain','debug');
 		},
 	},
 };
