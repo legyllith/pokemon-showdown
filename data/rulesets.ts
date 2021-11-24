@@ -1820,12 +1820,12 @@ export const Rulesets: {[k: string]: FormatData} = {
 			}
 		},
 	},
-	grassyterrain: {
+	testyterrain: {
 		effectType: 'Rule',
-		name: 'Grassy Terrain',
+		name: 'Testy Terrain',
 		desc: 'The fight start on Grassy Terrain',
 		onBegin() {
-			this.field.setTerrain('grassyterrain');
+			this.field.setTerrain('testyterrain');
 		},
 	},
 };
