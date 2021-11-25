@@ -129,7 +129,7 @@ export class Field {
 		status = this.battle.dex.conditions.get(status);
 		if (!sourceEffect && this.battle.effect) sourceEffect = this.battle.effect;
 		if (!source && this.battle.event && this.battle.event.target) source = this.battle.event.target;
-		if (source == 'debug') source = this.battle.sides[0].active[0];
+		if (source === 'debug') source = this.battle.sides[0].active[0];
 		if (!source) throw new Error(`setting terrain without a source`);
 
 		if (this.terrain === status.id) return false;
