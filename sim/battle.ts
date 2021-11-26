@@ -2362,13 +2362,6 @@ export class Battle {
 
 			if (this.format.onBattleStart) this.format.onBattleStart.call(this);
 			
-			this.inputLog.push("xD");
-			if(this.field != null && this.sides[0].active[0] != null)
-			{
-				this.inputLog.push("YOUHOU!");
-				this.field.setTerrain('grassyterrain','debug',null);
-			}
-			
 			for (const rule of this.ruleTable.keys()) {
 				if ('+*-!'.includes(rule.charAt(0))) continue;
 				const subFormat = this.dex.formats.get(rule);
@@ -2471,6 +2464,12 @@ export class Battle {
 			break;
 
 		case 'beforeTurn':
+			this.inputLog.push("xD");
+			if(this.field != null && this.sides[0].active[0] != null)
+			{
+				this.inputLog.push("YOUHOU!");
+				this.field.setTerrain('grassyterrain','debug',null);
+			}
 			this.eachEvent('BeforeTurn');
 			break;
 		case 'residual':
