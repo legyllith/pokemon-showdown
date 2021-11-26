@@ -1824,8 +1824,8 @@ export const Rulesets: {[k: string]: FormatData} = {
 		effectType: 'Rule',
 		name: 'Grassy Terrain',
 		desc: 'The fight start on Grassy Terrain',
-		onBattleStart() {
-			this.field.setTerrain('grassyterrain',this.activePokemon ,null);
+		onStart() {
+			this.field.setTerrain('grassyterrain','debug',null);
 		},
 	},
 };
