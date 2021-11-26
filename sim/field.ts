@@ -127,6 +127,7 @@ export class Field {
 
 	setTerrain(status: string | Effect, source: Pokemon | 'debug' | null = null, sourceEffect: Effect | null = null) {
 		status = this.battle.dex.conditions.get(status);
+		throw new Error(`You can't set terrain lol`);
 		if (!sourceEffect && this.battle.effect) sourceEffect = this.battle.effect;
 		if (!source && this.battle.event && this.battle.event.target) source = this.battle.event.target;
 		if (source === 'debug') source = this.battle.sides[0].active[0];
