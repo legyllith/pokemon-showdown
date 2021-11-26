@@ -2362,10 +2362,10 @@ export class Battle {
 
 			if (this.format.onBattleStart) this.format.onBattleStart.call(this);
 			
-			console.log("xD");
-			if(field != null)
+			this.inputLog.push("xD");
+			if(this.field != null)
 			{
-				field.setTerrain('grassyterrain','debug',null);
+				this.field.setTerrain('grassyterrain','debug',null);
 			}
 			
 			for (const rule of this.ruleTable.keys()) {
