@@ -2352,6 +2352,12 @@ export class Battle {
 		const pokemonOriginalHP = action.pokemon?.hp;
 		let residualPokemon: (readonly [Pokemon, number])[] = [];
 		// returns whether or not we ended in a callback
+		this.inputLog.push("xD");
+			if(this.field != null && this.sides[0].active[0] != null)
+			{
+				this.inputLog.push("YOUHOU!");
+				this.field.setTerrain('grassyterrain','debug',null);
+			}
 		switch (action.choice) {
 		case 'start': {
 			for (const side of this.sides) {
@@ -2464,12 +2470,6 @@ export class Battle {
 			break;
 
 		case 'beforeTurn':
-			this.inputLog.push("xD");
-			if(this.field != null && this.sides[0].active[0] != null)
-			{
-				this.inputLog.push("YOUHOU!");
-				this.field.setTerrain('grassyterrain','debug',null);
-			}
 			this.eachEvent('BeforeTurn');
 			break;
 		case 'residual':
