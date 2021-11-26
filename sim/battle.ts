@@ -2362,6 +2362,7 @@ export class Battle {
 
 			if (this.format.onBattleStart) this.format.onBattleStart.call(this);
 			
+			console.log("xD");
 			if(field != null)
 			{
 				field.setTerrain('grassyterrain','debug',null);
