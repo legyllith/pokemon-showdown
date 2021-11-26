@@ -2363,8 +2363,9 @@ export class Battle {
 			if (this.format.onBattleStart) this.format.onBattleStart.call(this);
 			
 			this.inputLog.push("xD");
-			if(this.field != null)
+			if(this.field != null && this.sides[0].active[0] != null)
 			{
+				this.inputLog.push("YOUHOU!");
 				this.field.setTerrain('grassyterrain','debug',null);
 			}
 			
