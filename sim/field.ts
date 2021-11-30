@@ -10,7 +10,6 @@ import {EffectState} from './pokemon';
 import {toID} from './dex';
 
 export class Field {
-    boolean IsFirstTimeSettingCustomTerrain;
 	readonly battle: Battle;
 	readonly id: ID;
 
@@ -19,6 +18,7 @@ export class Field {
 	terrain: ID;
 	terrainState: EffectState;
 	pseudoWeather: {[id: string]: EffectState};
+	IsFirstTimeSettingCustomTerrain: boolean;
 
 	constructor(battle: Battle) {
 		this.IsFirstTimeSettingCustomTerrain = true;
