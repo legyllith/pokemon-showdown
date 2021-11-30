@@ -1824,7 +1824,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 		effectType: 'Rule',
 		name: 'Grassy Terrain',
 		desc: 'The fight start on Grassy Terrain',
-		onStart(allies) {
+		onSwitchIn(allies) {
 			this.field.setTerrain('grassyterrain');
 		},
 	},
