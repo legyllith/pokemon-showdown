@@ -10,6 +10,7 @@ import {EffectState} from './pokemon';
 import {toID} from './dex';
 
 export class Field {
+    boolean IsFirstTimeSettingCustomTerrain;
 	readonly battle: Battle;
 	readonly id: ID;
 
@@ -20,6 +21,7 @@ export class Field {
 	pseudoWeather: {[id: string]: EffectState};
 
 	constructor(battle: Battle) {
+		this.IsFirstTimeSettingCustomTerrain = true;
 		this.battle = battle;
 		const fieldScripts = this.battle.format.field || this.battle.dex.data.Scripts.field;
 		if (fieldScripts) Object.assign(this, fieldScripts);
