@@ -1820,11 +1820,11 @@ export const Rulesets: {[k: string]: FormatData} = {
 			}
 		},
 	},
-	grassyterrain: {
+	grassyterrainrule: {
 		effectType: 'Rule',
-		name: 'Grassy Terrain',
+		name: 'Grassy Terrain Rule',
 		desc: 'The fight start on Grassy Terrain',
-		onSwitchIn(foes) {
+		onSwitchIn(pokemon) {
 			this.field.setTerrain('grassyterrain');
 		},
 	},
