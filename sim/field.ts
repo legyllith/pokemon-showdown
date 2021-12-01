@@ -18,7 +18,7 @@ export class Field {
 	terrain: ID;
 	terrainState: EffectState;
 	pseudoWeather: {[id: string]: EffectState};
-	CustomTerrainIsActive: boolean;
+	IsFirstTimeSettingCustomTerrain: boolean;
 
 	constructor(battle: Battle) {
 		this.IsFirstTimeSettingCustomTerrain = true;

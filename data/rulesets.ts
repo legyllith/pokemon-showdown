@@ -1825,12 +1825,12 @@ export const Rulesets: {[k: string]: FormatData} = {
 		name: 'Grassy Terrain Rule',
 		desc: 'The fight start on Grassy Terrain',
 		onSwitchIn(pokemon) {
-			if(this.field.CustomTerrainIsActive) {
+			if(this.field.IsFirstTimeSettingCustomTerrain) {
 				this.field.setTerrain('grassyterrain');
-				this.field.CustomTerrainIsActive = false;
+				this.field.IsFirstTimeSettingCustomTerrain = false;
 			}
 		},
-		onFieldEnd(pokemon){
+		onEnd(pokemon){
 			if(this.field.isTerrain('')) {
 				this.field.setTerrain('grassyterrain');
 			}
