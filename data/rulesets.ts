@@ -1831,7 +1831,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 			}
 		},
 		onEnd(pokemon){
-			if(this.field.getTerrain()==='') {
+			if(this.field.isTerrain('')) {
 				this.field.setTerrain('grassyterrain');
 			}
 		}
