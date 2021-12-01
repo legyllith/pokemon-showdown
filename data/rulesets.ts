@@ -1832,7 +1832,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 		},
 		onEnd(){
 			if(this.field.getTerrain()==='') {
-				this.field.IsFirstTimeSettingCustomTerrain = true;
+				this.field.setTerrain('grassyterrain');
 			}
 		}
 	},
