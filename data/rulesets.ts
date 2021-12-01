@@ -1830,7 +1830,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 				this.field.CustomTerrainIsActive = false;
 			}
 		},
-		onEnd(pokemon){
+		onFieldEnd(pokemon){
 			if(this.field.isTerrain('')) {
 				this.field.setTerrain('grassyterrain');
 			}
