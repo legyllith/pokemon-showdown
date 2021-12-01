@@ -4895,25 +4895,26 @@ export const Moves: {[moveid: string]: MoveData} = {
 			if (move.sourceEffect === 'grasspledge') {
 				move.type = 'Fire';
 				move.forceSTAB = true;
-				move.sideCondition = 'firepledge';
+				this.field.setTerrain('burningterrain');
+				// move.sideCondition = 'firepledge';
 			}
 		},
-		condition: {
-			duration: 4,
-			onSideStart(targetSide) {
-				this.add('-sidestart', targetSide, 'Fire Pledge');
-			},
-			onResidualOrder: 5,
-			onResidualSubOrder: 1,
-			onResidual(pokemon) {
-				if (!pokemon.hasType('Fire')) this.damage(pokemon.baseMaxhp / 8, pokemon);
-			},
-			onSideResidualOrder: 26,
-			onSideResidualSubOrder: 8,
-			onSideEnd(targetSide) {
-				this.add('-sideend', targetSide, 'Fire Pledge');
-			},
-		},
+		// condition: {
+			// duration: 4,
+			// onSideStart(targetSide) {
+				// this.add('-sidestart', targetSide, 'Fire Pledge');
+			// },
+			// onResidualOrder: 5,
+			// onResidualSubOrder: 1,
+			// onResidual(pokemon) {
+				// if (!pokemon.hasType('Fire')) this.damage(pokemon.baseMaxhp / 8, pokemon);
+			// },
+			// onSideResidualOrder: 26,
+			// onSideResidualSubOrder: 8,
+			// onSideEnd(targetSide) {
+				// this.add('-sideend', targetSide, 'Fire Pledge');
+			// },
+		// },
 		secondary: null,
 		target: "normal",
 		type: "Fire",
@@ -7101,7 +7102,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 			if (move.sourceEffect === 'firepledge') {
 				move.type = 'Fire';
 				move.forceSTAB = true;
-				move.sideCondition = 'firepledge';
+				this.field.setTerrain('burningterrain');
+				// move.sideCondition = 'firepledge';
 			}
 		},
 		condition: {
@@ -19683,48 +19685,63 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Electric",
 		contestType: "Cool",
 	},
-	testyterrain: {
+	burningterrain: {
 		num: 2000,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
-		name: "Testy Terrain",
+		name: "Burning Terrain",
 		pp: 10,
 		priority: 0,
 		flags: {nonsky: 1},
-		terrain: 'testyterrain',
+		terrain: 'burningterrain',
 		condition: {
 			duration: 99,
+			durationCallback(source, effect) {
+				if (source?.hasItem('terrainextender')) {
+					return 99;
+				}
+				return 99;
+			},
+			onSetStatus(status, target, source, effect) {
+				if (status.id === 'frz' && !target.isSemiInvulnerable()) {
+					this.add('-activate', target, 'move: Burning Terrain');
+					return false;
+				}
+			},
 			onBasePowerPriority: 6,
 			onBasePower(basePower, attacker, defender, move) {
-				const weakenedMoves = ['earthquake', 'bulldoze', 'magnitude'];
-				if (weakenedMoves.includes(move.id) && defender.isGrounded() && !defender.isSemiInvulnerable()) {
-					this.debug('move weakened by testy terrain');
+				if (move.type === 'Ice') {
+					this.debug('move weakened by burning terrain');
 					return this.chainModify(0.5);
 				}
+				if (move.type === 'Fire' && attacker.isGrounded()) {
+					this.debug('burning terrain boost');
+					return this.chainModify(1.5);
+				}
 				if (move.type === 'Grass' && attacker.isGrounded()) {
-					this.debug('grassy terrain boost');
-					return this.chainModify([5325, 4096]);
+					this.debug('move weakened by burning terrain');
+					return this.chainModify(0.5);
 				}
 			},
 			onResidualOrder: 5,
 			onResidualSubOrder: 2,
 			onResidual(pokemon) {
-				if (pokemon.isGrounded() && !pokemon.isSemiInvulnerable()) {
-					this.heal(pokemon.baseMaxhp / 16, pokemon, pokemon);
-				} else {
-					this.debug(`Pokemon semi-invuln or not grounded; Grassy Terrain skipped`);
+				const fireAbility = ['magmaarmor', 'flamebody', 'flashfire', 'flareboost', 'waterveil', 'waterbubble', 'heatproof'];
+				if (!pokemon.hasType('Fire') && pokemon.isGrounded() && !pokemon.volatiles['aquaring'] && !fireAbility.includes(pokemon.ability)) {
+					const typeMod = this.clampIntRange(pokemon.runEffectiveness(this.dex.getActiveMove('burningterrain')), -6, 6);
+					this.damage(pokemon.maxhp * Math.pow(2, typeMod) / 8);
 				}
 			},
 			onFieldResidualOrder: 27,
 			onFieldResidualSubOrder: 7,
 			onFieldEnd() {
-				this.add('-fieldend', 'move: Grassy Terrain');
+				this.add('-fieldend', 'move: Burning Terrain');
 			},
 		},
 		secondary: null,
 		target: "all",
-		type: "Grass",
+		type: "Fire",
 		zMove: {boost: {def: 1}},
 		contestType: "Beautiful",
 	},
