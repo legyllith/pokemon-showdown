@@ -1831,7 +1831,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 			}
 		},
 		onEnd(){
-			if(this.field.getTerrain()='') {
+			if(this.field.getTerrain()==='') {
 				this.field.IsFirstTimeSettingCustomTerrain = true;
 			}
 		}
