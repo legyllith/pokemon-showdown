@@ -1830,7 +1830,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 				this.field.IsFirstTimeSettingCustomTerrain = false;
 			}
 		},
-		onEnd(pokemon){
+		onResidual(pokemon){
 			if(this.field.isTerrain('')) {
 				this.field.setTerrain('grassyterrain');
 			}
