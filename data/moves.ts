@@ -19696,12 +19696,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		flags: {nonsky: 1},
 		terrain: 'burningterrain',
 		condition: {
-			duration: 99,
+			duration: 5,
 			durationCallback(source, effect) {
 				if (source?.hasItem('terrainextender')) {
-					return 99;
+					return 8;
 				}
-				return 99;
+				return 5;
 			},
 			onSetStatus(status, target, source, effect) {
 				if (status.id === 'frz' && !target.isSemiInvulnerable()) {
@@ -19727,10 +19727,15 @@ export const Moves: {[moveid: string]: MoveData} = {
 			onResidualOrder: 5,
 			onResidualSubOrder: 2,
 			onResidual(pokemon) {
-				const fireAbility = ['magmaarmor', 'flamebody', 'flashfire', 'flareboost', 'waterveil', 'waterbubble', 'heatproof'];
-				if (!pokemon.hasType('Fire') && pokemon.isGrounded() && !pokemon.volatiles['aquaring'] && !fireAbility.includes(pokemon.ability)) {
+				const fireImmuneAbility = ['magmaarmor', 'flamebody', 'flashfire', 'flareboost', 'waterveil', 'waterbubble', 'heatproof'];
+				const burningAbility = ['fluffy', 'grasspelt', 'icebody', 'leafguard'];
+				var factorBurning = 1;
+				if (!pokemon.hasType('Fire') && pokemon.isGrounded() && !pokemon.volatiles['aquaring'] && !fireImmuneAbility.includes(pokemon.ability)) {
 					const typeMod = this.clampIntRange(pokemon.runEffectiveness(this.dex.getActiveMove('burningterrain')), -6, 6);
-					this.damage(pokemon.maxhp * Math.pow(2, typeMod) / 8);
+					if (burningAbility.includes(pokemon.ability)){
+						factorBurning = 0.5;
+					}
+					this.damage(pokemon.maxhp * Math.pow(2, typeMod) / (8*factorBurning));
 				}
 			},
 			onFieldResidualOrder: 27,

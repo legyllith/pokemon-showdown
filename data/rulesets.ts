@@ -1836,4 +1836,20 @@ export const Rulesets: {[k: string]: FormatData} = {
 			}
 		}
 	},
+	burningterrainrule: {
+		effectType: 'Rule',
+		name: 'Burning Terrain Rule',
+		desc: 'The fight start on Burning Terrain',
+		onSwitchIn(pokemon) {
+			if(this.field.IsFirstTimeSettingCustomTerrain) {
+				this.field.setTerrain('burningterrain');
+				this.field.IsFirstTimeSettingCustomTerrain = false;
+			}
+		},
+		onResidual(pokemon){
+			if(this.field.isTerrain('')) {
+				this.field.setTerrain('burningterrain');
+			}
+		}
+	},
 };

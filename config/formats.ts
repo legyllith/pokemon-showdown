@@ -78,7 +78,7 @@ export const Formats: FormatList = [
 		],
 
 		mod: 'gen8',
-		ruleset: ['Standard', 'Dynamax Clause', 'Grassy Terrain Rule'],
+		ruleset: ['Standard', 'Dynamax Clause'],
 		banlist: ['Uber', 'AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock', 'Baton Pass'],
 	},
 	{
@@ -313,7 +313,7 @@ export const Formats: FormatList = [
 		name: "[Gen 8] Custom Game",
 
 		mod: 'gen8',
-		searchShow: false,
+		searchShow: true,
 		debug: true,
 		battle: {trunc: Math.trunc},
 		// no restrictions, for serious (other than team preview)
@@ -344,7 +344,7 @@ export const Formats: FormatList = [
 
 		mod: 'gen8',
 		gameType: 'doubles',
-		ruleset: ['Standard Doubles', 'Dynamax Clause', 'Swagger Clause'],
+		ruleset: ['Standard Doubles', 'Dynamax Clause', 'Swagger Clause', 'Burning Terrain Rule'],
 		banlist: ['DUber', 'Power Construct', 'Shadow Tag'],
 	},
 	{
