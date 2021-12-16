@@ -17173,5 +17173,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "White",
 		evos: ["Floette"],
 		eggGroups: ["Fairy"],
+		cosmeticFormes: ["Flabe\u0301be\u0301-Tradessar-Blue"],
+		formeOrder: ["Flabe\u0301be\u0301-Tradessar", "Flabe\u0301be\u0301-Tradessar-Blue"],
+	
 	},
 };
