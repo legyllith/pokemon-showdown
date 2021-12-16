@@ -19694,7 +19694,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {nonsky: 1},
-		terrain: 'burningterrain',
+		terrain: 'burningterrain', //aucun visuel, pas d'invocation au début
 		condition: {
 			duration: 5,
 			durationCallback(source, effect) {
@@ -19728,7 +19728,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			onResidualSubOrder: 2,
 			onResidual(pokemon) {
 				const fireImmuneAbility = ['magmaarmor', 'flamebody', 'flashfire', 'flareboost', 'waterveil', 'waterbubble', 'heatproof'];
-				const burningAbility = ['fluffy', 'grasspelt', 'icebody', 'leafguard'];
+				const burningAbility = ['fluffy', 'grasspelt', 'icebody', 'leafguard']; //marche pas
 				var factorBurning = 1;
 				if (!pokemon.hasType('Fire') && pokemon.isGrounded() && !pokemon.volatiles['aquaring'] && !fireImmuneAbility.includes(pokemon.ability)) {
 					const typeMod = this.clampIntRange(pokemon.runEffectiveness(this.dex.getActiveMove('burningterrain')), -6, 6);
