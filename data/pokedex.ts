@@ -17162,6 +17162,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	flabebetradessar: {
 		num: 669,
 		name: "Flabe\u0301be\u0301-Tradessar",
+		baseForm: "Tradessarred",
 		baseSpecies: "Flabe\u0301be\u0301",
 		forme: "Tradessar",
 		types: ["Fairy"],
@@ -17173,7 +17174,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "White",
 		evos: ["Floette"],
 		eggGroups: ["Fairy"],
-		cosmeticFormes: ["Flabe\u0301be\u0301-Tradessar-Blue"],
+		cosmeticFormes: ["Flabe\u0301be\u0301-Tradessarblue"],
 		formeOrder: ["Flabe\u0301be\u0301-Tradessar", "Flabe\u0301be\u0301-Tradessarblue"],
 	
 	},
