@@ -17163,7 +17163,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		num: 669,
 		name: "Flabe\u0301be\u0301-Tradessar",
 		baseForm: "Tradessarred",
-		baseSpecies: "Flabe\u0301be\u0301",
+		baseSpecies: "Flabe\u0301be\u0301-Tradessar",
 		forme: "Tradessar",
 		types: ["Fairy"],
 		gender: "M",
