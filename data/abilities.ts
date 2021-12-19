@@ -4494,19 +4494,16 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onModifyAtk(atk, attacker, defender, move) {
 			if (move.type === 'Plant') {
 				this.debug('Hidden Bloom');
-				this.boost({spa: 1});
+				attacker.boost({spa: 1});
 			}
 		},
 		onModifySpAPriority: 5,
 		onModifySpA(atk, attacker, defender, move) {
 			if (move.type === 'Plant') {
 				this.debug('Hidden Bloom');
-				this.boost({spa: 1});
+				attackers.boost({spa: 1});
 			}
 		},
-		name: "Blaze",
-		rating: 2,
-		num: 66,
 		name: "Hidden Bloom",
 		rating: 4,
 		num: 2000,
