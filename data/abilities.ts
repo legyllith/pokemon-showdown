@@ -4490,15 +4490,13 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: -4,
 	},
 	hiddenbloom: {
-		onResidualOrder: 28,
-		onResidualSubOrder: 2,
-		onResidual(pokemon) {
-			if (pokemon.activeTurns && !pokemon.status) {
+		onModifyType(move, pokemon) {
+			if (move.type === 'Plant')) {
 				this.boost({spa: 1});
 			}
 		},
 		name: "Hidden Bloom",
-		rating: 4.5,
+		rating: 4,
 		num: 2000,
 	},
 };
