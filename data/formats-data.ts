@@ -6492,4 +6492,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	flabebetradessar: {
 		tier: "OU",
 	},
+	floettetradessar: {
+		tier: "OU",
+	},
+	florgestradessar: {
+		tier: "OU",
+	},
 };

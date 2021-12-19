@@ -3675,9 +3675,15 @@ export const PokedexText: {[k: string]: PokedexText} = {
 		name: "Pokestar UFO-PropU2",
 	},
 	panbu: {
-		name: "panbu",
+		name: "Panbu",
 	},
 	flabebetradessar: {
-		name: "test2",
+		name: "Flabe\u0301be\u0301-Tradessar",
+	},
+	floettetradessar: {
+		name: "Floette-Tradessar",
+	},
+	florgestradessar: {
+		name: "Florges-Tradessar",
 	},
 };
