@@ -4490,18 +4490,10 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: -4,
 	},
 	hiddenbloom: {
-		onModifyAtkPriority: 5,
-		onModifyAtk(atk, attacker, defender, move) {
+		onPrepareHit(source, target, move) {
 			if (move.type === 'Plant') {
 				this.debug('Hidden Bloom');
-				attacker.boost({spa: 1});
-			}
-		},
-		onModifySpAPriority: 5,
-		onModifySpA(atk, attacker, defender, move) {
-			if (move.type === 'Plant') {
-				this.debug('Hidden Bloom');
-				attackers.boost({spa: 1});
+				this.boost({spa: 1});
 			}
 		},
 		name: "Hidden Bloom",
