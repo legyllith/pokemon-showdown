@@ -4491,7 +4491,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	hiddenbloom: {
 		onPrepareHit(source, target, move) {
-			if (move.type === 'Plant') {
+			if (move.type === 'Grass') {
 				this.debug('Hidden Bloom');
 				this.boost({spa: 1});
 			}
