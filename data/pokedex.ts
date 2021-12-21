@@ -17156,7 +17156,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		heightm: 0.5,
 		weightkg: 5,
 		color: "Green",
-		evos: ["Grovyle"],
+		evos: ["Sastif"],
 		eggGroups: ["Monster", "Dragon"],
 	},
 	sastif: {
@@ -17169,9 +17169,9 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		heightm: 0.9,
 		weightkg: 21.6,
 		color: "Green",
-		prevo: "Treecko",
+		prevo: "Charmuke",
 		evoLevel: 16,
-		evos: ["Sceptile"],
+		evos: ["Ushuke"],
 		eggGroups: ["Monster", "Dragon"],
 	},
 	ushuke: {
@@ -17184,11 +17184,9 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		heightm: 1.7,
 		weightkg: 48.8,
 		color: "Green",
-		prevo: "Grovyle",
+		prevo: "Sastif",
 		evoLevel: 36,
 		eggGroups: ["Monster", "Dragon"],
-		otherFormes: ["Sceptile-Mega"],
-		formeOrder: ["Sceptile", "Sceptile-Mega"],
 	},
 	flabebetradessar: {
 		num: 669,
@@ -17204,7 +17202,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "White",
 		evos: ["Floette-Tradessar"],
 		eggGroups: ["Fairy"],
-	
 	},
 	floettetradessar: {
 		num: 670,

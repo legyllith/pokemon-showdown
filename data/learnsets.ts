@@ -83021,10 +83021,6 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			workup: ["8M", "7M"],
 			worryseed: ["8E", "7T", "7E", "6T", "6E", "5T", "5E", "4T", "4E"],
 		},
-		eventData: [
-			{generation: 3, level: 10, gender: "M", moves: ["pound", "leer", "absorb"], pokeball: "pokeball"},
-			{generation: 5, level: 10, gender: "M", isHidden: true, moves: ["pound", "leer", "absorb"]},
-		],
 	},
 	sastif: {
 		learnset: {
