@@ -19728,7 +19728,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			onResidualSubOrder: 2,
 			onResidual(pokemon) {
 				const fireImmuneAbility = ['magmaarmor', 'flamebody', 'flashfire', 'flareboost', 'waterveil', 'waterbubble', 'heatproof'];
-				const burningAbility = ['fluffy', 'grasspelt', 'icebody', 'leafguard']; //marche pas
+				const burningAbility = ['fluffy', 'grasspelt', 'icebody', 'leafguard'];
 				if (!pokemon.hasType('Fire') && pokemon.isGrounded() && !pokemon.volatiles['aquaring'] && !fireImmuneAbility.includes(pokemon.ability)) {
 					const typeMod = this.clampIntRange(pokemon.runEffectiveness(this.dex.getActiveMove('burningterrain')), -6, 6);
 					if (burningAbility.includes(pokemon.ability)){
