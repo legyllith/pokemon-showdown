@@ -823,6 +823,7 @@ export const Aliases: {[alias: string]: string} = {
 	bde: "Baby-Doll Eyes",
 	bpass: "Baton Pass",
 	bp: "Baton Pass",
+	bterrain: "Burning Terrain",
 	cc: "Close Combat",
 	cm: "Calm Mind",
 	dbond: "Destiny Bond",
