@@ -1738,6 +1738,6 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 	},
 	hiddenbloom: {
 		name: "Hidden Bloom",
-		shortDesc: "At the end of each turn up attack special by 1 if no status activ.",
+		shortDesc: "When you use a Grass move you gain 1 att spe before use it",
 	},
 };

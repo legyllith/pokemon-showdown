@@ -6486,7 +6486,13 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		isNonstandard: "Custom",
 		tier: "Illegal",
 	},
-	panbu: {
+	charmuke: {
+		tier: "OU",
+	},
+	sastif: {
+		tier: "OU",
+	},
+	ushuke: {
 		tier: "OU",
 	},
 	flabebetradessar: {
