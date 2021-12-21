@@ -19726,9 +19726,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 			},
 			onFieldStart(field, source, effect) {
 				if (effect?.effectType === 'Ability') {
-					this.add('-fieldstart', 'move: Grassy Terrain', '[from] ability: ' + effect, '[of] ' + source);
+					this.add('-fieldstart', 'move: Burning Terrain', '[from] ability: ' + effect, '[of] ' + source);
 				} else {
-					this.add('-fieldstart', 'move: Grassy Terrain');
+					this.add('-fieldstart', 'move: Burning Terrain');
 				}
 			},
 			onResidualOrder: 5,
