@@ -19729,13 +19729,14 @@ export const Moves: {[moveid: string]: MoveData} = {
 			onResidual(pokemon) {
 				const fireImmuneAbility = ['magmaarmor', 'flamebody', 'flashfire', 'flareboost', 'waterveil', 'waterbubble', 'heatproof'];
 				const burningAbility = ['fluffy', 'grasspelt', 'icebody', 'leafguard']; //marche pas
-				var factorBurning = 1;
 				if (!pokemon.hasType('Fire') && pokemon.isGrounded() && !pokemon.volatiles['aquaring'] && !fireImmuneAbility.includes(pokemon.ability)) {
 					const typeMod = this.clampIntRange(pokemon.runEffectiveness(this.dex.getActiveMove('burningterrain')), -6, 6);
 					if (burningAbility.includes(pokemon.ability)){
-						factorBurning = 0.5;
+						this.damage(pokemon.maxhp * Math.pow(2, typeMod) / 4);
 					}
-					this.damage(pokemon.maxhp * Math.pow(2, typeMod) / (8*factorBurning));
+					if (!burningAbility.includes(pokemon.ability)){
+						this.damage(pokemon.maxhp * Math.pow(2, typeMod) / 8);
+					}
 				}
 			},
 			onFieldResidualOrder: 27,

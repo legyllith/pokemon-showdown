@@ -332,6 +332,12 @@ export const DefaultText: {[k: string]: DefaultText} = {
 		end: "  The weirdness disappeared from the battlefield!",
 		block: "  [POKEMON] is protected by the Psychic Terrain!",
 	},
+	burningterrain: {
+		start: "  The field is ablaze!",
+		end: "  The flames disappeared from the battlefield.",
+		damage: "  [POKEMON] is hurt by the flames!",
+		block: "  [POKEMON] is protected by the Burning Terrain!",
+	},
 
 	// field effects
 	gravity: {
