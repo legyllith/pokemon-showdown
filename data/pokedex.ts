@@ -17182,7 +17182,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		baseStats: {hp: 68, atk: 105, def: 65, spa: 85, spd: 90, spe: 122},
 		abilities: {0: "Overgrow", H: "Unburden"},
 		heightm: 1.7,
-		weightkg: 48,8,
+		weightkg: 48.8,
 		color: "Green",
 		prevo: "Grovyle",
 		evoLevel: 36,
