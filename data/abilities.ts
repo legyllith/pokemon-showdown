@@ -369,14 +369,14 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	blaze: {
 		onModifyAtkPriority: 5,
 		onModifyAtk(atk, attacker, defender, move) {
-			if (move.type === 'Fire' && attacker.hp <= attacker.maxhp / 3) {
+			if (move.type === 'Fire' && (attacker.hp <= attacker.maxhp / 3 || this.field.isTerrain('burningterrain'))) {
 				this.debug('Blaze boost');
 				return this.chainModify(1.5);
 			}
 		},
 		onModifySpAPriority: 5,
 		onModifySpA(atk, attacker, defender, move) {
-			if (move.type === 'Fire' && attacker.hp <= attacker.maxhp / 3) {
+			if (move.type === 'Fire' && (attacker.hp <= attacker.maxhp / 3 || this.field.isTerrain('burningterrain'))) {
 				this.debug('Blaze boost');
 				return this.chainModify(1.5);
 			}
@@ -988,7 +988,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	flareboost: {
 		onBasePowerPriority: 19,
 		onBasePower(basePower, attacker, defender, move) {
-			if (attacker.status === 'brn' && move.category === 'Special') {
+			if ((attacker.status === 'brn' || this.field.isTerrain('burningterrain')) && move.category === 'Special') {
 				return this.chainModify(1.5);
 			}
 		},
@@ -997,6 +997,17 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 138,
 	},
 	flashfire: {
+		onStart(pokemon) {
+			if (this.field.isTerrain('burningterrain')) {
+				pokemon.addVolatile('flashfire');
+			}
+		},
+		onAnyTerrainStart() {
+			const pokemon = this.effectState.target;
+			if (this.field.isTerrain('burningterrain')) {
+				pokemon.addVolatile('flashfire');
+			}
+		},
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Fire') {
 				move.accuracy = true;
@@ -2089,6 +2100,9 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 					break;
 				case 'psychicterrain':
 					newType = 'Psychic';
+					break;
+				case 'burningterrain':
+					newType = 'Fire';
 					break;
 				}
 				if (!newType || pokemon.getTypes().join() === newType || !pokemon.setType(newType)) return;

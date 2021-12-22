@@ -1890,6 +1890,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 				pokemon.setType(pokemon.getTypes(true).map(type => type === "Fire" ? "???" : type));
 				this.add('-start', pokemon, 'typechange', pokemon.types.join('/'), '[from] move: Burn Up');
 			},
+			onResidual(pokemon) {
+				if (!pokemon.hasType('Fire')) && this.field.isTerrain('burningterrain')) {
+					this.add('-start', target, 'typeadd', 'Fire', '[from] move: Burn Up');
+				} 
+			},
 		},
 		secondary: null,
 		target: "normal",
@@ -1953,8 +1958,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 				newType = 'Fairy';
 			} else if (this.field.isTerrain('psychicterrain')) {
 				newType = 'Psychic';
+			} else if (this.field.isTerrain('burningterrain')) {
+				newType = 'Fire';
 			}
-
 			if (target.getTypes().join() === newType || !target.setType(newType)) return false;
 			this.add('-start', target, 'typechange', newType);
 		},
@@ -2245,6 +2251,17 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 15,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		onBasePower(basePower, source) {
+			if (this.field.isTerrain('burningterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify(2);
+			}
+		},
+		onEffectiveness(typeMod, target, type, move) {
+			if (this.field.isTerrain('burningterrain')){
+				return typeMod + this.dex.getEffectiveness('Fire', type);
+			}
+		},
 		onHit(target) {
 			target.clearBoosts();
 			this.add('-clearboost', target);
@@ -11780,6 +11797,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 				move = 'moonblast';
 			} else if (this.field.isTerrain('psychicterrain')) {
 				move = 'psychic';
+			} else if (this.field.isTerrain('burningterrain')) {
+				move = 'flamethrower';
 			}
 			this.actions.useMove(move, pokemon, target);
 			return null;
@@ -14839,7 +14858,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 						spe: -1,
 					},
 				});
-			}
+			} else if (this.field.isTerrain('burningterrain')) {
+				move.secondaries.push({
+					chance: 30,
+					status: 'brn',
+				});
+			} 
 		},
 		secondary: {
 			chance: 30,
@@ -15832,6 +15856,17 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 15,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, nonsky: 1},
+		onBasePower(basePower, source) {
+			if (this.field.isTerrain('burningterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify(1.5);
+			}
+		},
+		onEffectiveness(typeMod, target, type, move) {
+			if (this.field.isTerrain('burningterrain')){
+				return typeMod + this.dex.getEffectiveness('Fire', type);
+			}
+		},
 		volatileStatus: 'smackdown',
 		condition: {
 			noCopy: true,
@@ -15914,6 +15949,17 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 20,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		onBasePower(basePower, source) {
+			if (this.field.isTerrain('burningterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify(2);
+			}
+		},
+		onEffectiveness(typeMod, target, type, move) {
+			if (this.field.isTerrain('burningterrain')){
+				return typeMod + this.dex.getEffectiveness('Fire', type);
+			}
+		},
 		secondary: {
 			chance: 40,
 			status: 'psn',
@@ -15931,6 +15977,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 20,
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1},
+		onModifyMove(move, pokemon) {
+			if (this.field.isTerrain('burningterrain')) {
+				move.boosts = accuracy: -2;
+			}
+		},
 		boosts: {
 			accuracy: -1,
 		},
@@ -17950,6 +18001,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 			case 'psychicterrain':
 				move.type = 'Psychic';
 				break;
+			case 'burningterrain':
+				move.type = 'Fire';
+				break;
 			}
 		},
 		onModifyMove(move, pokemon) {
@@ -18002,12 +18056,21 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, nonsky: 1},
+		onBasePower(basePower, source) {
+			if (this.field.isTerrain('burningterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify(1.5);
+			}
+		},
 		onEffectiveness(typeMod, target, type, move) {
 			if (move.type !== 'Ground') return;
 			if (!target) return; // avoid crashing when called from a chat plugin
 			// ignore effectiveness if the target is Flying type and immune to Ground
 			if (!target.runImmunity('Ground')) {
 				if (target.hasType('Flying')) return 0;
+			}
+			if (this.field.isTerrain('burningterrain')){
+				return typeMod + this.dex.getEffectiveness('Fire', type);
 			}
 		},
 		volatileStatus: 'smackdown',
@@ -19350,6 +19413,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 15,
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1},
+		onModifyMove(move, pokemon, target) {
+			if (this.field.isTerrain('burningterrain')) {
+				move.accuracy = 100;
+			}
+		},
 		status: 'brn',
 		secondary: null,
 		target: "normal",
@@ -19694,7 +19762,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {nonsky: 1},
-		terrain: 'burningterrain', //aucun visuel, pas d'invocation au début
+		terrain: 'burningterrain',
 		condition: {
 			duration: 5,
 			durationCallback(source, effect) {
