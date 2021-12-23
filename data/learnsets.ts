@@ -83395,6 +83395,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			toxic: ["7M", "6M"],
 			wish: ["7L1", "6L1"],
 			worryseed: ["7T", "6T"],
+			beachterrain: ["7T", "6T"],
 		},
 	},
 };
