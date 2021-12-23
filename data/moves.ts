@@ -15978,9 +15978,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1},
 		onModifyMove(move, pokemon) {
-			if (this.field.isTerrain('burningterrain')) {
-				move.boosts = accuracy: -2;
-			}
+			if (this.field.isTerrain('burningterrain')) move.boosts = {accuracy: -2};
 		},
 		boosts: {
 			accuracy: -1,
