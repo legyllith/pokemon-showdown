@@ -19781,6 +19781,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 					return false;
 				}
 			},
+			onModifyMove(move, attacker, defender) {
+				if (['surf', 'muddywater', 'sludgewave', 'gust', 'whirlwind', 'razorwind', 'defog', 'sandtomb', 'watersport', 'waterpledge', 'hurricane', 'waterspout', 'tailwind', 'sparklingaria', 'oceanicoperetta', 'hydrovortex', 'continentalcrush'].includes(move.id)) {
+					this.field.clearTerrain();
+					this.add('-fieldend', 'move: Burning Terrain');
+				}
+			},
 			onBasePowerPriority: 6,
 			onBasePower(basePower, attacker, defender, move) {
 				if (move.type === 'Ice') {
@@ -19806,7 +19812,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 			onAnyWeatherStart() {
 				const pokemon = this.effectState.target;
 				if (['raindance', 'primordialsea', 'sandstorm'].includes(pokemon.effectiveWeather())) {
-					this.field.clearTerrain()
+					this.field.clearTerrain();
+					this.add('-fieldend', 'move: Burning Terrain');
 				}
 			},
 			onResidualOrder: 5,
