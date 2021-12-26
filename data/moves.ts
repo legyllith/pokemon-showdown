@@ -19761,6 +19761,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {nonsky: 1},
 		terrain: 'burningterrain',
+		onTryMove(pokemon, target, move) {
+			if (!['raindance', 'primordialsea', 'sandstorm'].includes(pokemon.effectiveWeather())) return;
+			this.add('-fail', pokemon, 'move: Burning Terrain');
+			this.attrLastMove('[still]');
+			return null;
+		},
 		condition: {
 			duration: 5,
 			durationCallback(source, effect) {
@@ -19795,6 +19801,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 					this.add('-fieldstart', 'move: Burning Terrain', '[from] ability: ' + effect, '[of] ' + source);
 				} else {
 					this.add('-fieldstart', 'move: Burning Terrain');
+				}
+			},
+			onAnyWeatherStart() {
+				const pokemon = this.effectState.target;
+				if (['raindance', 'primordialsea', 'sandstorm'].includes(pokemon.effectiveWeather())) {
+					this.field.clearTerrain()
 				}
 			},
 			onResidualOrder: 5,
