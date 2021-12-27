@@ -19768,12 +19768,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 			return null;
 		},
 		condition: {
-			duration: 5,
+			duration: 4,
 			durationCallback(source, effect) {
 				if (source?.hasItem('terrainextender')) {
-					return 8;
+					return 7;
 				}
-				return 5;
+				return 4;
 			},
 			onSetStatus(status, target, source, effect) {
 				if (status.id === 'frz' && !target.isSemiInvulnerable()) {
