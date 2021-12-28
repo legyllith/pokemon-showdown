@@ -1889,11 +1889,15 @@ export const Moves: {[moveid: string]: MoveData} = {
 			onHit(pokemon) {
 				pokemon.setType(pokemon.getTypes(true).map(type => type === "Fire" ? "???" : type));
 				this.add('-start', pokemon, 'typechange', pokemon.types.join('/'), '[from] move: Burn Up');
+				volatileStatus: 'burn up',
 			},
+		},
+		condition: {
 			onResidual(pokemon) {
-				if (this.field.isTerrain('burningterrain')) {
+				if (this.field.isTerrain('burningterrain') && pokemon.hasType('???')) {
 					pokemon.setType(pokemon.getTypes(true).map(type => type === "???" ? "Fire" : type));
 					this.add('-start', pokemon, 'typechange', pokemon.types.join('/'), '[from] move: Burn Up');
+					this.add('-end', pokemon, 'Burn Up', '[silent]');
 				}
 			},
 		},
