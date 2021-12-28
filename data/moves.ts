@@ -1889,8 +1889,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 			onHit(pokemon) {
 				pokemon.setType(pokemon.getTypes(true).map(type => type === "Fire" ? "???" : type));
 				this.add('-start', pokemon, 'typechange', pokemon.types.join('/'), '[from] move: Burn Up');
-				volatileStatus: 'burn up',
-			}
+				volatileStatus: 'burn up';
+			},
 		},
 		condition: {
 			onResidual(pokemon) {
