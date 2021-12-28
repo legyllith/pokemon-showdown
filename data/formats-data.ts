@@ -6498,7 +6498,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	fuwu: {
 		tier: "OU",
 	},
-	renduwu: {
+	rennduwu: {
 		tier: "OU",
 	},
 	uwurora: {

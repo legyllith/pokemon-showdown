@@ -3686,8 +3686,8 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	fuwu: {
 		name: "Fuwu",
 	},
-	renduwu: {
-		name: "Renduwu",
+	rennduwu: {
+		name: "Rennduwu",
 	},
 	uwurora: {
 		name: "Uwurora",

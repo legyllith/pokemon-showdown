@@ -83285,7 +83285,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			workup: ["8M", "7M"],
 		},
 	},
-	renduwu: {
+	rennduwu: {
 		learnset: {
 			acrobatics: ["8M", "7M"],
 			attract: ["8M", "7M"],
