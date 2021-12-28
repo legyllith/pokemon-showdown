@@ -19825,8 +19825,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 						this.damage(pokemon.maxhp * Math.pow(2, typeMod) / 8);
 					}
 				if (pokemon.lastMove.id == 'burnup') {
-					pokemon.setType(pokemon.getTypes(true).map(type => type === "???" ? "Fire" : type));
-					this.add('-start', pokemon, 'typechange', pokemon.types.join('/'), '[from] move: Burning Terrain');
+					pokemon.addType('Fire')
+					this.add('-start', pokemon, 'typeadd', pokemon.types.join('/'), '[from] move: Burning Terrain');
 					}
 				}
 			},
