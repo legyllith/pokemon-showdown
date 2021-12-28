@@ -19824,7 +19824,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 					if (!burningAbility.includes(pokemon.ability)){
 						this.damage(pokemon.maxhp * Math.pow(2, typeMod) / 8);
 					}
-				if (pokemon.hasType('???')) {
+				if (pokemon.lastMove.id == 'burnup') {
 					pokemon.setType(pokemon.getTypes(true).map(type => type === "???" ? "Fire" : type));
 					this.add('-start', pokemon, 'typechange', pokemon.types.join('/'), '[from] move: Burning Terrain');
 					}
