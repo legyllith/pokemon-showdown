@@ -19828,7 +19828,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 					pokemon.setType(pokemon.getTypes(true).map(type => type === "???" ? "Fire" : type));
 					this.add('-start', pokemon, 'typechange', pokemon.types.join('/'), '[from] move: Burning Terrain');
 					}
-				},
+				}
 			},
 			onFieldResidualOrder: 27,
 			onFieldResidualSubOrder: 7,
