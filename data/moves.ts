@@ -19824,10 +19824,10 @@ export const Moves: {[moveid: string]: MoveData} = {
 					if (!burningAbility.includes(pokemon.ability)){
 						this.damage(pokemon.maxhp * Math.pow(2, typeMod) / 8);
 					}
-				if (pokemon.lastMove.id == 'burnup') {
-					pokemon.addType('Fire')
-					this.add('-start', pokemon, 'typeadd', pokemon.types.join('/'), '[from] move: Burning Terrain');
-					}
+				}
+				if (pokemon.hasType('???')) {
+					pokemon.setType(pokemon.getTypes(true).map(type => type === "???" ? "Fire" : type));
+					this.add('-start', pokemon, 'typechange', pokemon.types.join('/'), '[from] move: Burning Terrain');
 				}
 			},
 			onFieldResidualOrder: 27,
