@@ -6495,6 +6495,24 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	ushuke: {
 		tier: "OU",
 	},
+	fuwu: {
+		tier: "OU",
+	},
+	rennduwu: {
+		tier: "OU",
+	},
+	uwurora: {
+		tier: "OU",
+	},
+	ananard: {
+		tier: "OU",
+	},
+	canoirdcoco: {
+		tier: "OU",
+	},
+	alguanard: {
+		tier: "OU",
+	},
 	flabebetradessar: {
 		tier: "OU",
 	},

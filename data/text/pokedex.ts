@@ -3683,6 +3683,24 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	ushuke: {
 		name: "Ushuke",
 	},
+	fuwu: {
+		name: "Fuwu",
+	},
+	rennduwu: {
+		name: "Rennduwu",
+	},
+	uwurora: {
+		name: "Uwurora",
+	},
+	ananard: {
+		name: "Ananard",
+	},
+	canoirdcoco: {
+		name: "Canoirdcoco",
+	},
+	alguanard: {
+		name: "Alguanard",
+	},
 	flabebetradessar: {
 		name: "Flabe\u0301be\u0301-Tradessar",
 	},
