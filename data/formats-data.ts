@@ -6504,6 +6504,15 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	uwurora: {
 		tier: "OU",
 	},
+	ananard: {
+		tier: "OU",
+	},
+	canoirdcoco: {
+		tier: "OU",
+	},
+	alguanard: {
+		tier: "OU",
+	},
 	flabebetradessar: {
 		tier: "OU",
 	},
