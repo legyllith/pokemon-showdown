@@ -1889,16 +1889,6 @@ export const Moves: {[moveid: string]: MoveData} = {
 			onHit(pokemon) {
 				pokemon.setType(pokemon.getTypes(true).map(type => type === "Fire" ? "???" : type));
 				this.add('-start', pokemon, 'typechange', pokemon.types.join('/'), '[from] move: Burn Up');
-				volatileStatus: 'burn up';
-			},
-		},
-		condition: {
-			onResidual(pokemon) {
-				if (this.field.isTerrain('burningterrain') && pokemon.hasType('???')) {
-					pokemon.setType(pokemon.getTypes(true).map(type => type === "???" ? "Fire" : type));
-					this.add('-start', pokemon, 'typechange', pokemon.types.join('/'), '[from] move: Burn Up');
-					this.add('-end', pokemon, 'Burn Up', '[silent]');
-				}
 			},
 		},
 		secondary: null,
@@ -19834,7 +19824,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 					if (!burningAbility.includes(pokemon.ability)){
 						this.damage(pokemon.maxhp * Math.pow(2, typeMod) / 8);
 					}
-				}
+				if (pokemon.hasType('???')) {
+					pokemon.setType(pokemon.getTypes(true).map(type => type === "???" ? "Fire" : type));
+					this.add('-start', pokemon, 'typechange', pokemon.types.join('/'), '[from] move: Burning Terrain');
+					}
+				},
 			},
 			onFieldResidualOrder: 27,
 			onFieldResidualSubOrder: 7,
