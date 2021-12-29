@@ -1534,6 +1534,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {contact: 1, charge: 1, protect: 1, mirror: 1, gravity: 1, distance: 1},
 		onTryMove(attacker, defender, move) {
+			if (this.field.isTerrain('caveterrain')) return;
 			if (attacker.removeVolatile(move.id)) {
 				return;
 			}
@@ -1957,6 +1958,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 				newType = 'Fire';
 			} else if (this.field.isTerrain('desertterrain')) {
 				newType = 'Ground';
+			} else if (this.field.isTerrain('caveterrain')) {
+				newType = 'Rock';
 			}
 			if (target.getTypes().join() === newType || !target.setType(newType)) return false;
 			this.add('-start', target, 'typechange', newType);
@@ -5386,6 +5389,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {contact: 1, charge: 1, protect: 1, mirror: 1, gravity: 1, distance: 1},
 		onTryMove(attacker, defender, move) {
+			if (this.field.isTerrain('caveterrain')) return;
 			if (attacker.removeVolatile(move.id)) {
 				return;
 			}
@@ -11798,6 +11802,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 				move = 'flamethrower';
 			} else if (this.field.isTerrain('desertterrain')) {
 				move = 'sandtomb';
+			} else if (this.field.isTerrain('caveterrain')) {
+				move = 'rocktomb';
 			}
 			this.actions.useMove(move, pokemon, target);
 			return null;
@@ -14287,6 +14293,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 15,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('caveterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify(1.5);
+			}
+		},
 		secondary: {
 			chance: 100,
 			boosts: {
@@ -14872,7 +14884,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 						accuracy: -1,
 					},
 				});
-			} 
+			} else if (this.field.isTerrain('caveterrain')) {
+				move.secondaries.push({
+					chance: 30,
+					volatileStatus: 'flinch',
+				});
 		},
 		secondary: {
 			chance: 30,
@@ -15607,6 +15623,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			return !target.fainted;
 		},
 		onTryHit(target, source, move) {
+			if (this.field.isTerrain('caveterrain')) return null;
 			if (source.removeVolatile(move.id)) {
 				if (target !== source.volatiles['twoturnmove'].source) return false;
 
@@ -16712,7 +16729,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 			onSwitchIn(pokemon) {
 				if (pokemon.hasItem('heavydutyboots')) return;
 				const typeMod = this.clampIntRange(pokemon.runEffectiveness(this.dex.getActiveMove('stealthrock')), -6, 6);
-				this.damage(pokemon.maxhp * Math.pow(2, typeMod) / 8);
+				if (this.field.isTerrain('caveterrain')) {
+					this.debug('terrain buff');
+					this.damage(pokemon.maxhp * Math.pow(2, typeMod) / 4);
+				} else {
+					this.damage(pokemon.maxhp * Math.pow(2, typeMod) / 8);
+				}
 			},
 		},
 		secondary: null,
@@ -18013,6 +18035,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 				break;
 			case 'desertterrain':
 				move.type = 'Ground';
+				break;
+			case 'caveterrain':
+				move.type = 'Rock';
 				break;
 			}
 		},
@@ -19837,8 +19862,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 					const typeMod = this.clampIntRange(pokemon.runEffectiveness(this.dex.getActiveMove('burningterrain')), -6, 6);
 					if (burningAbility.includes(pokemon.ability)){
 						this.damage(pokemon.maxhp * Math.pow(2, typeMod) / 4);
-					}
-					if (!burningAbility.includes(pokemon.ability)){
+					} else {
 						this.damage(pokemon.maxhp * Math.pow(2, typeMod) / 8);
 					}
 				}
@@ -19970,6 +19994,112 @@ export const Moves: {[moveid: string]: MoveData} = {
 		secondary: null,
 		target: "all",
 		type: "Ground",
+		zMove: {boost: {def: 1}},
+		contestType: "Beautiful",
+	},
+	caveterrain: {
+		num: 2003,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Cave Terrain",
+		pp: 10,
+		priority: 0,
+		flags: {nonsky: 1},
+		terrain: 'caveterrain',
+		condition: {
+			duration: 99,
+			durationCallback(source, effect) {
+				return 99;
+			},
+			onBasePowerPriority: 6,
+			onBasePower(basePower, attacker, defender, move) {
+				if (move.type === 'Flying' && !this.checkMoveMakesContact(move, source, target)) {
+					this.debug('move weakened by cave terrain');
+					return this.chainModify(0.5);
+				}
+				if (move.type === 'Rock') {
+					this.debug('cave terrain boost');
+					return this.chainModify(1.5);
+				}
+				if (move.flags['sound']) {
+					this.debug('cave terrain boost');
+					return this.chainModify(1.5);
+				}
+			},
+			onEffectiveness(typeMod, target, type, move) {
+				if (move.type !== 'Ground') return;
+				if (!target) return; // avoid crashing when called from a chat plugin
+				// ignore effectiveness if the target is Flying type and immune to Ground
+				if (!target.runImmunity('Ground')) {
+					if (target.hasType('Flying')) return 0;
+				}
+			},
+			var collapseeffect = 0;
+			onModifyMove(move, attacker, defender) {
+				if (['powergem', 'diamondstorm'].includes(move.id)) {
+					this.field.clearTerrain();
+					this.add('-fieldend', 'move: Cave Terrain');
+					this.field.setTerrain('crystalcavernterrain')
+				}
+				if (['earthquake', 'magnitude','bulldoze','tectonicrage','continentalcrush'].includes(move.id)) {
+					if (collapseeffect == 0) {
+						collapseeffect = 1
+					} else if (collapseeffect == 1) {
+						this.field.clearTerrain();
+						this.add('-fieldend', 'move: Cave Terrain');
+						for (const pokemon of this.getAllActive()) {
+							if (!['bulletproof', 'rockhead'].includes(pokemon.ability) && !['protect', 'spikyshield', 'wideguard'].includes(pokemon.volatiles) && !pokemon.isSemiInvulnerable()) {
+								if (['battlearmor', 'shellarmor'].includes(pokemon.ability)){
+									if (((pokemon.maxhp/2) >= pokemon.hp) && pokemon.volatiles['endure']) {
+										this.add('-activate', pokemon, 'move: Endure');
+										return pokemon.hp - 1;
+									} else {
+										this.damage(pokemon.maxhp/2);
+									}
+								} else if (['solidrock', 'prismarmor'].includes(pokemon.ability)){
+									if (((pokemon.maxhp/3) >= pokemon.hp) && pokemon.volatiles['endure']) {
+										this.add('-activate', pokemon, 'move: Endure');
+										return pokemon.hp - 1;
+									} else {
+										this.damage(pokemon.maxhp/3);
+									}
+								} else if (pokemon.ability == 'sturdy'){
+									if (((pokemon.maxhp-1) >= pokemon.hp) && pokemon.volatiles['endure']) {
+										this.add('-activate', pokemon, 'move: Endure');
+										return pokemon.hp - 1;
+									} else {
+										this.damage(pokemon.maxhp-1);
+									}
+								} else {
+									if (pokemon.volatiles['endure']) {
+										this.add('-activate', pokemon, 'move: Endure');
+										return pokemon.hp - 1;
+									} else {
+										this.damage(pokemon.maxhp);
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			onFieldStart(field, source, effect) {
+				if (effect?.effectType === 'Ability') {
+					this.add('-fieldstart', 'move: Cave Terrain', '[from] ability: ' + effect, '[of] ' + source);
+				} else {
+					this.add('-fieldstart', 'move: Cave Terrain');
+				}
+			},
+			onFieldResidualOrder: 27,
+			onFieldResidualSubOrder: 7,
+			onFieldEnd() {
+				this.add('-fieldend', 'move: Cave Terrain');
+			},
+		},
+		secondary: null,
+		target: "all",
+		type: "Rock",
 		zMove: {boost: {def: 1}},
 		contestType: "Beautiful",
 	},
