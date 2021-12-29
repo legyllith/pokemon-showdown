@@ -1955,6 +1955,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 				newType = 'Psychic';
 			} else if (this.field.isTerrain('burningterrain')) {
 				newType = 'Fire';
+			} else if (this.field.isTerrain('desertterrain')) {
+				newType = 'Ground';
 			}
 			if (target.getTypes().join() === newType || !target.setType(newType)) return false;
 			this.add('-start', target, 'typechange', newType);
@@ -11794,6 +11796,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 				move = 'psychic';
 			} else if (this.field.isTerrain('burningterrain')) {
 				move = 'flamethrower';
+			} else if (this.field.isTerrain('desertterrain')) {
+				move = 'sandtomb';
 			}
 			this.actions.useMove(move, pokemon, target);
 			return null;
@@ -14600,6 +14604,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 15,
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1},
+		onModifyMove(move, pokemon) {
+			if (this.field.isTerrain('desertterrain')) move.boosts = {accuracy: -2};
+		},
 		boosts: {
 			accuracy: -1,
 		},
@@ -14857,6 +14864,13 @@ export const Moves: {[moveid: string]: MoveData} = {
 				move.secondaries.push({
 					chance: 30,
 					status: 'brn',
+				});
+			} else if (this.field.isTerrain('desertterrain')) {
+				move.secondaries.push({
+					chance: 30,
+					boosts: {
+						accuracy: -1,
+					},
 				});
 			} 
 		},
@@ -15277,7 +15291,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		flags: {snatch: 1, heal: 1},
 		onHit(pokemon) {
 			let factor = 0.5;
-			if (this.field.isWeather('sandstorm')) {
+			if (this.field.isWeather('sandstorm') || this.field.isTerrain('desertterrain')) {
 				factor = 0.667;
 			}
 			return !!this.heal(this.modify(pokemon.maxhp, factor));
@@ -17997,6 +18011,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 			case 'burningterrain':
 				move.type = 'Fire';
 				break;
+			case 'desertterrain':
+				move.type = 'Ground';
+				break;
 			}
 		},
 		onModifyMove(move, pokemon) {
@@ -19897,6 +19914,62 @@ export const Moves: {[moveid: string]: MoveData} = {
 		secondary: null,
 		target: "all",
 		type: "Grass",
+		zMove: {boost: {def: 1}},
+		contestType: "Beautiful",
+	},
+	desertterrain: {
+		num: 2002,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Desert Terrain",
+		pp: 10,
+		priority: 0,
+		flags: {nonsky: 1},
+		terrain: 'desertterrain',
+		condition: {
+			duration: 99,
+			durationCallback(source, effect) {
+				return 99;
+			},
+			onModifySpDPriority: 10,
+			onModifySpD(spd, pokemon) {
+				if (pokemon.hasType('Ground')) {
+					return this.modify(spd, 1.5);
+				}
+			},
+			onBasePowerPriority: 6,
+			onBasePower(basePower, attacker, defender, move) {
+				const poweredMoves = ['heatwave', 'needlearm', 'pinmissile', 'dig', 'sandtomb', 'thousandwaves', 'burnup', 'searingsunrazesmash'];
+				if (move.type === 'Water' && attacker.isGrounded()) {
+					this.debug('move weakened by desert terrain');
+					return this.chainModify(0.5);
+				}
+				if (move.type === 'Electric' && defender.isGrounded()) {
+					this.debug('move weakened by desert terrain');
+					return this.chainModify(0.5);
+				}
+				if (poweredMoves.includes(move.id)) {
+					this.debug('desert terrain boost');
+					return this.chainModify(1.5);
+				}
+			},
+			onFieldStart(field, source, effect) {
+				if (effect?.effectType === 'Ability') {
+					this.add('-fieldstart', 'move: Desert Terrain', '[from] ability: ' + effect, '[of] ' + source);
+				} else {
+					this.add('-fieldstart', 'move: Desert Terrain');
+				}
+			},
+			onFieldResidualOrder: 27,
+			onFieldResidualSubOrder: 7,
+			onFieldEnd() {
+				this.add('-fieldend', 'move: Desert Terrain');
+			},
+		},
+		secondary: null,
+		target: "all",
+		type: "Ground",
 		zMove: {boost: {def: 1}},
 		contestType: "Beautiful",
 	},

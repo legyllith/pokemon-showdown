@@ -889,7 +889,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (target.hasItem('utilityumbrella')) return;
 			if (effect.id === 'raindance' || effect.id === 'primordialsea') {
 				this.heal(target.baseMaxhp / 8);
-			} else if (effect.id === 'sunnyday' || effect.id === 'desolateland') {
+			} else if (effect.id === 'sunnyday' || effect.id === 'desolateland' || this.field.isTerrain('desertterrain')) {
 				this.damage(target.baseMaxhp / 8, target, target);
 			}
 		},
@@ -2104,6 +2104,9 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				case 'burningterrain':
 					newType = 'Fire';
 					break;
+				case 'desertterrain':
+					newType = 'Ground';
+					break;
 				}
 				if (!newType || pokemon.getTypes().join() === newType || !pokemon.setType(newType)) return;
 				this.add('-start', pokemon, 'typechange', newType, '[from] ability: Mimicry');
@@ -3103,7 +3106,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	sandforce: {
 		onBasePowerPriority: 21,
 		onBasePower(basePower, attacker, defender, move) {
-			if (this.field.isWeather('sandstorm')) {
+			if (this.field.isWeather('sandstorm') || this.field.isTerrain('desertterrain')) {
 				if (move.type === 'Rock' || move.type === 'Ground' || move.type === 'Steel') {
 					this.debug('Sand Force boost');
 					return this.chainModify([5325, 4096]);
@@ -3119,7 +3122,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	sandrush: {
 		onModifySpe(spe, pokemon) {
-			if (this.field.isWeather('sandstorm')) {
+			if (this.field.isWeather('sandstorm') || this.field.isTerrain('desertterrain')) {
 				return this.chainModify(2);
 			}
 		},
@@ -3155,7 +3158,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onModifyAccuracyPriority: -1,
 		onModifyAccuracy(accuracy) {
 			if (typeof accuracy !== 'number') return;
-			if (this.field.isWeather('sandstorm')) {
+			if (this.field.isWeather('sandstorm') || this.field.isTerrain('desertterrain')) {
 				this.debug('Sand Veil - decreasing accuracy');
 				return this.chainModify([3277, 4096]);
 			}

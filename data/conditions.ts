@@ -220,7 +220,7 @@ export const Conditions: {[k: string]: ConditionData} = {
 		},
 		onStart(pokemon, source) {
 			this.add('-activate', pokemon, 'move: ' + this.effectState.sourceEffect, '[of] ' + source);
-			this.effectState.boundDivisor = source.hasItem('bindingband') ? 6 : 8;
+			this.effectState.boundDivisor = source.hasItem('bindingband') || (this.effectState.sourceEffect.id == 'sandtomb' && this.field.isTerrain('desertterrain')) ? 6 : 8;
 		},
 		onResidualOrder: 13,
 		onResidual(pokemon) {
@@ -528,7 +528,7 @@ export const Conditions: {[k: string]: ConditionData} = {
 		effectType: 'Weather',
 		duration: 5,
 		durationCallback(source, effect) {
-			if (source?.hasItem('heatrock')) {
+			if (source?.hasItem('heatrock')|| this.field.isTerrain('desertterrain')) {
 				return 8;
 			}
 			return 5;
@@ -606,7 +606,7 @@ export const Conditions: {[k: string]: ConditionData} = {
 		effectType: 'Weather',
 		duration: 5,
 		durationCallback(source, effect) {
-			if (source?.hasItem('smoothrock')) {
+			if (source?.hasItem('smoothrock') || this.field.isTerrain('desertterrain')) {
 				return 8;
 			}
 			return 5;

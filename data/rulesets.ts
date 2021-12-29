@@ -1852,4 +1852,20 @@ export const Rulesets: {[k: string]: FormatData} = {
 			}
 		}
 	},
+	desertterrainrule: {
+		effectType: 'Rule',
+		name: 'Desert Terrain Rule',
+		desc: 'The fight start on Desert Terrain',
+		onSwitchIn(pokemon) {
+			if(this.field.IsFirstTimeSettingCustomTerrain) {
+				this.field.setTerrain('desertterrain');
+				this.field.IsFirstTimeSettingCustomTerrain = false;
+			}
+		},
+		onResidual(pokemon){
+			if(this.field.isTerrain('')) {
+				this.field.setTerrain('desertterrain');
+			}
+		}
+	},
 };
