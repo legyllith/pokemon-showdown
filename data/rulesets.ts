@@ -1868,4 +1868,20 @@ export const Rulesets: {[k: string]: FormatData} = {
 			}
 		}
 	},
+	caveterrainrule: {
+		effectType: 'Rule',
+		name: 'Cave Terrain Rule',
+		desc: 'The fight start on Cave Terrain',
+		onSwitchIn(pokemon) {
+			if(this.field.IsFirstTimeSettingCustomTerrain) {
+				this.field.setTerrain('caveterrain');
+				this.field.IsFirstTimeSettingCustomTerrain = false;
+			}
+		},
+		onResidual(pokemon){
+			if(this.field.isTerrain('')) {
+				this.field.setTerrain('caveterrain');
+			}
+		}
+	},
 };

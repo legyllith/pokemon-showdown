@@ -335,12 +335,17 @@ export const DefaultText: {[k: string]: DefaultText} = {
 	burningterrain: {
 		start: "  The field is ablaze!",
 		end: "  The flames disappeared from the battlefield.",
-		damage: "  [POKEMON] is hurt by the flames!",
+		damage: "  [POKEMON] was burned by the field!",
 		block: "  [POKEMON] is protected by the Burning Terrain!",
 	},
 	desertterrain: {
 		start: "  The field is rife with sand.",
 		end: "  The sand was blown away from the battlefield.",
+	},
+	caveterrain: {
+		start: "  The cave echoes dully…",
+		end: "  The cavern was destroyed",
+		damage: "  The quake collapsed the ceiling! It fell on [POKEMON].",
 	},
 
 	// field effects
