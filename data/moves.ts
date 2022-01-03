@@ -2039,6 +2039,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		onHit(pokemon) {
 			this.add('-activate', pokemon, 'move: Charge');
 		},
+		onModifyMove(move, pokemon) {
+			if (this.field.isTerrain('electricterrain')) move.boosts = {spd: 2};
+		},
 		condition: {
 			duration: 2,
 			onRestart(pokemon) {
@@ -3834,7 +3837,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		flags: {protect: 1, mirror: 1, heal: 1},
 		drain: [1, 2],
 		onTryImmunity(target) {
-			return target.status === 'slp' || target.hasAbility('comatose');
+			return target.status === 'slp' || (target.hasAbility('comatose') && !this.field.isTerrain('electricterrain'));
 		},
 		secondary: null,
 		target: "normal",
@@ -4028,6 +4031,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 15,
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1},
+		onModifyMove(move, pokemon) {
+			if (this.field.isTerrain('electricterrain')) move.boosts = {spa: -3};
+		},
 		boosts: {
 			spa: -2,
 		},
@@ -4090,10 +4096,21 @@ export const Moves: {[moveid: string]: MoveData} = {
 		condition: {
 			duration: 5,
 			durationCallback(source, effect) {
-				if (source?.hasItem('terrainextender')) {
+				if (effect.id === 'stokedsparksurfer' || effect.id === 'iondeluge') {
+					if (source?.hasItem('terrainextender')) {
+						return 6;
+					}
+					return 3;
+				} else if (source?.hasItem('terrainextender')) {
 					return 8;
 				}
 				return 5;
+			},
+			onModifyMove(move, attacker, defender) {
+				if (['mudsport', 'tectonicrage'].includes(move.id)) {
+					this.field.clearTerrain();
+					this.add('-fieldend', 'move: Electric Terrain');
+				}
 			},
 			onSetStatus(status, target, source, effect) {
 				if (status.id === 'slp' && target.isGrounded() && !target.isSemiInvulnerable()) {
@@ -4110,11 +4127,26 @@ export const Moves: {[moveid: string]: MoveData} = {
 					return null;
 				}
 			},
+			onEffectiveness(typeMod, target, type, move) {
+				const poweredMoves = ['explosion', 'selfdestruct', 'smackdown', 'surf', 'muddywater', 'hurricane', 'thousandarrows'];
+				if (poweredMoves.includes(move.id)) {
+					return typeMod + this.dex.getEffectiveness('Electric', type);
+				}
+			},
 			onBasePowerPriority: 6,
 			onBasePower(basePower, attacker, defender, move) {
+				const poweredMoves = ['explosion', 'selfdestruct', 'smackdown', 'surf', 'muddywater', 'hurricane', 'thousandarrows'];
 				if (move.type === 'Electric' && attacker.isGrounded() && !attacker.isSemiInvulnerable()) {
 					this.debug('electric terrain boost');
 					return this.chainModify([5325, 4096]);
+				}
+				if (move.type === 'Electric' && attacker.isGrounded() && !attacker.isSemiInvulnerable()) {
+					this.debug('electric terrain boost');
+					return this.chainModify([5325, 4096]);
+				}
+				if (poweredMoves.includes(move.id)) {
+					this.debug('electric terrain boost');
+					return this.chainModify(1.5);
 				}
 			},
 			onFieldStart(field, source, effect) {
@@ -5499,7 +5531,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			pokemon.addVolatile('focuspunch');
 		},
 		beforeMoveCallback(pokemon) {
-			if (pokemon.volatiles['focuspunch'] && pokemon.volatiles['focuspunch'].lostFocus) {
+			if (pokemon.volatiles['focuspunch'] && (pokemon.volatiles['focuspunch'].lostFocus || this.field.isTerrain('electricterrain'))) {
 				this.add('cant', pokemon, 'Focus Punch', 'Focus Punch');
 				return true;
 			}
@@ -8068,7 +8100,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		accuracy: 100,
 		basePower: 65,
 		basePowerCallback(pokemon, target, move) {
-			if (target.status || target.hasAbility('comatose')) return move.basePower * 2;
+			if (target.status || (target.hasAbility('comatose') && !this.field.isTerrain('electricterrain'))) return move.basePower * 2;
 			return move.basePower;
 		},
 		category: "Special",
@@ -8574,6 +8606,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 1,
 		priority: 0,
 		flags: {},
+		onEffectiveness(typeMod, target, type, move) {
+			if (this.field.isTerrain('electricterrain')){
+				return typeMod + this.dex.getEffectiveness('Electric', type);
+			}
+		},
 		isZ: "wateriumz",
 		secondary: null,
 		target: "normal",
@@ -9109,7 +9146,14 @@ export const Moves: {[moveid: string]: MoveData} = {
 				}
 			},
 		},
-		secondary: null,
+		secondary: {
+			chance: 100,
+			self: {
+				onHit() {
+					this.field.setTerrain('electricterrain');
+				},
+			},
+		},
 		target: "all",
 		type: "Electric",
 		zMove: {boost: {spa: 1}},
@@ -10129,6 +10173,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 20,
 		priority: 0,
 		flags: {bullet: 1, protect: 1, mirror: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('electricterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify(2);
+			}
+		},
 		secondary: null,
 		target: "normal",
 		type: "Steel",
@@ -10183,6 +10233,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		},
 		condition: {
 			duration: 5,
+			durationCallback(source, effect) {
+				if (this.field.isTerrain('electricterrain')) {
+					return 8;
+				}
+				return 5;
+			},
 			onStart(target) {
 				this.add('-start', target, 'Magnet Rise');
 			},
@@ -11897,7 +11953,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		condition: {
 			noCopy: true,
 			onStart(pokemon) {
-				if (pokemon.status !== 'slp' && !pokemon.hasAbility('comatose')) {
+				if (pokemon.status !== 'slp' && (!pokemon.hasAbility('comatose') || this.field.isTerrain('electricterrain'))) {
 					return false;
 				}
 				this.add('-start', pokemon, 'Nightmare');
@@ -12576,6 +12632,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 15,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('electricterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify(2);
+			}
+		},
 		pseudoWeather: 'iondeluge',
 		secondary: null,
 		target: "normal",
@@ -13987,7 +14049,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {snatch: 1, heal: 1},
 		onTry(source) {
-			if (source.status === 'slp' || source.hasAbility('comatose')) return false;
+			if (source.status === 'slp' || (source.hasAbility('comatose') && !this.field.isTerrain('electricterrain'))) return false;
 
 			if (source.hp === source.maxhp) {
 				this.add('-fail', source, 'heal');
@@ -15793,7 +15855,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		flags: {},
 		sleepUsable: true,
 		onTry(source) {
-			return source.status === 'slp' || source.hasAbility('comatose');
+			return source.status === 'slp' || (source.hasAbility('comatose') && !this.field.isTerrain('electricterrain'));
 		},
 		onHit(pokemon) {
 			const noSleepTalk = [
@@ -16110,7 +16172,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1},
 		sleepUsable: true,
 		onTry(source) {
-			return source.status === 'slp' || source.hasAbility('comatose');
+			return source.status === 'slp' || (source.hasAbility('comatose') && !this.field.isTerrain('electricterrain'));
 		},
 		secondary: {
 			chance: 30,
@@ -16934,10 +16996,20 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {},
 		isZ: "aloraichiumz",
-		secondary: {
-			chance: 100,
-			status: 'par',
-		},
+		secondaries: [
+			{
+				chance: 100,
+				status: 'par',
+			}, {
+				chance: 100,
+				self: {
+					onHit() {
+						this.field.setTerrain('electricterrain');
+					},
+				},
+			},
+		],
+
 		target: "normal",
 		type: "Electric",
 		contestType: "Cool",
@@ -19067,7 +19139,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		accuracy: 100,
 		basePower: 70,
 		basePowerCallback(pokemon, target, move) {
-			if (target.status === 'slp' || target.hasAbility('comatose')) return move.basePower * 2;
+			if (target.status === 'slp' || (target.hasAbility('comatose') && !this.field.isTerrain('electricterrain'))) return move.basePower * 2;
 			return move.basePower;
 		},
 		category: "Physical",

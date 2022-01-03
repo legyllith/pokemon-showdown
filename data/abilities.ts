@@ -242,7 +242,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onResidual(pokemon) {
 			if (!pokemon.hp) return;
 			for (const target of pokemon.foes()) {
-				if (target.status === 'slp' || target.hasAbility('comatose')) {
+				if (target.status === 'slp' || (target.hasAbility('comatose') && !this.field.isTerrain('electricterrain'))) {
 					this.damage(target.baseMaxhp / 8, target, pokemon);
 				}
 			}
@@ -489,7 +489,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			this.add('-ability', pokemon, 'Comatose');
 		},
 		onSetStatus(status, target, source, effect) {
-			if ((effect as Move)?.status) {
+			if ((effect as Move)?.status && !this.field.isTerrain('electricterrain')) {
 				this.add('-immune', target, '[from] ability: Comatose');
 			}
 			return false;
@@ -1265,7 +1265,12 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		},
 		onBasePowerPriority: 23,
 		onBasePower(basePower, pokemon, target, move) {
-			if (move.galvanizeBoosted) return this.chainModify([4915, 4096]);
+			if (move.galvanizeBoosted) {
+				if (this.field.isTerrain('electricterrain')){
+					return this.chainModify(1.5);
+				}
+				return this.chainModify([4915, 4096]);
+				}
 		},
 		name: "Galvanize",
 		rating: 4,
