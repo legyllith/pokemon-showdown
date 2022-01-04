@@ -453,7 +453,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 			},
 			onResidualOrder: 6,
 			onResidual(pokemon) {
-				this.heal(pokemon.baseMaxhp / 16);
+				if (this.field.isTerrain('mistyterrain')) {
+					this.heal(pokemon.baseMaxhp / 8);
+				} else {
+					this.heal(pokemon.baseMaxhp / 16);
+				}
 			},
 		},
 		secondary: null,
@@ -526,6 +530,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 20,
 		priority: 0,
 		flags: {bypasssub: 1},
+		onModifyMove(move, pokemon) {
+			if (this.field.isTerrain('mistyterrain')) move.boosts = {spd: 2};
+		},
 		boosts: {
 			spd: 1,
 		},
@@ -1924,6 +1931,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 20,
 		priority: 0,
 		flags: {snatch: 1},
+		onModifyMove(move, pokemon) {
+			if (this.field.isTerrain('psychicterrain')) move.boosts = {spa: 2, spd: 2};
+		},
 		boosts: {
 			spa: 1,
 			spd: 1,
@@ -2590,6 +2600,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 20,
 		priority: 0,
 		flags: {snatch: 1},
+		onModifyMove(move, pokemon) {
+			if (this.field.isTerrain('psychicterrain') || this.field.isTerrain('mistyterrain')) move.boosts = {def: 2, spd: 2};
+		},
 		boosts: {
 			def: 1,
 			spd: 1,
@@ -7305,9 +7318,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 		condition: {
 			duration: 5,
 			durationCallback(source, effect) {
-				if (source?.hasAbility('persistent')) {
-					this.add('-activate', source, 'ability: Persistent', effect);
-					return 7;
+				if (source?.hasAbility('persistent') || if (this.field.isTerrain('psychicterrain'))) {
+					return 8;
 				}
 				return 5;
 			},
@@ -8726,6 +8738,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 20,
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1},
+		onModifyMove(move, pokemon, target) {
+			if (this.field.isTerrain('psychicterrain')) {
+				move.accuracy = 90;
+			}
+		},
 		status: 'slp',
 		secondary: null,
 		target: "normal",
@@ -9313,6 +9330,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 15,
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1},
+		onModifyMove(move, pokemon) {
+			if (this.field.isTerrain('psychicterrain')) move.boosts = {atk: -2, spa: -2, accuracy: -2};
+		},
 		boosts: {
 			accuracy: -1,
 		},
@@ -10123,9 +10143,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 		condition: {
 			duration: 5,
 			durationCallback(source, effect) {
-				if (source?.hasAbility('persistent')) {
-					this.add('-activate', source, 'ability: Persistent', effect);
-					return 7;
+				if (source?.hasAbility('persistent') || if (this.field.isTerrain('psychicterrain'))) {
+					return 8;
 				}
 				return 5;
 			},
@@ -10828,6 +10847,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 40,
 		priority: 0,
 		flags: {snatch: 1},
+		onModifyMove(move, pokemon) {
+			if (this.field.isTerrain('psychicterrain')) move.boosts = {atk: 2, spa: 2};
+		},
 		boosts: {
 			atk: 1,
 		},
@@ -11229,7 +11251,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 			source.addVolatile('lockon', target);
 			this.add('-activate', source, 'move: Mind Reader', '[of] ' + target);
 		},
+		onModifyMove(move, pokemon) {
+			if (this.field.isTerrain('psychicterrain')) move.boosts = {spa: 2};
+		},
 		secondary: null,
+		boosts: {},
 		target: "normal",
 		type: "Normal",
 		zMove: {boost: {spa: 1}},
@@ -11302,7 +11328,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 				}
 			},
 		},
+		onModifyMove(move, pokemon) {
+			if (this.field.isTerrain('psychicterrain')) move.boosts = {spa: 2};
+		},
 		secondary: null,
+		boosts: {},
 		target: "normal",
 		type: "Psychic",
 		zMove: {boost: {spa: 1}},
@@ -11434,7 +11464,14 @@ export const Moves: {[moveid: string]: MoveData} = {
 				this.add('-sideend', side, 'Mist');
 			},
 		},
-		secondary: null,
+		secondary: {
+			chance: 100,
+			self: {
+				onHit() {
+					this.field.setTerrain('mistyterrain');
+				},
+			},
+		},
 		target: "allySide",
 		type: "Ice",
 		zMove: {effect: 'heal'},
@@ -11492,7 +11529,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		condition: {
 			duration: 5,
 			durationCallback(source, effect) {
-				if (source?.hasItem('terrainextender')) {
+				if (effect.id === 'mist') {
+					if (source?.hasItem('terrainextender')) {
+						return 6;
+					}
+					return 3;
+				} else if (source?.hasItem('terrainextender')) {
 					return 8;
 				}
 				return 5;
@@ -11511,11 +11553,34 @@ export const Moves: {[moveid: string]: MoveData} = {
 					return null;
 				}
 			},
+			onModifySpDPriority: 10,
+			onModifySpD(spd, pokemon) {
+				if (pokemon.hasType('Fairy')) {
+					return this.modify(spd, 1.5);
+				}
+			},
 			onBasePowerPriority: 6,
 			onBasePower(basePower, attacker, defender, move) {
+				const poweredMoves = ['fairywind', 'mysticalfire', 'magicalleaf', 'moonblast', 'doomdesire', 'aurasphere', 'icywind', 'mistball', 'steameruption', 'silverwind', 'dazzlinggleam', 'clearsmog', 'smog', 'moongeistbeam', 'menacingmoonrazemaelstrom'];
+				const weakenedMoves = ['darkpulse', 'nightdaze', 'shadowball'];
+				if (poweredMoves.includes(move.id)) {
+					this.debug('misty terrain boost');
+					return this.chainModify(1.5);
+				}
+				if (weakenedMoves.includes(move.id)) {
+					this.debug('misty terrain weaken');
+					return this.chainModify(0.5);
+				}
 				if (move.type === 'Dragon' && defender.isGrounded() && !defender.isSemiInvulnerable()) {
 					this.debug('misty terrain weaken');
 					return this.chainModify(0.5);
+				}
+			},
+			onAnyTryMove(target, source, effect) {
+				if (['explosion', 'mindblown', 'mistyexplosion', 'selfdestruct'].includes(effect.id)) {
+					this.attrLastMove('[still]');
+					this.add('cant', this.effectState.target, 'move: Misty Terrain', effect, '[of] ' + target);
+					return false;
 				}
 			},
 			onFieldStart(field, source, effect) {
@@ -11793,6 +11858,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 20,
 		priority: 0,
 		flags: {snatch: 1},
+		onModifyMove(move, pokemon) {
+			if (this.field.isTerrain('psychicterrain')) move.boosts = {spa: 3};
+		},
 		boosts: {
 			spa: 2,
 		},
@@ -13228,7 +13296,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 			}
 			this.add('-copyboost', source, target, '[from] move: Psych Up');
 		},
+		onModifyMove(move, pokemon) {
+			if (this.field.isTerrain('psychicterrain')) move.boosts = {spa: 2};
+		},
 		secondary: null,
+		boosts: {},
 		target: "normal",
 		type: "Normal",
 		zMove: {effect: 'heal'},
@@ -13309,6 +13381,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 			},
 			onBasePowerPriority: 6,
 			onBasePower(basePower, attacker, defender, move) {
+				const poweredMoves = ['hex', 'mysticalfire', 'magicalleaf','moonblast','aurasphere','mindblown'];
+				if (poweredMoves.includes(move.id)) {
+					this.debug('psychic terrain boost');
+					return this.chainModify(1.5);
+				}
 				if (move.type === 'Psychic' && attacker.isGrounded() && !attacker.isSemiInvulnerable()) {
 					this.debug('psychic terrain boost');
 					return this.chainModify([5325, 4096]);
@@ -15200,8 +15277,14 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 1,
 		priority: 0,
 		flags: {},
+		if (this.field.isTerrain('psychicterrain')) {
+			move.secondaries.push({
+				chance: 100,
+				volatileStatus: 'confusion',
+			})
+		},
 		isZ: "psychiumz",
-		secondary: null,
+		secondary: {},
 		target: "normal",
 		type: "Psychic",
 		contestType: "Cool",
@@ -17561,6 +17644,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1},
+		onModifyMove(move, pokemon, target) {
+			if (this.field.isTerrain('mistyterrain')) {
+				move.accuracy = 100;
+			}
+		},
 		volatileStatus: 'confusion',
 		secondary: null,
 		target: "normal",
@@ -17577,6 +17665,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 20,
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1},
+		onModifyMove(move, pokemon) {
+			if (this.field.isTerrain('mistyterrain')) move.boosts = {evasion: -2, def: -1, spd: -1};
+		},
 		boosts: {
 			evasion: -2,
 		},
@@ -18026,6 +18117,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 				return null;
 			}
 		},
+		onModifyMove(move, pokemon) {
+			if (this.field.isTerrain('psychicterrain')) move.boosts = {def: -2, spd: -2};
+		},
 		condition: {
 			duration: 3,
 			onStart(target) {
@@ -18056,6 +18150,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			},
 		},
 		secondary: null,
+		boosts: {},
 		target: "normal",
 		type: "Psychic",
 		zMove: {boost: {spa: 1}},
@@ -18718,9 +18813,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 		condition: {
 			duration: 5,
 			durationCallback(source, effect) {
-				if (source?.hasAbility('persistent')) {
-					this.add('-activate', source, 'ability: Persistent', effect);
-					return 7;
+				if (source?.hasAbility('persistent') || if (this.field.isTerrain('psychicterrain'))) {
+					return 8;
 				}
 				return 5;
 			},
@@ -19559,7 +19653,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 		condition: {
 			duration: 2,
 			onStart(pokemon, source) {
-				this.effectState.hp = source.maxhp / 2;
+				if (this.field.isTerrain('mistyterrain')) {
+					this.effectState.hp = source.maxhp * 0.75;
+				} else {
+					this.effectState.hp = source.maxhp / 2;
+				}
 			},
 			onResidualOrder: 4,
 			onEnd(target) {
@@ -19608,9 +19706,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 		condition: {
 			duration: 5,
 			durationCallback(source, effect) {
-				if (source?.hasAbility('persistent')) {
-					this.add('-activate', source, 'ability: Persistent', effect);
-					return 7;
+				if (source?.hasAbility('persistent') || if (this.field.isTerrain('psychicterrain'))) {
+					return 8;
 				}
 				return 5;
 			},
@@ -20086,7 +20183,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			},
 			onBasePowerPriority: 6,
 			onBasePower(basePower, attacker, defender, move) {
-				if (move.type === 'Flying' && !this.checkMoveMakesContact(move, source, target)) {
+				if (move.type === 'Flying' && !this.checkMoveMakesContact(move, attacker, defender)) {
 					this.debug('move weakened by cave terrain');
 					return this.chainModify(0.5);
 				}

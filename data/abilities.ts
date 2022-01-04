@@ -140,6 +140,9 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 					}
 				}
 			}
+			if (this.field.isTerrain('psychicterrain')) {
+				this.boost({spa: 1}, pokemon);
+			}
 		},
 		name: "Anticipation",
 		rating: 0.5,
@@ -887,7 +890,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		},
 		onWeather(target, source, effect) {
 			if (target.hasItem('utilityumbrella')) return;
-			if (effect.id === 'raindance' || effect.id === 'primordialsea') {
+			if (effect.id === 'raindance' || effect.id === 'primordialsea' || this.field.isTerrain('mistyterrain')) {
 				this.heal(target.baseMaxhp / 8);
 			} else if (effect.id === 'sunnyday' || effect.id === 'desolateland' || this.field.isTerrain('desertterrain')) {
 				this.damage(target.baseMaxhp / 8, target, target);
@@ -2043,7 +2046,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	marvelscale: {
 		onModifyDefPriority: 6,
 		onModifyDef(def, pokemon) {
-			if (pokemon.status) {
+			if (pokemon.status || this.field.isTerrain('mistyterrain')) {
 				return this.chainModify(1.5);
 			}
 		},
@@ -2678,7 +2681,12 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		},
 		onBasePowerPriority: 23,
 		onBasePower(basePower, pokemon, target, move) {
-			if (move.pixilateBoosted) return this.chainModify([4915, 4096]);
+			if (move.pixilateBoosted) {
+				if (this.field.isTerrain('mistyterrain')){
+					return this.chainModify(1.5);
+				}
+				return this.chainModify([4915, 4096]);
+				}
 		},
 		name: "Pixilate",
 		rating: 4,
@@ -2895,7 +2903,14 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	purepower: {
 		onModifyAtkPriority: 5,
 		onModifyAtk(atk) {
-			return this.chainModify(2);
+			if (!this.field.isTerrain('psychicterrain')) {
+				return this.chainModify(2);
+			}
+		},
+		onModifySpA(spa, pokemon) {
+			if (this.field.isTerrain('psychicterrain')) {
+				return this.chainModify(2);
+			}
 		},
 		name: "Pure Power",
 		rating: 5,
@@ -3541,6 +3556,9 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onAnyFaintPriority: 1,
 		onAnyFaint() {
 			this.boost({spa: 1}, this.effectState.target);
+			if (this.field.isTerrain('mistyterrain')) {
+				this.boost({spd: 1}, this.effectState.target);
+			}
 		},
 		name: "Soul-Heart",
 		rating: 3.5,
@@ -3939,6 +3957,11 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				return null;
 			}
 		},
+		onModifySpe(spe, pokemon) {
+			if (this.field.isTerrain('psychicterrain')) {
+				return this.chainModify(2);
+			}
+		},
 		isBreakable: true,
 		name: "Telepathy",
 		rating: 0,
@@ -4312,6 +4335,11 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onDamagingHit(damage, target, source, move) {
 			if (move.type === 'Water') {
 				this.boost({def: 2});
+			}
+		},
+		onStart(Pokemon) {
+			if (this.field.isTerrain('mistyterrain')) {
+				this.boost({def: 2}, pokemon);
 			}
 		},
 		name: "Water Compaction",
