@@ -15282,48 +15282,14 @@ export const Moves: {[moveid: string]: MoveData} = {
 		onModifyMove(move, pokemon) {
 			if (this.field.isTerrain('')) return;
 			move.secondaries = [];
-			if (this.field.isTerrain('electricterrain')) {
-				move.secondaries.push({
-					chance: 30,
-					status: 'par',
-				});
-			} else if (this.field.isTerrain('grassyterrain')) {
-				move.secondaries.push({
-					chance: 30,
-					status: 'slp',
-				});
-			} else if (this.field.isTerrain('mistyterrain')) {
-				move.secondaries.push({
-					chance: 30,
-					boosts: {
-						spa: -1,
-					},
-				});
-			} else if (this.field.isTerrain('psychicterrain')) {
+			if (this.field.isTerrain('psychicterrain')) {
 				move.secondaries.push({
 					chance: 30,
 					boosts: {
 						spe: -1,
 					},
 				});
-			} else if (this.field.isTerrain('burningterrain')) {
-				move.secondaries.push({
-					chance: 30,
-					status: 'brn',
-				});
-			} else if (this.field.isTerrain('desertterrain')) {
-				move.secondaries.push({
-					chance: 30,
-					boosts: {
-						accuracy: -1,
-					},
-				});
-			} else if (this.field.isTerrain('caveterrain')) {
-				move.secondaries.push({
-					chance: 30,
-					volatileStatus: 'flinch',
-				});
-			}
+			} 
 		},
 		secondary: {
 			chance: 30,
