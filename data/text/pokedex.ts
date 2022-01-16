@@ -3701,6 +3701,15 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	alguanard: {
 		name: "Alguanard",
 	},
+	eliogere: {
+		name: "Eliogere",
+	},
+	rugeille: {
+		name: "Rugeille",
+	},
+	dragaciel: {
+		name: "Dragaciel",
+	},
 	flabebetradessar: {
 		name: "Flabe\u0301be\u0301-Tradessar",
 	},

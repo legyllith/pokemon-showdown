@@ -6513,6 +6513,15 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	alguanard: {
 		tier: "OU",
 	},
+	eliogere: {
+		tier: "OU",
+	},
+	rugeille: {
+		tier: "OU",
+	},
+	dragaciel: {
+		tier: "OU",
+	},
 	flabebetradessar: {
 		tier: "OU",
 	},
