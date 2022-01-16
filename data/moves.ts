@@ -15281,7 +15281,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		onModifyMove(move, pokemon) {
 			if (this.field.isTerrain('')) return;
 			move.secondaries = [];
-			if (this.field.isTerrain('psychicterrain')) {
+			else if (this.field.isTerrain('psychicterrain')) {
 				move.secondaries.push({
 					chance: 100,
 					volatileStatus: 'confusion',
