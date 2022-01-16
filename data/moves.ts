@@ -15284,10 +15284,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 			move.secondaries = [];
 			if (this.field.isTerrain('psychicterrain')) {
 				move.secondaries.push({
-					chance: 30,
-					boosts: {
-						spe: -1,
-					},
+					chance: 100,
+					volatileStatus: 'confusion',
 				});
 			} 
 		},
