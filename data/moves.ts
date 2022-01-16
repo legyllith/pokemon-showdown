@@ -15291,10 +15291,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 				});
 			} 
 		},
-		secondary: {
-			chance: 30,
-			status: 'par',
-		},
+		secondary: {},
 		target: "normal",
 		type: "Psychic",
 		contestType: "Cool",
