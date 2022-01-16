@@ -19711,7 +19711,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		condition: {
 			duration: 5,
 			durationCallback(source, effect) {
-				if (source?.hasAbility('persistent') || if (this.field.isTerrain('psychicterrain'))) {
+				if (source?.hasAbility('persistent') || (this.field.isTerrain('psychicterrain'))) {
 					return 8;
 				}
 				return 5;
