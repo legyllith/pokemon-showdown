@@ -15285,7 +15285,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 				move.secondaries.push({
 					chance: 100,
 					volatileStatus: 'confusion',
-				})
+				});
 			}
 		},
 		isZ: "psychiumz",
