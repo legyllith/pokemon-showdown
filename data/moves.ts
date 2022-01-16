@@ -20209,55 +20209,6 @@ export const Moves: {[moveid: string]: MoveData} = {
 					if (target.hasType('Flying')) return 0;
 				}
 			},
-			var collapseeffect = 0;
-			onModifyMove(move, attacker, defender) {
-				if (['powergem', 'diamondstorm'].includes(move.id)) {
-					this.field.clearTerrain();
-					this.add('-fieldend', 'move: Cave Terrain');
-					this.field.setTerrain('crystalcavernterrain')
-				}
-				if (['earthquake', 'magnitude','bulldoze','tectonicrage','continentalcrush'].includes(move.id)) {
-					if (collapseeffect == 0) {
-						collapseeffect = 1
-					} else if (collapseeffect == 1) {
-						this.field.clearTerrain();
-						this.add('-fieldend', 'move: Cave Terrain');
-						for (const pokemon of this.getAllActive()) {
-							if (!['bulletproof', 'rockhead'].includes(pokemon.ability) && !['protect', 'spikyshield', 'wideguard'].includes(pokemon.volatiles) && !pokemon.isSemiInvulnerable()) {
-								if (['battlearmor', 'shellarmor'].includes(pokemon.ability)){
-									if (((pokemon.maxhp/2) >= pokemon.hp) && pokemon.volatiles['endure']) {
-										this.add('-activate', pokemon, 'move: Endure');
-										return pokemon.hp - 1;
-									} else {
-										this.damage(pokemon.maxhp/2);
-									}
-								} else if (['solidrock', 'prismarmor'].includes(pokemon.ability)){
-									if (((pokemon.maxhp/3) >= pokemon.hp) && pokemon.volatiles['endure']) {
-										this.add('-activate', pokemon, 'move: Endure');
-										return pokemon.hp - 1;
-									} else {
-										this.damage(pokemon.maxhp/3);
-									}
-								} else if (pokemon.ability == 'sturdy'){
-									if (((pokemon.maxhp-1) >= pokemon.hp) && pokemon.volatiles['endure']) {
-										this.add('-activate', pokemon, 'move: Endure');
-										return pokemon.hp - 1;
-									} else {
-										this.damage(pokemon.maxhp-1);
-									}
-								} else {
-									if (pokemon.volatiles['endure']) {
-										this.add('-activate', pokemon, 'move: Endure');
-										return pokemon.hp - 1;
-									} else {
-										this.damage(pokemon.maxhp);
-									}
-								}
-							}
-						}
-					}
-				}
-			},
 			onFieldStart(field, source, effect) {
 				if (effect?.effectType === 'Ability') {
 					this.add('-fieldstart', 'move: Cave Terrain', '[from] ability: ' + effect, '[of] ' + source);
