@@ -15286,8 +15286,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 					chance: 100,
 					volatileStatus: 'confusion',
 				})
-			},
-		}
+			}
+		},
 		isZ: "psychiumz",
 		secondary: {},
 		target: "normal",
