@@ -15278,18 +15278,57 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 1,
 		priority: 0,
 		flags: {},
+		isZ: "psychiumz",
 		onModifyMove(move, pokemon) {
 			if (this.field.isTerrain('')) return;
 			move.secondaries = [];
+			if (this.field.isTerrain('electricterrain')) {
+				move.secondaries.push({
+					chance: 30,
+					status: 'par',
+				});
+			} else if (this.field.isTerrain('grassyterrain')) {
+				move.secondaries.push({
+					chance: 30,
+					status: 'slp',
+				});
+			} else if (this.field.isTerrain('mistyterrain')) {
+				move.secondaries.push({
+					chance: 30,
+					boosts: {
+						spa: -1,
+					},
+				});
 			} else if (this.field.isTerrain('psychicterrain')) {
 				move.secondaries.push({
-					chance: 100,
-					volatileStatus: 'confusion',
+					chance: 30,
+					boosts: {
+						spe: -1,
+					},
+				});
+			} else if (this.field.isTerrain('burningterrain')) {
+				move.secondaries.push({
+					chance: 30,
+					status: 'brn',
+				});
+			} else if (this.field.isTerrain('desertterrain')) {
+				move.secondaries.push({
+					chance: 30,
+					boosts: {
+						accuracy: -1,
+					},
+				});
+			} else if (this.field.isTerrain('caveterrain')) {
+				move.secondaries.push({
+					chance: 30,
+					volatileStatus: 'flinch',
 				});
 			}
 		},
-		isZ: "psychiumz",
-		secondary: {},
+		secondary: {
+			chance: 30,
+			status: 'par',
+		},
 		target: "normal",
 		type: "Psychic",
 		contestType: "Cool",
