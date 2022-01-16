@@ -15028,6 +15028,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 					chance: 30,
 					volatileStatus: 'flinch',
 				});
+			}
 		},
 		secondary: {
 			chance: 30,
