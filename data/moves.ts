@@ -15278,12 +15278,16 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 1,
 		priority: 0,
 		flags: {},
-		if (this.field.isTerrain('psychicterrain')) {
-			move.secondaries.push({
-				chance: 100,
-				volatileStatus: 'confusion',
-			})
-		},
+		onModifyMove(move, pokemon) {
+			if (this.field.isTerrain('')) return;
+			move.secondaries = [];
+			if (this.field.isTerrain('psychicterrain')) {
+				move.secondaries.push({
+					chance: 100,
+					volatileStatus: 'confusion',
+				})
+			},
+		}
 		isZ: "psychiumz",
 		secondary: {},
 		target: "normal",
