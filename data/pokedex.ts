@@ -17324,7 +17324,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		heightm: 0.5,
 		weightkg: 18,
 		color: "Red",
-		evos: ["Coraindi"],
+		evos: ["Corinsect"],
 		eggGroups: ["Field"],
 	},
 	corinsect: {
@@ -17337,9 +17337,9 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		heightm: 0.7,
 		weightkg: 25,
 		color: "Red",
-		prevo: "Corinsect",
+		prevo: "Coraindi",
 		evoLevel: 16,
-		evos: ["Coraindi"],
+		evos: ["Insaeon"],
 		eggGroups: ["Field"],
 	},
 	insaeon: {

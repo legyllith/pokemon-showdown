@@ -6513,6 +6513,15 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	alguanard: {
 		tier: "OU",
 	},
+	coraindi: {
+		tier: "OU",
+	},
+	corinsect: {
+		tier: "OU",
+	},
+	insaeon: {
+		tier: "OU",
+	},
 	eliogere: {
 		tier: "OU",
 	},
@@ -6529,15 +6538,6 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "OU",
 	},
 	florgestradessar: {
-		tier: "OU",
-	},
-	coraindi: {
-		tier: "OU",
-	},
-	corinsect: {
-		tier: "OU",
-	},
-	insaeon: {
 		tier: "OU",
 	},
 };
