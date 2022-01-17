@@ -6531,6 +6531,15 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	dragaciel: {
 		tier: "OU",
 	},
+	riddulage: {
+		tier: "OU",
+	},
+	emoage: {
+		tier: "OU",
+	},
+	crustage: {
+		tier: "OU",
+	},
 	flabebetradessar: {
 		tier: "OU",
 	},
