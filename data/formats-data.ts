@@ -6531,4 +6531,13 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	florgestradessar: {
 		tier: "OU",
 	},
+	coraindi: {
+		tier: "OU",
+	},
+	corinsect: {
+		tier: "OU",
+	},
+	insaeon: {
+		tier: "OU",
+	},
 };

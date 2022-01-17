@@ -3710,6 +3710,15 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	dragaciel: {
 		name: "Dragaciel",
 	},
+	coraindi: {
+		name: "Coraindi",
+	},
+	corinsect: {
+		name: "Corinsect",
+	},
+	insaeon: {
+		name: "Insaeon",
+	},
 	flabebetradessar: {
 		name: "Flabe\u0301be\u0301-Tradessar",
 	},
