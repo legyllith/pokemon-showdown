@@ -6540,6 +6540,18 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	crustage: {
 		tier: "OU",
 	},
+	elikiti: {
+		tier: "OU",
+	},
+	bixiard: {
+		tier: "OU",
+	},
+	sparkit: {
+		tier: "OU",
+	},
+	tinderev: {
+		tier: "OU",
+	},
 	flabebetradessar: {
 		tier: "OU",
 	},

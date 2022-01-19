@@ -3728,6 +3728,18 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	crustage: {
 		name: "Crustage",
 	},
+	elikiti: {
+		name: "Elikiti",
+	},
+	bixiard: {
+		name: "Bixiard",
+	},
+	sparkit: {
+		name: "Sparkit",
+	},
+	tinderev: {
+		name: "Tinderev",
+	},
 	flabebetradessar: {
 		name: "Flabe\u0301be\u0301-Tradessar",
 	},
