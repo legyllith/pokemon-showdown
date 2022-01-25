@@ -20209,7 +20209,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 					if (target.hasType('Flying')) return 0;
 				}
 			},
-			this.field.TerrainDestruction = 0;
+			this.field.TerrainDestruction = 0,
 			onModifyMove(move, attacker, defender) {
 				if (['powergem', 'diamondstorm'].includes(move.id)) {
 					this.field.clearTerrain();
