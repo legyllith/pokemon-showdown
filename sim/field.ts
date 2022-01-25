@@ -23,6 +23,7 @@ export class Field {
 
 	constructor(battle: Battle) {
 		this.IsFirstTimeSettingCustomTerrain = true;
+		this.TerrainDestruction = 0;
 		this.battle = battle;
 		const fieldScripts = this.battle.format.field || this.battle.dex.data.Scripts.field;
 		if (fieldScripts) Object.assign(this, fieldScripts);
