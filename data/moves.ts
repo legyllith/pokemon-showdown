@@ -20219,6 +20219,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 					if (this.field.TerrainDestruction == 0) {
 						this.field.TerrainDestruction = 1
 					} else if (this.field.TerrainDestruction == 1) {
+						this.field.TerrainDestruction = 0;
 						this.field.clearTerrain();
 						this.add('-fieldend', 'move: Cave Terrain');
 						for (const pokemon of this.getAllActive()) {
