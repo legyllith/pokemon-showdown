@@ -3740,6 +3740,18 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	tinderev: {
 		name: "Tinderev",
 	},
+	moiri:	{
+		name: "Moiri",
+	},
+	sacriau: {
+		name: "Sacriau",
+	},
+	espritchu:	{
+		name: "Espritchu",
+	},
+	raichome: {
+		name: "Raichome",
+	},
 	flabebetradessar: {
 		name: "Flabe\u0301be\u0301-Tradessar",
 	},
@@ -3748,5 +3760,8 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	},
 	florgestradessar: {
 		name: "Florges-Tradessar",
+	},
+	miltankraott: {
+		name: "Miltank-Raott",
 	},
 };
