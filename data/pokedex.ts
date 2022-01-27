@@ -17619,7 +17619,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		baseSpecies: "Neruku",
 		forme: "Autumn",
 		types: ["Psychic", "Grass"],
-		baseStats: {{hp: 100, atk: 69, def: 65, spa: 138, spd: 90, spe: 69},
+		baseStats: {hp: 100, atk: 69, def: 65, spa: 138, spd: 90, spe: 69},
 		abilities: {0: "Anticipation", H: "Overcoat"},
 		heightm: 0.5,
 		weightkg: 6.5,
