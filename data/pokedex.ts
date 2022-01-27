@@ -17579,7 +17579,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		weightkg: 3.4,
 		color: "Green",
 		prevo: "Orkitty",
-		evos: ["Wormadam", "Wormadam-Sandy", "Wormadam-Trash", "Mothim"],
+		evos: ["Felidacea"],
 		eggGroups: ["Field"],
 	},
 	felidacea: {
