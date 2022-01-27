@@ -3764,4 +3764,22 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	miltankraott: {
 		name: "Miltank-Raott",
 	},
+	orkitty: {
+		name: "Orkitty",
+	},
+	felidacea: {
+		name: "Felidacea",
+	},
+	neruku: {
+		name: "Neruku",
+	},
+	nerukuautumn: {
+		name: "Neruku-Autumn",
+	},
+	nerukuwinter: {
+		name: "Neruku-Winter",
+	},
+	nerukusummer: {
+		name: "Neruku-Summer",
+	},
 };

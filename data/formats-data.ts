@@ -6576,5 +6576,23 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	miltankraott: {
 		tier: "OU",
 	},
+	orkitty: {
+		tier: "OU",
+	},
+	felidacea: {
+		tier: "OU",
+	},
+	neruku: {
+		tier: "OU",
+	},
+	nerukuautumn: {
+		tier: "OU",
+	},
+	nerukuwinter: {
+		tier: "OU",
+	},
+	nerukusummer: {
+		tier: "OU",
+	},
 	
 };
