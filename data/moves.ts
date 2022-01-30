@@ -20277,4 +20277,20 @@ export const Moves: {[moveid: string]: MoveData} = {
 		zMove: {boost: {def: 1}},
 		contestType: "Beautiful",
 	},
+	
+	1000pidgey: {
+		num: 2004,
+		accuracy: 100,
+		basePower: 70,
+		category: "Physical",
+		name: "1000 Pidgey",
+		pp: 20,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		critRatio: 2,
+		secondary: null,
+		target: "normal",
+		type: "Electric",
+		contestType: "Cool",
+	},
 };

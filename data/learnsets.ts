@@ -83024,6 +83024,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	sastif: {
 		learnset: {
+			1000pidgey: ["8L18"],
 			absorb: ["7L1", "6L1", "5L1", "4L1", "3L1"],
 			acrobatics: ["8M", "7M", "6M", "5M"],
 			aerialace: ["7M", "6M", "5M", "4M", "3M"],
