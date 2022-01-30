@@ -6849,8 +6849,8 @@ export const MovesText: {[k: string]: MoveText} = {
 			shortDesc: "Nearly always goes first. Always crits.",
 		},
 	},
-	1000pidgey: {
-		name: "1000 Pidgey",
+	thousandpidgey: {
+		name: "Thousand Pidgey",
 		desc: "Has a higher chance for a critical hit.",
 		shortDesc: "High critical hit ratio.",
 	},

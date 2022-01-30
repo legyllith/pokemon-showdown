@@ -83024,7 +83024,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	sastif: {
 		learnset: {
-			1000pidgey: ["8L18"],
+			thousandpidgey: ["8L18"],
 			spark: ["8L10"],
 			thunderwave: ["8L20"],
 			voltswitch: ["8M"],
@@ -83116,7 +83116,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	ushuke: {
 		learnset: {
-			1000pidgey: ["8L20"],
+			thousandpidgey: ["8L20"],
 			spark: ["8L12"],
 			thunderwave: ["8L24"],
 			voltswitch: ["8M"],

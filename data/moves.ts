@@ -20278,12 +20278,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		contestType: "Beautiful",
 	},
 	
-	1000pidgey: {
+	thousandpidgey: {
 		num: 2004,
 		accuracy: 100,
 		basePower: 70,
 		category: "Physical",
-		name: "1000 Pidgey",
+		name: "Thousand Pidgey",
 		pp: 20,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
