@@ -82931,7 +82931,8 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	charmuke: {
 		learnset: {
 			spark: ["8L8"],
-			tearfullook ["8L12"],
+			tearfullook: ["8L12"],
+			faketears:	["8L12"],
 			thunderwave: ["8L20"],
 			voltswitch: ["8M"],
 			wildcharge: ["8L35"],
@@ -83021,6 +83022,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			toxic: ["7M", "6M", "5M", "4M", "3M"],
 			workup: ["8M", "7M"],
 			worryseed: ["8E", "7T", "7E", "6T", "6E", "5T", "5E", "4T", "4E"],
+			suckerpunch: ["8E"],
 		},
 	},
 	sastif: {
@@ -83115,11 +83117,13 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			workup: ["8M", "7M"],
 			worryseed: ["7T", "6T", "5T", "4T"],
 			xscissor: ["8M", "8L1", "7M", "7L43", "6M", "6L43", "5M", "4M"],
+			suckerpunch: ["8E"],
 		},
 	},
 	ushuke: {
 		learnset: {
 			teleport: ["8L20"],
+			suckerpunch: ["8E"],
 			honeclaws: ["8L22"],
 			thousandpidgey: ["8L20"],
 			meanlook: ["8L45"],
