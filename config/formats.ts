@@ -28,7 +28,7 @@ export const Formats: FormatList = [
 	{
 		name: "Normal Battle",
 		mod: 'gen8',
-		ruleset: ['Standard NatDex', 'Species Clause', 'Dynamax Clause'],
+		ruleset: ['Standard NatDex', 'Species Clause', 'Dynamax Clause', 'Adjust Level = 10'],
 		
 	},
 	];
