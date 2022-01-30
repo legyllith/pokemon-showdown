@@ -6552,6 +6552,18 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	tinderev: {
 		tier: "OU",
 	},
+	moiri:	{
+		tier: "OU",
+	},
+	sacriau: {
+		tier: "OU",
+	},
+	espritchu:	{
+		tier: "OU",
+	},
+	raichome: {
+		tier: "OU",
+	},
 	flabebetradessar: {
 		tier: "OU",
 	},
@@ -6561,4 +6573,26 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	florgestradessar: {
 		tier: "OU",
 	},
+	miltankraott: {
+		tier: "OU",
+	},
+	orkitty: {
+		tier: "OU",
+	},
+	felidacea: {
+		tier: "OU",
+	},
+	neruku: {
+		tier: "OU",
+	},
+	nerukuautumn: {
+		tier: "OU",
+	},
+	nerukuwinter: {
+		tier: "OU",
+	},
+	nerukusummer: {
+		tier: "OU",
+	},
+	
 };
