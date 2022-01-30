@@ -83132,7 +83132,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			thunderwave: ["8L24"],
 			expandingforce: ["8T"],
 			cosmicpower: ["8T"],
-			psychicterrain ["8T"],
+			psychicterrain: ["8T"],
 			voltswitch: ["8M"],
 			chargebeam: ["8M"],
 			eerieimpulse: ["8M"],
