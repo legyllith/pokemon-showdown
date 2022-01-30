@@ -83026,7 +83026,6 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	sastif: {
 		learnset: {
 			thousandpidgey: ["8L18"],
-			honeclaws: ["8L22"],
 			spark: ["8L10"],
 			teleport: ["8L16"],
 			thunderwave: ["8L20"],
@@ -83120,7 +83119,6 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	ushuke: {
 		learnset: {
 			teleport: ["8L20"],
-			honeclaws: ["8L22"],
 			thousandpidgey: ["8L20"],
 			meanlook: ["8L45"],
 			glare: ["8L55"],
