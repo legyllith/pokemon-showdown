@@ -4557,7 +4557,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		name: "Oxymort",
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
-			if (!target.hp)) {
+			if (!target.hp) {
 				this.damage(source.baseMaxhp / 4, source, target);
 			}
 		},
