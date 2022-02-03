@@ -4561,6 +4561,12 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				this.damage(source.baseMaxhp / 4, source, target);
 			}
 		},
+		onPrepareHit(source, target, move) {
+			if (move.selfdestruct){
+				this.damage(target.baseMaxhp / 4, target, source);
+			}
+			
+		},
 		rating: 3,
 		num: 2001,
 	},
