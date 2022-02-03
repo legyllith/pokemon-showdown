@@ -4563,7 +4563,9 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		},
 		onPrepareHit(source, target, move) {
 			if (move.selfdestruct){
-				this.damage(source.baseMaxhp / 4, allAdjacentFoes, source);
+				for (const targetE of pokemon.foes()) {
+					this.damage(targetE.baseMaxhp / 4, targetE, source);
+				}
 			}
 			
 		},
