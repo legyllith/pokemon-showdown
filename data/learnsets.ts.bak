@@ -85085,11 +85085,6 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	espritchu: {
 		learnset: {
-			lick: ["8L3"],
-			phantomforce: ["8L45"],
-			shadowpunch: ["8L25"],
-			hex: ["8L33"],
-			polteageist: ["8T"],
 			agility: ["8M", "8L24", "8V", "7L45", "7V", "6L37", "6S41", "5L37", "4L34", "3L33", "3S0", "3S8"],
 			attract: ["8M", "7M", "7V", "6M", "5M", "4M", "3M"],
 			bestow: ["7S44", "6S42"],
@@ -85207,12 +85202,6 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	raichome: {
 		learnset: {
-			lick: ["8L3"],
-			phantomforce: ["8L45"],
-			shadowpunch: ["8L25"],
-			hex: ["8L33"],
-			polteageist: ["8T"],
-			confuseray: ["8L1"],
 			agility: ["8M", "8L1"],
 			attract: ["8M", "7M", "7V", "6M", "5M", "4M", "3M"],
 			bide: ["7V"],
