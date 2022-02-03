@@ -4558,12 +4558,12 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			if (!target.hp) {
-				this.damage(source.baseMaxhp / 4, source, target);
+				this.damage(target.baseMaxhp / 4, source, target);
 			}
 		},
 		onPrepareHit(source, target, move) {
 			if (move.selfdestruct){
-				this.damage(target.baseMaxhp / 4, target, source);
+				this.damage(source.baseMaxhp / 4, allAdjacentFoes, source);
 			}
 			
 		},
