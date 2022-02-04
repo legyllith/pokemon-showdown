@@ -4555,28 +4555,33 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	oxymort: {
 		name: "Oxymort",
-		onResidualOrder: 28,
+		/*onResidualOrder: 28,
 		onResidualSubOrder: 2,
 		onResidual(pokemon) {
 			//if (!pokemon.hp) return;
 			for (const target of pokemon.foes()) {
 					this.damage(target.baseMaxhp / 8, target, pokemon);
 			}
-		},
-		/*onDamagingHitOrder: 1,
+		},*/
+		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			if (!target.hp) {
 				this.damage(target.baseMaxhp / 4, source, target);
 			}
 		},
-		//onPrepareHit(source, target, move) {
-		//	if (move.selfdestruct){
-		//		for (const targetE of pokemon.foes()) {
-		//			this.damage(targetE.baseMaxhp / 4, targetE, pokemon);
-		//		}
-		//	}
+		onPrepareHit(source, target, move) {
+			if (move.selfdestruct){
+				if ( source == move){
+					for (const targetE of pokemon.foes()) {
+						this.damage(targetE.baseMaxhp / 4, targetE, source);
+					}
+				}
+				else {
+					this.damage(target.baseMaxhp / 4, target, source);
+				}
+			}
 		
-		onResidualOrder: 28,
+		/*onResidualOrder: 28,
 		onResidualSubOrder: 2,
 		onResidual(pokemon) {
 			if (!pokemon.hp) {
