@@ -4555,7 +4555,15 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	oxymort: {
 		name: "Oxymort",
-		onDamagingHitOrder: 1,
+		onResidualOrder: 28,
+		onResidualSubOrder: 2,
+		onResidual(pokemon) {
+			//if (!pokemon.hp) return;
+			for (const target of pokemon.foes()) {
+					this.damage(target.baseMaxhp / 8, target, pokemon);
+			}
+		},
+		/*onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			if (!target.hp) {
 				this.damage(target.baseMaxhp / 4, source, target);
@@ -4576,7 +4584,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 					this.damage(target.baseMaxhp / 4, target, pokemon);
 				}
 			}
-		},
+		},*/
 		rating: 3,
 		num: 2001,
 	},
