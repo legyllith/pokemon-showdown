@@ -4580,6 +4580,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 					this.damage(target.baseMaxhp / 4, target, source);
 				}
 			}
+		},
 		
 		/*onResidualOrder: 28,
 		onResidualSubOrder: 2,
