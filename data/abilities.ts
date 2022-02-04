@@ -4561,13 +4561,21 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				this.damage(target.baseMaxhp / 4, source, target);
 			}
 		},
-		onPrepareHit(source, target, move) {
-			if (move.selfdestruct){
-				for (const targetE of pokemon.foes()) {
-					this.damage(targetE.baseMaxhp / 4, targetE, source);
+		//onPrepareHit(source, target, move) {
+		//	if (move.selfdestruct){
+		//		for (const targetE of pokemon.foes()) {
+		//			this.damage(targetE.baseMaxhp / 4, targetE, pokemon);
+		//		}
+		//	}
+		
+		onResidualOrder: 28,
+		onResidualSubOrder: 2,
+		onResidual(pokemon) {
+			if (!pokemon.hp) {
+			for (const target of pokemon.foes()) {
+					this.damage(target.baseMaxhp / 4, target, pokemon);
 				}
 			}
-			
 		},
 		rating: 3,
 		num: 2001,
