@@ -83132,7 +83132,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			thunderwave: ["8L24"],
 			expandingforce: ["8T"],
 			cosmicpower: ["8T"],
-			psychicterrain ["8T"],
+			psychicterrain: ["8T"],
 			voltswitch: ["8M"],
 			chargebeam: ["8M"],
 			eerieimpulse: ["8M"],
@@ -84932,6 +84932,16 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	moiri: {
 		learnset: {
+			lick: ["8L3"],
+			selfdestruct: ["8L3"],
+			memento: ["8L10"],
+			healingwish: ["8L10"],
+			mistyexplosion: ["8L20"],
+			mistyterrain: ["8L40"],
+			explosion: ["8L31"],
+			willowisp: ["8L33"],
+			hex: ["8L38"],
+			poltergeist: ["8T"],
 			aerialace: ["7M", "6M", "5M", "4M", "3M"],
 			agility: ["8V", "7L29", "7V", "6L29", "5L29", "4L29", "3L39"],
 			aircutter: ["7E", "6E", "5E", "4T", "4E", "3E"],
@@ -85000,6 +85010,16 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	sacriau: {
 		learnset: {
+			lick: ["8L5"],
+			selfdestruct: ["8L5"],
+			memento: ["8L12"],
+			healingwish: ["8L12"],
+			mistyexplosion: ["8L22"],
+			mistyterrain: ["8L42"],
+			explosion: ["8L33"],
+			willowisp: ["8L35"],
+			hex: ["8L40"],
+			poltergeist: ["8T"],
 			aerialace: ["7M", "6M", "5M", "4M", "3M"],
 			agility: ["8V", "7L32", "7V", "6L32", "5L32", "4L32", "3L43"],
 			aircutter: ["4T"],
@@ -85065,6 +85085,11 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	espritchu: {
 		learnset: {
+			lick: ["8L3"],
+			phantomforce: ["8L45"],
+			shadowpunch: ["8L25"],
+			hex: ["8L33"],
+			poltergeist: ["8T"],
 			agility: ["8M", "8L24", "8V", "7L45", "7V", "6L37", "6S41", "5L37", "4L34", "3L33", "3S0", "3S8"],
 			attract: ["8M", "7M", "7V", "6M", "5M", "4M", "3M"],
 			bestow: ["7S44", "6S42"],
@@ -85182,6 +85207,12 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	raichome: {
 		learnset: {
+			lick: ["8L3"],
+			phantomforce: ["8L45"],
+			shadowpunch: ["8L25"],
+			hex: ["8L33"],
+			poltergeist: ["8T"],
+			confuseray: ["8L1"],
 			agility: ["8M", "8L1"],
 			attract: ["8M", "7M", "7V", "6M", "5M", "4M", "3M"],
 			bide: ["7V"],

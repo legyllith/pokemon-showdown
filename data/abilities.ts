@@ -4553,4 +4553,49 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 4,
 		num: 2000,
 	},
+	oxymort: {
+		name: "Oxymort",
+		/*onResidualOrder: 28,
+		onResidualSubOrder: 2,
+		onResidual(pokemon) {
+			//if (!pokemon.hp) return;
+			for (const target of pokemon.foes()) {
+					this.damage(target.baseMaxhp / 8, target, pokemon);
+			}
+		},*/
+		/*onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {
+			if (!target.hp) {
+				this.damage(target.baseMaxhp / 4, source, target);
+			}
+		},
+		onPrepareHit(source, target, move) {
+			if (move.selfdestruct){
+				//if ( source == target){
+					for (const targetE of source.foes()) {
+						this.damage(targetE.baseMaxhp / 4, targetE, source);
+					}
+				} //a essayer de mettre ce ode en mode tout le temps et de desactiver si damp
+				else {
+					this.damage(target.baseMaxhp / 4, target, source);
+				}
+			}
+		},*/
+		onFaint(pokemon) {
+			for (const targetE of pokemon.foes()) {
+						this.damage(targetE.baseMaxhp / 4, targetE, pokemon);
+					}
+		},
+		/*onResidualOrder: 28,
+		onResidualSubOrder: 2,
+		onResidual(pokemon) {
+			if (!pokemon.hp) {
+			for (const target of pokemon.foes()) {
+					this.damage(target.baseMaxhp / 4, target, pokemon);
+				}
+			}
+		},*/
+		rating: 3,
+		num: 2001,
+	},
 };

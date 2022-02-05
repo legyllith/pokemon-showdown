@@ -1740,4 +1740,8 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		name: "Hidden Bloom",
 		shortDesc: "When you use a Grass move you gain 1 att spe before use it",
 	},
+	oxymort: {
+		name: "Oxymort",
+		shortDesc: "When this pokemon die, it deal 1/4 of ennemy HP as damage",
+	},
 };
