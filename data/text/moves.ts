@@ -6854,4 +6854,23 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "Has a higher chance for a critical hit.",
 		shortDesc: "High critical hit ratio.",
 	},
+	
+	fermentedmilk: {
+		name: "Fermented Milk",
+		desc: "Deal damage and for 5 turns, the target is prevented from restoring any HP as long as it remains active. During the effect, healing and draining moves are unusable, and Abilities and items that grant healing will not heal the user. If an affected Pokemon uses Baton Pass, the replacement will remain unable to restore its HP. Pain Split and the Regenerator Ability are unaffected.",
+		shortDesc: "Deal damage and for 5 turns, the foe(s) is prevented from healing.",
+		gen7: {
+			desc: "Deal damage and for 5 turns, the target is prevented from restoring any HP as long as it remains active. During the effect, healing and draining moves are unusable, and Abilities and items that grant healing will not heal the user. If an affected Pokemon uses Baton Pass, the replacement will remain unable to restore its HP. Pain Split and the Regenerator Ability are unaffected. Relevant Z-Powered moves can still be selected and executed during this effect.",
+		},
+		gen6: {
+			desc: "Deal damage and for 5 turns, the target is prevented from restoring any HP as long as it remains active. During the effect, healing and draining moves are unusable, and Abilities and items that grant healing will not heal the user. If an affected Pokemon uses Baton Pass, the replacement will remain unable to restore its HP. Pain Split and the Regenerator Ability are unaffected.",
+		},
+		gen4: {
+			desc: "Deal damage and for 5 turns, the target is prevented from restoring any HP as long as it remains active. During the effect, healing moves are unusable, move effects that grant healing will not heal, but Abilities and items will continue to heal the user. If an affected Pokemon uses Baton Pass, the replacement will remain under the effect. Pain Split is unaffected.",
+		},
+
+		start: "  [POKEMON] was prevented from healing!",
+		end: "  [POKEMON]'s Fermented Milk wore off!",
+		cant: "[POKEMON] can't use [MOVE] because of Fermented Milk!",
+		fail: "  But it failed to affect [POKEMON]!",
 };
