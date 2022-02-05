@@ -4563,7 +4563,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 					this.damage(target.baseMaxhp / 8, target, pokemon);
 			}
 		},*/
-		onDamagingHitOrder: 1,
+		/*onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			if (!target.hp) {
 				this.damage(target.baseMaxhp / 4, source, target);
@@ -4575,13 +4575,17 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 					for (const targetE of source.foes()) {
 						this.damage(targetE.baseMaxhp / 4, targetE, source);
 					}
-				/*} a essayer de mettre ce ode en mode tout le temps et de desactiver si damp
+				} //a essayer de mettre ce ode en mode tout le temps et de desactiver si damp
 				else {
 					this.damage(target.baseMaxhp / 4, target, source);
-				}*/
+				}
 			}
+		},*/
+		onFaint(pokemon) {
+			for (const targetE of pokemon.foes()) {
+						this.damage(targetE.baseMaxhp / 4, targetE, pokemon);
+					}
 		},
-		
 		/*onResidualOrder: 28,
 		onResidualSubOrder: 2,
 		onResidual(pokemon) {
