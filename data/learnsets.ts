@@ -85495,6 +85495,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	miltankraott: {
 		learnset: {
+			fermentedmilk: ["8L25"],
 			afteryou: ["7T", "6T", "5T"],
 			attract: ["8M", "7M", "7V", "6M", "6S0", "5M", "4M", "3M"],
 			belch: ["8E", "7E", "6E"],
