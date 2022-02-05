@@ -6873,4 +6873,5 @@ export const MovesText: {[k: string]: MoveText} = {
 		end: "  [POKEMON]'s Fermented Milk wore off!",
 		cant: "[POKEMON] can't use [MOVE] because of Fermented Milk!",
 		fail: "  But it failed to affect [POKEMON]!",
+	}
 };
