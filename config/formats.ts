@@ -28,7 +28,7 @@ export const Formats: FormatList = [
 	{
 		name: "Standard Normal Battle",
 		mod: 'gen8',
-		ruleset: ['Obtainable', '+Unobtainable', '+Past', 'Sketch Gen 8 Moves', 'Nickname Clause', 'HP Percentage Mod', 'Cancel Mod', 'Endless Battle Clause', 'Species Clause', 'Dynamax Clause', 'Adjust Level = 10'],
+		ruleset: ['Standard NatDex', 'Species Clause', 'Dynamax Clause', 'Adjust Level = 10'],
 		
 	},
 	{
@@ -38,7 +38,7 @@ export const Formats: FormatList = [
 		name: "Standard Double Battle",
 		gameType: 'doubles',
 		mod: 'gen8',
-		ruleset: ['Obtainable', '+Unobtainable', '+Past', 'Sketch Gen 8 Moves', 'Nickname Clause', 'HP Percentage Mod', 'Cancel Mod', 'Endless Battle Clause', 'Species Clause', 'Dynamax Clause', 'Adjust Level = 10'],
+		ruleset: ['Standard NatDex', 'Species Clause', 'Dynamax Clause', 'Adjust Level = 10'],
 		
 	},
 	];
