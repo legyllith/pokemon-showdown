@@ -20306,7 +20306,6 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
 		volatileStatus: 'healblock',
-		attacker.addVolatile('fermentedmilk');
 		condition: {
 			duration: 5,
 			durationCallback(target, source, effect) {
@@ -20319,6 +20318,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			onStart(pokemon, source) {
 				this.add('-start', pokemon, 'move: Heal Block');
 				source.moveThisTurnResult = true;
+				attacker.addVolatile('fermentedmilk');//tentative
 			},
 			onDisableMove(pokemon) {
 				for (const moveSlot of pokemon.moveSlots) {
