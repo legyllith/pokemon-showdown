@@ -20306,7 +20306,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
 		volatileStatus: 'healblock',
-		source.addVolatile('fermentedmilk'),
+		attacker.addVolatile('fermentedmilk');
 		condition: {
 			duration: 5,
 			durationCallback(target, source, effect) {
