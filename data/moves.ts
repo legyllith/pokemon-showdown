@@ -20305,8 +20305,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 15,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
-		volatileStatus: 'healblock', 
-		pokemon.addVolatile('fermentedmilk'),
+		volatileStatus: 'healblock',
+		source.addVolatile('fermentedmilk'),
 		condition: {
 			duration: 5,
 			durationCallback(target, source, effect) {
