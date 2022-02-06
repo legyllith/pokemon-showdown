@@ -20373,6 +20373,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 			if (pokemon.volatiles['milkdrink']) {
 				bp *= 2;
 			}
+			if (pokemon.volatiles['fermentedmilk']) {
+				bp *= 2;
+			}
 			this.debug("milkwheel bp: " + bp);
 			return bp;
 		},
