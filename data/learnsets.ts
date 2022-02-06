@@ -28484,6 +28484,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	miltank: {
 		learnset: {
+			milkwheel: ["8L5", "7L19", "7V", "6L19", "6S0", "5L19", "4T", "4L19", "3T", "3L34"],
 			afteryou: ["7T", "6T", "5T"],
 			attract: ["8M", "7M", "7V", "6M", "6S0", "5M", "4M", "3M"],
 			belch: ["8E", "7E", "6E"],
@@ -85495,7 +85496,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	miltankraott: {
 		learnset: {
-			fermentedmilk: ["8L25"],
+			milkwheel: ["8L5", "7L19", "7V", "6L19", "6S0", "5L19", "4T", "4L19", "3T", "3L34"],
 			afteryou: ["7T", "6T", "5T"],
 			attract: ["8M", "7M", "7V", "6M", "6S0", "5M", "4M", "3M"],
 			belch: ["8E", "7E", "6E"],
@@ -85545,7 +85546,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			megakick: ["8M", "3T"],
 			megapunch: ["8M", "3T"],
 			metronome: ["8M", "3T"],
-			milkdrink: ["8L35", "7L11", "7V", "6L11", "6S0", "5L11", "4L11", "3L19"],
+			fermentedmilk: ["8L35", "7L11", "7V", "6L11", "6S0", "5L11", "4L11", "3L19"],
 			mimic: ["3T"],
 			mudslap: ["7V", "4T", "3T"],
 			naturalgift: ["7E", "6E", "5E", "4M"],
