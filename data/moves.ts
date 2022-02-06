@@ -11175,6 +11175,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		secondary: null,
 		target: "self",
 		type: "Normal",
+		volatileStatus: 'milkdrink',
 		zMove: {effect: 'clearnegativeboost'},
 		contestType: "Cute",
 	},
@@ -20357,5 +20358,50 @@ export const Moves: {[moveid: string]: MoveData} = {
 		target: "normal",
 		type: "Poison",
 		contestType: "Clever",
+	},
+	milkwheel: {
+		num: 2006,
+		accuracy: 90,
+		basePower: 30,
+		basePowerCallback(pokemon, target, move) {
+			let bp = move.basePower;
+			if (pokemon.volatiles['rollout'] && pokemon.volatiles['milkwheel'].hitCount) {
+				bp *= Math.pow(2, pokemon.volatiles['milkwheel'].hitCount);
+			}
+			if (pokemon.status !== 'slp') pokemon.addVolatile('milkwheel');
+			if (pokemon.volatiles['milkdrink']) {
+				bp *= 2;
+			}
+			this.debug("milkwheel bp: " + bp);
+			return bp;
+		},
+		category: "Physical",
+		name: "Milk Wheel",
+		pp: 20,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		condition: {
+			duration: 2,
+			onLockMove: 'milkwheel',
+			onStart() {
+				this.effectState.hitCount = 1;
+			},
+			onRestart() {
+				this.effectState.hitCount++;
+				if (this.effectState.hitCount < 5) {
+					this.effectState.duration = 2;
+				}
+			},
+			onResidual(target) {
+				if (target.lastMove && target.lastMove.id === 'struggle') {
+					// don't lock
+					delete target.volatiles['milkwheel'];
+				}
+			},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Water",
+		contestType: "Cute",
 	},
 };
