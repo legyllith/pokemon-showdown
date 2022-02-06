@@ -20366,7 +20366,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		basePower: 30,
 		basePowerCallback(pokemon, target, move) {
 			let bp = move.basePower;
-			if (pokemon.volatiles['rollout'] && pokemon.volatiles['milkwheel'].hitCount) {
+			if (pokemon.volatiles['milkwheel'] && pokemon.volatiles['milkwheel'].hitCount) {
 				bp *= Math.pow(2, pokemon.volatiles['milkwheel'].hitCount);
 			}
 			if (pokemon.status !== 'slp') pokemon.addVolatile('milkwheel');
