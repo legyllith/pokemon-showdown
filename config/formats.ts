@@ -32,6 +32,12 @@ export const Formats: FormatList = [
 		
 	},
 	{
+		name: "Tournament 1",
+		mod: 'gen8',
+		ruleset: ['Standard NatDex', 'Species Clause', 'Dynamax Clause', 'Adjust Level = 10', 'Electric Terrain Rule'],
+		
+	},
+	{
 		section: "Double Battles",
 	},
 	{
