@@ -6595,4 +6595,11 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "OU",
 	},
 	
+	meowthraott: {
+		tier: "OU",
+	},
+	persianraott: {
+		tier: "OU",
+	},
+	
 };

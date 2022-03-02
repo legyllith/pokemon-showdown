@@ -3782,4 +3782,10 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	nerukusummer: {
 		name: "Neruku-Summer",
 	},
+	meowthraott: {
+		name: "Meowth-Raott",
+	},
+	persianraott: {
+		name: "Persian-Raott",
+	},
 };
