@@ -17714,7 +17714,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "White",
 		prevo: "Meowth-Proelos",
 		evoLevel: 28,
-		otherFormes: [Pewowth-Fish"],
+		otherFormes: ["Pewowth-Fish"],
 		formeOrder: ["Pewowth", "Pewowth-Fish"],
 		eggGroups: ["Field"],
 	},
