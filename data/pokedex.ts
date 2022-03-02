@@ -17693,7 +17693,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		num: 52,
 		name: "Meowth-Proelos",
 		baseSpecies: "Meowth",
-		forme: "Raott",
+		forme: "Proelos",
 		types: ["Water","Fire"],
 		baseStats: {hp: 65, atk: 65, def: 55, spa: 40, spd: 45, spe: 40},
 		abilities: {0: "Pickup", 1: "Tough Claws", H: "Unnerve"},
