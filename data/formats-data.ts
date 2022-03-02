@@ -6601,5 +6601,14 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	persianraott: {
 		tier: "OU",
 	},
+	meowthproelos: {
+		tier: "OU",
+	},
+	pewowth: {
+		tier: "OU",
+	},
+	pewowthfish: {
+		tier: "OU",
+	},
 	
 };
