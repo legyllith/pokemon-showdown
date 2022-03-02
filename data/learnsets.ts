@@ -85823,7 +85823,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			lashout: ["8T"],
 			lastresort: ["7T"],
 			sweetkiss: ["8M", "8L40", "8V", "7L38"],
-			iceshard ["8L36", "7L49"],
+			iceshard: ["8L36", "7L49"],
 			partingshot: ["8E", "7E"],
 			payback: ["8M", "7M"],
 			payday: ["8M", "8L12", "8V", "7L30"],
