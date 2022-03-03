@@ -928,8 +928,8 @@ export class TeamValidator {
 			}
 		} else { // EVs
 			for (const stat in set.evs) {
-				if (set.evs[stat as StatID] > 99999) {
-					problems.push(`${name} has more than 99999 EVs in ${Dex.stats.names[stat as 'hp']}.`);
+				if (set.evs[stat as StatID] > 255) {
+					problems.push(`${name} has more than 255 EVs in ${Dex.stats.names[stat as 'hp']}.`);
 				}
 			}
 			if (dex.gen <= 2) {
