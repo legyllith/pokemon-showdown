@@ -75,7 +75,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 		name: 'Standard NatDex',
 		desc: "The standard ruleset for all National Dex tiers",
 		ruleset: [
-			'Obtainable', '+Unobtainable', '+Past', 'Sketch Gen 8 Moves', 'Nickname Clause', 'HP Percentage Mod', 'Cancel Mod', 'Endless Battle Clause',
+			'Obtainable', '+Unobtainable', '+Past','! EV Limit', 'Sketch Gen 8 Moves', 'Nickname Clause', 'HP Percentage Mod', 'Cancel Mod', 'Endless Battle Clause',
 		],
 		onValidateSet(set) {
 			// These Pokemon are still unobtainable
@@ -106,7 +106,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 		effectType: 'ValidatorRule',
 		name: 'Obtainable',
 		desc: "Makes sure the team is possible to obtain in-game.",
-		ruleset: ['Obtainable Moves', 'Obtainable Abilities', 'Obtainable Formes', '! EV Limit', 'Obtainable Misc'],
+		ruleset: ['Obtainable Moves', 'Obtainable Abilities', 'Obtainable Formes', 'EV Limit = auto', 'Obtainable Misc'],
 		banlist: ['Unreleased', 'Unobtainable', 'Nonexistent'],
 		// Mostly hardcoded in team-validator.ts
 		onValidateTeam(team, format) {
