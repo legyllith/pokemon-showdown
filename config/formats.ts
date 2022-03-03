@@ -28,7 +28,7 @@ export const Formats: FormatList = [
 	{
 		name: "Standard Normal Battle",
 		mod: 'gen8',
-		ruleset: ['Standard NatDex', 'Species Clause', 'Dynamax Clause', 'Adjust Level = 20', '-Nonexistent'],
+		ruleset: ['Standard NatDex', 'Species Clause', 'Dynamax Clause', 'Adjust Level = 20'],
 		
 	},
 	{
@@ -44,7 +44,7 @@ export const Formats: FormatList = [
 		name: "Standard Double Battle",
 		gameType: 'doubles',
 		mod: 'gen8',
-		ruleset: ['Standard NatDex', 'Species Clause', 'Dynamax Clause', 'Adjust Level = 20', '-Nonexistent'],
+		ruleset: ['Standard NatDex', 'Species Clause', 'Dynamax Clause', 'Adjust Level = 20'],
 		
 	},
 	];
