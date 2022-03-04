@@ -38,6 +38,12 @@ export const Formats: FormatList = [
 		
 	},
 	{
+		name: "Tournament 2",
+		mod: 'gen8',
+		ruleset: ['Standard NatDex', 'Species Clause', 'Dynamax Clause', 'Adjust Level = 20', 'Desert Terrain Rule'],
+		
+	},
+	{
 		section: "Double Battles",
 	},
 	{
