@@ -86039,7 +86039,13 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			razorshell: ["8L1"],
 		},
 	},
-	meowth: {
+	pewowthfish: {
+		learnset: {
+			dive: ["7L1"],
+			razorshell: ["8L1"],
+		},
+	},
+	meowthtradessar: {
 		learnset: {
 			aerialace: ["7M", "6M", "5M", "4M", "3M"],
 			amnesia: ["8M", "7E", "7V", "6E", "5E", "4E", "3E"],
