@@ -3798,4 +3798,13 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	pewowthfish: {
 		name: "Pewowth-Fish",
 	},
+	meowthtradessar: {
+		name: "Meowth-Tradessar",
+	},
+	peradox-down: {
+		name: "Peradox-Down",
+	},
+	peradox-up: {
+		name: "Peradox-Up",
+	},
 };
