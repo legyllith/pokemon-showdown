@@ -1275,8 +1275,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "Yellow",
 		evos: ["Persian"],
 		eggGroups: ["Field"],
-		otherFormes: ["Meowth-Alola", "Meowth-Galar","Meowth-Raott","Meowth-Proelos",Meowth-Tradessar],
-		formeOrder: ["Meowth", "Meowth-Alola", "Meowth-Galar","Meowth-Raott","Meowth-Proelos",Meowth-Tradessar],
+		otherFormes: ["Meowth-Alola", "Meowth-Galar","Meowth-Raott","Meowth-Proelos","Meowth-Tradessar"],
+		formeOrder: ["Meowth", "Meowth-Alola", "Meowth-Galar","Meowth-Raott","Meowth-Proelos","Meowth-Tradessar"],
 		canGigantamax: "G-Max Gold Rush",
 	},
 	meowthalola: {
