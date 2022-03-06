@@ -17748,7 +17748,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		evos: ["Pewowth"],
 		eggGroups: ["Field"],
 	},
-	peradox-down: {
+	peradoxdown: {
 		num: 1831,
 		name: "Peradox-Down",
 		forme: "Down",
@@ -17765,7 +17765,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		eggGroups: ["Field"],
 	},
 	
-	peradox-up: {
+	peradoxup: {
 		num: 1831,
 		name: "Peradox-Up",
 		forme: "Up",
