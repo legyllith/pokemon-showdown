@@ -86147,7 +86147,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			curse: ["8L28"],
 		},
 	},
-	peradoxup{
+	peradoxup: {
 		learnset: {
 			curse: ["8L28"],
 		},
