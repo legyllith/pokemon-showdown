@@ -17713,6 +17713,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		weightkg: 80,
 		color: "White",
 		prevo: "Meowth-Proelos",
+		otherFormes: ["Pewowth-Fish"],
+		formeOrder: ["Pewowth", "Pewowth-Fish"],
 		evoLevel: 28,
 		eggGroups: ["Field"],
 	},
@@ -17720,6 +17722,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	pewowthfish: {
 		num: 1830,
 		name: "Pewowth-Fish",
+		baseForme: "Pewowth",
 		forme: "Fish",
 		types: ["Water","Fire"],
 		baseStats: {hp: 80, atk: 95, def: 85, spa: 75, spd: 90, spe: 15},
@@ -17729,8 +17732,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "White",
 		prevo: "Meowth-Proelos",
 		evoLevel: 28,
-		otherFormes: ["Pewowth-Fish"],
-		formeOrder: ["Pewowth", "Pewowth-Fish"],
 		eggGroups: ["Field"],
 	},
 	
@@ -17751,7 +17752,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	peradoxdown: {
 		num: 1831,
 		name: "Peradox-Down",
-		forme: "Down",
+		baseForme: "Down",
 		types: ["Psychic","Ghost"],
 		baseStats: {hp: 80, atk: 70, def: 60, spa: 50, spd: 65, spe: 115},
 		abilities: {0: "Fur Coat", 1: "Technician", H: "Snow Cloak"},
@@ -17769,6 +17770,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		num: 1831,
 		name: "Peradox-Up",
 		forme: "Up",
+		baseSpecies: "Peradox-Down",
 		types: ["Psychic","Normal"],
 		baseStats: {hp: 80, atk: 95, def: 85, spa: 75, spd: 90, spe: 15},
 		abilities: {0: "Fur Coat", 1: "Technician", H: "Snow Cloak"},
@@ -17777,8 +17779,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "White",
 		prevo: "Meowth-Tradessar",
 		evoLevel: 28,
-		otherFormes: ["Peradox-Down"],
-		formeOrder: ["Peradox-Down", "Peradox-Up"],
 		eggGroups: ["Field"],
 	},
 };
