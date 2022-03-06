@@ -6613,7 +6613,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	meowthtradessar: {
 		tier: "OU",
 	},
-	peradoxdown:{
+	peradox:{
 		tier: "OU",
 	},
 	peradoxup: {

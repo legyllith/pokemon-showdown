@@ -86142,7 +86142,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			zapcannon: ["7V"],
 		},
 	},
-	peradoxdown: {
+	peradox: {
 		learnset: {
 			curse: ["8L28"],
 		},
