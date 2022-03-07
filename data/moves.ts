@@ -14920,7 +14920,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 					chance: 60,
 					status: 'brn',
 				});
-		}
+			}
+		},
 		thawsTarget: true,
 		secondary: {
 			chance: 30,
