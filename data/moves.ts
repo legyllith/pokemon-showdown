@@ -883,6 +883,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 30,
 		priority: 1,
 		flags: {protect: 1, reflectable: 1, mirror: 1, allyanim: 1},
+		onModifyMove(move, pokemon) {
+			if (this.field.isTerrain('beachterrain')) move.boosts = {atk: -1, spa: -1};
+		}
 		boosts: {
 			atk: -1,
 		},
@@ -1970,6 +1973,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 				newType = 'Ground';
 			} else if (this.field.isTerrain('caveterrain')) {
 				newType = 'Rock';
+			}else if (this.field.isTerrain('beachterrain')) {
+				newType = 'Normal';
 			}
 			if (target.getTypes().join() === newType || !target.setType(newType)) return false;
 			this.add('-start', target, 'typechange', newType);
@@ -2104,6 +2109,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 20,
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1, allyanim: 1},
+		onModifyMove(move, pokemon) {
+			if (this.field.isTerrain('beachterrain')) move.boosts = {atk: -2, spa: -2};
+		}
 		boosts: {
 			atk: -2,
 		},
@@ -11929,6 +11937,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 				move = 'sandtomb';
 			} else if (this.field.isTerrain('caveterrain')) {
 				move = 'rocktomb';
+			}else if (this.field.isTerrain('beachterrain')) {
+				move = 'weatherball';
 			}
 			this.actions.useMove(move, pokemon, target);
 			return null;
@@ -14758,6 +14768,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		flags: {protect: 1, reflectable: 1, mirror: 1},
 		onModifyMove(move, pokemon) {
 			if (this.field.isTerrain('desertterrain')) move.boosts = {accuracy: -2};
+			if (this.field.isTerrain('beachterrain')) move.boosts = {accuracy: -2};
 		},
 		boosts: {
 			accuracy: -1,
@@ -14901,6 +14912,15 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, defrost: 1},
+		onModifyMove(move, pokemon) {
+			if (this.field.isTerrain('')) return;
+			move.secondaries = [];
+			if (this.field.isTerrain('beachterrain')) {
+				move.secondaries.push({
+					chance: 60,
+					status: 'brn',
+				});
+		},
 		thawsTarget: true,
 		secondary: {
 			chance: 30,
@@ -15028,6 +15048,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 				move.secondaries.push({
 					chance: 30,
 					volatileStatus: 'flinch',
+				});
+			}
+			else if (this.field.isTerrain('beachterrain')) {
+				move.secondaries.push({
+					chance: 30,
+					drain: [1, 2],
 				});
 			}
 		},
@@ -15458,7 +15484,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		flags: {snatch: 1, heal: 1},
 		onHit(pokemon) {
 			let factor = 0.5;
-			if (this.field.isWeather('sandstorm') || this.field.isTerrain('desertterrain')) {
+			if (this.field.isWeather('sandstorm') || this.field.isTerrain('desertterrain') || this.field.isTerrain('beachterrain')) {
 				factor = 0.667;
 			}
 			return !!this.heal(this.modify(pokemon.maxhp, factor));
@@ -18893,6 +18919,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 15,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
+		onModifyMove(move, pokemon) {
+			if (this.field.isTerrain('beachterrain')) move.boosts = {atk: -1, spa: -1};
+		},
 		secondary: {
 			chance: 100,
 			boosts: {
@@ -20078,14 +20107,18 @@ export const Moves: {[moveid: string]: MoveData} = {
 			},
 			onBasePowerPriority: 6,
 			onBasePower(basePower, attacker, defender, move) {
-				const weakenedMoves = ['earthquake', 'bulldoze', 'magnitude'];
-				if (weakenedMoves.includes(move.id) && defender.isGrounded() && !defender.isSemiInvulnerable()) {
-					this.debug('move weakened by beach terrain');
-					return this.chainModify(0.5);
+				const strenghtMoves = ['surf', 'watergun', 'waterspout','whirlpool','dragonhammer','bubble'];
+				if (strenghtMoves.includes(move.id) && defender.isGrounded() && !defender.isSemiInvulnerable()) {
+					this.debug('move strenght by beach terrain');
+					return this.chainModify(1.5);
 				}
-				if (move.type === 'Grass' && attacker.isGrounded()) {
-					this.debug('beach terrain boost');
-					return this.chainModify([5325, 4096]);
+				if (move.flags['bullet']) {
+				this.debug('move strenght by beach terrain');
+				return this.chainModify(1.5);
+				}
+				if (defender.bst < 486) {
+					this.debug('move strenght by beach terrain');
+					return this.chainModify(0.75);
 				}
 			},
 			onFieldStart(field, source, effect) {
@@ -20097,13 +20130,6 @@ export const Moves: {[moveid: string]: MoveData} = {
 			},
 			onResidualOrder: 5,
 			onResidualSubOrder: 2,
-			onResidual(pokemon) {
-				if (pokemon.isGrounded() && !pokemon.isSemiInvulnerable()) {
-					this.heal(pokemon.baseMaxhp / 16, pokemon, pokemon);
-				} else {
-					this.debug(`Pokemon semi-invuln or not grounded; Beach Terrain skipped`);
-				}
-			},
 			onFieldResidualOrder: 27,
 			onFieldResidualSubOrder: 7,
 			onFieldEnd() {
@@ -20151,6 +20177,13 @@ export const Moves: {[moveid: string]: MoveData} = {
 				if (poweredMoves.includes(move.id)) {
 					this.debug('desert terrain boost');
 					return this.chainModify(1.5);
+				}
+			},
+			onModifyMove(move, attacker, defender) {
+				if (['watersport','surf','waterspout','waterfall','hydrovortex'].includes(move.id)) {
+					this.field.clearTerrain();
+					this.add('-fieldend', 'move: Desert Terrain');
+					this.field.setTerrain('beachterrain')
 				}
 			},
 			onFieldStart(field, source, effect) {
