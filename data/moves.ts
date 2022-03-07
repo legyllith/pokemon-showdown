@@ -885,7 +885,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		flags: {protect: 1, reflectable: 1, mirror: 1, allyanim: 1},
 		onModifyMove(move, pokemon) {
 			if (this.field.isTerrain('beachterrain')) move.boosts = {atk: -1, spa: -1};
-		}
+		},
 		boosts: {
 			atk: -1,
 		},
