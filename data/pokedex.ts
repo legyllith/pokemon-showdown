@@ -17714,9 +17714,9 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		weightkg: 80,
 		color: "White",
 		prevo: "Meowth-Proelos",
+		evoLevel: 28,
 		otherFormes: ["Pewowth-Fish"],
 		formeOrder: ["Pewowth", "Pewowth-Fish"],
-		evoLevel: 28,
 		eggGroups: ["Field"],
 	},
 	
@@ -17730,9 +17730,9 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		abilities: {0: "Fur Coat", 1: "Technician", H: "Snow Cloak"},
 		heightm: 1.1,
 		weightkg: 80,
+		color: "White",
 		prevo: "Meowth-Proelos",
 		evoLevel: 28,
-		color: "White",
 		eggGroups: ["Field"],
 	},
 	
