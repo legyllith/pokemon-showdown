@@ -17709,7 +17709,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		forme: "Pirath",
 		types: ["Water","Fire"],
 		baseStats: {hp: 80, atk: 70, def: 60, spa: 50, spd: 65, spe: 115},
-		abilities: {0: "Fish Sword"}},
+		abilities: {0: "Fish Sword"},
 		heightm: 1.1,
 		weightkg: 80,
 		color: "Black",
