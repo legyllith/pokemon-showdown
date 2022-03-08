@@ -1744,4 +1744,8 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		name: "Oxymort",
 		shortDesc: "When this pokemon die, it deal 1/4 of ennemy HP as damage",
 	},
+	fishsword: {
+		name: "Fish Sword",
+		shortDesc: "When peowth dive he return with a fish, make it really stronger, he loose fish",
+	},
 };
