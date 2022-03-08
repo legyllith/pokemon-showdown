@@ -3437,6 +3437,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 				const forme = attacker.hp <= attacker.maxhp / 2 ? 'cramorantgorging' : 'cramorantgulping';
 				attacker.formeChange(forme, move);
 			}
+			if (attacker.hasAbility('fishsword') && attacker.species.name === 'Pewowth' && !attacker.transformed) {
+				attacker.formeChange('pewowthfish', move);
+			}
 			this.add('-prepare', attacker, move.name);
 			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
 				return;

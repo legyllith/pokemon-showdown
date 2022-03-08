@@ -4601,4 +4601,27 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 3,
 		num: 2001,
 	},
+	fishsword: {
+		onDamagingHit(damage, target, source, move) {
+			if (!source.hp || !source.isActive || target.transformed || target.isSemiInvulnerable()) return;
+			if (['pewowthfish'].includes(target.species.id)) {
+				this.damage(source.baseMaxhp / 4, source, target);
+				target.formeChange('pewowth', move);
+			}
+		},
+		// The Dive part of this mechanic is implemented in Dive's `onTryMove` in moves.ts
+		/*onSourceTryPrimaryHit(target, source, effect) {
+			if (
+				effect && effect.id === 'surf' && source.hasAbility('fishsword') &&
+				source.species.name === 'Cramorant' && !source.transformed
+			) {
+				const forme = source.hp <= source.maxhp / 2 ? 'cramorantgorging' : 'cramorantgulping';
+				source.formeChange(forme, effect);
+			}
+		},*/
+		isPermanent: true,
+		name: "Fish Sword",
+		rating: 2.5,
+		num: 2002,
+	},
 };
