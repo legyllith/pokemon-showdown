@@ -4649,12 +4649,15 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			source.heal(source.baseMaxhp / 3);
 			}
 		},
-		onTryHit(target, source, move) {
+		onImmunity(type, pokemon) {
+			if (type === 'Poison') return false;
+		},
+		/*onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Poison') {
 				this.add('-immune', target, '[from] ability: Sap Of Immortality');
 				return null;
 			}
-		},
+		},*/
 		name: "Sap Of Immortality",
 		rating: 4,
 		num: 2004,
