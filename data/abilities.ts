@@ -4624,6 +4624,8 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 2002,
 	},
 	shrodinger: {
+		onResidualOrder: 28,
+		onResidualSubOrder: 2,
 		onResidual(pokemon) {
 			if (this.randomChance(5, 10)) {
 					if(pokemon.Species.name === 'Peradox-Up"'){
