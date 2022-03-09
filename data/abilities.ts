@@ -4652,7 +4652,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		},
 		onPrepareHit(source, target, move) {
 			if (move.type === 'Grass') {
-			pokemon.heal(pokemon.baseMaxhp / 6);
+			source.heal(pokemon.baseMaxhp / 6);
 			}
 		},
 		name: "Sap Of Immortality",
