@@ -4628,12 +4628,12 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onResidualSubOrder: 2,
 		onResidual(pokemon) {
 			if (this.randomChance(5, 10)) {
-					if(pokemon.Species.name === 'Peradox-Up"'){
+					if(pokemon.species.id === 'peradoxup'){
 						pokemon.formeChange('Peradox');
 					}
 			}
 			else {
-					if(pokemon.Species.name === 'Peradox"'){
+					if(pokemon.species.id === 'peradox'){
 						pokemon.formeChange('Peradox-Up');
 					}
 			}
