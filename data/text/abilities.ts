@@ -1748,4 +1748,14 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		name: "Fish Sword",
 		shortDesc: "When peowth dive he return with a fish, make it really stronger, he loose fish",
 	},
+	
+	shrodinger: {
+		name: "Shrodinger",
+		shortDesc: "it is impossible to predict the form of peradox at the end of turn",
+	},
+	
+	sapofimmortality: {
+		name: "Sap Of Immortality",
+		shortDesc: "immune to poison type (not status) and regenerate 1/6 life when use grass move",
+	},
 };

@@ -4605,7 +4605,6 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onDamagingHit(damage, target, source, move) {
 			if (!source.hp || !source.isActive || target.transformed || target.isSemiInvulnerable()) return;
 			if (['pewowthfish'].includes(target.species.id)) {
-				this.damage(source.baseMaxhp / 4, source, target);
 				target.formeChange('pewowth', move);
 			}
 		},
@@ -4623,5 +4622,39 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		name: "Fish Sword",
 		rating: 2.5,
 		num: 2002,
+	},
+	shrodinger: {
+		onResidual(pokemon) {
+			if (this.randomChance(5, 10)) {
+					if(pokemon.Species.name === 'Peradox-Up"'){
+						pokemon.formeChange('Peradox');
+					}
+			}
+			else {
+					if(pokemon.Species.name === 'Peradox"'){
+						pokemon.formeChange('Peradox-Up');
+					}
+			}
+			
+		},
+		name: "Shrodinger",
+		rating: 2,
+		num: 2003,
+	},
+	sapofimmortality: {
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Poison') {
+				this.add('-immune', target, '[from] ability: Sap Of Immortality');
+				return null;
+			}
+		},
+		onPrepareHit(source, target, move) {
+			if (move.type === 'Grass') {
+			pokemon.heal(pokemon.baseMaxhp / 6);
+			}
+		},
+		name: "Sap Of Immortality",
+		rating: 4,
+		num: 2004,
 	},
 };
