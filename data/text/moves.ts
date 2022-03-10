@@ -6882,4 +6882,29 @@ export const MovesText: {[k: string]: MoveText} = {
 			desc: "If this move is successful, the user is locked into this move and cannot make another move until it misses, 5 turns have passed, or the attack cannot be used. Power doubles with each successful hit of this move and doubles again if Defense Curl was used previously by the user. If this move is called by Sleep Talk, the move is used for one turn.",
 		},
 	},
+	magmadive: {
+		name: "Magma Dive",
+		desc: "This attack charges on the first turn and executes on the second. On the first turn, the user avoids all attacks other than Surf and Whirlpool but takes double damage from them, and is also unaffected by weather. If the user is holding a Power Herb, the move completes in one turn.",
+		shortDesc: "Dives underwater turn 1, strikes turn 2.",
+	},
+	insectswarm: {
+		name: "Insect Swarm",
+		desc: "This move combines Flying in its type effectiveness against the target.",
+		shortDesc: "Combines Flying in its type effectiveness.",
+	},
+	shrodingerbox: {
+		name: "Shrodinger Box",
+		desc: "This move change depending on your type, put confusion, or boost your resistance",
+		shortDesc: "Depending on your type, put confusion, or boost your resistance",
+	},
+	gainbracket: {
+		name: "Gain Bracket",
+		desc: "This move combines Psychic in its type effectiveness against the target.High Critical Ratio",
+		shortDesc: "Combines Psychic in its type effectiveness with your primary Type, High critical ratio.",
+	},
+	allin: {
+		name: "All In",
+		desc: "Must recharge and heal 1/2 of damage done",
+		shortDesc: "Must recharge and heal 1/2 of damage done"
+	},
 };

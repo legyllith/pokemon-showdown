@@ -20445,4 +20445,147 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Water",
 		contestType: "Cute",
 	},
+	
+	magmadive: {
+		num: 2007,
+		accuracy: 100,
+		basePower: 80,
+		category: "Physical",
+		name: "Magma Dive",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, charge: 1, protect: 1, mirror: 1, nonsky: 1, allyanim: 1},
+		onTryMove(attacker, defender, move) {
+			if (attacker.removeVolatile(move.id)) {
+				return;
+			}
+			if (attacker.hasAbility('fishsword') && attacker.species.name === 'Pewowth' && !attacker.transformed) {
+				attacker.formeChange('pewowthfish', move);
+			}
+			this.add('-prepare', attacker, move.name);
+			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
+				return;
+			}
+			attacker.addVolatile('twoturnmove', defender);
+			return null;
+		},
+		condition: {
+			duration: 2,
+			onImmunity(type, pokemon) {
+				if (type === 'sandstorm' || type === 'hail') return false;
+			},
+			onInvulnerability(target, source, move) {
+				if (['earthquake', 'magnitude'].includes(move.id)) {
+					return;
+				}
+				return false;
+			},
+			onSourceModifyDamage(damage, source, target, move) {
+				if (move.id === 'earthquake' || move.id === 'magnitude') {
+					return this.chainModify(2);
+				}
+			},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Fire",
+		contestType: "Beautiful",
+	},
+	insectswarm: {
+		num: 2008,
+		accuracy: 100,
+		basePower: 90,
+		category: "Physical",
+		name: "Insect Swarm",
+		pp: 10,
+		flags: {contact: 1, protect: 1, mirror: 1, gravity: 1, distance: 1, nonsky: 1},
+		onEffectiveness(typeMod, target, type, move) {
+			return typeMod + this.dex.getEffectiveness('Flying', type);
+		},
+		priority: 0,
+		secondary: null,
+		target: "any",
+		type: "Bug",
+		zMove: {basePower: 170},
+		contestType: "Tough",
+	},
+	shrodingerbox: {
+		num: 2007,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Shrodinger Box",
+		pp: 10,
+		priority: 0,
+		flags: {bypasssub: 1},
+		volatileStatus: 'curse',
+		onModifyMove(move, source, target) {
+			if (!source.hasType('Ghost')) {
+				move.target = move.nonGhostTarget as MoveTarget;
+			}
+		},
+		onTryHit(target, source, move) {
+			if (!source.hasType('Ghost')) {
+				delete move.volatileStatus;
+				move.self = {boosts: {spd: 1, def: 1}};
+			} 
+		},
+		volatileStatus: 'confusion',
+		secondary: null,
+		target: "randomNormal",
+		nonGhostTarget: "self",
+		type: "Ghost",
+		contestType: "Tough",
+	},
+	gainbracket: {
+		num: 2008,
+		accuracy: 95,
+		basePower: 70,
+		category: "Physical",
+		isNonstandard: "Past",
+		name: "Gain Bracket",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, dance: 1},
+		critRatio: 2,
+		onModifyType(move, pokemon) {
+			let type = pokemon.getTypes()[0];
+			if (type === "Psychic") type = "???";
+			move.type = type;
+		},
+		onEffectiveness(typeMod, target, type, move) {
+			return typeMod + this.dex.getEffectiveness('Psychic', type);
+		},
+		secondary: null,
+		target: "normal",
+		type: "Normal",
+		contestType: "Tough",
+	},
+	allin: {
+		num: 2008,
+		accuracy: 100,
+		basePower: 120,
+		category: "Physical",
+		isNonstandard: "Past",
+		name: "All In",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, dance: 1},
+		drain: [1, 2],
+		self: {
+			volatileStatus: 'mustrecharge',
+		},
+		onModifyType(move, pokemon) {
+			let type = pokemon.getTypes()[0];
+			if (type === "Psychic") type = "???";
+			move.type = type;
+		},
+		onEffectiveness(typeMod, target, type, move) {
+			return typeMod + this.dex.getEffectiveness('Psychic', type);
+		},
+		secondary: null,
+		target: "normal",
+		type: "Normal",
+		contestType: "Tough",
+	},
 };
