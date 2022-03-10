@@ -17775,7 +17775,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		types: ["Normal","Psychic"],
 		baseStats: {hp: 80, atk: 95, def: 85, spa: 75, spd: 90, spe: 15},
 		abilities: {0: "Shrodinger"},
-		heightm: 1.1,"Normal"
+		heightm: 1.1,
 		weightkg: 80,
 		color: "White",
 		prevo: "Meowth-Tradessar",
