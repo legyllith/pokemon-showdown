@@ -20510,7 +20510,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		contestType: "Tough",
 	},
 	shrodingerbox: {
-		num: 2007,
+		num: 2009,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -20538,7 +20538,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		contestType: "Tough",
 	},
 	gainbracket: {
-		num: 2008,
+		num: 2010,
 		accuracy: 95,
 		basePower: 70,
 		category: "Physical",
@@ -20562,10 +20562,10 @@ export const Moves: {[moveid: string]: MoveData} = {
 		contestType: "Tough",
 	},
 	allin: {
-		num: 2008,
+		num: 2011,
 		accuracy: 100,
-		basePower: 120,
-		category: "Physical",
+		basePower: 150,
+		category: "Special",
 		isNonstandard: "Past",
 		name: "All In",
 		pp: 15,
