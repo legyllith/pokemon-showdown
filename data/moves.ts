@@ -20529,6 +20529,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 				delete move.volatileStatus;
 				delete move.boosts;
 				delete move.secondary;
+				move.type = "normal";
 				move.secondary = null;
 				move.basePower = 0;
 				move.self = {boosts: {spd: 1, def: 1}};
@@ -20568,7 +20569,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "Psychic",
 		contestType: "Tough",
 	},
 	
@@ -20582,7 +20583,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 15,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, dance: 1},
-		drain: [1, 2],
+		drain: [1, 4],
 		self: {
 			volatileStatus: 'mustrecharge',
 		},
@@ -20596,19 +20597,19 @@ export const Moves: {[moveid: string]: MoveData} = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "Psychic",
 		contestType: "Tough",
 	},
 	
 	pokerface: {
 		num: 2012,
 		accuracy: 100,
-		basePower: 85,
+		basePower: 95,
 		category: "Special",
 		name: "Poker Face",
 		pp: 10,
 		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1},
+		flags: {contact: 1, protect: 1, mirror: 1, bypasssub: 1},
 		drain: [1, 2],
 		self: {
 			volatileStatus: 'lockedmove',
