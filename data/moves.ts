@@ -20556,7 +20556,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			atk: 1,
 		},
 		secondary: {
-			let factor = 100;
+			const factor = 100;
 			if (!pokemon.hasType('Ghost')) {
 				factor = 0;
 			}
