@@ -20514,6 +20514,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		accuracy: true,
 		basePower: 20,
 		category: "Physical",
+		nonGhostCategory: "special",
 		name: "Shrodinger Box",
 		pp: 10,
 		priority: 0,
@@ -20522,19 +20523,20 @@ export const Moves: {[moveid: string]: MoveData} = {
 		onModifyMove(move, source, target) {
 			if (!source.hasType('Ghost')) {
 				move.target = move.nonGhostTarget as MoveTarget;
+				move.category = move.nonGhostCategory as MoveCategory;
 			}
 		},
-		onModifyType(move, pokemon) {
+		/*onModifyType(move, pokemon) {
 			if (!pokemon.hasType('Ghost')) {
 				move.type = "normal";
 			}
-		},
+		},*/
 		onTryHit(target, source, move) {
 			if (!source.hasType('Ghost')) {
 				delete move.volatileStatus;
 				delete move.boosts;
 				delete move.secondary;
-				move.basePower = 0;
+				//move.basePower = 0;
 				move.secondary = null;
 				move.self = {boosts: {spd: 1, def: 1}};
 				/*secondary: {
