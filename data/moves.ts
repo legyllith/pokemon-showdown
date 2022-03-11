@@ -20519,7 +20519,6 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {bypasssub: 1},
-		volatileStatus: 'curse',
 		onModifyMove(move, source, target) {
 			if (!source.hasType('Ghost')) {
 				move.target = move.nonGhostTarget as MoveTarget;
