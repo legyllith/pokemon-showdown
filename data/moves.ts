@@ -20531,11 +20531,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 				});
 			}
 		},
-		onModifyType(move, pokemon) {
+		/*onModifyType(move, pokemon) {
 			if (!pokemon.hasType('Ghost')) {
 				move.type = "normal";
 			}
-		},
+		},*/
 		onTryHit(target, source, move) {
 			if (!source.hasType('Ghost')) {
 				delete move.volatileStatus;
@@ -20553,7 +20553,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		},
 		target: "normal",
 		nonGhostTarget: "self",
-		type: "Ghost",
+		type: "Normal",
 		contestType: "Tough",
 	},
 	gainbracket: {
