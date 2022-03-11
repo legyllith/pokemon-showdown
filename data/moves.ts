@@ -20524,6 +20524,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 			if (!source.hasType('Ghost')) {
 				move.target = move.nonGhostTarget as MoveTarget;
 				move.category = move.nonGhostCategory as MoveCategory;
+				move.basePower = 0;
+				move.secondary = null;
 			}
 		},
 		/*onModifyType(move, pokemon) {
