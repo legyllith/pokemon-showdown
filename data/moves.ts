@@ -20525,7 +20525,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			}
 		},
 		onModifyType(move, pokemon) {
-			(!source.hasType('Ghost')) {
+			if (!source.hasType('Ghost')) {
 				move.type = "normal";
 			}
 		},
