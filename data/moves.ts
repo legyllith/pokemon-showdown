@@ -20525,15 +20525,15 @@ export const Moves: {[moveid: string]: MoveData} = {
 				move.target = move.nonGhostTarget as MoveTarget;
 				move.category = move.nonGhostCategory as MoveCategory;
 				move.basePower = 0;
-				delete move.secondary;
-				move.secondary = null;
+				//delete move.secondary;
+				//move.secondary = null;
 			}
 		},
-		/*onModifyType(move, pokemon) {
+		onModifyType(move, pokemon) {
 			if (!pokemon.hasType('Ghost')) {
 				move.type = "normal";
 			}
-		},*/
+		},
 		onTryHit(target, source, move) {
 			if (!source.hasType('Ghost')) {
 				delete move.volatileStatus;
@@ -20556,12 +20556,16 @@ export const Moves: {[moveid: string]: MoveData} = {
 			atk: 1,
 		},
 		secondary: {
-			chance: 100,
+			let factor = 100;
+			if (!pokemon.hasType('Ghost')) {
+				factor = 0;
+			}
+			chance: factor,
 			volatileStatus: 'confusion',
 		},
 		target: "normal",
 		nonGhostTarget: "self",
-		type: "Normal",
+		type: "Ghost",
 		contestType: "Tough",
 	},
 	gainbracket: {
