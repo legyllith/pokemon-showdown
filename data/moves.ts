@@ -20530,6 +20530,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 					chance: 0,
 					volatileStatus: 'confusion',
 				});
+			}
 		},
 		onModifyType(move, pokemon) {
 			if (!pokemon.hasType('Ghost')) {
