@@ -20522,6 +20522,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		onModifyMove(move, source, target) {
 			if (!source.hasType('Ghost')) {
 				move.target = move.nonGhostTarget as MoveTarget;
+				move.type = "normal";
 			}
 		},
 		onTryHit(target, source, move) {
@@ -20529,9 +20530,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 				delete move.volatileStatus;
 				delete move.boosts;
 				delete move.secondary;
-				move.type = "normal";
-				move.secondary = null;
 				move.basePower = 0;
+				move.secondary = null;
 				move.self = {boosts: {spd: 1, def: 1}};
 			} 
 		},
