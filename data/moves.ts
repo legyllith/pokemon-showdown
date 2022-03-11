@@ -20604,7 +20604,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	pokerface: {
 		num: 2012,
 		accuracy: 100,
-		basePower: 95,
+		basePower: 90,
 		category: "Special",
 		name: "Poker Face",
 		pp: 10,
