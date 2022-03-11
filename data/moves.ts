@@ -20535,11 +20535,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 			}
 		},
 		onTryHit(target, source, move) {
-			let factor = 100;
+			//let factor = 100;
 			/*if (!pokemon.hasType('Ghost')) {
 			}*/
 			if (!source.hasType('Ghost')) {
-				factor = 0;
+				//factor = 0;
 				delete move.volatileStatus;
 				delete move.boosts;
 				//move.basePower = 0;
@@ -20560,7 +20560,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			atk: 1,
 		},
 		secondary: {
-			chance: factor,
+			chance: (this.hasType('Ghost') ? 100 : 0),
 			volatileStatus: 'confusion',
 		},
 		target: "normal",
