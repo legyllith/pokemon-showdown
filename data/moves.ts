@@ -20522,6 +20522,10 @@ export const Moves: {[moveid: string]: MoveData} = {
 		onModifyMove(move, source, target) {
 			if (!source.hasType('Ghost')) {
 				move.target = move.nonGhostTarget as MoveTarget;
+			}
+		},
+		onModifyType(move, pokemon) {
+			(!source.hasType('Ghost')) {
 				move.type = "normal";
 			}
 		},
@@ -20533,6 +20537,14 @@ export const Moves: {[moveid: string]: MoveData} = {
 				move.basePower = 0;
 				move.secondary = null;
 				move.self = {boosts: {spd: 1, def: 1}};
+				/*secondary: {
+					chance: 100,
+					self: {
+						boosts: {
+							atk: 1,
+						},
+					},
+				},*/
 			} 
 		},
 		volatileStatus: 'confusion',
