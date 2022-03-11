@@ -20559,7 +20559,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		},
 		target: "normal",
 		nonGhostTarget: "self",
-		type: "Ghost",
+		type: "normal",
 		contestType: "Tough",
 	},
 	gainbracket: {
