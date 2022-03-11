@@ -20525,6 +20525,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 				move.target = move.nonGhostTarget as MoveTarget;
 				move.category = move.nonGhostCategory as MoveCategory;
 				move.basePower = 0;
+				delete move.secondary;
 				move.secondary = null;
 			}
 		},
@@ -20537,7 +20538,6 @@ export const Moves: {[moveid: string]: MoveData} = {
 			if (!source.hasType('Ghost')) {
 				delete move.volatileStatus;
 				delete move.boosts;
-				delete move.secondary;
 				//move.basePower = 0;
 				//move.secondary = null;
 				move.self = {boosts: {spd: 1, def: 1}};
