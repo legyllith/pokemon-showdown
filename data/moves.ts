@@ -20512,8 +20512,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 	shrodingerbox: {
 		num: 2009,
 		accuracy: true,
-		basePower: 0,
-		category: "Status",
+		basePower: 20,
+		category: "Physical",
 		name: "Shrodinger Box",
 		pp: 10,
 		priority: 0,
@@ -20527,12 +20527,22 @@ export const Moves: {[moveid: string]: MoveData} = {
 		onTryHit(target, source, move) {
 			if (!source.hasType('Ghost')) {
 				delete move.volatileStatus;
+				delete move.boosts;
+				delete move.secondary;
+				move.secondary = null;
+				move.basePower = 0;
 				move.self = {boosts: {spd: 1, def: 1}};
 			} 
 		},
 		volatileStatus: 'confusion',
-		secondary: null,
-		target: "randomNormal",
+		boosts: {
+			atk: 1,
+		},
+		secondary: {
+			chance: 100,
+			volatileStatus: 'confusion',
+		},
+		target: "normal",
 		nonGhostTarget: "self",
 		type: "Ghost",
 		contestType: "Tough",
@@ -20561,6 +20571,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Normal",
 		contestType: "Tough",
 	},
+	
 	allin: {
 		num: 2011,
 		accuracy: 100,
@@ -20587,5 +20598,37 @@ export const Moves: {[moveid: string]: MoveData} = {
 		target: "normal",
 		type: "Normal",
 		contestType: "Tough",
+	},
+	
+	pokerface: {
+		num: 2012,
+		accuracy: 100,
+		basePower: 85,
+		category: "Special",
+		name: "Poker Face",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		drain: [1, 2],
+		self: {
+			volatileStatus: 'lockedmove',
+		},
+		onAfterMove(pokemon) {
+			if (pokemon.volatiles['lockedmove'] && pokemon.volatiles['lockedmove'].duration === 1) {
+				pokemon.removeVolatile('lockedmove');
+			}
+		},
+		onModifyType(move, pokemon) {
+			let type = pokemon.getTypes()[0];
+			if (type === "Dark") type = "???";
+			move.type = type;
+		},
+		onEffectiveness(typeMod, target, type, move) {
+			return typeMod + this.dex.getEffectiveness('Dark', type);
+		},
+		secondary: null,
+		target: "randomNormal",
+		type: "Dark",
+		contestType: "Cool",
 	},
 };

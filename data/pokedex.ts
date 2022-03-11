@@ -17773,7 +17773,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		forme: "Up",
 		baseSpecies: "Peradox",
 		types: ["Normal","Psychic"],
-		baseStats: {hp: 80, atk: 75, def: 95, spa: 65, spd: 110, spe: 15},
+		baseStats: {hp: 80, atk: 75, def: 110, spa: 65, spd: 125, spe: 25},
 		abilities: {0: "Shrodinger"},
 		heightm: 1.1,
 		weightkg: 80,
