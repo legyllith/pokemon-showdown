@@ -86079,6 +86079,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	meowthtradessar: {
 		learnset: {
 			psywave: ["8L1"],
+			pokerface: ["8L35"],
 			astonish: ["8L1"],
 			payday: ["8L12"], 
 			confusion: ["8L9"],
@@ -86102,7 +86103,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			cut: ["7V", "6M", "5M", "4M", "3M"],
 			thrash: ["8L35"],
 			outrage: ["8L47"],
-			rollout: ["8L15"], 
+			rollout: ["8L15"],
 		},
 	},
 	peradox: {
