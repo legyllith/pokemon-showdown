@@ -20535,7 +20535,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			}
 		},
 		onTryHit(target, source, move) {
-			const factor = 100;
+			let factor = 100;
 			/*if (!pokemon.hasType('Ghost')) {
 			}*/
 			if (!source.hasType('Ghost')) {
