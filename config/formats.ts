@@ -21,14 +21,13 @@ export const Formats: FormatList = [
 
 	// Sw/Sh Singles
 	///////////////////////////////////////////////////////////////////
-
 	{
 		section: "Normal Battles",
 	},
 	{
 		name: "Standard Normal Battle",
 		mod: 'gen8',
-		ruleset: ['Standard NatDex', 'Species Clause', 'Dynamax Clause', 'Adjust Level = 20'],
+		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 20'],
 		
 	},
 	{
