@@ -17726,7 +17726,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		baseSpecies: "Pewowth",
 		forme: "Fish",
 		types: ["Water","Fire"],
-		baseStats: {hp: 80, atk: 95, def: 85, spa: 75, spd: 90, spe: 15},
+		baseStats: {hp: 80, atk: 95, def: 105, spa: 85, spd: 95, spe: 13},
 		abilities: {0: "Fish Sword"},
 		heightm: 1.1,
 		weightkg: 120,

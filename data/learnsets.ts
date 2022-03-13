@@ -86115,6 +86115,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			thrash: ["8L35"],
 			outrage: ["8L47"],
 			rollout: ["8L15"],
+			round: ["8M", "7M"],
 		},
 	},
 	peradox: {
