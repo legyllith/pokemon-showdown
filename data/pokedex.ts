@@ -11867,7 +11867,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		num: 690,
 		name: "Skrelp",
 		types: ["Poison", "Water"],
-		baseStats: {hp: 50, atk: 60, def: 60, spa: 60, spd: 60, spe: 30},
+		baseStats: {hp: 58, atk: 68, def: 68, spa: 68, spd: 68, spe: 30},
 		abilities: {0: "Poison Point", 1: "Poison Touch", H: "Adaptability"},
 		heightm: 0.5,
 		weightkg: 7.3,
