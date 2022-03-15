@@ -12264,7 +12264,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		num: 714,
 		name: "Noibat",
 		types: ["Flying", "Dragon"],
-		baseStats: {hp: 60, atk: 40, def: 45, spa: 70, spd: 55, spe: 20},
+		baseStats: {hp: 60, atk: 40, def: 45, spa: 70, spd: 55, spe: 75},
 		abilities: {0: "Frisk", 1: "Infiltrator", H: "Telepathy"},
 		heightm: 0.5,
 		weightkg: 8,
