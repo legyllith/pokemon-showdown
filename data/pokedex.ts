@@ -17814,4 +17814,5 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		prevo: "Dwebble-Proelos",
 		evoLevel: 34,
 		eggGroups: ["Bug", "Mineral"],
+	},
 };
