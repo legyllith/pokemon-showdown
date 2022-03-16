@@ -6619,4 +6619,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	peradoxup: {
 		tier: "OU",
 	},	
+	dwebbleproelos: {
+		tier: "OU",
+	},
+	crustleproelos: {
+		tier: "OU",
+	},
 };

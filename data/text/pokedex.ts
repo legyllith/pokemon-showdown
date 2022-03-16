@@ -3807,4 +3807,10 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	peradoxup: {
 		name: "Peradox-Up",
 	},
+	dwebbleproelos: {
+		name: "Dwebble-Proelos",
+	},
+	crustleproelos: {
+		name: "Crustle-Proelos",
+	},
 };
