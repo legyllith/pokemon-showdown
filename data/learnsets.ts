@@ -56141,6 +56141,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			rocksmash: ["6M", "5M"],
 			rollout: ["7L6", "6L6", "5L6"],
 			round: ["8M", "7M", "6M", "5M"],
+			sandstorm: ["8M", "7M", "6M", "5M"],
 			secretpower: ["6M"],
 			seedbomb: ["8M", "7T", "7E", "6T", "6E", "5T", "5E"],
 			selfdestruct: ["8M", "8L30", "7L38", "6L38", "5L38"],
