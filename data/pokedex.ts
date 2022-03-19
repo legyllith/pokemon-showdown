@@ -9143,7 +9143,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		num: 517,
 		name: "Munna",
 		types: ["Psychic"],
-		baseStats: {hp: 76, atk: 25, def: 45, spa: 67, spd: 55, spe: 24},
+		baseStats: {hp: 86, atk: 25, def: 55, spa: 77, spd: 65, spe: 24},
 		abilities: {0: "Forewarn", 1: "Synchronize", H: "Telepathy"},
 		heightm: 0.6,
 		weightkg: 23.3,

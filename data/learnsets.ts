@@ -83913,7 +83913,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	rugeille: {
 		learnset: {
 			twister: ["8L18"],
-			dragonrage: ["8L25"],
+			dragonrage: ["8L26"],
 			astonish: ["8L1", "7L11"],
 			attract: ["8M", "7M"],
 			batonpass: ["8M"],
