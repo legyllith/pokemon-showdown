@@ -6504,7 +6504,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		forme: "School",
 		types: ["Water","Flying"],
 		baseStats: {hp: 43, atk: 138, def: 125, spa: 145, spd: 140, spe: 30},
-		abilities: {0: "Swift Swim",1: "Schooling" H: "Hydration"},
+		abilities: {0: "Swift Swim",1: "Schooling", H: "Hydration"},
 		heightm: 8.2,
 		weightkg: 78.6,
 		color: "Pink",
