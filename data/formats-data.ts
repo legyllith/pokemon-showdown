@@ -2594,8 +2594,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		doublesTier: "(DUU)",
 	},
 	luvdisc: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "OU",
+	},
+	luvdiscschool: {
+		tier: "OU",
 	},
 	bagon: {
 		tier: "LC",
@@ -6570,6 +6572,9 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	floettetradessar: {
 		tier: "OU",
 	},
+	floetteephemeral: {
+		tier: "OU",
+	},
 	florgestradessar: {
 		tier: "OU",
 	},
@@ -6594,7 +6599,6 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	nerukusummer: {
 		tier: "OU",
 	},
-	
 	meowthraott: {
 		tier: "OU",
 	},
@@ -6623,6 +6627,24 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "OU",
 	},
 	crustleproelos: {
+		tier: "OU",
+	},
+	huntin: {
+		tier: "OU",
+	},
+	lunapin: {
+		tier: "OU",
+	},
+	butterfreetradessar: {
+		tier: "OU",
+	},
+	bourgon: {
+		tier: "OU",
+	},
+	bourlousson: {
+		tier: "OU",
+	},
+	droseon: {
 		tier: "OU",
 	},
 };

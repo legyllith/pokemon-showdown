@@ -1406,6 +1406,9 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	luvdisc: {
 		name: "Luvdisc",
 	},
+	luvdiscschool: {
+		name: "Luvdisc-School",
+	},
 	bagon: {
 		name: "Bagon",
 	},
@@ -3758,6 +3761,10 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	floettetradessar: {
 		name: "Floette-Tradessar",
 	},
+	
+	floetteephemeral: {
+		name: "Floette-Ephemeral",
+	},
 	florgestradessar: {
 		name: "Florges-Tradessar",
 	},
@@ -3812,5 +3819,23 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	},
 	crustleproelos: {
 		name: "Crustle-Proelos",
+	},
+	huntin: {
+		name: "Huntin",
+	},
+	lunapin: {
+		name: "Lunapin",
+	},
+	butterfreetradessar: {
+		name: "Butterfree-Tradessar",
+	},
+	bourgon: {
+		name: "Bourgon",
+	},
+	bourlousson: {
+		name: "Bourlousson",
+	},
+	droseon: {
+		name: "Droseon",
 	},
 };
