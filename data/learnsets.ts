@@ -86549,7 +86549,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 		},
 	},
 	
-	skrelp: {
+	bourgon: {
 		learnset: {
 			acid: ["8L5", "7L15", "6L15"],
 			acidarmor: ["8E", "7E", "6E"],
