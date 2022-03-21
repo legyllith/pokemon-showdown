@@ -25,25 +25,25 @@ export const Formats: FormatList = [
 		section: "Normal Battles",
 	},
 	{
-		name: "Standard Normal Battle",
+		name: "[Gen 8] Standard Normal Battle",
 		mod: 'gen8',
 		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 25'],
 		
 	},
 	{
-		name: "Tournament 1",
+		name: "[Gen 8] Tournament 1",
 		mod: 'gen8',
 		ruleset: ['Standard NatDex', 'Species Clause', 'Dynamax Clause', 'Adjust Level = 10', 'Electric Terrain Rule'],
 		
 	},
 	{
-		name: "Tournament 2",
+		name: "[Gen 8] Tournament 2",
 		mod: 'gen8',
 		ruleset: ['Standard NatDex', 'Species Clause', 'Dynamax Clause', 'Adjust Level = 20', 'Desert Terrain Rule'],
 		
 	},
 	{
-		name: "Boss",
+		name: "[Gen 8] Boss",
 		mod: 'gen8',
 		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 25', '! EV Limit',],
 		
@@ -52,7 +52,7 @@ export const Formats: FormatList = [
 		section: "Double Battles",
 	},
 	{
-		name: "Standard Double Battle",
+		name: "[Gen 8] Standard Double Battle",
 		gameType: 'doubles',
 		mod: 'gen8',
 		ruleset: ['Standard NatDex', 'Species Clause', 'Dynamax Clause', 'Adjust Level = 25'],
