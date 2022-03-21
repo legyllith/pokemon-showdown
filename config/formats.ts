@@ -27,7 +27,7 @@ export const Formats: FormatList = [
 	{
 		name: "Standard Normal Battle",
 		mod: 'gen8',
-		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 20'],
+		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 25'],
 		
 	},
 	{
@@ -43,13 +43,19 @@ export const Formats: FormatList = [
 		
 	},
 	{
+		name: "Boss",
+		mod: 'gen8',
+		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 25', '! EV Limit',],
+		
+	},
+	{
 		section: "Double Battles",
 	},
 	{
 		name: "Standard Double Battle",
 		gameType: 'doubles',
 		mod: 'gen8',
-		ruleset: ['Standard NatDex', 'Species Clause', 'Dynamax Clause', 'Adjust Level = 20'],
+		ruleset: ['Standard NatDex', 'Species Clause', 'Dynamax Clause', 'Adjust Level = 25'],
 		
 	},
 	];
