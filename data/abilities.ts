@@ -3217,14 +3217,22 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	schooling: {
 		onStart(pokemon) {
-			if (pokemon.baseSpecies.baseSpecies !== 'Wishiwashi' || pokemon.level < 20 || pokemon.transformed) return;
+			if (pokemon.baseSpecies.baseSpecies !== 'Wishiwashi' || pokemon.level < 20 || pokemon.transformed){
+			 if (pokemon.baseSpecies.baseSpecies !== 'Luvdisc') return;
+			}
 			if (pokemon.hp > pokemon.maxhp / 4) {
 				if (pokemon.species.id === 'wishiwashi') {
 					pokemon.formeChange('Wishiwashi-School');
 				}
+				if (pokemon.species.id === 'luvdisc') {
+					pokemon.formeChange('Luvdisc-School');
+				}
 			} else {
 				if (pokemon.species.id === 'wishiwashischool') {
 					pokemon.formeChange('Wishiwashi');
+				}
+				if (pokemon.species.id === 'luvdiscschool') {
+					pokemon.formeChange('Luvdisc');
 				}
 			}
 		},
@@ -3233,14 +3241,22 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (
 				pokemon.baseSpecies.baseSpecies !== 'Wishiwashi' || pokemon.level < 20 ||
 				pokemon.transformed || !pokemon.hp
-			) return;
+			) {
+				if (pokemon.baseSpecies.baseSpecies !== 'Luvdisc') return;
+			}
 			if (pokemon.hp > pokemon.maxhp / 4) {
 				if (pokemon.species.id === 'wishiwashi') {
 					pokemon.formeChange('Wishiwashi-School');
 				}
+				if (pokemon.species.id === 'luvdisc') {
+					pokemon.formeChange('Luvdisc-School');
+				}
 			} else {
 				if (pokemon.species.id === 'wishiwashischool') {
 					pokemon.formeChange('Wishiwashi');
+				}
+				if (pokemon.species.id === 'luvdiscschool') {
+					pokemon.formeChange('Luvdisc');
 				}
 			}
 		},
