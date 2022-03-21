@@ -85383,6 +85383,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			helpinghand: ["7T", "6T"],
 			hiddenpower: ["7M", "6M"],
 			luckychant: ["7L10", "6L10"],
+			leechseed: ["6E"],
 			magicalleaf: ["7L22", "6L22"],
 			magiccoat: ["7T", "6T"],
 			naturepower: ["7M", "6M"],
