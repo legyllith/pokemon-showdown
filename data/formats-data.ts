@@ -6646,5 +6646,8 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	},
 	droseon: {
 		tier: "OU",
+	},	
+	mawileproelos: {
+		tier: "OU",
 	},
 };

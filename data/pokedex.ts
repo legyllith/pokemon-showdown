@@ -278,7 +278,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		evoLevel: 10,
 		eggGroups: ["Bug"],
 		otherFormes: ["Butterfree-Tradessar"],
-		formeOrder: ["Rattata", "Butterfree-Tradessar"],
+		formeOrder: ["Butterfree", "Butterfree-Tradessar"],
 		canGigantamax: "G-Max Befuddle",
 	},
 	butterfreegmax: {
@@ -5446,8 +5446,9 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		weightkg: 11.5,
 		color: "Black",
 		eggGroups: ["Field", "Fairy"],
-		otherFormes: ["Mawile-Mega"],
-		formeOrder: ["Mawile", "Mawile-Mega"],
+		otherFormes: ["Mawile-Mega","Mawile-Proelos"],
+		formeOrder: ["Mawile", "Mawile-Mega","Mawile-Proelos"],
+
 	},
 	mawilemega: {
 		num: 303,
@@ -17931,5 +17932,18 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		prevo: "Bourlousson",
 		evoLevel: 50,
 		eggGroups: ["Amorphous", "Dragon"],
+	},	
+	mawileproelos: {
+		num: 303,
+		name: "Mawile-Proelos",
+		baseSpecies: "Mawile",
+		forme: "Proelos",
+		types: ["Steel", "Bug"],
+		baseStats: {hp: 57, atk: 25, def: 80, spa: 90, spd: 50, spe: 73},
+		abilities: {0: "Hyper Cutter", 1: "Intimidate", H: "Sheer Force"},
+		heightm: 0.6,
+		weightkg: 11.5,
+		color: "Black",
+		eggGroups: ["Bug", "Fairy"],
 	},
 };
