@@ -17613,7 +17613,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	orkitty: {
 		num: 1827,
 		name: "Orkitty",
-		types: ["Grass"],
+		types: ["Grass","Fairy"],
 		baseStats: {hp: 50, atk: 45, def: 45, spa: 45, spd: 45, spe: 40},
 		abilities: {0: "Sap Of Immortality"},
 		heightm: 0.2,
@@ -17625,8 +17625,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	felidacea: {
 		num: 1828,
 		name: "Felidacea",
-		types: ["Grass"],
-		baseStats: {hp: 69, atk: 60, def: 63, spa: 60, spd: 64, spe: 69},
+		types: ["Grass","Fairy"],
+		baseStats: {hp: 79, atk: 69, def: 73, spa: 69, spd: 74, spe: 69},
 		abilities: {0: "Sap Of Immortality"},
 		heightm: 0.2,
 		weightkg: 3.4,
