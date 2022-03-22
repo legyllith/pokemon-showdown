@@ -20157,9 +20157,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		flags: {nonsky: 1},
 		terrain: 'desertterrain',
 		condition: {
-			duration: 99,
+			duration: 5,
 			durationCallback(source, effect) {
-				return 99;
+				if (source?.hasItem('terrainextender')) {
+					return 8;
+				}
+				return 5;
 			},
 			onModifySpDPriority: 10,
 			onModifySpD(spd, pokemon) {
@@ -20639,5 +20642,86 @@ export const Moves: {[moveid: string]: MoveData} = {
 		target: "randomNormal",
 		type: "Dark",
 		contestType: "Cool",
+	},
+	friendshippower: {
+		num: 2013,
+		accuracy: 100,
+		basePower: 0,
+		basePowerCallback(pokemon, target, move) {
+			return 5 + Math.floor(move.allies!.shift()!.species.baseStats.atk / 10);
+		},
+		category: "Physical",
+		name: "Friendship Power",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, allyanim: 1},
+		onModifyMove(move, pokemon) {
+			move.allies = pokemon.side.pokemon.filter(ally => ally === pokemon || !ally.fainted && !ally.status);
+			move.multihit = move.allies.length;
+		},
+		secondary: null,
+		target: "normal",
+		type: "Fairy",
+		contestType: "Clever",
+	},
+	sharingan: {
+		num: 2014,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Sharingan",
+		pp: 10,
+		flags: {},
+		stallingMove: true,
+		volatileStatus: 'spikyshield',
+		onPrepareHit(pokemon) {
+			return !!this.queue.willAct() && this.runEvent('StallMove', pokemon);
+		},
+		onHit(pokemon) {
+			pokemon.addVolatile('stall');
+		},
+		secondary: null,
+		target: "self",
+		type: "Psychic",
+		zMove: {boost: {def: 1}},
+		contestType: "Tough",
+	},
+	hunger: {
+		num: 2015,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Hunger",
+		pp: 10,
+		priority: 0,
+		flags: {snatch: 1, heal: 1},
+		onTry(source) {
+			if (source.status === 'slp' || (source.hasAbility('comatose') && !this.field.isTerrain('electricterrain'))) return false;
+
+			if (source.hp === source.maxhp) {
+				this.add('-fail', source, 'heal');
+				return null;
+			}
+			if (source.hasAbility(['insomnia', 'vitalspirit'])) {
+				this.add('-fail', source, '[from] ability: ' + source.getAbility().name, '[of] ' + source);
+				return null;
+			}
+			return !this.field.isTerrain('');
+		},
+		onHit(target, source, move) {
+			if (!target.setStatus('slp', source, move)) return false;
+			target.statusState.time = 3;
+			target.statusState.startTime = 3;
+			this.heal(target.maxhp); // Aesthetic only as the healing happens after you fall asleep in-game
+			this.field.clearTerrain();
+		},
+		onAfterSubDamage() {
+			this.field.clearTerrain();
+		},
+		secondary: null,
+		target: "self",
+		type: "Insect",
+		zMove: {effect: 'clearnegativeboost'},
+		contestType: "Cute",
 	},
 };

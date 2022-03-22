@@ -4675,4 +4675,12 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 4,
 		num: 2004,
 	},
+	desertsurge: {
+		onStart(source) {
+			this.field.setTerrain('desertterrain');
+		},
+		name: "Desert Surge",
+		rating: 4,
+		num: 2005,
+	},
 };
