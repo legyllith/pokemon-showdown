@@ -618,6 +618,9 @@ export const Conditions: {[k: string]: ConditionData} = {
 			if (pokemon.hasType('Rock') && this.field.isWeather('sandstorm')) {
 				return this.modify(spd, 1.5);
 			}
+			if (pokemon.hasType('Bug') && this.field.isWeather('sandstorm') && this.field.isTerrain('beachterrain')) {
+				return this.modify(spd, 1.5);
+			}
 		},
 		onFieldStart(field, source, effect) {
 			if (effect?.effectType === 'Ability') {
@@ -648,6 +651,12 @@ export const Conditions: {[k: string]: ConditionData} = {
 				return 8;
 			}
 			return 5;
+		},
+		onModifyDefPriority: 10,
+		onModifyDef(def, pokemon) {
+			if (pokemon.hasType('Ice') && this.field.isWeather('hail')) {
+				return this.modify(def, 1.5);
+			}
 		},
 		onFieldStart(field, source, effect) {
 			if (effect?.effectType === 'Ability') {

@@ -20113,17 +20113,30 @@ export const Moves: {[moveid: string]: MoveData} = {
 			onBasePower(basePower, attacker, defender, move) {
 				const strenghtMoves = ['surf', 'watergun', 'waterspout','whirlpool','dragonhammer','bubble'];
 				if (strenghtMoves.includes(move.id) && defender.isGrounded() && !defender.isSemiInvulnerable()) {
+					if (defender.bst < 486) {
+						this.debug('move strenght a little by beach terrain');
+						return this.chainModify(1.125);
+					}
+					else {
 					this.debug('move strenght by beach terrain');
 					return this.chainModify(1.5);
+					}
 				}
 				if (move.flags['bullet']) {
-				this.debug('move strenght by beach terrain');
-				return this.chainModify(1.5);
+				if (defender.bst < 486) {
+						this.debug('move strenght a little by beach terrain');
+						return this.chainModify(1.125);
+					}
+					else {
+						this.debug('move strenght by beach terrain');
+						return this.chainModify(1.5);
+					}
 				}
 				if (defender.bst < 486) {
-					this.debug('move strenght by beach terrain');
-					return this.chainModify(0.75);
-				}
+						this.debug('move decrease by beach terrain');
+						return this.chainModify(0.75);
+				}	
+				
 			},
 			onFieldStart(field, source, effect) {
 				if (effect?.effectType === 'Ability') {
@@ -20131,6 +20144,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 				} else {
 					this.add('-fieldstart', 'move: Beach Terrain');
 				}
+			},
+			onImmunity(type, pokemon) {
+				if (type === 'sandstorm' && pokemon.hasType('Bug')) return false;
 			},
 			onResidualOrder: 5,
 			onResidualSubOrder: 2,

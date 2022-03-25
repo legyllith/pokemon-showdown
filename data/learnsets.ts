@@ -10031,6 +10031,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			flamethrower: ["8M", "8V", "7M", "6M", "5M", "4M", "3M"],
 			flamewheel: ["8L25", "7L13", "7E", "7V", "6L13", "6E", "5L13", "5E", "4L15", "4E", "3E"],
 			flareblitz: ["8M", "8L55", "8V", "7L49", "6L49", "5L49", "4L46"],
+			friendshippower: ["8L24"],
 			frustration: ["7M", "7V", "6M", "5M", "4M", "3M"],
 			growl: ["8L1", "8V", "7L1", "7V", "6L1", "5L1", "4L1", "3L5"],
 			headbutt: ["8V", "7V", "4T"],
@@ -49554,6 +49555,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	liepard: {
 		learnset: {
+			sharingan: ["8L24"],
 			aerialace: ["7M", "6M", "5M"],
 			assist: ["7L1", "6L1", "5L1"],
 			assurance: ["8M", "8L23", "7L31", "6L31", "5L31"],
@@ -82971,9 +82973,10 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	charmuke: {
 		learnset: {
+			sharingan: ["8L15"],		
 			spark: ["8L8"],
 			tearfullook: ["8L12"],
-			faketears:	["8L12"],
+			faketears: ["8L12"],
 			thunderwave: ["8L20"],
 			voltswitch: ["8M"],
 			wildcharge: ["8L35"],
