@@ -14915,20 +14915,18 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, defrost: 1},
-		onModifyMove(move, pokemon) {
-			if (this.field.isTerrain('')) return;
-			move.secondaries = [];
-			if (this.field.isTerrain('beachterrain')) {
-				move.secondaries.push({
-					chance: 60,
-					status: 'brn',
-				});
-			}
-		},
 		thawsTarget: true,
-		secondary: {
-			chance: 30,
-			status: 'brn',
+		secondary: {[
+			{
+				chance: 30,
+				status: 'brn',
+			}, {
+				chance: 100,
+					if (this.field.isTerrain('beachterrain')) {
+						status: 'brn',
+					}
+				},
+			],
 		},
 		target: "normal",
 		type: "Ground",
