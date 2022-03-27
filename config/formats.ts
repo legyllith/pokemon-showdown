@@ -64,4 +64,17 @@ export const Formats: FormatList = [
 		ruleset: ['Standard NatDex', 'Species Clause', 'Dynamax Clause', 'Adjust Level = 25'],
 		
 	},
+	{
+		section: "Multi Battles",
+	},
+	{
+		name: "[Gen 8] Standard Multi Battle",
+
+		mod: 'gen8',
+		gameType: 'multi',
+		ruleset: [
+			'Max Team Size = 3',
+			'Standard NatDex', 'Dynamax Clause', 'Adjust Level = 25'
+		],
+	},
 	];
