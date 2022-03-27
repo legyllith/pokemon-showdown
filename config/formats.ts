@@ -45,7 +45,13 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 8] Boss",
 		mod: 'gen8',
-		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 25', '! EV Limit',],
+		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 25', '! EV Limit'],
+		
+	},
+	{
+		name: "[Gen 8] Test",
+		mod: 'gen8',
+		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 25', 'Beach Terrain Rule'],
 		
 	},
 	{

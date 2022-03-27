@@ -20115,7 +20115,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 				if (strenghtMoves.includes(move.id) && defender.isGrounded() && !defender.isSemiInvulnerable()) {
 					if (defender.bst < 486) {
 						this.debug('move strenght a little by beach terrain');
-						return this.chainModify(1.125);
+						return this.chainModify([4608, 4096]);
 					}
 					else {
 					this.debug('move strenght by beach terrain');
@@ -20125,7 +20125,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 				if (move.flags['bullet']) {
 				if (defender.bst < 486) {
 						this.debug('move strenght a little by beach terrain');
-						return this.chainModify(1.125);
+						return this.chainModify([4608, 4096]);
 					}
 					else {
 						this.debug('move strenght by beach terrain');
@@ -20739,5 +20739,35 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Insect",
 		zMove: {effect: 'clearnegativeboost'},
 		contestType: "Cute",
+	},
+	sandthrow: {
+		num: 2016,
+		accuracy: 100,
+		basePower: 40,
+		category: "Special",
+		name: "Sand Throw",
+		pp: 25,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: null,
+		target: "normal",
+		type: "Ground",
+		contestType: "Cute",
+	},
+	erosion: {
+		num: 2017,
+		accuracy: 70,
+		basePower: 110,
+		category: "Special",
+		name: "Erosion",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		onModifyMove(move) {
+			if (this.field.isWeather('sandstorm')) move.accuracy = true;
+		},
+		target: "allAdjacentFoes",
+		type: "Ground",
+		contestType: "Beautiful",
 	},
 };

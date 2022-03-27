@@ -1897,4 +1897,20 @@ export const Rulesets: {[k: string]: FormatData} = {
 			}
 		}
 	},
+	beachterrainrule: {
+		effectType: 'Rule',
+		name: 'Beach Terrain Rule',
+		desc: 'The fight start on Beach Terrain',
+		onSwitchIn(pokemon) {
+			if(this.field.IsFirstTimeSettingCustomTerrain) {
+				this.field.setTerrain('beachterrain');
+				this.field.IsFirstTimeSettingCustomTerrain = false;
+			}
+		},
+		onResidual(pokemon){
+			if(this.field.isTerrain('')) {
+				this.field.setTerrain('beachterrain');
+			}
+		}
+	},
 };
