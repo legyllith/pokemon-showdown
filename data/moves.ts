@@ -20113,7 +20113,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			onBasePower(basePower, attacker, defender, move) {
 				const strenghtMoves = ['surf', 'watergun', 'waterspout','whirlpool','dragonhammer','bubble'];
 				if (strenghtMoves.includes(move.id) && defender.isGrounded() && !defender.isSemiInvulnerable()) {
-					if (defender.bst < 486) {
+					if (defender.species.bst < 486) {
 						this.debug('move strenght a little by beach terrain');
 						return this.chainModify([4608, 4096]);
 					}
@@ -20123,7 +20123,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 					}
 				}
 				if (move.flags['bullet']) {
-				if (defender.bst < 486) {
+				if (defender.species.bst < 486) {
 						this.debug('move strenght a little by beach terrain');
 						return this.chainModify([4608, 4096]);
 					}
@@ -20132,7 +20132,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 						return this.chainModify(1.5);
 					}
 				}
-				if (defender.bst < 486) {
+				if (defender.species.bst < 486) {
 						this.debug('move decrease by beach terrain');
 						return this.chainModify(0.75);
 				}	
