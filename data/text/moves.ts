@@ -6905,11 +6905,31 @@ export const MovesText: {[k: string]: MoveText} = {
 	allin: {
 		name: "All In",
 		desc: "Must recharge and heal 1/2 of damage done",
-		shortDesc: "Must recharge and heal 1/2 of damage done"
+		shortDesc: "Must recharge and heal 1/2 of damage done. add your primary type"
 	},
 	pokerface: {
 		name: "Poker Face",
 		desc: "The user spends two or three turns locked into this sonor move and becomes confused immediately after its move on the last turn of the effect if it is not already. This move targets an opposing Pokemon at random on each turn. If the user is prevented from moving, is asleep at the beginning of a turn, or the attack is not successful against the target on the first turn of the effect or the second turn of a three-turn effect, the effect ends without causing confusion. If this move is called by Sleep Talk and the user is asleep, the move is used for one turn and does not confuse the user. the move drain 50% of life",
-		shortDesc: "Lasts 2-3 turns. Confuses the user afterwards.drain 50% of damage. Sonor",
+		shortDesc: "Lasts 2-3 turns. Confuses the user afterwards.drain 50% of damage. Sonor and add your primary type",
+	},
+	sharingan: {
+		name: "Sharingan",
+		desc: "Protect yourself and dammage 1/8 opponant life if your faster than him and if he attacks you",
+		shortDesc: "Protect yourself and dammage your opponant if your faster than him and if he attacks you",
+	},
+	hunger: {
+		name: "Hunger",
+		desc: "Destroy the terrain, to go into rest for 2 turn and heal 50% of your life",
+		shortDesc: "Eat the terrain to use rest",
+	},
+	sandthrow: {
+		name: "Sand Throw",
+		desc: "Destroy the terrain, to go into rest for 2 turn and heal 50% of your life",
+		shortDesc: "Eat the terrain to use rest",
+	},
+	erosion: {
+		name: "Erosion",
+		desc: "deal damage, accuracy is up onto sandstorm",
+		shortDesc: "deal damage, accuracy is up onto sandstorm",
 	},
 };
