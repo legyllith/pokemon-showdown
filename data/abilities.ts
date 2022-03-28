@@ -4665,7 +4665,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	sapofimmortality: {
 		onPrepareHit(source, target, move) {
 			if (move.type === 'Grass') {
-			this.heal(source.baseMaxhp / 6);
+			this.heal(source.baseMaxhp / 8);
 			}
 		},
 		onTryHit(target, source, move) {
@@ -4683,6 +4683,46 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			this.field.setTerrain('desertterrain');
 		},
 		name: "Desert Surge",
+		rating: 4,
+		num: 2005,
+	},
+	funplayer: {
+		onTryHit(target, source, move) {
+			if (target !== source && this.field.terrain === 'electricterrain' && move.type === 'Electric') {
+				this.add('-immune', target, '[from] ability: Fun Player');
+				return null;
+			}
+			if (target !== source && this.field.terrain === 'grassyterrain' && move.type === 'Grass') {
+				this.add('-immune', target, '[from] ability: Fun Player');
+				return null;
+			}
+			
+			if (target !== source && this.field.terrain === 'mistyterrain' && move.type === 'Fairy') {
+				this.add('-immune', target, '[from] ability: Fun Player');
+				return null;
+			}
+			if (target !== source && this.field.terrain === 'psychicterrain' && move.type === 'Psychic') {
+				this.add('-immune', target, '[from] ability: Fun Player');
+				return null;
+			}
+			if (target !== source && this.field.terrain === 'burningterrain' && move.type === 'Fire') {
+				this.add('-immune', target, '[from] ability: Fun Player');
+				return null;
+			}
+			if (target !== source && this.field.terrain === 'desertterrain' && move.type === 'Ground') {
+				this.add('-immune', target, '[from] ability: Fun Player');
+				return null;
+			}
+			if (target !== source && this.field.terrain === 'caveterrain' && move.type === 'Rock') {
+				this.add('-immune', target, '[from] ability: Fun Player');
+				return null;
+			}
+			if (target !== source && this.field.terrain === 'caveterrain' && move.type === 'Normal') {
+				this.add('-immune', target, '[from] ability: Fun Player');
+				return null;
+			}
+		},
+		name: "Mimicry",
 		rating: 4,
 		num: 2005,
 	},
