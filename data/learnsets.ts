@@ -86263,7 +86263,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			rockwrecker: ["8L40"],
 			rockblast: ["8L31"],
 			stoneedge: ["8L50"],
-			meteorbeam["8T"],
+			meteorbeam: ["8T"],
 		},
 	},
 	butterfreetradessar: {
