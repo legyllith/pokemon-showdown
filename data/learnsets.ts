@@ -85728,7 +85728,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			tailwhip: ["8L1"],
 			thunder: ["8M"],
 			thunderbolt: ["8M"],
-			thunderwave: ["8M""],
+			thunderwave: ["8M"],
 			tickle: ["8E"],
 			toxic: ["8M"],
 			uproar: ["8T"],
