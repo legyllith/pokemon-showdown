@@ -10124,7 +10124,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		num: 580,
 		name: "Ducklett",
 		types: ["Water", "Flying"],
-		baseStats: {hp: 62, atk: 44, def: 50, spa: 44, spd: 50, spe: 55},
+		baseStats: {hp: 64, atk: 54, def: 52, spa: 54, spd: 52, spe: 55},
 		abilities: {0: "Keen Eye", 1: "Big Pecks", H: "Hydration"},
 		heightm: 0.5,
 		weightkg: 5.5,
