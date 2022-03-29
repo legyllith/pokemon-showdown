@@ -86158,6 +86158,8 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	huntin: {
 		learnset: {
+			rollout: ["7L1", "6L1", "5L1", "4L1"],
+			defensecurl: ["7L1", "6L1", "5L1", "4L1"],
 			allyswitch: ["8M", "7T"],
 			attract: ["8M", "7M", "6M", "5M", "4M"],
 			batonpass: ["8M", "8L4", "7L46", "6L46", "5L46", "4L46"],
