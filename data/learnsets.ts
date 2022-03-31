@@ -86243,6 +86243,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			trickroom: ["8M", "7M", "6M", "5M", "4M"],
 			uproar: ["8M", "7T", "6T", "5T", "4T"],
 			wonderroom: ["8M", "7T", "6T", "5T"],
+			friendshippower: ["8L23"],
 		},
 	},
 	lunapin: {
