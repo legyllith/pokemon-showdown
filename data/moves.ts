@@ -9658,12 +9658,15 @@ export const Moves: {[moveid: string]: MoveData} = {
 				}
 				if (this.field.isTerrain('beachterrain')){
 					const damage = this.damage(pokemon.baseMaxhp / 16, pokemon, target);
+					if (damage) {
+						this.heal(damage, target, pokemon);
+					}
 				}
 				else {
 					const damage = this.damage(pokemon.baseMaxhp / 8, pokemon, target);
-				}
-				if (damage) {
-					this.heal(damage, target, pokemon);
+					if (damage) {
+						this.heal(damage, target, pokemon);
+					}
 				}
 			},
 		},
