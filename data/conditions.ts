@@ -220,7 +220,28 @@ export const Conditions: {[k: string]: ConditionData} = {
 		},
 		onStart(pokemon, source) {
 			this.add('-activate', pokemon, 'move: ' + this.effectState.sourceEffect, '[of] ' + source);
-			this.effectState.boundDivisor = source.hasItem('bindingband') || (this.effectState.sourceEffect.id == 'sandtomb' && this.field.isTerrain('desertterrain')) ? 6 : 8;
+			if(this.effectState.sourceEffect.id == 'sandtomb' && this.field.isTerrain('desertterrain')){
+				if (source.hasItem('bindingband')){
+					this.effectState.boundDivisor = 5;
+				}
+				else {
+					this.effectState.boundDivisor = 6;
+				}
+			}
+			else if (source.hasItem('bindingband')){
+				this.effectState.boundDivisor = 6;
+			}
+			else if (!source.hasItem('bindingband')){
+				this.effectState.boundDivisor = 8;
+			}
+			else if(this.field.isTerrain('beachterrain')){
+				if (source.hasItem('bindingband')){
+					this.effectState.boundDivisor = 8;
+				}
+				else {
+					this.effectState.boundDivisor = 12;
+				}
+			}
 		},
 		onResidualOrder: 13,
 		onResidual(pokemon) {
