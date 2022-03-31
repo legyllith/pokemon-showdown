@@ -49,6 +49,12 @@ export const Formats: FormatList = [
 		
 	},
 	{
+		name: "[Gen 8] Yoishi",
+		mod: 'gen8',
+		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 25', '! EV Limit', 'Beach Terrain Rule'],
+		
+	},
+	{
 		name: "[Gen 8] Test",
 		mod: 'gen8',
 		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 25', 'Beach Terrain Rule'],
