@@ -17388,7 +17388,15 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
 		onModifyMove(move, pokemon) {
-			if (this.field.isTerrain('beachterrain')) move.boosts = {atk: -1};
+			move.secondaries = [];
+			if (this.field.isTerrain('beachterrain')) {
+				move.secondaries.push({
+					chance: 100,
+					boosts: {
+						atk: -1,
+						spa: -1,
+						},
+				});
 		},
 		secondary: {
 			chance: 100,
