@@ -228,9 +228,6 @@ export const Conditions: {[k: string]: ConditionData} = {
 					this.effectState.boundDivisor = 6;
 				}
 			}
-			else if (source.hasItem('bindingband')){
-				this.effectState.boundDivisor = 6;
-			}
 			else if(this.field.isTerrain('beachterrain')){
 				if (source.hasItem('bindingband')){
 					this.effectState.boundDivisor = 8;
@@ -238,6 +235,9 @@ export const Conditions: {[k: string]: ConditionData} = {
 				else {
 					this.effectState.boundDivisor = 12;
 				}
+			}
+			else if (source.hasItem('bindingband')){
+				this.effectState.boundDivisor = 6;
 			}
 			else if (!source.hasItem('bindingband')){
 				this.effectState.boundDivisor = 8;
