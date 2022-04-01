@@ -2130,7 +2130,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1, allyanim: 1},
 		onModifyMove(move, pokemon) {
-			if (this.field.isTerrain('beachterrain')) move.boosts = {atk: -2, spa: -2};
+			if (this.field.isTerrain('beachterrain')) move.boosts = {atk: -2, spa: -1};
 		},
 		boosts: {
 			atk: -2,
@@ -9762,6 +9762,14 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 30,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
+		onHitField() {
+			if(this.field.isTerrain('beachterrain')) {
+			this.add('-clearallboost');
+				for (const pokemon of this.getAllActive()) {
+					pokemon.clearBoosts();
+				}
+			}
+		},
 		secondary: {
 			chance: 30,
 			status: 'par',
@@ -14476,6 +14484,14 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 15,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
+		onHitField() {
+			if(this.field.isTerrain('beachterrain')) {
+			this.add('-clearallboost');
+				for (const pokemon of this.getAllActive()) {
+					pokemon.clearBoosts();
+				}
+			}
+		},
 		secondary: {
 			chance: 50,
 			boosts: {
@@ -17947,6 +17963,14 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 35,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
+		onHitField() {
+			if(this.field.isTerrain('beachterrain')) {
+			this.add('-clearallboost');
+				for (const pokemon of this.getAllActive()) {
+					pokemon.clearBoosts();
+				}
+			}
+		},
 		secondary: null,
 		target: "normal",
 		type: "Normal",
