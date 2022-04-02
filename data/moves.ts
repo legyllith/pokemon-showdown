@@ -1776,6 +1776,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 20,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
+		onModifyMove(move, source, target) {
+			if (this.field.isTerrain('beachterrain')) {
+				move.basePower = 40;
+			}
+		},
 		onHit(target, source) {
 			const item = target.getItem();
 			if (source.hp && item.isBerry && target.takeItem(source)) {
@@ -3423,6 +3428,14 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 15,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1},
+		onHit() {
+			if(this.field.isTerrain('beachterrain')) {
+			this.add('-clearallboost');
+				for (const pokemon of this.getAllActive()) {
+					pokemon.clearBoosts();
+				}
+			}
+		},
 		secondary: null,
 		target: "allAdjacentFoes",
 		type: "Fairy",
@@ -12924,6 +12937,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 35,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		onModifyMove(move, source, target) {
+			if (this.field.isTerrain('beachterrain')) {
+				move.basePower = 75;
+				move.type = "Bug";
+			}
+		},
 		secondary: {
 			chance: 30,
 			status: 'psn',
@@ -17382,6 +17401,14 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 40,
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1},
+		onHit() {
+			if(this.field.isTerrain('beachterrain')) {
+			this.add('-clearallboost');
+				for (const pokemon of this.getAllActive()) {
+					pokemon.clearBoosts();
+				}
+			}
+		},
 		boosts: {
 			spe: -2,
 		},
