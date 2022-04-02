@@ -14902,7 +14902,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		flags: {protect: 1, reflectable: 1, mirror: 1},
 		onModifyMove(move, pokemon) {
 			if (this.field.isTerrain('desertterrain')) move.boosts = {accuracy: -2};
-			if (this.field.isTerrain('beachterrain')) move.boosts = {accuracy: -2};
+			if (this.field.isTerrain('beachterrain')) move.basePower = 20;
 		},
 		boosts: {
 			accuracy: -1,
@@ -17438,11 +17438,6 @@ export const Moves: {[moveid: string]: MoveData} = {
 				for (const pokemon of this.getAllActive()) {
 					pokemon.clearBoosts();
 				}
-			}
-		},
-		onHit(target, source) {
-			if(this.field.isTerrain('beachterrain')) {
-				target.boosts.spe=-1;
 			}
 		},
 		boosts: {
