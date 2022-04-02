@@ -86585,7 +86585,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			icywind: ["8L25"],
 		},
 	},
-	pengwace: {
+	jetweng: {
 		learnset: {
 			flamecharge: ["8L25"],
 			icywind: ["8L25"],
