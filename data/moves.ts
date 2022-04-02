@@ -7658,6 +7658,14 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 35,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, distance: 1},
+		onHit() {
+			if(this.field.isTerrain('beachterrain')) {
+			this.add('-clearallboost');
+				for (const pokemon of this.getAllActive()) {
+					pokemon.clearBoosts();
+				}
+			}
+		},
 		secondary: null,
 		target: "any",
 		type: "Flying",
@@ -12609,6 +12617,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 35,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, distance: 1},
+		onModifyMove(move, source, target) {
+			if (this.field.isTerrain('beachterrain')) {
+				move.basePower = 70;
+			}
+		},
 		secondary: null,
 		target: "any",
 		type: "Flying",
@@ -13271,6 +13284,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 15,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		onModifyMove(move, pokemon) {
+			if (this.field.isTerrain('beachterrain')) move.boosts = {def: 1};
+		},
 		onModifyMove(move, pokemon, target) {
 			const rand = this.random(10);
 			if (rand < 2) {
@@ -13278,10 +13294,13 @@ export const Moves: {[moveid: string]: MoveData} = {
 				move.infiltrates = true;
 			} else if (rand < 6) {
 				move.basePower = 40;
+				if (this.field.isTerrain('beachterrain')) move.basePower = 80;
 			} else if (rand < 9) {
 				move.basePower = 80;
+				if (this.field.isTerrain('beachterrain')) move.basePower = 120;
 			} else {
 				move.basePower = 120;
+				if (this.field.isTerrain('beachterrain')) move.basePower = 180;
 			}
 		},
 		secondary: null,
@@ -16910,6 +16929,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 				return null;
 			}
 		},
+		onModifyMove(move, pokemon) {
+			if (this.field.isTerrain('beachterrain')) move.boosts = {atk: 1, spa: 1, spe: 1};
+		},
 		onTryHit(target, source) {
 			this.add('-nothing');
 		},
@@ -17407,6 +17429,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 				for (const pokemon of this.getAllActive()) {
 					pokemon.clearBoosts();
 				}
+				defender.boost({def: -2};
 			}
 		},
 		boosts: {
@@ -17869,6 +17892,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 20,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		onModifyMove(move, source, target) {
+			if (this.field.isTerrain('beachterrain')) {
+				move.basePower = 70;
+			}
+		},
 		secondary: null,
 		target: "allAdjacentFoes",
 		type: "Normal",
