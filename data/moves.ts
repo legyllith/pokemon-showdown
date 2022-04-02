@@ -17433,7 +17433,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		},
 		onHit(target, source) {
 			if(this.field.isTerrain('beachterrain')) {
-				target.boost({def: -2});
+				target.boost({def: -2}, source, target, this.dex.getActiveMove("String Shot"));
 			}
 		},
 		boosts: {
