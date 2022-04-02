@@ -17423,13 +17423,17 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 40,
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1},
-		onHit() {
+		onTryHit() {
 			if(this.field.isTerrain('beachterrain')) {
 			this.add('-clearallboost');
 				for (const pokemon of this.getAllActive()) {
 					pokemon.clearBoosts();
 				}
-				defender.boost({def: -2},
+			}
+		},
+		onHit(target, source) {
+			if(this.field.isTerrain('beachterrain')) {
+				target.boost({def: -2});
 			}
 		},
 		boosts: {
