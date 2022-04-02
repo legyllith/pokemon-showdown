@@ -17993,7 +17993,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		num: 1838,
 		name: "Pengwace",
 		types: ["Ice", "Fire"],
-		baseStats: {hp: 60, atk: 68, def: 50, spa: 88, spd: 55 spe: 83},
+		baseStats: {hp: 60, atk: 68, def: 50, spa: 88, spd: 55, spe: 83},
 		abilities: {0: "Clear Body", 1: "Infiltrator", H: "Cursed Body"},
 		heightm: 1.4,
 		weightkg: 11,
