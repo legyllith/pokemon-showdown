@@ -13005,6 +13005,14 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 35,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
+		onHit() {
+			if(this.field.isTerrain('beachterrain')) {
+			this.add('-clearallboost');
+				for (const pokemon of this.getAllActive()) {
+					pokemon.clearBoosts();
+				}
+			}
+		},
 		secondary: null,
 		target: "normal",
 		type: "Normal",

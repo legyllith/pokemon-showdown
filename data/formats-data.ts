@@ -6650,4 +6650,16 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	mawileproelos: {
 		tier: "OU",
 	},
+	lopunnytradessar: {
+		tier: "OU",
+	},
+	fridgion: {
+		tier: "OU",
+	},
+	pengwace: {
+		tier: "OU",
+	},
+	jetweng: {
+		tier: "OU",
+	},
 };

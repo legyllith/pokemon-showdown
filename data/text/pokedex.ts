@@ -3841,4 +3841,16 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	mawileproelos: {
 		name: "Mawile-Proelos",
 	},
+	lopunnytradessar: {
+		name: "Lopunny-Tradessar",
+	},
+	fridgion: {
+		name: "Fridgion",
+	},
+	pengwace: {
+		name: "Pengwace",
+	},
+	jetweng: {
+		name: "Jetweng",
+	},
 };
