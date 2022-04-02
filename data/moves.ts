@@ -17429,7 +17429,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 				for (const pokemon of this.getAllActive()) {
 					pokemon.clearBoosts();
 				}
-				defender.boost({def: -2};
+				defender.boost({def: -2},
 			}
 		},
 		boosts: {
