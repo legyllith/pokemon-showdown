@@ -86090,7 +86090,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			shrodingerbox: ["8L28"],
 		},
 	},
-	dwebble: {
+	dwebbleproelos: {
 		learnset: {
 			aerialace: ["7M", "6M", "5M"],
 			attract: ["8M", "7M", "6M", "5M"],
@@ -86156,7 +86156,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			xscissor: ["8M", "8L36", "7M", "7L35", "6M", "6L35", "5M", "5L35"],
 		},
 	},
-	crustle: {
+	crustleproelos: {
 		learnset: {
 			attackorder: ["8L39"],
 			defendorder: ["8L39"],
