@@ -86148,7 +86148,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			silverwind: ["6L32"],
 			substitute: ["8M", "7M", "6M", "5M"],
 			toxic: ["7M", "6M", "5M"],
-			waterspot: ["8L5"],
+			watersport: ["8L5"],
 			waterspout: ["8L35"],
 			watergun: ["8L12"],
 			wideguard: ["8E", "7E", "6E"],
