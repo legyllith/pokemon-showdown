@@ -40274,6 +40274,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	luvdisc: {
 		learnset: {
+			aerialace: ["8M"],
 			agility: ["7L7", "6L7", "5L9", "4L9", "3L16"],
 			aquajet: ["7E", "6E", "5E", "4E"],
 			aquaring: ["7L40", "7E", "6L40", "6E", "5L46", "5E", "4L37", "4E"],
@@ -40287,7 +40288,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			dive: ["6M", "5M", "4T", "3M"],
 			doubleedge: ["3T"],
 			doubleteam: ["7M", "6M", "5M", "4M", "3M"],
-			drainingkiss: ["7L9", "6L9"],
+			drainingkiss: ["8L40"],
 			endure: ["4M", "3T"],
 			entrainment: ["7E", "6E"],
 			facade: ["7M", "6M", "5M", "4M", "3M"],
@@ -40297,6 +40298,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			healpulse: ["7E", "6E", "5E"],
 			heartstamp: ["7L22"],
 			hiddenpower: ["7M", "6M", "5M", "4M", "3M"],
+			hurricane: ["8L40"],
 			hydropump: ["7L46", "6L40", "5L40"],
 			icebeam: ["7M", "6M", "5M", "4M", "3M"],
 			icywind: ["7T", "6T", "5T", "5D", "4T", "3T"],
@@ -40323,6 +40325,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			surf: ["7M", "6M", "5M", "4M", "3M"],
 			swagger: ["7M", "6M", "5M", "4M", "3T"],
 			sweetkiss: ["7L31", "6L31", "5L37", "4L27", "3L36"],
+			skydrop: ["8L44"],
 			swift: ["4T", "3T"],
 			tackle: ["7L1", "6L1", "5L1", "4L1", "3L1"],
 			takedown: ["7L34", "6L14", "5L14", "4L14", "3L24"],
