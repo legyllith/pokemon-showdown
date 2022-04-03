@@ -4722,8 +4722,18 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				return null;
 			}
 		},
-		name: "Mimicry",
+		name: "Fun Player",
 		rating: 4,
-		num: 2005,
+		num: 2006,
+	},
+	firedance: {
+		onModifySpe(spe, pokemon) {
+			if (['sunnyday', 'desolateland'].includes(pokemon.effectiveWeather())) {
+				return this.chainModify(2);
+			}
+		},
+		name: "Fire Dance",
+		rating: 3,
+		num: 2007,
 	},
 };

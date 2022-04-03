@@ -1758,8 +1758,16 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		name: "Sap Of Immortality",
 		shortDesc: "immune to poison type (not status) and regenerate 1/6 life when use grass move",
 	},
+	desertsurge: {
+		name: "Desert Surge",
+		shortDesc: "put the desert terrain",
+	},
 	funplayer: {
 		name: "Fun PLayer",
 		shortDesc: "immune to a type depending of the terrain",
+	},
+	firedance: {
+		name: "Fire Dance",
+		shortDesc: "twice speed if sun",
 	},
 };
