@@ -40286,7 +40286,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			charm: ["7L1", "6L1", "5L4", "5D", "4L4", "3L4"],
 			confide: ["7M", "6M"],
 			dive: ["6M", "5M", "4T", "3M"],
-			Disarming Voice: ["6L9"],
+			disarmingvoice: ["6L9"],
 			doubleedge: ["3T"],
 			doubleteam: ["7M", "6M", "5M", "4M", "3M"],
 			drainingkiss: ["8L40"],
