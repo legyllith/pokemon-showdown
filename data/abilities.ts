@@ -4717,7 +4717,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				this.add('-immune', target, '[from] ability: Fun Player');
 				return null;
 			}
-			if (target !== source && this.field.terrain === 'caveterrain' && move.type === 'Normal') {
+			if (target !== source && this.field.terrain === 'beachterrain' && move.type === 'Normal') {
 				this.add('-immune', target, '[from] ability: Fun Player');
 				return null;
 			}
