@@ -375,6 +375,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 20,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
+		onModifyMove(move, pokemon) {
+			if (this.field.isTerrain('beachterrain')) move.basePower = 90;
+		},
 		secondary: {
 			chance: 100,
 			onHit(target, source, move) {
@@ -11840,6 +11843,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		onModifyMove(move, pokemon) {
+			if (this.field.isTerrain('beachterrain')) move.basePower = 40;
+		},
 		secondary: {
 			chance: 100,
 			boosts: {
@@ -19222,6 +19228,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 20,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		onModifyMove(move, pokemon) {
+			if (this.field.isTerrain('beachterrain')) move.basePower = 55;
+		},
 		secondary: {
 			chance: 20,
 			volatileStatus: 'flinch',
