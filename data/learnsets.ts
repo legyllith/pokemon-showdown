@@ -86128,7 +86128,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			rototiller: ["7E", "6E"],
 			round: ["8M", "7M", "6M", "5M"],
 			sandattack: ["8L1", "7L11", "6L11", "5L11"],
-			spalsh: ["8L1"],
+			splash: ["8L1"],
 			sandstorm: ["8M", "7M", "6M", "5M"],
 			surf: ["8M"],
 			sandtomb: ["8M", "7E", "6E", "5E"],
