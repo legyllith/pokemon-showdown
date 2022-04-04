@@ -4821,6 +4821,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		flags: {mirror: 1},
 		breaksProtect: true,
 		// Breaking protection implemented in scripts.js
+		onModifyMove(move, source, target) {
+			if (this.field.isTerrain('beachterrain')) {
+				move.basePower = 70;
+				move.type = "Dark";
+			}
+		},
 		secondary: null,
 		target: "normal",
 		type: "Normal",
