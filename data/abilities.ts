@@ -4665,7 +4665,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	sapofimmortality: {
 		onPrepareHit(source, target, move) {
 			if (move.type === 'Grass') {
-			this.heal(source.baseMaxhp / 8);
+			this.heal(source.baseMaxhp / 12);
 			}
 		},
 		onTryHit(target, source, move) {

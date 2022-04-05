@@ -620,6 +620,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 15,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
+		onModifyMove(move, pokemon) {
+			if (this.field.isTerrain('beachterrain')) move.basePower = 50;
+		},
 		secondary: {
 			chance: 30,
 			volatileStatus: 'flinch',
@@ -4783,6 +4786,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 40,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
+		onModifyMove(move, pokemon) {
+			if (this.field.isTerrain('beachterrain')) move.basePower = 90;
+		},
 		onDamagePriority: -20,
 		onDamage(damage, target, source, effect) {
 			if (damage >= target.hp) return target.hp - 1;
@@ -7472,6 +7478,19 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 40,
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1, sound: 1, bypasssub: 1},
+		onModifyMove(move, pokemon) {
+			if (this.field.isTerrain('')) return;
+			move.secondaries = [];
+			if (this.field.isTerrain('beachterrain')) {
+				move.secondaries.push({
+					chance: 100,
+					boosts: {
+						atk: -1,
+						spa: -1,
+						},
+				});
+			}
+		},
 		boosts: {
 			atk: -1,
 		},
@@ -8522,6 +8541,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 40,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
+		onModifyMove(move, pokemon) {
+			if (this.field.isTerrain('beachterrain')) move.basePower = 120;
+		},
 		onDamagePriority: -20,
 		onDamage(damage, target, source, effect) {
 			if (damage >= target.hp) return target.hp - 1;
@@ -11135,6 +11157,18 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 35,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
+		onModifyMove(move, pokemon) {
+			if (this.field.isTerrain('')) return;
+			move.secondaries = [];
+			if (this.field.isTerrain('beachterrain')) {
+				move.secondaries.push({
+					chance: 50,
+					boosts: {
+						atk: 1,
+						},
+				});
+			}
+		},
 		secondary: {
 			chance: 10,
 			self: {
@@ -18087,6 +18121,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
+		onModifyMove(move, source, target) {
+			if (this.field.isTerrain('beachterrain')) {
+				move.basePower = 30;
+			}
+		},
 		multihit: [2, 5],
 		secondary: null,
 		target: "normal",
@@ -18104,6 +18143,19 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 30,
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1},
+		onModifyMove(move, pokemon) {
+			if (this.field.isTerrain('')) return;
+			move.secondaries = [];
+			if (this.field.isTerrain('beachterrain')) {
+				move.secondaries.push({
+					chance: 100,
+					boosts: {
+						atk: -1,
+						spa: -1,
+						},
+				});
+			}
+		},
 		boosts: {
 			def: -1,
 		},
@@ -18785,6 +18837,13 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 20,
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1, allyanim: 1},
+		onModifyMove(move, source, target) {
+			if (this.field.isTerrain('beachterrain')) {
+				move.basePower = 30;
+				move.type = "Dark";
+				move.category = "Physical";
+			}
+		},
 		boosts: {
 			atk: -1,
 			def: -1,
