@@ -4829,7 +4829,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		// Breaking protection implemented in scripts.js
 		onModifyMove(move, source, target) {
 			if (this.field.isTerrain('beachterrain')) {
-				move.basePower = 70;
+				move.basePower = 55;
 				move.type = "Dark";
 			}
 		},
