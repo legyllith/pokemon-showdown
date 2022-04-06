@@ -4754,7 +4754,17 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		},
 		name: "Macabre Fire",
 		rating: 3,
-		num: 2008,
+		num: 2009,
+	},
+	aquaticbody: {
+		onStart(source) {
+			if (source.hasType('Water')) return false;
+			if (!source.addType('Water')) return false;
+			this.add('-start', source, 'typeadd', 'Water', '[from] abilities: Aquatic Body');
+		},
+		name: "Aquatic Body",
+		rating: 3,
+		num: 20010,
 	},
 	
 };

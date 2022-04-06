@@ -1778,4 +1778,8 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		name: "Macabre Fire",
 		shortDesc: "add fire type",
 	},
+	aquaticbody: {
+		name: "Aquatic Body",
+		shortDesc: "add water type",
+	},
 };

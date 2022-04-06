@@ -14959,6 +14959,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		onModifyMove(move, pokemon) {
 			if (this.field.isTerrain('desertterrain')) move.boosts = {accuracy: -2};
 			if (this.field.isTerrain('beachterrain')) move.basePower = 20;
+			if (this.field.isTerrain('beachterrain')) move.category = "Special";
 		},
 		boosts: {
 			accuracy: -1,
@@ -21084,5 +21085,34 @@ export const Moves: {[moveid: string]: MoveData} = {
 		target: "allAdjacentFoes",
 		type: "Ground",
 		contestType: "Beautiful",
+	},
+	stealthice: {
+		num: 2018,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Stealth Ice",
+		pp: 20,
+		priority: 0,
+		flags: {reflectable: 1},
+		sideCondition: 'stealthrock',
+		condition: {
+			// this is a side condition
+			onSideStart(side) {
+				this.add('-sidestart', side, 'move: Stealth Ice');
+			},
+			onSwitchIn(pokemon) {
+				if (pokemon.hasItem('heavydutyboots')) return;
+				const iceHazard = this.dex.getActiveMove('Stealth Rock');
+				iceHazard.type = 'Ice';
+				const typeMod = this.clampIntRange(pokemon.runEffectiveness(this.dex.getActiveMove('iceHazard')), -6, 6);
+				this.damage(pokemon.maxhp * Math.pow(2, typeMod) / 8);
+			},
+		},
+		secondary: null,
+		target: "foeSide",
+		type: "Ice",
+		zMove: {boost: {def: 1}},
+		contestType: "Cool",
 	},
 };
