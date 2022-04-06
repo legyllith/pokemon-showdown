@@ -12451,6 +12451,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		onModifyMove(move, source, target) {
+			if (this.field.isTerrain('beachterrain')) {
+				move.basePower = 70;
+			}
+		},
 		secondary: {
 			chance: 10,
 			self: {
@@ -13137,6 +13142,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 25,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		onModifyMove(move, source, target) {
+			if (this.field.isTerrain('beachterrain')) {
+				move.basePower = 80;
+			}
+		},
 		secondary: {
 			chance: 10,
 			status: 'frz',
@@ -15343,6 +15353,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 15,
 		priority: 0,
 		flags: {bullet: 1, protect: 1, mirror: 1},
+		onModifyMove(move, source, target) {
+			if (this.field.isTerrain('beachterrain')) {
+				move.basePower = 60;
+			}
+		},
 		secondary: {
 			chance: 20,
 			boosts: {
@@ -15712,6 +15727,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		onModifyMove(move, source, target) {
+			if (this.field.isTerrain('beachterrain')) {
+				move.basePower = 70;
+			}
+		},
 		secondary: {
 			chance: 10,
 			self: {
@@ -16197,6 +16217,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 20,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		onModifyMove(move, source, target) {
+			if (this.field.isTerrain('beachterrain')) {
+				move.basePower = 80;
+			}
+		},
 		secondary: {
 			chance: 30,
 			status: 'psn',
@@ -16214,6 +16239,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {bullet: 1, protect: 1, mirror: 1},
+		onModifyMove(move, source, target) {
+			if (this.field.isTerrain('beachterrain')) {
+				move.basePower = 40;
+			}
+		},
 		secondary: {
 			chance: 30,
 			status: 'psn',

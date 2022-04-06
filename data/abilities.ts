@@ -4746,5 +4746,15 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 3,
 		num: 2008,
 	},
+	macabrefire: {
+		onStart(source) {
+			if (source.hasType('Fire')) return false;
+			if (!source.addType('Fire')) return false;
+			this.add('-start', source, 'typeadd', 'Fire', '[from] abilities: Macabre Fire');
+		},
+		name: "Macabre Fire",
+		rating: 3,
+		num: 2008,
+	},
 	
 };

@@ -1774,4 +1774,8 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		name: "Fairy Spirit",
 		shortDesc: "add fairy type",
 	},
+	macabrefire: {
+		name: "Macabre Fire",
+		shortDesc: "add fire type",
+	},
 };
