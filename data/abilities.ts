@@ -4736,4 +4736,15 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 3,
 		num: 2007,
 	},
+	fairyspirit: {
+		onStart(source) {
+			if (source.hasType('Fairy')) return false;
+			if (!source.addType('Fairy')) return false;
+			this.add('-start', source, 'typeadd', 'Fairy', '[from] abilities: Fairy Spirit');
+		},
+		name: "Fire Dance",
+		rating: 3,
+		num: 2007,
+	},
+	
 };

@@ -17955,7 +17955,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		forme: "Proelos",
 		types: ["Steel", "Bug"],
 		baseStats: {hp: 57, atk: 25, def: 80, spa: 90, spd: 50, spe: 73},
-		abilities: {0: "Hyper Cutter", 1: "Intimidate", H: "Sheer Force"},
+		abilities: {0: "Fairy Spirit"},
 		heightm: 0.6,
 		weightkg: 11.5,
 		color: "Black",
