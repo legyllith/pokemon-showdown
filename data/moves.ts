@@ -21105,7 +21105,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 				if (pokemon.hasItem('heavydutyboots')) return;
 				const iceHazard = this.dex.getActiveMove('Stealth Rock');
 				iceHazard.type = 'Ice';
-				const typeMod = this.clampIntRange(pokemon.runEffectiveness(this.dex.getActiveMove('iceHazard')), -6, 6);
+				const typeMod = this.clampIntRange(pokemon.runEffectiveness(iceHazard), -6, 6);
 				this.damage(pokemon.maxhp * Math.pow(2, typeMod) / 8);
 			},
 		},
