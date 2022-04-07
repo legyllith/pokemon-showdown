@@ -21097,7 +21097,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		flags: {reflectable: 1},
 		sideCondition: 'stealthice',
 		onTryMove(attacker, defender, move) {
-			if (defender.removeSideCondition(stealthrock)){
+			if (defender.removeSideCondition('stealthrock')){
 				return;
 			}
 		},
