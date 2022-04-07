@@ -4663,15 +4663,18 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 2003,
 	},
 	sapofimmortality: {
-		onPrepareHit(source, target, move) {
-			if (move.type === 'Grass') {
+		onAfterMoveSecondary(target, source, move) {
+			if (source && move.type === 'Grass') {
 			this.heal(source.baseMaxhp / 12);
 			}
 		},
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Poison') {
-				this.add('-immune', target, '[from] ability: Sap Of Immortality');
-				return null;
+				if (move.name===('Poison Gas' || 'Toxic') && target.hasAbility('corrosion')){}
+				else{
+					this.add('-immune', target, '[from] ability: Sap Of Immortality');
+					return null;
+				}
 			}
 		},
 		name: "Sap Of Immortality",
