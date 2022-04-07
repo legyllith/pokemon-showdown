@@ -18983,6 +18983,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1},
 		// No Guard-like effect for Poison-type users implemented in Scripts#tryMoveHit
+		onModifyMove(move, attacker){
+			if (attacker.hasAbility('corrosion') ) {
+				move.ignoreAbility = true;
+			}
+		}
 		status: 'tox',
 		secondary: null,
 		target: "normal",
