@@ -4664,13 +4664,14 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	sapofimmortality: {
 		onAfterMoveSecondary(target, source, move) {
-			if (source && move.type === 'Grass') {
-			this.heal(source.baseMaxhp / 12);
+			if (move.type === 'Grass') {
+				this.heal(source.baseMaxhp / 12);
 			}
 		},
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Poison') {
-				if (move.name===('Poison Gas' || 'Toxic') && target.hasAbility('corrosion')){}
+				if ( target.hasAbility('corrosion')){}
+				//move.name===('Poison Gas' || 'Toxic') &&
 				else{
 					this.add('-immune', target, '[from] ability: Sap Of Immortality');
 					return null;
