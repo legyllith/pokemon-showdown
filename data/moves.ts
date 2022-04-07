@@ -18987,7 +18987,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			if (attacker.hasAbility('corrosion') ) {
 				move.ignoreAbility = true;
 			}
-		}
+		},
 		status: 'tox',
 		secondary: null,
 		target: "normal",
