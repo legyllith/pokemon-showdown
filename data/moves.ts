@@ -21097,7 +21097,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		flags: {reflectable: 1},
 		sideCondition: 'stealthice',
 		onTry(target) {
-			return !target.side.getSideCondition('stealthrock');
+			if(target.side.getSideCondition('stealthrock')){
+				return;
+			}
 		},
 		condition: {
 			// this is a side condition
