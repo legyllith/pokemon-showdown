@@ -284,6 +284,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 25,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		onModifyMove(move, source, target) {
+			if (this.field.isTerrain('beachterrain')) {
+				move.basePower = 70;
+			}
+		},
 		critRatio: 2,
 		secondary: null,
 		target: "allAdjacentFoes",
@@ -299,6 +304,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 15,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, distance: 1},
+		onModifyMove(move, source, target) {
+			if (this.field.isTerrain('beachterrain')) {
+				move.basePower = 65;
+			}
+		},
 		secondary: {
 			chance: 30,
 			volatileStatus: 'flinch',
@@ -9116,6 +9126,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 15,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		onModifyMove(move, source, target) {
+			if (this.field.isTerrain('beachterrain')) {
+				move.basePower = 65;
+			}
+		},
 		onHit(pokemon, source) {
 			const item = pokemon.getItem();
 			if ((item.isBerry || item.isGem) && pokemon.takeItem(source)) {
@@ -9780,6 +9795,13 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 30,
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1},
+		onModifyMove(move, source, target) {
+			if (this.field.isTerrain('beachterrain')) {
+				move.basePower = 50;
+				move.type = "Dark";
+				move.category = "Special";
+			}
+		},
 		boosts: {
 			def: -1,
 		},
@@ -11163,9 +11185,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 			if (this.field.isTerrain('beachterrain')) {
 				move.secondaries.push({
 					chance: 50,
-					boosts: {
-						atk: 1,
+					self: {
+						boosts: {
+							atk: 1,
 						},
+					},
 				});
 			}
 		},
@@ -17126,6 +17150,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {reflectable: 1},
 		sideCondition: 'stealthrock',
+		onTryMove(attacker, defender, move) {
+           		if (defender.side.getSideCondition('stealthice')){
+                		return false;
+            		}
+        	},
 		condition: {
 			// this is a side condition
 			onSideStart(side) {
