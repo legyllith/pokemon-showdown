@@ -17125,7 +17125,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 20,
 		priority: 0,
 		flags: {reflectable: 1},
-		sideCondition: {'stealthrock','stealthice'},
+		sideCondition: 'stealthrock',
 		condition: {
 			// this is a side condition
 			onSideStart(side) {
@@ -21095,10 +21095,13 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 20,
 		priority: 0,
 		flags: {reflectable: 1},
-		sideCondition: {'stealthice','stealthearth'},
+		sideCondition: 'stealthice',
 		condition: {
 			// this is a side condition
 			onSideStart(side) {
+				if (target.side.removeSideCondition(stealthrock)){
+					return;
+				}
 				this.add('-sidestart', side, 'move: Stealth Ice');
 			},
 			onSwitchIn(pokemon) {
