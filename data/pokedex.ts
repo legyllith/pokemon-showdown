@@ -10368,7 +10368,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		name: "Klink",
 		types: ["Steel"],
 		gender: "N",
-		baseStats: {hp: 40, atk: 55, def: 70, spa: 45, spd: 60, spe: 30},
+		baseStats: {hp: 45, atk: 60, def: 73, spa: 50, spd: 62, spe: 35},
 		abilities: {0: "Plus", 1: "Minus", H: "Clear Body"},
 		heightm: 0.3,
 		weightkg: 21,

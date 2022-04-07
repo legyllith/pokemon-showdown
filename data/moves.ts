@@ -21096,12 +21096,14 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {reflectable: 1},
 		sideCondition: 'stealthice',
+		onTryMove(attacker, defender, move) {
+			if (defender.removeSideCondition(stealthrock)){
+				return;
+			}
+		},
 		condition: {
 			// this is a side condition
 			onSideStart(side) {
-				if (target.side.removeSideCondition(stealthrock)){
-					return;
-				}
 				this.add('-sidestart', side, 'move: Stealth Ice');
 			},
 			onSwitchIn(pokemon) {
