@@ -17125,7 +17125,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 20,
 		priority: 0,
 		flags: {reflectable: 1},
-		sideCondition: 'stealthrock','stealthice',
+		sideCondition: {'stealthrock','stealthice'},
 		condition: {
 			// this is a side condition
 			onSideStart(side) {
@@ -21095,7 +21095,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 20,
 		priority: 0,
 		flags: {reflectable: 1},
-		sideCondition: 'stealthice','stealthearth',
+		sideCondition: {'stealthice','stealthearth'},
 		condition: {
 			// this is a side condition
 			onSideStart(side) {
