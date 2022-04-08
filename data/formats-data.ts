@@ -6662,4 +6662,22 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	jetweng: {
 		tier: "OU",
 	},
+	astraleon: {
+		tier: "OU",
+	},
+	eidoleon: {
+		tier: "OU",
+	},
+	galleon: {
+		tier: "OU",
+	},
+	lepideon: {
+		tier: "OU",
+	},
+	hermeon: {
+		tier: "OU",
+	},
+	drakeon: {
+		tier: "OU",
+	},
 };

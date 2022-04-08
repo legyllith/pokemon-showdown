@@ -3853,4 +3853,22 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	jetweng: {
 		name: "Jetweng",
 	},
+	astraleon: {
+		name: "Astraleon",
+	},
+	eidoleon: {
+		name: "Eidoleon",
+	},
+	galleon: {
+		name: "Galleon",
+	},
+	lepideon: {
+		name: "Lepideon",
+	},
+	hermeon: {
+		name: "Hermeon",
+	},
+	drakeon: {
+		name: "Drakeon",
+	},
 };

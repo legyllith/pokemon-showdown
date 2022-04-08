@@ -86608,4 +86608,34 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			moonblast: ["8L40"],
 		},
 	},
+	astraleon: {
+		learnset: {
+			rockthrow: ["8L15"],
+		},
+	},
+	eidoleon: {
+		learnset: {
+			lick: ["8L15"],
+		},
+	},
+	galleon: {
+		learnset: {
+			irondefense: ["8L15"],
+		},
+	},
+	lepideon: {
+		learnset: {
+			strugglebug: ["8L15"],
+		},
+	},
+	hermeon: {
+		learnset: {
+			gust: ["8L15"],
+		},
+	},
+	drakeon: {
+		learnset: {
+			twister: ["8L15"],
+		},
+	},
 };
