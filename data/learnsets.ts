@@ -86638,4 +86638,9 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			twister: ["8L15"],
 		},
 	},
+	champeon: {
+		learnset: {
+			brickbreak: ["8L15"],
+		},
+	},
 };

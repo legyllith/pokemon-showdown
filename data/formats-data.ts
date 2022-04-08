@@ -6680,4 +6680,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	drakeon: {
 		tier: "OU",
 	},
+	champeon: {
+		tier: "OU",
+	},
 };

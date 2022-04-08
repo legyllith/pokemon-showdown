@@ -3871,4 +3871,7 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	drakeon: {
 		name: "Drakeon",
 	},
+	champeon: {
+		name: "Champeon",
+	},
 };
