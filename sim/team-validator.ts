@@ -1390,14 +1390,8 @@ export class TeamValidator {
 		}
 
 		if (nonexistentCheck) {
-			if (tierSpecies.isNonstandard === 'Past' || tierSpecies.isNonstandard === 'Future') {
-				return `${tierSpecies.name} does not exist in Gen ${dex.gen}.`;
-			}
 			if (tierSpecies.isNonstandard === 'CAP') {
 				return `${tierSpecies.name} is a CAP and does not exist in this game.`;
-			}
-			if (tierSpecies.isNonstandard === 'Unobtainable') {
-				return `${tierSpecies.name} is not possible to obtain in this game.`;
 			}
 			if (tierSpecies.isNonstandard === 'Gigantamax') {
 				return `${tierSpecies.name} is a placeholder for a Gigantamax sprite, not a real Pokémon. (This message is likely to be a validator bug.)`;
