@@ -18064,7 +18064,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	lepideon: {
 		num: 1843,
 		name: "Lepideon",
-		types: ["Steel"],
+		types: ["Bug"],
 		genderRatio: {M: 0.875, F: 0.125},
 		baseStats: {hp: 130, atk: 95, def: 110, spa: 65, spd: 65, spe: 60},
 		abilities: {0: "Water Absorb", H: "Hydration"},
