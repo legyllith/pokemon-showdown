@@ -277,13 +277,6 @@ export class TeamValidator {
 			} else {
 				setProblems = (format.validateSet || this.validateSet).call(this, set, teamHas);
 			}
-
-			if (set.species === 'Pikachu-Starter' || set.species === 'Eevee-Starter') {
-				lgpeStarterCount++;
-				if (lgpeStarterCount === 2 && ruleTable.isBanned('nonexistent')) {
-					problems.push(`You can only have one of Pikachu-Starter or Eevee-Starter on a team.`);
-				}
-			}
 			if (dex.gen === 3 && set.species.startsWith('Deoxys')) {
 				if (!deoxysType) {
 					deoxysType = set.species;
@@ -1399,9 +1392,6 @@ export class TeamValidator {
 		if (nonexistentCheck) {
 			if (tierSpecies.isNonstandard === 'Past' || tierSpecies.isNonstandard === 'Future') {
 				return `${tierSpecies.name} does not exist in Gen ${dex.gen}.`;
-			}
-			if (tierSpecies.isNonstandard === 'LGPE') {
-				return `${tierSpecies.name} does not exist in this game, only in Let's Go Pikachu/Eevee.`;
 			}
 			if (tierSpecies.isNonstandard === 'CAP') {
 				return `${tierSpecies.name} is a CAP and does not exist in this game.`;
