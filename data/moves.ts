@@ -9051,15 +9051,15 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 15,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
-		onModifyMove(move, source, target) {
-			if (this.field.isTerrain('beachterrain')) {
-				move.basePower = 65;
-			}
-		},
 		onHit(pokemon, source) {
 			const item = pokemon.getItem();
 			if ((item.isBerry || item.isGem) && pokemon.takeItem(source)) {
 				this.add('-enditem', pokemon, item.name, '[from] move: Incinerate');
+			}
+		},
+		onEffectiveness(typeMod, target, type, move) {
+			if (this.field.isTerrain('beachterrain')){
+				return typeMod + this.dex.getEffectiveness('Grass', type);
 			}
 		},
 		secondary: null,
