@@ -16262,6 +16262,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 20,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		onModifyMove(move, source, target) {
+			if (this.field.isTerrain('beachterrain')) {
+				move.basePower = 50;
+				move.accuracy = 85;
+			}
+		},
 		onBasePower(basePower, source) {
 			if (this.field.isTerrain('burningterrain')) {
 				this.debug('terrain buff');
@@ -16271,6 +16277,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		onEffectiveness(typeMod, target, type, move) {
 			if (this.field.isTerrain('burningterrain')){
 				return typeMod + this.dex.getEffectiveness('Fire', type);
+			}
+			if (this.field.isTerrain('beachterrain')){
+				return typeMod + this.dex.getEffectiveness('Water', type);
 			}
 		},
 		secondary: {
