@@ -6037,7 +6037,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		doublesTier: "DUber",
 	},
 	eternatuseternamax: {
-		isNonstandard: "RU",
+		tier: "RU",
 		doublesTier: "(DUU)",
 	},
 	kubfu: {
