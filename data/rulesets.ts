@@ -1928,6 +1928,6 @@ export const Rulesets: {[k: string]: FormatData} = {
 				this.debug('Filter neutralize');
 				return this.chainModify(0.75);
 			}
-		},
+		}
 	},
 };
