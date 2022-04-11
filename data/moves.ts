@@ -20528,7 +20528,6 @@ export const Moves: {[moveid: string]: MoveData} = {
 		zMove: {boost: {def: 1}},
 		contestType: "Beautiful",
 	},
-	
 	thousandpidgey: {
 		num: 2004,
 		accuracy: 100,
@@ -20544,7 +20543,6 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Electric",
 		contestType: "Cool",
 	},
-	
 	fermentedmilk: {
 		num: 2005,
 		accuracy: 100,
@@ -20657,7 +20655,6 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Water",
 		contestType: "Cute",
 	},
-	
 	magmadive: {
 		num: 2007,
 		accuracy: 100,

@@ -1913,21 +1913,4 @@ export const Rulesets: {[k: string]: FormatData} = {
 			}
 		}
 	},
-	filterrule:{
-		effectType: 'Rule',
-		name: 'Filter Rule',
-		desc: 'Reduce damage from super effective attacks',
-		onSourceModifyAtk(atk, attacker, defender, move) {
-			if (target.getMoveHitData(move).typeMod > 0) {
-				this.debug('Filter neutralize');
-				return this.chainModify(0.75);
-			}
-		},
-		onSourceModifyAtk(atk, attacker, defender, move) {
-			if (target.getMoveHitData(move).typeMod > 0) {
-				this.debug('Filter neutralize');
-				return this.chainModify(0.75);
-			}
-		}
-	},
 };
