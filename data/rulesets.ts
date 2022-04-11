@@ -1913,4 +1913,15 @@ export const Rulesets: {[k: string]: FormatData} = {
 			}
 		}
 	},
+	filterrule:{
+		effectType: 'Rule',
+		name: 'Filter Rule',
+		desc: 'Reduce damage from super effective attacks',
+		onSourceModifyDamage(damage, source, target, move) {
+			if (target.getMoveHitData(move).typeMod > 0) {
+				this.debug('Filter neutralize');
+				return this.chainModify(0.75);
+			}
+		}
+	},
 };

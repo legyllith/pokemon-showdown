@@ -235,7 +235,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		doublesTier: "(DUU)",
 	},
 	pikachustarter: {
-		isNonstandard: "(PU)",
+		tier: "(PU)",
 		doublesTier: "(DUU)",
 	},
 	pikachugmax: {
@@ -1172,7 +1172,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	eeveestarter: {
-		isNonstandard: "(PU)",
+		tier: "(PU)",
 		doublesTier: "(DUU)",
 	},
 	eeveegmax: {
@@ -6037,7 +6037,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		doublesTier: "DUber",
 	},
 	eternatuseternamax: {
-		isNonstandard: "Unobtainable",
+		isNonstandard: "RU",
 		doublesTier: "(DUU)",
 	},
 	kubfu: {
