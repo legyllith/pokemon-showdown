@@ -1924,7 +1924,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 			}
 		},
 		onSourceModifyAtk(atk, attacker, defender, move) {
-			onSourceModifySpA(atk, attacker, defender, move) {
+			if (target.getMoveHitData(move).typeMod > 0) {
 				this.debug('Filter neutralize');
 				return this.chainModify(0.75);
 			}
