@@ -57,7 +57,7 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 8] Test",
 		mod: 'gen8',
-		ruleset: ['Standard NatDex', 'Species Clause', 'Dynamax Clause', 'Adjust Level = 25', 'Item Clause', 'Filter Rule'],
+		ruleset: ['Standard NatDex', 'Species Clause', 'Dynamax Clause', 'Adjust Level = 25', 'Item Clause'],
 		
 	},
 	{
