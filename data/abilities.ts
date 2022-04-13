@@ -4765,16 +4765,16 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (source.hasType('Fire')) return false;
 			if (!source.addType('Fire')) return false;
 			this.add('-start', source, 'typeadd', 'Fire', '[from] abilities: Macabre Fire');
-			if (pokemon.side.faintedLastTurn) {
+			if (source.side.faintedLastTurn) {
 				this.debug('Boosted for a faint last turn');
 				return this.chainModify(2);
 			}
 			let stats: BoostID[] = [];
 			const boost: SparseBoostsTable = {};
 			let statPlus: BoostID;
-			for (statPlus in pokemon.boosts) {
+			for (statPlus in source.boosts) {
 				if (statPlus === 'accuracy' || statPlus === 'evasion') continue;
-				if (pokemon.boosts[statPlus] < 6) {
+				if (source.boosts[statPlus] < 6) {
 					stats.push(statPlus);
 				}
 			}
@@ -4783,9 +4783,9 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 
 			stats = [];
 			let statMinus: BoostID;
-			for (statMinus in pokemon.boosts) {
+			for (statMinus in source.boosts) {
 				if (statMinus === 'accuracy' || statMinus === 'evasion') continue;
-				if (pokemon.boosts[statMinus] > -6 && statMinus !== randomStat) {
+				if (source.boosts[statMinus] > -6 && statMinus !== randomStat) {
 					stats.push(statMinus);
 				}
 			}
