@@ -4779,7 +4779,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				}
 			}
 			let randomStat: BoostID | undefined = stats.length ? this.sample(stats) : undefined;
-			if (randomStat) boost[randomStat] = 2;
+			if (randomStat) boost[randomStat] = 1;
 
 			stats = [];
 			let statMinus: BoostID;
