@@ -86643,4 +86643,19 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			brickbreak: ["8L15"],
 		},
 	},
+	poiseon: {
+		learnset: {
+			acid: ["8L15"],
+		},
+	},
+	scarfeon: {
+		learnset: {
+			sandthrow: ["8L15"],
+		},
+	},
+	deanjark: {
+		learnset: {
+			sandthrow: ["8L15"],
+		},
+	},
 };

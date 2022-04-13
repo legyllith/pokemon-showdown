@@ -6683,4 +6683,13 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	champeon: {
 		tier: "OU",
 	},
+	poiseon: {
+		tier: "OU",
+	},
+	scarfeon: {
+		tier: "OU",
+	},
+	deanjark: {
+		tier: "OU",
+	},
 };
