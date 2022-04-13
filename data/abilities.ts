@@ -4808,14 +4808,14 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onSourceModifyAtk(atk, attacker, defender, move) {
 			if (move.flags['contact']) {
 				this.debug('Aquatique Body weaken');
-				return this.chainModify([4608, 4096]);
+				return this.chainModify([3686, 4096]);
 			}
 		},
 		onSourceModifySpAPriority: 5,
 		onSourceModifySpA(atk, attacker, defender, move) {
 			if (move.flags['contact']) {
 				this.debug('Aquatique Body weaken');
-				return this.chainModify([4608, 4096]);
+				return this.chainModify([3686, 4096]);
 			}
 		},
 		name: "Aquatic Body",
