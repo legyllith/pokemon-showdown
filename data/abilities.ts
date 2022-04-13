@@ -4742,6 +4742,20 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (!source.addType('Fairy')) return false;
 			this.add('-start', source, 'typeadd', 'Fairy', '[from] abilities: Fairy Spirit');
 		},
+		onSourceModifyAtkPriority: 6,
+		onSourceModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Ghost') {
+				this.debug('Fairy Spirit weaken');
+				return this.chainModify(0.75);
+			}
+		},
+		onSourceModifySpAPriority: 5,
+		onSourceModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Ghost') {
+				this.debug('Fairy Spirit weaken');
+				return this.chainModify(0.75);
+			}
+		},
 		name: "Fairy Spirit",
 		rating: 3,
 		num: 2008,
@@ -4751,6 +4765,34 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (source.hasType('Fire')) return false;
 			if (!source.addType('Fire')) return false;
 			this.add('-start', source, 'typeadd', 'Fire', '[from] abilities: Macabre Fire');
+			if (pokemon.side.faintedLastTurn) {
+				this.debug('Boosted for a faint last turn');
+				return this.chainModify(2);
+			}
+			let stats: BoostID[] = [];
+			const boost: SparseBoostsTable = {};
+			let statPlus: BoostID;
+			for (statPlus in pokemon.boosts) {
+				if (statPlus === 'accuracy' || statPlus === 'evasion') continue;
+				if (pokemon.boosts[statPlus] < 6) {
+					stats.push(statPlus);
+				}
+			}
+			let randomStat: BoostID | undefined = stats.length ? this.sample(stats) : undefined;
+			if (randomStat) boost[randomStat] = 2;
+
+			stats = [];
+			let statMinus: BoostID;
+			for (statMinus in pokemon.boosts) {
+				if (statMinus === 'accuracy' || statMinus === 'evasion') continue;
+				if (pokemon.boosts[statMinus] > -6 && statMinus !== randomStat) {
+					stats.push(statMinus);
+				}
+			}
+			randomStat = stats.length ? this.sample(stats) : undefined;
+			if (randomStat) boost[randomStat] = -1;
+
+			this.boost(boost);
 		},
 		name: "Macabre Fire",
 		rating: 3,
@@ -4761,6 +4803,20 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (source.hasType('Water')) return false;
 			if (!source.addType('Water')) return false;
 			this.add('-start', source, 'typeadd', 'Water', '[from] abilities: Aquatic Body');
+		},
+		onSourceModifyAtkPriority: 6,
+		onSourceModifyAtk(atk, attacker, defender, move) {
+			if (move.flags['contact']) {
+				this.debug('Aquatique Body weaken');
+				return this.chainModify([4608, 4096]);
+			}
+		},
+		onSourceModifySpAPriority: 5,
+		onSourceModifySpA(atk, attacker, defender, move) {
+			if (move.flags['contact']) {
+				this.debug('Aquatique Body weaken');
+				return this.chainModify([4608, 4096]);
+			}
 		},
 		name: "Aquatic Body",
 		rating: 3,
