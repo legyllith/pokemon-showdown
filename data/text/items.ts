@@ -2336,4 +2336,9 @@ export const ItemsText: {[k: string]: ItemText} = {
 		name: "Crucibellite",
 		desc: "If held by a Crucibelle, this item allows it to Mega Evolve in battle.",
 	},
+	
+	awakeningglove: {
+		name: "Awakening Glove",
+		desc: "If held by a pokemon with Awaken punch move, he gain fighting type.",
+	},
 };

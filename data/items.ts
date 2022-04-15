@@ -6976,4 +6976,22 @@ export const Items: {[itemid: string]: ItemData} = {
 		gen: 6,
 		isNonstandard: "CAP",
 	},
+	awakeningglove: {
+		name: "Awakening Glove",
+		spritenum: 1184,
+		onStart(source) {
+			if (source.hasType('Water')) return false;
+			if (!source.addType('Water')) return false;
+			this.add('-start', source, 'typeadd', 'Water', '[from] abilities: Aquatic Body');
+			for (const moveSlot of source.moveSlots) {
+					const move = this.dex.moves.get(moveSlot.move);
+					if (move.id === 'stealthice') {
+						this.debug('Awakening Glove');
+						this.boost({spa: 1});
+					}
+				}
+		},
+		num: 2000,
+		gen: 8,
+	},
 };
