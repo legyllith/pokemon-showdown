@@ -20997,4 +20997,21 @@ export const Moves: {[moveid: string]: MoveData} = {
 		zMove: {boost: {def: 1}},
 		contestType: "Cool",
 	},
+	awakenpunch: {
+		num: 2019,
+		accuracy: 100,
+		basePower: 75,
+		category: "Physical",
+		name: "Awaken Punch",
+		pp: 15,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
+		secondary: {
+			chance: 10,
+			status: 'par',
+		},
+		target: "normal",
+		type: "Fighting",
+		contestType: "Cool",
+	},
 };

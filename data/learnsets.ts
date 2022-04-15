@@ -58035,6 +58035,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 		learnset: {
 			allyswitch: ["8M", "7T"],
 			astonish: ["8L1", "7L1", "6L1", "5L1"],
+			awakenpunch: ["8L28"],
 			block: ["7T", "6T", "5T"],
 			bodypress: ["8M"],
 			bodyslam: ["8M"],

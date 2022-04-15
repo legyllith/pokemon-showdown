@@ -6945,4 +6945,9 @@ export const MovesText: {[k: string]: MoveText} = {
 		end: "  The Iced stones disappeared from around [TEAM]!",
 		damage: "  Iced stones dug into [POKEMON]!",
 	},
+	awakenpunch: {
+		name: "Awaken Punch",
+		desc: "Punch opponant, having this skill and awakening gloves may add Fighting type to your pokemon",
+		shortDesc: "Punch opponant, having this skill and awakening gloves may add Fighting type to your pokemon",
+	},
 };
