@@ -6984,9 +6984,7 @@ export const Items: {[itemid: string]: ItemData} = {
 					const move = this.dex.moves.get(moveSlot.move);
 					if (move.id === 'awakenpunch') {
 						if (source.species.name === 'Hitmonchan'){
-							if (source.hasType('Normal')) return false;
-							if (!source.addType('Normal')) return false;
-							this.add('-start', source, 'typeadd', 'Normal', '[from] items: Awakening Glove');
+							source.formeChange('hitmonchanawaken');
 
 						}
 						else if (move.id === 'awakenpunch'){
