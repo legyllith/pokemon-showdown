@@ -3883,4 +3883,22 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	deanjark: {
 		name: "Deanjark",
 	},
+	paritone: {
+		name: "Paritone",
+	},
+	paritonecombat: {
+		name: "Paritone-Combat",
+	},
+	paritoneelec: {
+		name: "Paritone-Elec",
+	},
+	paritonefeu: {
+		name: "Paritone-Feu",
+	},
+	paritoneice: {
+		name: "Paritone-Ice",
+	},
+	paritonepsy: {
+		name: "Paritone-Psy",
+	},
 };

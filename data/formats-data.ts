@@ -6692,4 +6692,22 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	deanjark: {
 		tier: "OU",
 	},
+	paritone: {
+		tier: "OU",
+	},
+	paritonecombat: {
+		tier: "OU",
+	},
+	paritoneelec: {
+		tier: "OU",
+	},
+	paritonefeu: {
+		tier: "OU",,
+	},
+	paritoneice: {
+		tier: "OU",
+	},
+	paritonepsy: {
+		tier: "OU",
+	},
 };

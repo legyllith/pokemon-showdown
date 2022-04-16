@@ -6983,9 +6983,17 @@ export const Items: {[itemid: string]: ItemData} = {
 			for (const moveSlot of source.moveSlots) {
 					const move = this.dex.moves.get(moveSlot.move);
 					if (move.id === 'awakenpunch') {
-						if (source.hasType('Fighting')) return false;
-						if (!source.addType('Fighting')) return false;
-						this.add('-start', source, 'typeadd', 'Fighting', '[from] items: Awakening Glove');
+						if (source.species.name === 'Hitmonchan'){
+							if (source.hasType('Normal')) return false;
+							if (!source.addType('Normal')) return false;
+							this.add('-start', source, 'typeadd', 'Normal', '[from] items: Awakening Glove');
+
+						}
+						else if (move.id === 'awakenpunch'){
+							if (source.hasType('Fighting')) return false;
+							if (!source.addType('Fighting')) return false;
+							this.add('-start', source, 'typeadd', 'Fighting', '[from] items: Awakening Glove');
+						}
 					}
 				}
 		},

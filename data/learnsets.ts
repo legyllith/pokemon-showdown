@@ -3740,6 +3740,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			agility: ["8M"],
 			amnesia: ["8M"],
 			attract: ["8M", "7M", "7E", "6M", "5M", "4M", "3M"],
+			awakenpunch: ["8L28"],
 			bide: ["7E"],
 			bodyslam: ["8M", "7E", "3T"],
 			brickbreak: ["8M", "8E", "7M", "6M", "5M", "4M", "3M"],
@@ -4099,6 +4100,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			aerialace: ["7M", "6M", "5M", "4M", "3M"],
 			aquatail: ["7T", "6T", "5T", "4T"],
 			attract: ["8M", "7M", "7E", "6M", "5M", "4M", "3M"],
+			awakenpunch: ["8L28"],
 			avalanche: ["8M", "4M"],
 			beatup: ["8M"],
 			bide: ["7E"],
@@ -4410,6 +4412,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			aquatail: ["7T", "7S0", "6T", "5T", "4T"],
 			attract: ["8M", "7M", "7E", "6M", "5M", "4M", "3M"],
 			avalanche: ["8M", "4M"],
+			awakenpunch: ["8L28"],
 			beatup: ["8M"],
 			bide: ["7E"],
 			blizzard: ["8M", "8E", "7M", "7E", "6M", "5M", "4M", "3M"],
@@ -8987,6 +8990,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 		learnset: {
 			assurance: ["8M"],
 			attract: ["8M", "7M", "7E", "6M", "5M", "4M", "3M"],
+			awakenpunch: ["8L28"],
 			bide: ["8E", "7E"],
 			bodyslam: ["8M", "7E", "3T"],
 			brickbreak: ["8M", "8E", "7M", "6M", "5M", "4M", "3M"],
@@ -13672,6 +13676,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 		learnset: {
 			aerialace: ["7M", "6M", "5M", "4M", "3M"],
 			attract: ["8M", "7M", "7E", "6M", "5M", "4M", "3M"],
+			awakenpunch: ["8L28"],
 			bide: ["7E"],
 			blizzard: ["8M", "8E", "7M", "7E", "6M", "5M", "4M", "3M"],
 			bodyslam: ["8M", "7E", "3T"],
@@ -14138,6 +14143,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 		learnset: {
 			agility: ["8M", "8L28", "8E", "7L1", "7E", "6L6", "5L6", "4L6", "3L7"],
 			attract: ["8M", "7M", "7E", "6M", "5M", "4M", "3M"],
+			awakenpunch: ["8L28"],
 			aurasphere: ["8M"],
 			bide: ["7E"],
 			bodyslam: ["8M", "7E", "3T"],
@@ -57783,6 +57789,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			assurance: ["8M"],
 			attract: ["8M", "7M", "6M", "5M"],
 			aurasphere: ["8M", "8L45", "7L1", "6L1", "5L70"],
+			awakenpunch: ["8L28"],
 			batonpass: ["8M"],
 			blazekick: ["8M"],
 			bounce: ["8M", "8L53", "7T", "7L49", "6T", "6L49", "5T", "5L49"],
@@ -69615,6 +69622,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			aerialace: ["7M"],
 			assurance: ["8M"],
 			attract: ["8M", "7M"],
+			awakenpunch: ["8L28"],
 			beatup: ["8M", "8L15", "7L15"],
 			bestow: ["7L25", "7S0"],
 			block: ["7T"],
@@ -86672,6 +86680,40 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	deanjark: {
 		learnset: {
 			sandthrow: ["8L15"],
+		},
+	},
+	paritone: {
+		learnset: {
+			revelationdance: ["8L40"],
+		},
+	},
+	paritonecombat: {
+		learnset: {
+			revelationdance: ["8L40"],
+		},
+	},
+	
+	paritoneelec: {
+		learnset: {
+			revelationdance: ["8L40"],
+		},
+	},
+	
+	paritonefeu: {
+		learnset: {
+			revelationdance: ["8L40"],
+		},
+	},
+	
+	paritoneice: {
+		learnset: {
+			revelationdance: ["8L40"],
+		},
+	},
+	
+	paritonepsy: {
+		learnset: {
+			revelationdance: ["8L40"],
 		},
 	},
 };
