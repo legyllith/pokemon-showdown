@@ -2429,10 +2429,10 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	noguard: {
 		onAnyInvulnerabilityPriority: 1,
 		onAnyInvulnerability(target, source, move) {
-			if (move && (source === this.effectState.target || target === this.effectState.target)) return 0;
+			if (move && move.ohko !== true && (source === this.effectState.target || target === this.effectState.target)) return 0;
 		},
 		onAnyAccuracy(accuracy, target, source, move) {
-			if (move && (source === this.effectState.target || target === this.effectState.target)) {
+			if (move && move.ohko !== true && (source === this.effectState.target || target === this.effectState.target)) {
 				return true;
 			}
 			return accuracy;
