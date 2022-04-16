@@ -6702,7 +6702,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "OU",
 	},
 	paritonefeu: {
-		tier: "OU",,
+		tier: "OU",
 	},
 	paritoneice: {
 		tier: "OU",
