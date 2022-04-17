@@ -6950,4 +6950,10 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "Punch opponant, having this skill and awakening gloves may add Fighting type to your pokemon",
 		shortDesc: "Punch opponant, having this skill and awakening gloves may add Fighting type to your pokemon",
 	},
+	rainybloom: {
+		name: "Rainy Bloom",
+		desc: "This attack charges on the first turn and executes on the second. Power is halved if the weather is Hail, Desolated Land, Sunday, or Sandstorm and the user is not holding Utility Umbrella. If the user is holding a Power Herb or the weather is Desolate Land or Sunny Day, the move completes in one turn. If the user is holding Utility Umbrella and the weather is Primodial Sea or Raindance, the move still requires a turn to charge.",
+		shortDesc: "Charges turn 1. Hits turn 2. No charge in raint.",
+		prepare: "  [POKEMON] absorbed water!",
+	},
 };
