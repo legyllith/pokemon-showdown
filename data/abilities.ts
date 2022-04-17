@@ -1139,6 +1139,26 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 218,
 	},
 	forecast: {
+		onStart(source) {
+			for (const moveSlot of source.moveSlots) {
+					const move = this.dex.moves.get(moveSlot.move);
+					const weather = ['sandstorm', 'hail','raindance','sunnyday'];
+					if (weather.includes(move.id)) {
+						const count = 0;
+						for (const moveSlot1 of source.moveSlots) {
+							const move1 = this.dex.moves.get(moveSlot1.move);
+							if (weather.includes(move1.id)){
+								continue;
+								count++;
+							}
+						}
+						if(count === 3) {
+							this.field.setWeather(move.id)
+							break;
+						}
+					}
+				}
+		},
 		onUpdate(pokemon) {
 			if (pokemon.baseSpecies.baseSpecies !== 'Castform' || pokemon.transformed) return;
 			let forme = null;
