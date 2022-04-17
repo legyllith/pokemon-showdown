@@ -3904,4 +3904,7 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	hitmonchanawaken: {
 		name: "Hitmonchan-Awaken",
 	},
+	machampawaken: {
+		name: "Machamp-Awaken",
+	},
 };

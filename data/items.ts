@@ -6985,7 +6985,9 @@ export const Items: {[itemid: string]: ItemData} = {
 					if (move.id === 'awakenpunch') {
 						if (source.species.name === 'Hitmonchan'){
 							source.formeChange('hitmonchanawaken');
-
+						}
+						else if (source.species.name === 'Machamp'){
+							source.formeChange('machampawaken');
 						}
 						else if (move.id === 'awakenpunch'){
 							if (source.hasType('Fighting')) return false;

@@ -6713,4 +6713,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	hitmonchanawaken: {
 		tier: "OU",
 	},
+	machampawaken: {
+		tier: "OU",
+	},
 };
