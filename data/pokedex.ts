@@ -18285,6 +18285,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		name: "Machamp-Awaken",
 		types: ["Fire","Fighting"],
 		baseSpecies: "Machamp",
+		forme: "Awaken",
 		genderRatio: {M: 0.75, F: 0.25},
 		baseStats: {hp: 90, atk: 135, def: 90, spa: 70, spd: 95, spe: 65},
 		abilities: {0: "Guts", 1: "No Guard", H: "Steadfast"},
