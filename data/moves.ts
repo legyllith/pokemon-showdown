@@ -21095,7 +21095,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		contestType: "Beautiful",
 	},
 	bravesong: {
-		num: 2021,
+		num: 2022,
 		accuracy: 100,
 		basePower: 30,
 		basePowerCallback() {
@@ -21132,7 +21132,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		contestType: "Beautiful",
 	},
 	electrosong: {
-		num: 2021,
+		num: 2023,
 		accuracy: 100,
 		basePower: 30,
 		basePowerCallback() {
@@ -21172,7 +21172,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		contestType: "Beautiful",
 	},
 	firecampsong: {
-		num: 2021,
+		num: 2024,
 		accuracy: 100,
 		basePower: 30,
 		basePowerCallback() {
@@ -21212,7 +21212,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		contestType: "Beautiful",
 	},
 	sadsong: {
-		num: 2021,
+		num: 2025,
 		accuracy: 100,
 		basePower: 30,
 		basePowerCallback() {
@@ -21252,7 +21252,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		contestType: "Beautiful",
 	},
 	dreamsong: {
-		num: 2021,
+		num: 2026,
 		accuracy: 100,
 		basePower: 30,
 		basePowerCallback() {

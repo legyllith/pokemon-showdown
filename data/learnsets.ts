@@ -86714,35 +86714,67 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	paritone: {
 		learnset: {
 			revelationdance: ["8L40"],
+			birdsong: ["8M"],
+			bravesong: ["8M"],
+			electrosong: ["8M"],
+			firecampsong: ["8M"],
+			sadsong: ["8M"],
+			dreamsong: ["8M"],
 		},
 	},
 	paritonecombat: {
 		learnset: {
 			revelationdance: ["8L40"],
+			birdsong: ["8M"],
+			bravesong: ["8M"],
+			electrosong: ["8M"],
+			firecampsong: ["8M"],
+			sadsong: ["8M"],
+			dreamsong: ["8M"],
 		},
 	},
-	
 	paritoneelec: {
 		learnset: {
 			revelationdance: ["8L40"],
+			birdsong: ["8M"],
+			bravesong: ["8M"],
+			electrosong: ["8M"],
+			firecampsong: ["8M"],
+			sadsong: ["8M"],
+			dreamsong: ["8M"],
 		},
 	},
-	
 	paritonefeu: {
 		learnset: {
 			revelationdance: ["8L40"],
+			birdsong: ["8M"],
+			bravesong: ["8M"],
+			electrosong: ["8M"],
+			firecampsong: ["8M"],
+			sadsong: ["8M"],
+			dreamsong: ["8M"],
 		},
 	},
-	
 	paritoneice: {
 		learnset: {
 			revelationdance: ["8L40"],
+			birdsong: ["8M"],
+			bravesong: ["8M"],
+			electrosong: ["8M"],
+			firecampsong: ["8M"],
+			sadsong: ["8M"],
+			dreamsong: ["8M"],
 		},
 	},
-	
 	paritonepsy: {
 		learnset: {
 			revelationdance: ["8L40"],
+			birdsong: ["8M"],
+			bravesong: ["8M"],
+			electrosong: ["8M"],
+			firecampsong: ["8M"],
+			sadsong: ["8M"],
+			dreamsong: ["8M"],
 		},
 	},
 };
