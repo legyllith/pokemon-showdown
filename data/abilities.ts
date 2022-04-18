@@ -1153,7 +1153,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 							this.boost({spa: 1});
 							countforecast++;
 						}
-						if(count === 3) {
+						if(countforecast === 3) {
 							this.field.setWeather(move.id)
 							break;
 						}
