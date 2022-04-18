@@ -18303,6 +18303,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		name: "Mienshao-Awaken",
 		types: ["Psychic","Fighting"],
 		baseSpecies: "Mienshao",
+		forme: "Awaken",
 		baseStats: {hp: 68, atk: 125, def: 63, spa: 125, spd: 63, spe: 106},
 		abilities: {0: "Inner Focus", 1: "Regenerator", H: "Reckless"},
 		heightm: 1.4,

@@ -4849,37 +4849,37 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				effect && effect.id === 'birdsong' && source.hasAbility('walkman') &&
 				source.species.name === 'paritone'
 			) {
-				if (pokemon.species.id !== 'paritone') forme = 'Paritone';
+				if (source.species.id !== 'paritone') forme = 'Paritone';
 			}
 			else if (
 				effect && effect.id === 'birdsong' && source.hasAbility('walkman') &&
 				source.species.name === 'paritone'
 			) {
-				if (pokemon.species.id !== 'paritonecombat') forme = 'Paritone-Combat';
+				if (source.species.id !== 'paritonecombat') forme = 'Paritone-Combat';
 			}
 			else if (
 				effect && effect.id === 'electrosong' && source.hasAbility('walkman') &&
 				source.species.name === 'paritone'
 			) {
-				if (pokemon.species.id !== 'paritoneelec') forme = 'Paritone-Elec';
+				if (source.species.id !== 'paritoneelec') forme = 'Paritone-Elec';
 			}
 			else if (
 				effect && effect.id === 'firecampsong' && source.hasAbility('walkman') &&
 				source.species.name === 'paritone'
 			) {
-				if (pokemon.species.id !== 'paritonefeu') forme = 'Paritone-Feu';
+				if (source.species.id !== 'paritonefeu') forme = 'Paritone-Feu';
 			}
 			else if (
 				effect && effect.id === 'sadsong' && source.hasAbility('walkman') &&
 				source.species.name === 'paritone'
 			) {
-				if (pokemon.species.id !== 'paritoneice') forme = 'Paritone-Ice';
+				if (source.species.id !== 'paritoneice') forme = 'Paritone-Ice';
 			}
 			else if (
 				effect && effect.id === 'dreamsong' && source.hasAbility('walkman') &&
 				source.species.name === 'paritone'
 			) {
-				if (pokemon.species.id !== 'paritonepsy') forme = 'Paritone-Psy';
+				if (source.species.id !== 'paritonepsy') forme = 'Paritone-Psy';
 			}
 		},
 		isPermanent: true,
