@@ -4845,40 +4845,47 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	walkman: {
 		// The Dive part of this mechanic is implemented in Dive's `onTryMove` in moves.ts
 		onSourceTryPrimaryHit(target, source, effect) {
+			if (effect.id === 'birdsong') this.boost({spa: 1});
 			if (
 				effect && effect.id === 'birdsong' && source.hasAbility('walkman') &&
 				source.species.name === 'paritone'
 			) {
+				this.boost({spa: 1});
 				if (source.species.id !== 'paritone') forme = 'Paritone';
 			}
 			else if (
 				effect && effect.id === 'birdsong' && source.hasAbility('walkman') &&
 				source.species.name === 'paritone'
 			) {
+				this.boost({spa: 1});
 				if (source.species.id !== 'paritonecombat') forme = 'Paritone-Combat';
 			}
 			else if (
 				effect && effect.id === 'electrosong' && source.hasAbility('walkman') &&
 				source.species.name === 'paritone'
 			) {
+				this.boost({spa: 1});
 				if (source.species.id !== 'paritoneelec') forme = 'Paritone-Elec';
 			}
 			else if (
 				effect && effect.id === 'firecampsong' && source.hasAbility('walkman') &&
 				source.species.name === 'paritone'
 			) {
+				this.boost({spa: 1});
 				if (source.species.id !== 'paritonefeu') forme = 'Paritone-Feu';
 			}
 			else if (
 				effect && effect.id === 'sadsong' && source.hasAbility('walkman') &&
 				source.species.name === 'paritone'
 			) {
+				this.boost({spa: 1});
 				if (source.species.id !== 'paritoneice') forme = 'Paritone-Ice';
 			}
 			else if (
 				effect && effect.id === 'dreamsong' && source.hasAbility('walkman') &&
 				source.species.name === 'paritone'
 			) {
+				this.boost({spa: 1});
 				if (source.species.id !== 'paritonepsy') forme = 'Paritone-Psy';
 			}
 		},
