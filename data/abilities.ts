@@ -1144,14 +1144,14 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 					const move = this.dex.moves.get(moveSlot.move);
 					const weather = ['sandstorm', 'hail','raindance','sunnyday'];
 					if (weather.includes(move.id)) {
-						this.boost({spa: 1});
 						const count = 0;
 						for (const moveSlot1 of source.moveSlots) {
 							const move1 = this.dex.moves.get(moveSlot1.move);
 							if (weather.includes(move1.id)){
 								continue;
-								count++;
 							}
+							this.boost({spa: 1});
+							count++;
 						}
 						if(count === 3) {
 							this.field.setWeather(move.id)
