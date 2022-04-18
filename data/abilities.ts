@@ -1150,7 +1150,6 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 							if (weather.includes(move1.id)){
 								continue;
 							}
-							this.boost({spa: 1});
 							countforecast++;
 						}
 						if(countforecast === 3) {
