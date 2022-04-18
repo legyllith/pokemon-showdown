@@ -6716,4 +6716,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	machampawaken: {
 		tier: "OU",
 	},
+	mienshaoawaken: {
+		tier: "OU",
+	},
 };

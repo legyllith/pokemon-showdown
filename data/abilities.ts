@@ -4883,7 +4883,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			}
 		},
 		isPermanent: true,
-		name: "Gulp Missile",
+		name: "Walkman",
 		rating: 2.5,
 		num: 241,
 	},
