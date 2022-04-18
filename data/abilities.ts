@@ -4845,10 +4845,10 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	walkman: {
 		// The Dive part of this mechanic is implemented in Dive's `onTryMove` in moves.ts
 		onSourceTryPrimaryHit(target, source, effect) {
-			if (effect.id === 'birdsong' && source.species.name === 'paritone') this.boost({spa: 1});
+			if (effect.id === 'birdsong' && source.species.name === 'Paritone') this.boost({spa: 1});
 			if (
 				effect && effect.id === 'birdsong' && source.hasAbility('walkman') &&
-				source.species.name === 'paritone'
+				source.species.name === 'Paritone'
 			) {
 				this.boost({spa: 1});
 				if (source.species.id !== 'paritone') source.formeChange('Paritone', effect);
