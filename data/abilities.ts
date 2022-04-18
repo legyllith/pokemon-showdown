@@ -4856,35 +4856,35 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				effect && effect.id === 'bravesong' && source.hasAbility('walkman') &&
 				paritonelist.includes(source.species.name)
 			) {
-				if (source.species.id !== 'paritonecombat') forme = 'Paritone-Combat';
+				if (source.species.id !== 'paritonecombat') source.formeChange('Paritone-Combat', effect);
 			}
 			else if (
 				effect && effect.id === 'electrosong' && source.hasAbility('walkman') &&
 				paritonelist.includes(source.species.name)
 			) {
 				this.boost({spa: 1});
-				if (source.species.id !== 'paritoneelec') forme = 'Paritone-Elec';
+				if (source.species.id !== 'paritoneelec') source.formeChange('Paritone-Elec', effect);
 			}
 			else if (
 				effect && effect.id === 'firecampsong' && source.hasAbility('walkman') &&
 				paritonelist.includes(source.species.name)
 			) {
 				this.boost({spa: 1});
-				if (source.species.id !== 'paritonefeu') forme = 'Paritone-Feu';
+				if (source.species.id !== 'paritonefeu') source.formeChange('Paritone-Feu', effect);
 			}
 			else if (
 				effect && effect.id === 'sadsong' && source.hasAbility('walkman') &&
 				paritonelist.includes(source.species.name)
 			) {
 				this.boost({spa: 1});
-				if (source.species.id !== 'paritoneice') forme = 'Paritone-Ice';
+				if (source.species.id !== 'paritoneice') source.formeChange('Paritone-Ice', effect);
 			}
 			else if (
 				effect && effect.id === 'dreamsong' && source.hasAbility('walkman') &&
 				paritonelist.includes(source.species.name)
 			) {
 				this.boost({spa: 1});
-				if (source.species.id !== 'paritonepsy') forme = 'Paritone-Psy';
+				if (source.species.id !== 'paritonepsy') source.formeChange('Paritone-Psy', effect);
 			}
 		},
 		isPermanent: true,
