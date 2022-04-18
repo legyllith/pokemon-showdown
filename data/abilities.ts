@@ -4850,9 +4850,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				effect && effect.id === 'birdsong' && source.hasAbility('walkman') &&
 				source.species.name === 'paritone'
 			) {
-				this.boost({spa: 1});
-				if (source.species.id !== 'paritone')const forme = 'paritone';
-				source.formeChange(forme, effect);
+				if (source.species.id !== 'paritone') source.formeChange('Paritone', effect);
 			}
 			else if (
 				effect && effect.id === 'birdsong' && source.hasAbility('walkman') &&
