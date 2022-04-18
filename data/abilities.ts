@@ -4845,46 +4845,43 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	walkman: {
 		// The Dive part of this mechanic is implemented in Dive's `onTryMove` in moves.ts
 		onSourceTryPrimaryHit(target, source, effect) {
-			if (effect.id === 'birdsong' && source.species.name === 'Paritone') this.boost({spa: 1});
-			const paritonelist = ['Paritone','Paritone-Combat']
+			const paritonelist = ['Paritone','Paritone-Combat','Paritone-Elec','Paritone-Feu','Paritone-Ice','Paritone-Psy']
 			if (
 				effect && effect.id === 'birdsong' && source.hasAbility('walkman') &&
 				paritonelist.includes(source.species.name)
 			) {
-				this.boost({spa: 1});
 				if (source.species.id !== 'paritone') source.formeChange('Paritone', effect);
 			}
 			else if (
 				effect && effect.id === 'bravesong' && source.hasAbility('walkman') &&
-				source.species.name === 'paritone'
+				paritonelist.includes(source.species.name)
 			) {
-				this.boost({spa: 1});
 				if (source.species.id !== 'paritonecombat') forme = 'Paritone-Combat';
 			}
 			else if (
 				effect && effect.id === 'electrosong' && source.hasAbility('walkman') &&
-				source.species.name === 'paritone'
+				paritonelist.includes(source.species.name)
 			) {
 				this.boost({spa: 1});
 				if (source.species.id !== 'paritoneelec') forme = 'Paritone-Elec';
 			}
 			else if (
 				effect && effect.id === 'firecampsong' && source.hasAbility('walkman') &&
-				source.species.name === 'paritone'
+				paritonelist.includes(source.species.name)
 			) {
 				this.boost({spa: 1});
 				if (source.species.id !== 'paritonefeu') forme = 'Paritone-Feu';
 			}
 			else if (
 				effect && effect.id === 'sadsong' && source.hasAbility('walkman') &&
-				source.species.name === 'paritone'
+				paritonelist.includes(source.species.name)
 			) {
 				this.boost({spa: 1});
 				if (source.species.id !== 'paritoneice') forme = 'Paritone-Ice';
 			}
 			else if (
 				effect && effect.id === 'dreamsong' && source.hasAbility('walkman') &&
-				source.species.name === 'paritone'
+				paritonelist.includes(source.species.name)
 			) {
 				this.boost({spa: 1});
 				if (source.species.id !== 'paritonepsy') forme = 'Paritone-Psy';
