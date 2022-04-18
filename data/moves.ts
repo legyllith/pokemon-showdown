@@ -21050,4 +21050,245 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Grass",
 		contestType: "Cool",
 	},
+	birdsong: {
+		num: 2021,
+		accuracy: 100,
+		basePower: 30,
+		basePowerCallback() {
+			if (this.field.pseudoWeather.echoedvoice) {
+				return 30 * this.field.pseudoWeather.echoedvoice.multiplier;
+			}
+			return 30;
+		},
+		category: "Special",
+		name: "Bird Song",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1},
+		onTry() {
+			this.field.addPseudoWeather('echoedvoice');
+		},
+		condition: {
+			duration: 2,
+			onFieldStart() {
+				this.effectState.multiplier = 1;
+			},
+			onFieldRestart() {
+				if (this.effectState.duration !== 2) {
+					this.effectState.duration = 2;
+					if (this.effectState.multiplier < 5) {
+						this.effectState.multiplier++;
+					}
+				}
+			},
+		},
+		secondary: {
+			chance: 20,
+			self: {
+				boosts: {
+					spa: 1,
+				},
+			},
+		},
+		target: "normal",
+		type: "Flying",
+		contestType: "Beautiful",
+	},
+	bravesong: {
+		num: 2021,
+		accuracy: 100,
+		basePower: 30,
+		basePowerCallback() {
+			if (this.field.pseudoWeather.echoedvoice) {
+				return 30 * this.field.pseudoWeather.echoedvoice.multiplier;
+			}
+			return 30;
+		},
+		category: "Physical",
+		name: "Brave Song",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1},
+		onTry() {
+			this.field.addPseudoWeather('echoedvoice');
+		},
+		condition: {
+			duration: 2,
+			onFieldStart() {
+				this.effectState.multiplier = 1;
+			},
+			onFieldRestart() {
+				if (this.effectState.duration !== 2) {
+					this.effectState.duration = 2;
+					if (this.effectState.multiplier < 5) {
+						this.effectState.multiplier++;
+					}
+				}
+			},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Fighting",
+		contestType: "Beautiful",
+	},
+	electrosong: {
+		num: 2021,
+		accuracy: 100,
+		basePower: 30,
+		basePowerCallback() {
+			if (this.field.pseudoWeather.echoedvoice) {
+				return 30 * this.field.pseudoWeather.echoedvoice.multiplier;
+			}
+			return 30;
+		},
+		category: "Special",
+		name: "Electro Song",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1},
+		onTry() {
+			this.field.addPseudoWeather('echoedvoice');
+		},
+		condition: {
+			duration: 2,
+			onFieldStart() {
+				this.effectState.multiplier = 1;
+			},
+			onFieldRestart() {
+				if (this.effectState.duration !== 2) {
+					this.effectState.duration = 2;
+					if (this.effectState.multiplier < 5) {
+						this.effectState.multiplier++;
+					}
+				}
+			},
+		},
+		secondary: {
+			chance: 20,
+			status: 'par',
+		},
+		target: "normal",
+		type: "Electric",
+		contestType: "Beautiful",
+	},
+	firecampsong: {
+		num: 2021,
+		accuracy: 100,
+		basePower: 30,
+		basePowerCallback() {
+			if (this.field.pseudoWeather.echoedvoice) {
+				return 30 * this.field.pseudoWeather.echoedvoice.multiplier;
+			}
+			return 30;
+		},
+		category: "Special",
+		name: "Firecamp Song",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1},
+		onTry() {
+			this.field.addPseudoWeather('echoedvoice');
+		},
+		condition: {
+			duration: 2,
+			onFieldStart() {
+				this.effectState.multiplier = 1;
+			},
+			onFieldRestart() {
+				if (this.effectState.duration !== 2) {
+					this.effectState.duration = 2;
+					if (this.effectState.multiplier < 5) {
+						this.effectState.multiplier++;
+					}
+				}
+			},
+		},
+		secondary: {
+			chance: 20,
+			status: 'brn',
+		},
+		target: "normal",
+		type: "Fire",
+		contestType: "Beautiful",
+	},
+	sadsong: {
+		num: 2021,
+		accuracy: 100,
+		basePower: 30,
+		basePowerCallback() {
+			if (this.field.pseudoWeather.echoedvoice) {
+				return 30 * this.field.pseudoWeather.echoedvoice.multiplier;
+			}
+			return 30;
+		},
+		category: "Special",
+		name: "Sad Song",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1},
+		onTry() {
+			this.field.addPseudoWeather('echoedvoice');
+		},
+		condition: {
+			duration: 2,
+			onFieldStart() {
+				this.effectState.multiplier = 1;
+			},
+			onFieldRestart() {
+				if (this.effectState.duration !== 2) {
+					this.effectState.duration = 2;
+					if (this.effectState.multiplier < 5) {
+						this.effectState.multiplier++;
+					}
+				}
+			},
+		},
+		secondary: {
+			chance: 20,
+			status: 'frz',
+		},
+		target: "normal",
+		type: "Ice",
+		contestType: "Beautiful",
+	},
+	dreamsong: {
+		num: 2021,
+		accuracy: 100,
+		basePower: 30,
+		basePowerCallback() {
+			if (this.field.pseudoWeather.echoedvoice) {
+				return 30 * this.field.pseudoWeather.echoedvoice.multiplier;
+			}
+			return 30;
+		},
+		category: "Special",
+		name: "Dream Song",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1},
+		onTry() {
+			this.field.addPseudoWeather('echoedvoice');
+		},
+		condition: {
+			duration: 2,
+			onFieldStart() {
+				this.effectState.multiplier = 1;
+			},
+			onFieldRestart() {
+				if (this.effectState.duration !== 2) {
+					this.effectState.duration = 2;
+					if (this.effectState.multiplier < 5) {
+						this.effectState.multiplier++;
+					}
+				}
+			},
+		},
+		secondary: {
+			chance: 20,
+			status: 'slp',
+		},
+		target: "normal",
+		type: "Psychic",
+		contestType: "Beautiful",
+	},
 };

@@ -1772,14 +1772,18 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 	},
 	fairyspirit: {
 		name: "Fairy Spirit",
-		shortDesc: "add fairy type",
+		shortDesc: "add fairy type, up by 10% ghost resist",
 	},
 	macabrefire: {
 		name: "Macabre Fire",
-		shortDesc: "add fire type",
+		shortDesc: "add fire type, if ennemy faint an ally when switch in you gain stats and loose stats",
 	},
 	aquaticbody: {
 		name: "Aquatic Body",
-		shortDesc: "add water type",
+		shortDesc: "add water type, up by 10% resistance to contact move",
+	},
+	walkman: {
+		name: "Walkman",
+		shortDesc: "change type of user link to some sonor attacks",
 	},
 };

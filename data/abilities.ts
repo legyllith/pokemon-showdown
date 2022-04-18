@@ -4766,14 +4766,14 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onSourceModifyAtk(atk, attacker, defender, move) {
 			if (move.type === 'Ghost') {
 				this.debug('Fairy Spirit weaken');
-				return this.chainModify(0.75);
+				return this.chainModify([3686, 4096]);
 			}
 		},
 		onSourceModifySpAPriority: 5,
 		onSourceModifySpA(atk, attacker, defender, move) {
 			if (move.type === 'Ghost') {
 				this.debug('Fairy Spirit weaken');
-				return this.chainModify(0.75);
+				return this.chainModify([3686, 4096]);
 			}
 		},
 		name: "Fairy Spirit",
@@ -4841,6 +4841,51 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		name: "Aquatic Body",
 		rating: 3,
 		num: 20010,
+	},
+	walkman: {
+		// The Dive part of this mechanic is implemented in Dive's `onTryMove` in moves.ts
+		onSourceTryPrimaryHit(target, source, effect) {
+			if (
+				effect && effect.id === 'birdsong' && source.hasAbility('walkman') &&
+				source.species.name === 'paritone'
+			) {
+				if (pokemon.species.id !== 'paritone') forme = 'Paritone';
+			}
+			else if (
+				effect && effect.id === 'birdsong' && source.hasAbility('walkman') &&
+				source.species.name === 'paritone'
+			) {
+				if (pokemon.species.id !== 'paritonecombat') forme = 'Paritone-Combat';
+			}
+			else if (
+				effect && effect.id === 'electrosong' && source.hasAbility('walkman') &&
+				source.species.name === 'paritone'
+			) {
+				if (pokemon.species.id !== 'paritoneelec') forme = 'Paritone-Elec';
+			}
+			else if (
+				effect && effect.id === 'firecampsong' && source.hasAbility('walkman') &&
+				source.species.name === 'paritone'
+			) {
+				if (pokemon.species.id !== 'paritonefeu') forme = 'Paritone-Feu';
+			}
+			else if (
+				effect && effect.id === 'sadsong' && source.hasAbility('walkman') &&
+				source.species.name === 'paritone'
+			) {
+				if (pokemon.species.id !== 'paritoneice') forme = 'Paritone-Ice';
+			}
+			else if (
+				effect && effect.id === 'dreamsong' && source.hasAbility('walkman') &&
+				source.species.name === 'paritone'
+			) {
+				if (pokemon.species.id !== 'paritonepsy') forme = 'Paritone-Psy';
+			}
+		},
+		isPermanent: true,
+		name: "Gulp Missile",
+		rating: 2.5,
+		num: 241,
 	},
 	
 };

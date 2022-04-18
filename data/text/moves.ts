@@ -6956,4 +6956,34 @@ export const MovesText: {[k: string]: MoveText} = {
 		shortDesc: "Charges turn 1. Hits turn 2. No charge in raint.",
 		prepare: "  [POKEMON] absorbed water!",
 	},
+	birdsong: {
+		name: "Bird Song",
+		desc: "For every consecutive turn that this move is used by at least one Pokemon, this move's power is multiplied by the number of turns to pass, but not more than 5, count other attack sonor with same effect : Bird Song, Brave song, Electro song, Firecamp song, Sad song, Dream song",
+		shortDesc: "Power increases when used on consecutive turns with other sonor attack of same effect.",
+	},
+	bravesong: {
+		name: "Brave Song",
+		desc: "For every consecutive turn that this move is used by at least one Pokemon, this move's power is multiplied by the number of turns to pass, but not more than 5, count other attack sonor with same effect : Bird Song, Brave song, Electro song, Firecamp song, Sad song, Dream song",
+		shortDesc: "Power increases when used on consecutive turns with other sonor attack of same effect.",
+	},
+	electrosong: {
+		name: "Electro Song",
+		desc: "For every consecutive turn that this move is used by at least one Pokemon, this move's power is multiplied by the number of turns to pass, but not more than 5, count other attack sonor with same effect : Bird Song, Brave song, Electro song, Firecamp song, Sad song, Dream song",
+		shortDesc: "Power increases when used on consecutive turns with other sonor attack of same effect.",
+	},
+	firecampsong: {
+		name: "Firecamp Song",
+		desc: "For every consecutive turn that this move is used by at least one Pokemon, this move's power is multiplied by the number of turns to pass, but not more than 5, count other attack sonor with same effect : Bird Song, Brave song, Electro song, Firecamp song, Sad song, Dream song",
+		shortDesc: "Power increases when used on consecutive turns with other sonor attack of same effect.",
+	},
+	sadsong: {
+		name: "Sad Song",
+		desc: "For every consecutive turn that this move is used by at least one Pokemon, this move's power is multiplied by the number of turns to pass, but not more than 5, count other attack sonor with same effect : Bird Song, Brave song, Electro song, Firecamp song, Sad song, Dream song",
+		shortDesc: "Power increases when used on consecutive turns with other sonor attack of same effect.",
+	},
+	dreamsong: {
+		name: "Dream Song",
+		desc: "For every consecutive turn that this move is used by at least one Pokemon, this move's power is multiplied by the number of turns to pass, but not more than 5, count other attack sonor with same effect : Bird Song, Brave song, Electro song, Firecamp song, Sad song, Dream song",
+		shortDesc: "Power increases when used on consecutive turns with other sonor attack of same effect.",
+	},
 };
