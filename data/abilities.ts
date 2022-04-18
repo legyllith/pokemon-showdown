@@ -4854,7 +4854,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				if (source.species.id !== 'paritone') source.formeChange('Paritone', effect);
 			}
 			else if (
-				effect && effect.id === 'birdsong' && source.hasAbility('walkman') &&
+				effect && effect.id === 'bravesong' && source.hasAbility('walkman') &&
 				source.species.name === 'paritone'
 			) {
 				this.boost({spa: 1});
