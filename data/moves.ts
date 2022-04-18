@@ -21244,7 +21244,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			},
 		},
 		secondary: {
-			chance: 20,
+			chance: 10,
 			status: 'frz',
 		},
 		target: "normal",
