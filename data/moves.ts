@@ -21361,6 +21361,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 					return;
 				}
 				if (move.id === 'stealthrock') {
+					this.boost({spa: 1});
 					this.actions.useMove('rockthrow', target, source);
 				}
 				const newMove = this.dex.getActiveMove(move.id);
