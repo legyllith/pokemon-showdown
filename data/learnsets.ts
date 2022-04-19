@@ -86656,11 +86656,6 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			icywind: ["8L25"],
 		},
 	},
-	jetweng: {
-		learnset: {
-			moonblast: ["8L40"],
-		},
-	},
 	astraleon: {
 		learnset: {
 			rockthrow: ["8L15"],
@@ -86684,6 +86679,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	hermeon: {
 		learnset: {
 			gust: ["8L15"],
+			aerialsurge: ["8L15"],
 		},
 	},
 	drakeon: {
@@ -86720,6 +86716,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			firecampsong: ["8M"],
 			sadsong: ["8M"],
 			dreamsong: ["8M"],
+			metalsong: ["8M"],
 		},
 	},
 	paritonecombat: {
@@ -86731,6 +86728,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			firecampsong: ["8M"],
 			sadsong: ["8M"],
 			dreamsong: ["8M"],
+			metalsong: ["8M"],
 		},
 	},
 	paritoneelec: {
@@ -86742,6 +86740,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			firecampsong: ["8M"],
 			sadsong: ["8M"],
 			dreamsong: ["8M"],
+			metalsong: ["8M"],
 		},
 	},
 	paritonefeu: {
@@ -86753,6 +86752,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			firecampsong: ["8M"],
 			sadsong: ["8M"],
 			dreamsong: ["8M"],
+			metalsong: ["8M"],
 		},
 	},
 	paritoneice: {
@@ -86764,6 +86764,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			firecampsong: ["8M"],
 			sadsong: ["8M"],
 			dreamsong: ["8M"],
+			metalsong: ["8M"],
 		},
 	},
 	paritonepsy: {
@@ -86775,6 +86776,19 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			firecampsong: ["8M"],
 			sadsong: ["8M"],
 			dreamsong: ["8M"],
+			metalsong: ["8M"],
+		},
+	},
+	paritonemetal: {
+		learnset: {
+			revelationdance: ["8L40"],
+			birdsong: ["8M"],
+			bravesong: ["8M"],
+			electrosong: ["8M"],
+			firecampsong: ["8M"],
+			sadsong: ["8M"],
+			dreamsong: ["8M"],
+			metalsong: ["8M"],
 		},
 	},
 };

@@ -21291,4 +21291,99 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Psychic",
 		contestType: "Beautiful",
 	},
+	
+	metalsong: {
+		num: 2027,
+		accuracy: 100,
+		basePower: 30,
+		basePowerCallback() {
+			if (this.field.pseudoWeather.echoedvoice) {
+				return 30 * this.field.pseudoWeather.echoedvoice.multiplier;
+			}
+			return 30;
+		},
+		category: "Physical",
+		name: "Metal Song",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1},
+		onTry() {
+			this.field.addPseudoWeather('echoedvoice');
+		},
+		condition: {
+			duration: 2,
+			onFieldStart() {
+				this.effectState.multiplier = 1;
+			},
+			onFieldRestart() {
+				if (this.effectState.duration !== 2) {
+					this.effectState.duration = 2;
+					if (this.effectState.multiplier < 5) {
+						this.effectState.multiplier++;
+					}
+				}
+			},
+		},
+		secondary: {
+			chance: 20,
+			self: {
+				boosts: {
+					att: 1,
+				},
+			},
+		},
+		target: "normal",
+		type: "Steel",
+		contestType: "Beautiful",
+	},
+
+	aerialsurge: {
+		num: 2028,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Aerial Surge",
+		pp: 15,
+		priority: 4,
+		flags: {},
+		volatileStatus: 'magiccoat',
+		condition: {
+			duration: 1,
+			onStart(target, source, effect) {
+				this.add('-singleturn', target, 'move: Magic Coat');
+				if (effect?.effectType === 'Move') {
+					this.effectState.pranksterBoosted = effect.pranksterBoosted;
+				}
+			},
+			onTryHitPriority: 2,
+			onTryHit(target, source, move) {
+				if (target === source || move.hasBounced || !move.flags['reflectable']) {
+					return;
+				}
+				if (move.id === 'stealthrock') {
+					this.actions.useMove('rockthrow', target, source);
+				}
+				const newMove = this.dex.getActiveMove(move.id);
+				newMove.hasBounced = true;
+				newMove.pranksterBoosted = this.effectState.pranksterBoosted;
+				this.actions.useMove(newMove, target, source);
+				return null;
+			},
+			onAllyTryHitSide(target, source, move) {
+				if (target.isAlly(source) || move.hasBounced || !move.flags['reflectable']) {
+					return;
+				}
+				const newMove = this.dex.getActiveMove(move.id);
+				newMove.hasBounced = true;
+				newMove.pranksterBoosted = false;
+				this.actions.useMove(newMove, this.effectState.target, source);
+				return null;
+			},
+		},
+		secondary: null,
+		target: "self",
+		type: "Flying",
+		zMove: {boost: {spd: 2}},
+		contestType: "Beautiful",
+	},
 };

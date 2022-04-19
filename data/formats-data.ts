@@ -6719,4 +6719,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	mienshaoawaken: {
 		tier: "OU",
 	},
+	paritonemetal: {
+		tier: "OU",
+	},
 };

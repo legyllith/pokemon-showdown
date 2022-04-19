@@ -6958,32 +6958,47 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	birdsong: {
 		name: "Bird Song",
-		desc: "For every consecutive turn that this move is used by at least one Pokemon, this move's power is multiplied by the number of turns to pass, but not more than 5, count other attack sonor with same effect : Bird Song, Brave song, Electro song, Firecamp song, Sad song, Dream song",
+		desc: "For every consecutive turn that this move is used by at least one Pokemon, this move's power is multiplied by the number of turns to pass, but not more than 5, count other attack sonor with same effect : Bird Song, Brave song, Electro song, Firecamp song, Sad song, Dream song, Metal Song",
 		shortDesc: "Power increases when used on consecutive turns with other sonor attack of same effect.",
 	},
 	bravesong: {
 		name: "Brave Song",
-		desc: "For every consecutive turn that this move is used by at least one Pokemon, this move's power is multiplied by the number of turns to pass, but not more than 5, count other attack sonor with same effect : Bird Song, Brave song, Electro song, Firecamp song, Sad song, Dream song",
+		desc: "For every consecutive turn that this move is used by at least one Pokemon, this move's power is multiplied by the number of turns to pass, but not more than 5, count other attack sonor with same effect : Bird Song, Brave song, Electro song, Firecamp song, Sad song, Dream song, Metal Song",
 		shortDesc: "Power increases when used on consecutive turns with other sonor attack of same effect.",
 	},
 	electrosong: {
 		name: "Electro Song",
-		desc: "For every consecutive turn that this move is used by at least one Pokemon, this move's power is multiplied by the number of turns to pass, but not more than 5, count other attack sonor with same effect : Bird Song, Brave song, Electro song, Firecamp song, Sad song, Dream song",
+		desc: "For every consecutive turn that this move is used by at least one Pokemon, this move's power is multiplied by the number of turns to pass, but not more than 5, count other attack sonor with same effect : Bird Song, Brave song, Electro song, Firecamp song, Sad song, Dream song, Metal Song",
 		shortDesc: "Power increases when used on consecutive turns with other sonor attack of same effect.",
 	},
 	firecampsong: {
 		name: "Firecamp Song",
-		desc: "For every consecutive turn that this move is used by at least one Pokemon, this move's power is multiplied by the number of turns to pass, but not more than 5, count other attack sonor with same effect : Bird Song, Brave song, Electro song, Firecamp song, Sad song, Dream song",
+		desc: "For every consecutive turn that this move is used by at least one Pokemon, this move's power is multiplied by the number of turns to pass, but not more than 5, count other attack sonor with same effect : Bird Song, Brave song, Electro song, Firecamp song, Sad song, Dream song, Metal Song",
 		shortDesc: "Power increases when used on consecutive turns with other sonor attack of same effect.",
 	},
 	sadsong: {
 		name: "Sad Song",
-		desc: "For every consecutive turn that this move is used by at least one Pokemon, this move's power is multiplied by the number of turns to pass, but not more than 5, count other attack sonor with same effect : Bird Song, Brave song, Electro song, Firecamp song, Sad song, Dream song",
+		desc: "For every consecutive turn that this move is used by at least one Pokemon, this move's power is multiplied by the number of turns to pass, but not more than 5, count other attack sonor with same effect : Bird Song, Brave song, Electro song, Firecamp song, Sad song, Dream song, Metal Song",
 		shortDesc: "Power increases when used on consecutive turns with other sonor attack of same effect.",
 	},
 	dreamsong: {
 		name: "Dream Song",
-		desc: "For every consecutive turn that this move is used by at least one Pokemon, this move's power is multiplied by the number of turns to pass, but not more than 5, count other attack sonor with same effect : Bird Song, Brave song, Electro song, Firecamp song, Sad song, Dream song",
+		desc: "For every consecutive turn that this move is used by at least one Pokemon, this move's power is multiplied by the number of turns to pass, but not more than 5, count other attack sonor with same effect : Bird Song, Brave song, Electro song, Firecamp song, Sad song, Dream song, Metal Song",
 		shortDesc: "Power increases when used on consecutive turns with other sonor attack of same effect.",
+	},
+	metalsong: {
+		name: "Metal Song",
+		desc: "For every consecutive turn that this move is used by at least one Pokemon, this move's power is multiplied by the number of turns to pass, but not more than 5, count other attack sonor with same effect : Bird Song, Brave song, Electro song, Firecamp song, Sad song, Dream song, Metal Song",
+		shortDesc: "Power increases when used on consecutive turns with other sonor attack of same effect.",
+	},
+	aerialsurge: {
+		name: "Aerial Surge",
+		desc: "Until the end of the turn, the user is unaffected by certain non-damaging moves directed at it and will instead use such moves against the original user. Moves reflected in this way are unable to be reflected again by this or the Magic Bounce Ability's effect. Spikes, Stealth Rock, Sticky Web, and Toxic Spikes can only be reflected once per side, by the leftmost Pokemon under this or the Magic Bounce Ability's effect. The Lightning Rod and Storm Drain Abilities redirect their respective moves before this move takes effect.",
+		shortDesc: "Bounces back certain non-damaging moves.",
+		gen5: {
+			desc: "Until the end of the turn, the user is unaffected by certain non-damaging moves directed at it and will instead use such moves against the original user. Moves reflected in this way are unable to be reflected again by this or the Magic Bounce Ability's effect. Spikes, Stealth Rock, and Toxic Spikes can only be reflected once per side, by the leftmost Pokemon under this or the Magic Bounce Ability's effect. The Lightning Rod and Storm Drain Abilities redirect their respective moves before this move takes effect.",
+		},
+		start: "  [POKEMON] shrouded itself with Magic Coat!",
+		move: "[POKEMON] bounced the [MOVE] back!",
 	},
 };

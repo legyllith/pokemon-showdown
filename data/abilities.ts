@@ -4845,7 +4845,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	walkman: {
 		// The Dive part of this mechanic is implemented in Dive's `onTryMove` in moves.ts
 		onSourceTryPrimaryHit(target, source, effect) {
-			const paritonelist = ['Paritone','Paritone-Combat','Paritone-Elec','Paritone-Feu','Paritone-Ice','Paritone-Psy']
+			const paritonelist = ['Paritone','Paritone-Combat','Paritone-Elec','Paritone-Feu','Paritone-Ice','Paritone-Psy','Paritone-Metal']
 			if (
 				effect && effect.id === 'birdsong' && source.hasAbility('walkman') &&
 				paritonelist.includes(source.species.name)
@@ -4881,6 +4881,12 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				paritonelist.includes(source.species.name)
 			) {
 				if (source.species.id !== 'paritonepsy') source.formeChange('Paritone-Psy', effect);
+			}
+			else if (
+				effect && effect.id === 'metalsong' && source.hasAbility('walkman') &&
+				paritonelist.includes(source.species.name)
+			) {
+				if (source.species.id !== 'paritonemetal') source.formeChange('Paritone-Metal', effect);
 			}
 		},
 		isPermanent: true,

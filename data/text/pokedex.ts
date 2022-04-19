@@ -3901,6 +3901,9 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	paritonepsy: {
 		name: "Paritone-Psy",
 	},
+	paritonemetal: {
+		name: "Paritone-Metal",
+	},
 	hitmonchanawaken: {
 		name: "Hitmonchan-Awaken",
 	},
