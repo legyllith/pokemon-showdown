@@ -21360,7 +21360,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 				if (target === source || move.hasBounced || !move.flags['reflectable']) {
 					return;
 				}
-				if (move.id === 'stealthrock') {
+				if (this.lastSuccessfulMoveThisTurn === 'stealthrock') {
 					source.boost({spa: 1});
 					source.actions.useMove('rockthrow', target, source);
 				}
@@ -21374,7 +21374,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 				if (target.isAlly(source) || move.hasBounced || !move.flags['reflectable']) {
 					return;
 				}
-				if (move.id === 'stealthrock') {
+				if (this.lastSuccessfulMoveThisTurn === 'stealthrock') {
 					source.boost({spa: 1});
 					source.actions.useMove('rockthrow', target, source);
 				}
