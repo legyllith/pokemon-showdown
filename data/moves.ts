@@ -21374,6 +21374,10 @@ export const Moves: {[moveid: string]: MoveData} = {
 				if (target.isAlly(source) || move.hasBounced || !move.flags['reflectable']) {
 					return;
 				}
+				if (move.id === 'stealthrock') {
+					this.boost({spa: 1});
+					this.actions.useMove('rockthrow', target, source);
+				}
 				const newMove = this.dex.getActiveMove(move.id);
 				newMove.hasBounced = true;
 				newMove.pranksterBoosted = false;
