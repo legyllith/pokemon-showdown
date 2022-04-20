@@ -21375,6 +21375,13 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			xscissor: ["8M", "8E", "7M", "6M", "5M", "4M"],
 			zapcannon: ["7E", "3S12", "3S13"],
 			zenheadbutt: ["8M", "7T", "6T", "5T", "4T"],
+			birdsong: ["8M"],
+			bravesong: ["8M"],
+			electrosong: ["8M"],
+			firecampsong: ["8M"],
+			sadsong: ["8M"],
+			dreamsong: ["8M"],
+			metalsong: ["8M"],
 		},
 		eventData: [
 			{generation: 3, level: 30, shiny: 1, moves: ["pound", "transform", "megapunch", "metronome"]},
@@ -86695,8 +86702,19 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	hermeon: {
 		learnset: {
 			gust: ["8L15"],
-			aerialsurge: ["8L15"],
-		},
+			defog: ["8L20"],
+			featherdance: ["8L25"],
+			eerieimpulse: ["8L25"],
+			mirrormove: ["8L30"],
+			chargebeam: ["8L35"],
+			dualwingbeat: ["8L35"],
+			bounce: ["8L40"],
+			tailwind: ["8L40"],
+			aerialsurge: ["8L50"],
+			skydrop: ["8L50"],
+			skyattack: ["8L55"],
+			hurricane: ["8L55"],
+			roost: ["8M"],
 	},
 	drakeon: {
 		learnset: {

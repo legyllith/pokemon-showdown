@@ -21361,8 +21361,10 @@ export const Moves: {[moveid: string]: MoveData} = {
                     return;
                 }
                 if (move.id === 'stealthrock') {
-                    source.boost({spa: 1});
                     source.actions.useMove('rockthrow', target, source);
+                }
+                if (move.id === 'stealthice') {
+                    source.actions.useMove('powdersnow', target, source);
                 }
                 const newMove = this.dex.getActiveMove(move.id);
                 newMove.hasBounced = true;
@@ -21374,9 +21376,10 @@ export const Moves: {[moveid: string]: MoveData} = {
                 if (target.isAlly(source) || move.hasBounced || !move.flags['reflectable']) {
                     return;
                 }
-                if (move.id === 'stealthrock') {
-                    this.boost({spa: 1});
                     this.actions.useMove('rockthrow', target, source);
+                }
+                if (move.id === 'stealthice') {
+                    source.actions.useMove('powdersnow', target, source);
                 }
                 const newMove = this.dex.getActiveMove(move.id);
                 newMove.hasBounced = true;
