@@ -21376,6 +21376,7 @@ export const Moves: {[moveid: string]: MoveData} = {
                 if (target.isAlly(source) || move.hasBounced || !move.flags['reflectable']) {
                     return;
                 }
+		if (move.id === 'stealthrock') {
                     this.actions.useMove('rockthrow', target, source);
                 }
                 if (move.id === 'stealthice') {
