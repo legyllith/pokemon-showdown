@@ -18338,8 +18338,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	},
 	sentrettradessar: {
 		num: 161,
-		name: "Sentret",
-		forme: "Tradessar-Tradessar",
+		name: "Sentret-Tradessar",
+		forme: "Tradessar",
 		types: ["Normal"],
 		baseStats: {hp: 35, atk: 40, def: 28, spa: 40, spd: 50, spe: 25},
 		abilities: {0: "Run Away", 1: "Keen Eye", H: "Frisk"},
