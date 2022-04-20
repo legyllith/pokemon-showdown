@@ -21346,49 +21346,49 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 15,
 		priority: 4,
 		flags: {},
-		volatileStatus: 'magiccoat',
+		volatileStatus: 'aerialsurge',
 		condition: {
 			duration: 1,
 			onStart(target, source, effect) {
-				this.add('-singleturn', target, 'move: Magic Coat');
+				this.add('-singleturn', target, 'move: AerialSurge');
 				if (effect?.effectType === 'Move') {
 					this.effectState.pranksterBoosted = effect.pranksterBoosted;
 				}
 			},
 			onTryHitPriority: 2,
 			onTryHit(target, source, move) {
-				if (target === source || move.hasBounced || !move.flags['reflectable']) {
-					return;
-				}
-				if (this.lastSuccessfulMoveThisTurn === 'stealthrock') {
-					source.boost({spa: 1});
-					source.actions.useMove('rockthrow', target, source);
-				}
-				const newMove = this.dex.getActiveMove(move.id);
-				newMove.hasBounced = true;
-				newMove.pranksterBoosted = this.effectState.pranksterBoosted;
-				this.actions.useMove(newMove, target, source);
-				return null;
-			},
-			onAllyTryHitSide(target, source, move) {
-				if (target.isAlly(source) || move.hasBounced || !move.flags['reflectable']) {
-					return;
-				}
-				if (this.lastSuccessfulMoveThisTurn === 'stealthrock') {
-					source.boost({spa: 1});
-					source.actions.useMove('rockthrow', target, source);
-				}
-				const newMove = this.dex.getActiveMove(move.id);
-				newMove.hasBounced = true;
-				newMove.pranksterBoosted = false;
-				this.actions.useMove(newMove, this.effectState.target, source);
-				return null;
-			},
-		},
-		secondary: null,
-		target: "self",
-		type: "Flying",
-		zMove: {boost: {spd: 2}},
-		contestType: "Beautiful",
+                if (target === source || move.hasBounced || !move.flags['reflectable']) {
+                    return;
+                }
+                if (move.id === 'stealthrock') {
+                    source.boost({spa: 1});
+                    source.actions.useMove('rockthrow', target, source);
+                }
+                const newMove = this.dex.getActiveMove(move.id);
+                newMove.hasBounced = true;
+                newMove.pranksterBoosted = this.effectState.pranksterBoosted;
+                this.actions.useMove(newMove, target, source);
+                return null;
+            },
+            onAllyTryHitSide(target, source, move) {
+                if (target.isAlly(source) || move.hasBounced || !move.flags['reflectable']) {
+                    return;
+                }
+                if (move.id === 'stealthrock') {
+                    this.boost({spa: 1});
+                    this.actions.useMove('rockthrow', target, source);
+                }
+                const newMove = this.dex.getActiveMove(move.id);
+                newMove.hasBounced = true;
+                newMove.pranksterBoosted = false;
+                this.actions.useMove(newMove, this.effectState.target, source);
+                return null;
+            },
+	},
+	secondary: null,
+	target: "self",
+	type: "Flying",
+	zMove: {boost: {spd: 2}},
+	contestType: "Beautiful",
 	},
 };
