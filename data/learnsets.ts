@@ -86728,6 +86728,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			skillswap: ["8T"],
 			hypervoice: ["8T"],
 			risingvoltage: ["8T"],
+		},
 	},
 	drakeon: {
 		learnset: {
