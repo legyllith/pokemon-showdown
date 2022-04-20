@@ -6722,4 +6722,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	paritonemetal: {
 		tier: "OU",
 	},
+	sentrettradessar: {
+		tier: "OU",
+	},
+	furrettradessar: {
+		tier: "OU",
+	},
 };

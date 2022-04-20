@@ -3913,4 +3913,10 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	mienshaoawaken: {
 		name: "Mienshao-Awaken",
 	},
+	sentrettradessar: {
+		name: "Sentret-Tradessar",
+	},
+	furrettradessar: {
+		name: "Furret-Tradessar",
+	},
 };
