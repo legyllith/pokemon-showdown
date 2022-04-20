@@ -86701,10 +86701,16 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	hermeon: {
 		learnset: {
+			lightscreen: ["8L1"],
+			reflect: ["8L1"],
+			futuresight: ["8L1"],
+			disarmingvoice: ["8L5"],
+			taunt: ["8L10"],
 			gust: ["8L15"],
 			defog: ["8L20"],
 			featherdance: ["8L25"],
 			eerieimpulse: ["8L25"],
+			flyingpress: ["8L30"],
 			mirrormove: ["8L30"],
 			chargebeam: ["8L35"],
 			dualwingbeat: ["8L35"],
@@ -86714,7 +86720,13 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			skydrop: ["8L50"],
 			skyattack: ["8L55"],
 			hurricane: ["8L55"],
+			aerialace: ["8M"],
 			roost: ["8M"],
+			zapcannon: ["8M"],
+			magiccoat: ["8T"],
+			skillswap: ["8T"],
+			hypervoice: ["8T"],
+			risingvoltage: ["8T"],
 	},
 	drakeon: {
 		learnset: {
