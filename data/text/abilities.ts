@@ -1786,4 +1786,9 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		name: "Walkman",
 		shortDesc: "change type of user link to some sonor attacks",
 	},
+	mindgifted: {
+		name: "Mind Gifted",
+		desc: "This Pokemon's Normal-type moves become Psychic-type moves and have their power multiplied by 1.2. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
+		shortDesc: "This Pokemon's Normal-type moves become Psychic type and have 1.2x power.",
+	},
 };

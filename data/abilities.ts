@@ -4840,7 +4840,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		},
 		name: "Aquatic Body",
 		rating: 3,
-		num: 20010,
+		num: 2010,
 	},
 	walkman: {
 		// The Dive part of this mechanic is implemented in Dive's `onTryMove` in moves.ts
@@ -4892,7 +4892,27 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		isPermanent: true,
 		name: "Walkman",
 		rating: 2.5,
-		num: 241,
+		num: 2011,
+	},
+	
+	mindgifted: {
+		onModifyTypePriority: -1,
+		onModifyType(move, pokemon) {
+			const noModifyType = [
+				'judgment', 'multiattack', 'naturalgift', 'revelationdance', 'technoblast', 'terrainpulse', 'weatherball',
+			];
+			if (move.type === 'Normal' && !noModifyType.includes(move.id) && !(move.isZ && move.category !== 'Status')) {
+				move.type = 'Psychic';
+				move.mindgifted = true;
+			}
+		},
+		onBasePowerPriority: 23,
+		onBasePower(basePower, pokemon, target, move) {
+			if (move.mindgiftedBoosted) return this.chainModify([4915, 4096]);
+		},
+		name: "Mind Gifted",
+		rating: 4,
+		num: 2012,
 	},
 	
 };

@@ -18339,6 +18339,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	sentrettradessar: {
 		num: 161,
 		name: "Sentret-Tradessar",
+		baseSpecies: "Sentret",
 		forme: "Tradessar",
 		types: ["Normal"],
 		baseStats: {hp: 35, atk: 40, def: 28, spa: 40, spd: 50, spe: 25},
@@ -18352,10 +18353,11 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	furrettradessar: {
 		num: 162,
 		name: "Furret-Tradessar",
+		baseSpecies: "Furret",
 		forme: "Tradessar",
 		types: ["Normal"],
-		baseStats: {hp: 68, atk: 50, def: 50, spa: 100, spd: 52, spe: 95},
-		abilities: {0: "Run Away", 1: "Keen Eye", H: "Huge Power"},
+		baseStats: {hp: 70, atk: 50, def: 50, spa: 95, spd: 52, spe: 98},
+		abilities: {0: "Mind Gifted", 1: "Keen Eye", H: "Huge Power"},
 		heightm: 1.8,
 		weightkg: 32.5,
 		color: "Brown",
