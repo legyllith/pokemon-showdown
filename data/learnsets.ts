@@ -86839,7 +86839,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			metalsong: ["8M"],
 		},
 	},
-	sentrettradesar: {
+	sentrettradessar: {
 		learnset: {
 			amnesia: ["7L36", "7E", "6L36", "5L36", "4L36", "3L49"],
 			aquatail: ["7T", "6T", "5T", "4T"],
