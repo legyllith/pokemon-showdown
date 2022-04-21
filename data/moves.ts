@@ -21336,7 +21336,6 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Steel",
 		contestType: "Beautiful",
 	},
-
 	aerialsurge: {
 		num: 2028,
 		accuracy: true,
