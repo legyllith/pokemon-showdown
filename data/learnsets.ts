@@ -86506,7 +86506,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	droseon: {
 		learnset: {
-			curse: ["8L28"],
+			phantomforce: ["8L50"],
 		},
 	},
 	mawileproelos: {
@@ -86676,8 +86676,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	jetweng: {
 		learnset: {
-			flamecharge: ["8L25"],
-			icywind: ["8L25"],
+			moonblast: ["8L40"],
 		},
 	},
 	astraleon: {
