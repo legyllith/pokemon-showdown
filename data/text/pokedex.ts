@@ -3925,6 +3925,7 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	
 	shellosnorth: {
 		name: "Shellos-North",
+	},
 	gastrodonnorth: {
 		name: "Gastrodon-North",
 	},
