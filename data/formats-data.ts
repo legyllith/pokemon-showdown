@@ -6733,6 +6733,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	},
 	shellosnorth: {
 		tier: "OU",
+	},
 	gastrodonnorth: {
 		tier: "OU",
 	},
