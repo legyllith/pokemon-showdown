@@ -17933,7 +17933,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		name: "Bourlousson",
 		types: ["Poison", "Dragon"],
 		baseStats: {hp: 88, atk: 60, def: 95, spa: 60, spd: 97, spe: 50},
-		abilities: {0: "Liquid Ooze", 1: "Poison Touch", H: "Poison Point"}
+		abilities: {0: "Liquid Ooze", 1: "Poison Touch", H: "Poison Point"},
 		heightm: 1.4,
 		weightkg: 11,
 		color: "Green",
@@ -17947,7 +17947,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		name: "Droseon",
 		types: ["Poison", "Dragon"],
 		baseStats: {hp: 98, atk: 100, def: 105, spa: 100, spd: 107, spe: 90},
-		abilities: {0: "Liquid Ooze", 1: "Poison Touch", H: "Poison Point"}
+		abilities: {0: "Liquid Ooze", 1: "Poison Touch", H: "Poison Point"},
 		heightm: 3,
 		weightkg: 120,
 		color: "Green",
