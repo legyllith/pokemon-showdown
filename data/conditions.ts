@@ -208,7 +208,7 @@ export const Conditions: {[k: string]: ConditionData} = {
 				return this.chainModify([5376, 4096]);
 		},
 		onBeforeMovePriority: 3,
-		onBeforeMove(pokemon) {
+		onBeforeMove(pokemon, target, move) {
 			if (move.type === 'Electric' && move.category === 'Physical') {
 				target.cureStatus();
 				return;
