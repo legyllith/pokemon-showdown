@@ -203,8 +203,16 @@ export const Conditions: {[k: string]: ConditionData} = {
 			this.effectState.startTime = this.random(2, 5);
 			this.effectState.time = this.effectState.startTime;
 		},
+		onSourceBasePowerPriority: 120,
+		onSourceBasePower(basePower, attacker, defender, move) {
+				return this.chainModify([5376, 4096]);
+		},
 		onBeforeMovePriority: 3,
 		onBeforeMove(pokemon) {
+			if (move.type === 'Electric' && move.category === 'Physical') {
+				target.cureStatus();
+				return;
+			}
 			if (pokemon.hasAbility('earlybird')) {
 				pokemon.statusState.time--;
 			}
@@ -214,15 +222,26 @@ export const Conditions: {[k: string]: ConditionData} = {
 				return;
 			}
 			this.add('-activate', pokemon, 'drw');
-			if (!this.randomChance(33, 100)) {
+			if (this.field.isWeather('hail') ) {
+				if (this.randomChance(33, 100)) {
+					return;
+				}
+			}
+			else {
+				if (!this.randomChance(33, 100)) {
+					return;
+				}
+			}
+			this.add('cant', pokemon, 'drw');
+			if (move.sleepUsable) {
 				return;
 			}
-			this.activeTarget = pokemon;
-			const damage = this.actions.getConfusionDamage(pokemon, 40);
-			if (typeof damage !== 'number') throw new Error("Confusion damage not dealt");
-			const activeMove = {id: this.toID('confused'), effectType: 'Move', type: '???'};
-			this.damage(damage, pokemon, pokemon, activeMove as ActiveMove);
 			return false;
+		},
+		onDamagingHit(damage, target, source, move) {
+			if (move.type === 'Electric' && move.category === 'Physical') {
+				target.cureStatus();
+			}
 		},
 	},
 	flinch: {
