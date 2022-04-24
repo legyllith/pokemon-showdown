@@ -2732,9 +2732,9 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 57,
 	},
 	poisonheal: {
-		onEffectiveness(typeMod, target, type) {
-			if (type === 'psn') return 0;
-			if (type === 'tox') return 0;
+		onImmunity(type) {
+			if (type === 'psn') return false;
+			if (type === 'tox') return false;
 		},
 		onDamagePriority: 1,
 		onDamage(damage, target, source, effect) {

@@ -87091,7 +87091,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			memento: ["8L28"],
 			punishment: ["8L30"],
 			nightslash: ["8L34"],
-			Rainybloom: ["8L38"],
+			rainybloom: ["8L38"],
 			darkpulse: ["8L40"],
 			nightdaze: ["8L50"],
 			nastypot: ["8L60"],
