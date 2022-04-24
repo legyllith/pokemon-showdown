@@ -1791,8 +1791,8 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		desc: "This Pokemon's Normal-type moves become Psychic-type moves and have their power multiplied by 1.2. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
 		shortDesc: "This Pokemon's Normal-type moves become Psychic type and have 1.2x power.",
 	},
-	drowsypoint: {
-		name: "Drowsy Point",
-		shortDesc: "30% chance a Pokemon making contact with this Pokemon will be drowsy.",
+	drowsyspore: {
+		name: "Drowsy Spore",
+		shortDesc: "30% chance a Pokemon making contact with this Pokemon will be drowsy. Powder",
 	},
 };

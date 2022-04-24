@@ -4916,15 +4916,15 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 4,
 		num: 2012,
 	},
-	drowsypoint: {
+	drowsyspore: {
 		onDamagingHit(damage, target, source, move) {
-			if (this.checkMoveMakesContact(move, source, target)) {
+			if (this.checkMoveMakesContact(move, source, target) && !source.status && source.runStatusImmunity('powder')) {
 				if (this.randomChance(3, 10)) {
 					source.trySetStatus('drw', target);
 				}
 			}
 		},
-		name: "Drowsy Point",
+		name: "Drowsy Spore",
 		rating: 1.5,
 		num: 2013,
 	},
