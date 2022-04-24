@@ -4813,8 +4813,9 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (randomStat) boost[randomStat] = -1;
 			if (source.side.faintedLastTurn) {
 				this.debug('Boosted for a faint last turn');
-				this.boost(boost);
+				return;
 			}
+			this.boost(boost);
 		},
 		name: "Macabre Fire",
 		rating: 3,
