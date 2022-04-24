@@ -87082,4 +87082,21 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			dragontail: ["8T"],
 		},
 	},
+	somniflore: {
+		learnset: {
+			embargo: ["8L1"],
+			topsyturvy: ["8L15"],
+			partingshot: ["8L22"],
+			pursuit: ["8L25"],
+			memento: ["8L28"],
+			punishment: ["8L30"],
+			nightslash: ["8L34"],
+			Rainybloom: ["8L38"],
+			darkpulse: ["8L40"],
+			nightdaze: ["8L50"],
+			nastypot: ["8L60"],
+			dreamsong: ["8M"],
+			throatchop: ["8T"],
+		},
+	},
 };

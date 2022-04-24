@@ -210,7 +210,7 @@ export const Conditions: {[k: string]: ConditionData} = {
 		onBeforeMovePriority: 3,
 		onBeforeMove(pokemon, target, move) {
 			if (move.type === 'Electric' && move.category === 'Physical') {
-				target.cureStatus();
+				pokemon.cureStatus();
 				return;
 			}
 			if (pokemon.hasAbility('earlybird')) {

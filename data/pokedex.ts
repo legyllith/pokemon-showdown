@@ -1141,7 +1141,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "Blue",
 		prevo: "Oddish",
 		evoLevel: 21,
-		evos: ["Vileplume", "Bellossom"],
+		evos: ["Vileplume", "Bellossom", "Somniflore"],
 		eggGroups: ["Grass"],
 	},
 	vileplume: {
@@ -18440,5 +18440,19 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		prevo: "Shellos-South",
 		evoLevel: 30,
 		eggGroups: ["Water 1", "Amorphous"],
+	},
+	somniflore: {
+		num: 1851,
+		name: "Somniflore",
+		types: ["Grass", "Dark"],
+		baseStats: {hp: 95, atk: 90, def: 90, spa: 90, spd: 90, spe: 35},
+		abilities: {0: "Rain Dish", H: "drowsypoint"},
+		heightm: 1.2,
+		weightkg: 18.6,
+		color: "Purple",
+		prevo: "Gloom",
+		evoType: "useItem",
+		evoItem: "Dark Stone",
+		eggGroups: ["Grass"],
 	},
 };

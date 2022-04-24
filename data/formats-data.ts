@@ -6743,4 +6743,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	gastrodonsouth: {
 		tier: "OU",
 	},
+	somniflore: {
+		tier: "OU",
+	},
 };

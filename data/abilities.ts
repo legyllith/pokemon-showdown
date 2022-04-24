@@ -2732,6 +2732,10 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 57,
 	},
 	poisonheal: {
+		onEffectiveness(typeMod, target, type) {
+			if (type === 'psn') return 0;
+			if (type === 'tox') return 0;
+		},
 		onDamagePriority: 1,
 		onDamage(damage, target, source, effect) {
 			if (effect.id === 'psn' || effect.id === 'tox') {
@@ -4785,10 +4789,6 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (source.hasType('Fire')) return false;
 			if (!source.addType('Fire')) return false;
 			this.add('-start', source, 'typeadd', 'Fire', '[from] abilities: Macabre Fire');
-			if (source.side.faintedLastTurn) {
-				this.debug('Boosted for a faint last turn');
-				return this.chainModify(2);
-			}
 			let stats: BoostID[] = [];
 			const boost: SparseBoostsTable = {};
 			let statPlus: BoostID;
@@ -4811,8 +4811,10 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			}
 			randomStat = stats.length ? this.sample(stats) : undefined;
 			if (randomStat) boost[randomStat] = -1;
-
-			this.boost(boost);
+			if (source.side.faintedLastTurn) {
+				this.debug('Boosted for a faint last turn');
+				this.boost(boost);
+			}
 		},
 		name: "Macabre Fire",
 		rating: 3,
@@ -4913,6 +4915,18 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		name: "Mind Gifted",
 		rating: 4,
 		num: 2012,
+	},
+	drowsypoint: {
+		onDamagingHit(damage, target, source, move) {
+			if (this.checkMoveMakesContact(move, source, target)) {
+				if (this.randomChance(3, 10)) {
+					source.trySetStatus('drw', target);
+				}
+			}
+		},
+		name: "Drowsy Point",
+		rating: 1.5,
+		num: 2013,
 	},
 	
 };

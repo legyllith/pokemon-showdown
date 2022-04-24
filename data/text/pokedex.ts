@@ -3935,4 +3935,7 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	gastrodonsouth: {
 		name: "Gastrodon-South",
 	},
+	somniflore: {
+		name: "Somniflore",
+	},
 };
