@@ -1795,4 +1795,8 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		name: "Drowsy Spore",
 		shortDesc: "30% chance a Pokemon making contact with this Pokemon will be drowsy. Powder",
 	},
+	horoscope: {
+		name: "Horoscope",
+		shortDesc: "randomly change the spea of user before move",
+	},
 };

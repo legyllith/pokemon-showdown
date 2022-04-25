@@ -2732,10 +2732,6 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 57,
 	},
 	poisonheal: {
-		onImmunity(type) {
-			if (type === 'psn') return false;
-			if (type === 'tox') return false;
-		},
 		onDamagePriority: 1,
 		onDamage(damage, target, source, effect) {
 			if (effect.id === 'psn' || effect.id === 'tox') {
@@ -4811,7 +4807,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			}
 			randomStat = stats.length ? this.sample(stats) : undefined;
 			if (randomStat) boost[randomStat] = -1;
-			if (this.side.faintedLastTurn) {
+			if (source.side.faintedThisTurn) {
 				this.debug('Boosted for a faint last turn');
 				this.boost(boost);
 				this.boost(boost);
@@ -4930,6 +4926,20 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		name: "Drowsy Spore",
 		rating: 1.5,
 		num: 2013,
+	},
+	horoscope: {
+		onSourceModifySpAPriority: 5,
+		onSourceModifySpA(atk, attacker, defender, move) {
+			const h = this.random(1);
+				if (h < 0,5) {
+					return this.chainModify([2000, 4096]);
+				} else  {
+					return this.chainModify([6000, 4096]);
+				}
+		},
+		name: "Horoscope",
+		rating: 1.5,
+		num: 2014,
 	},
 	
 };
