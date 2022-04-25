@@ -4811,8 +4811,10 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			}
 			randomStat = stats.length ? this.sample(stats) : undefined;
 			if (randomStat) boost[randomStat] = -1;
-			if (source.side.faintedLastTurn) {
+			if (this.side.faintedLastTurn) {
 				this.debug('Boosted for a faint last turn');
+				this.boost(boost);
+				this.boost(boost);
 				return;
 			}
 			this.boost(boost);
