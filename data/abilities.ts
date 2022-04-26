@@ -4810,10 +4810,8 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (source.side.faintedThisTurn) {
 				this.debug('Boosted for a faint last turn');
 				this.boost(boost);
-				this.boost(boost);
 				return;
 			}
-			this.boost(boost);
 		},
 		name: "Macabre Fire",
 		rating: 3,
@@ -4928,12 +4926,19 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 2013,
 	},
 	horoscope: {
+		onStart(source) {
+			if (source.hasType('Psychic')) return false;
+			if (!source.addType('Psychic')) return false;
+			this.add('-start', source, 'typeadd', 'Psychic', '[from] abilities: Horoscope');
+		},
 		onSourceModifySpAPriority: 5,
 		onSourceModifySpA(atk, attacker, defender, move) {
 			const h = this.random(1);
 				if (h < 0,5) {
+					this.boost({spa: 1});
 					return this.chainModify([2000, 4096]);
 				} else  {
+					this.boost({spa: 2});
 					return this.chainModify([6000, 4096]);
 				}
 		},
