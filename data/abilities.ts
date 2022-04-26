@@ -4933,8 +4933,8 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		},
 		onSourceModifySpAPriority: 5,
 		onSourceModifySpA(atk, attacker, defender, move) {
-			const h = this.random(1);
-				if (h < 0,5) {
+			const h = this.random(2);
+				if (h < 1) {
 					this.boost({spa: 1});
 					return this.chainModify([2000, 4096]);
 				} else  {
