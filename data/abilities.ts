@@ -4931,16 +4931,19 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (!source.addType('Psychic')) return false;
 			this.add('-start', source, 'typeadd', 'Psychic', '[from] abilities: Horoscope');
 		},
-		onSourceModifySpAPriority: 5,
-		onSourceModifySpA(atk, attacker, defender, move) {
-			const h = this.random(2);
-				if (h < 1) {
-					this.boost({spa: 1});
-					return this.chainModify([2000, 4096]);
-				} else  {
-					this.boost({spa: 2});
-					return this.chainModify([6000, 4096]);
-				}
+		onBasePowerPriority: 23,
+		onBasePower(basePower, pokemon, target, move) {
+			if (move.category !== 'Special') {
+				const h = this.random(2);
+					if (h === 1) {
+						this.boost({spa: 1});
+						return this.chainModify([2000, 4096]);
+					} else  {
+						this.boost({spa: 2});
+						return this.chainModify([6000, 4096]);
+					}
+
+			}
 		},
 		name: "Horoscope",
 		rating: 1.5,
