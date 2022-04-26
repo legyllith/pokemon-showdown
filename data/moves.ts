@@ -20570,7 +20570,6 @@ export const Moves: {[moveid: string]: MoveData} = {
 			onStart(pokemon, source) {
 				this.add('-start', pokemon, 'move: Heal Block');
 				source.moveThisTurnResult = true;
-				attacker.addVolatile('fermentedmilk');//tentative
 			},
 			onDisableMove(pokemon) {
 				for (const moveSlot of pokemon.moveSlots) {
@@ -20607,7 +20606,15 @@ export const Moves: {[moveid: string]: MoveData} = {
 				}
 			},
 		},
-		secondary: null,
+		secondary: {
+			chance: 100,
+			self: {
+				volatileStatus: 'fermentedmilk',
+				condition: {
+					noCopy: true,
+				},
+			},
+		},
 		target: "normal",
 		type: "Poison",
 		contestType: "Clever",

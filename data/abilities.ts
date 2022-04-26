@@ -4935,14 +4935,14 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onBasePower(basePower, pokemon, target, move) {
 			if (move.category === 'Special') {
 				const h = this.random(3);
-					if (h === 1) {
-						this.boost({att: 1});
+					if (h === 0) {
+						this.boost({atk: 1});
 						return this.chainModify([1000, 4096]);
-					} else if (h === 2)  {
+					} else if (h === 1)  {
 						this.boost({spe: 1});
 						return this.chainModify([4000, 4096]);
 					}
-					else if (h === 3)  {
+					else if (h === 2)  {
 						this.boost({def: 1});
 						return this.chainModify([8000, 4096]);
 					}
