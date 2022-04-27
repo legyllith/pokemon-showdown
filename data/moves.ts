@@ -21362,9 +21362,6 @@ export const Moves: {[moveid: string]: MoveData} = {
 		num: 2006,
 		accuracy: 90,
 		basePower: 30,
-		basePowerCallback(pokemon, target, move) {
-			let astro = move.basePower;
-		},
 		category: "Physical",
 		name: "Astrolgy",
 		pp: 20,
