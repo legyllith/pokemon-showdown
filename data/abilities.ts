@@ -4931,7 +4931,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (source.hasType('Psychic')) return false;
 			if (!source.addType('Psychic')) return false;
 			this.add('-start', source, 'typeadd', 'Psychic', '[from] abilities: Horoscope');
-			pokemon.addVolatile('Astrology', this.effectState.target);
+			source.addVolatile('Astrology', this.effectState.target);
 		},
 		onBasePowerPriority: 23,
 		onBasePower(basePower, pokemon, target, move) {
