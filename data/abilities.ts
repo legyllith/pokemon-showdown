@@ -4931,11 +4931,12 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (source.hasType('Psychic')) return false;
 			if (!source.addType('Psychic')) return false;
 			this.add('-start', source, 'typeadd', 'Psychic', '[from] abilities: Horoscope');
+			pokemon.addVolatile('Astrology', this.effectState.target);
 		},
 		onBasePowerPriority: 23,
 		onBasePower(basePower, pokemon, target, move) {
 			if (move.category === 'Special') {
-				const h = this.volatiles['rollout'].hitCount;
+				const h = this.volatiles['Astrology'].hitCount;
 					if (h === 0) {
 						this.boost({atk: 1});
 						return this.chainModify([1000, 4096]);
