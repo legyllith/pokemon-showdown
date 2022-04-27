@@ -4938,7 +4938,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			this.boost({atk: 1});
 			let horo = move.basePower;
 			if (move.category === 'Special') {:
-				let h = pokemon.volatiles['astrology']?.property
+				let h = pokemon.volatiles['astrology']?.property;
 				if (!(h >= 0 && h <= 12)) return;
                 		this.add('-activate', source, 'move: Astrology' + h);
 					if (h === 0) {
