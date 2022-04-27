@@ -21370,7 +21370,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
 		condition: {
-			duration: 1,
+			duration: 2,
 			onStart(source) {
 				this.effectState.hitCount = this.random(12);
 				this.add('-activate', source, 'move: Astrolgy', this.effectState.hitCount);
