@@ -2216,15 +2216,16 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 104,
 	},
 	moody: {
-		onResidualOrder: 28,
-		onResidualSubOrder: 2,
-		onResidual(pokemon) {
+		onDamagingHit(damage, target, source, move) {
+			if (source === target) {
+				return
+			}
 			let stats: BoostID[] = [];
 			const boost: SparseBoostsTable = {};
 			let statPlus: BoostID;
-			for (statPlus in pokemon.boosts) {
+			for (statPlus in target.boosts) {
 				if (statPlus === 'accuracy' || statPlus === 'evasion') continue;
-				if (pokemon.boosts[statPlus] < 6) {
+				if (target.boosts[statPlus] < 6) {
 					stats.push(statPlus);
 				}
 			}
@@ -2233,9 +2234,9 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 
 			stats = [];
 			let statMinus: BoostID;
-			for (statMinus in pokemon.boosts) {
+			for (statMinus in target.boosts) {
 				if (statMinus === 'accuracy' || statMinus === 'evasion') continue;
-				if (pokemon.boosts[statMinus] > -6 && statMinus !== randomStat) {
+				if (target.boosts[statMinus] > -6 && statMinus !== randomStat) {
 					stats.push(statMinus);
 				}
 			}
@@ -4934,7 +4935,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onBasePowerPriority: 23,
 		onBasePower(basePower, pokemon, target, move) {
 			if (move.category === 'Special') {
-				const h = this.random(3);
+				const h = this.volatiles['rollout'].hitCount;
 					if (h === 0) {
 						this.boost({atk: 1});
 						return this.chainModify([1000, 4096]);
@@ -4944,10 +4945,18 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 					}
 					else if (h === 2)  {
 						this.boost({def: 1});
+						return this.chainModify([6000, 4096]);
+					}
+					else if (h > 2)  {
+						this.boost({def: 1});
 						return this.chainModify([8000, 4096]);
 					}
 
 			}
+			
+		},
+		onResidual(pokemon) {
+				pokemon.addVolatile('Astrology', this.effectState.target);
 		},
 		name: "Horoscope",
 		rating: 2.5,

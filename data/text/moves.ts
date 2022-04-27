@@ -7001,4 +7001,9 @@ export const MovesText: {[k: string]: MoveText} = {
 		start: "  [POKEMON] shrouded itself with Magic Coat!",
 		move: "[POKEMON] bounced the [MOVE] back!",
 	},
+	astrology: {
+		name: "Astrology",
+		desc: "astrology attack",
+		shortDesc: "astrolgy attack",
+	},
 };
