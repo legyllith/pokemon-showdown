@@ -20559,60 +20559,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		flags: {protect: 1, mirror: 1},
 		volatileStatus: 'healblock',
 		condition: {
-			duration: 5,
-			durationCallback(target, source, effect) {
-				if (source?.hasAbility('persistent')) {
-					this.add('-activate', source, 'ability: Persistent', effect);
-					return 7;
-				}
-				return 5;
-			},
-			onStart(pokemon, source) {
-				this.add('-start', pokemon, 'move: Heal Block');
-				source.moveThisTurnResult = true;
-			},
-			onDisableMove(pokemon) {
-				for (const moveSlot of pokemon.moveSlots) {
-					if (this.dex.moves.get(moveSlot.id).flags['heal']) {
-						pokemon.disableMove(moveSlot.id);
-					}
-				}
-			},
-			onBeforeMovePriority: 6,
-			onBeforeMove(pokemon, target, move) {
-				if (move.flags['heal'] && !move.isZ && !move.isMax) {
-					this.add('cant', pokemon, 'move: Heal Block', move);
-					return false;
-				}
-			},
-			onModifyMove(move, pokemon, target) {
-				if (move.flags['heal'] && !move.isZ && !move.isMax) {
-					this.add('cant', pokemon, 'move: Heal Block', move);
-					return false;
-				}
-			},
-			onResidualOrder: 20,
-			onEnd(pokemon) {
-				this.add('-end', pokemon, 'move: Heal Block');
-			},
-			onTryHeal(damage, target, source, effect) {
-				if ((effect?.id === 'zpower') || this.effectState.isZ) return damage;
-				return false;
-			},
-			onRestart(target, source) {
-				this.add('-fail', target, 'move: Heal Block'); // Succeeds to supress downstream messages
-				if (!source.moveThisTurnResult) {
-					source.moveThisTurnResult = false;
-				}
-			},
+			noCopy: true,
 		},
 		secondary: {
 			chance: 100,
 			self: {
 				volatileStatus: 'fermentedmilk',
-				condition: {
-					noCopy: true,
-				},
 			},
 		},
 		target: "normal",
