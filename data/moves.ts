@@ -21373,11 +21373,13 @@ export const Moves: {[moveid: string]: MoveData} = {
 			duration: 2,
 			onStart(source) {
 				this.effectState.hitCount = this.random(12);
-				this.add('-activate', source, 'move: Astrolgy', this.effectState.hitCount);
+               			value = this.effectState.hitCount
+                		this.add('-activate', source, 'move: Astrology' + value);
 			},
 			onRestart(source) {
 				this.effectState.hitCount = this.random(12);
-				this.add('-activate', source, 'move: Astrolgy', this.effectState.hitCount);
+               			value = this.effectState.hitCount
+                		this.add('-activate', source, 'move: Astrology' + value);
 			},
 		},
 		secondary: null,
