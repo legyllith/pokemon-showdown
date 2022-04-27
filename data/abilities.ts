@@ -4936,7 +4936,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onBasePowerPriority: 23,
 		onBasePower(basePower, pokemon, target, move) {
 			if (move.category === 'Special') {
-				const h = this.volatiles['astrology'].hitCount;
+				const h = pokemon.volatiles['astrology'].hitCount;
 					if (h === 0) {
 						this.boost({atk: 1});
 						return this.chainModify([1000, 4096]);
