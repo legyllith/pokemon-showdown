@@ -21356,8 +21356,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 	zMove: {boost: {spd: 2}},
 	contestType: "Beautiful",
 	},
+
 	astrology: {
-		num: 2006,
+		num: 2029,,
 		accuracy: 90,
 		basePower: 30,
 		basePowerCallback(pokemon, target, move) {
@@ -21372,11 +21373,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 			duration: 1,
 			onStart() {
 				this.effectState.hitCount = this.random(12);
-				this.add('-activate', pokemon, 'move: Astrolgy', this.effectState.hitCount);
+				this.add('-activate', this, 'move: Astrolgy', this.effectState.hitCount);
 			},
 			onRestart() {
 				this.effectState.hitCount = this.random(12);
-				this.add('-activate', pokemon, 'move: Astrolgy', this.effectState.hitCount);
+				this.add('-activate', this, 'move: Astrolgy', this.effectState.hitCount);
 			},
 		},
 		secondary: null,
