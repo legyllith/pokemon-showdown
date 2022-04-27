@@ -21358,7 +21358,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 
 	astrology: {
-		num: 2029,,
+		num: 2029,
 		accuracy: 90,
 		basePower: 30,
 		basePowerCallback(pokemon, target, move) {
