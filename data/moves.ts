@@ -21371,13 +21371,13 @@ export const Moves: {[moveid: string]: MoveData} = {
 		flags: {contact: 1, protect: 1, mirror: 1},
 		condition: {
 			duration: 1,
-			onStart() {
+			onStart(source) {
 				this.effectState.hitCount = this.random(12);
-				this.add('-activate', this, 'move: Astrolgy', this.effectState.hitCount);
+				this.add('-activate', source, 'move: Astrolgy', this.effectState.hitCount);
 			},
-			onRestart() {
+			onRestart(source) {
 				this.effectState.hitCount = this.random(12);
-				this.add('-activate', this, 'move: Astrolgy', this.effectState.hitCount);
+				this.add('-activate', source, 'move: Astrolgy', this.effectState.hitCount);
 			},
 		},
 		secondary: null,
