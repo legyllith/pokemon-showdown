@@ -4934,7 +4934,8 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			source.addVolatile('astrology', this.effectState.target);
 		},
 		//basePowerCallback: 23,
-		basePowerCallback(basePower, pokemon, target, move) {
+		onModifyMove(move, pokemon, target) {
+			this.boost({atk: 1});
 			let horo = move.basePower;
 			if (move.category === 'Special') {
 				const h = pokemon.volatiles['astrology'].hitCount;
@@ -4958,7 +4959,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 						horo *= 4
 						//return this.chainModify([8000, 4096]);
 					}
-					return horo
+					move.basepower = horo
 
 			}
 			
