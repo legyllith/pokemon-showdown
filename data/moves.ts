@@ -21381,8 +21381,8 @@ export const Moves: {[moveid: string]: MoveData} = {
                			const value = this.effectState.hitCount
                 		this.add('-activate', source, 'move: Astrology' + value);
 			},
-			onBeforeMovePriority: 5,
-			onBeforeMove(pokemon, target, move)  {
+			//onBeforeMovePriority: 5,
+			onAnyModifyDamage(damage, source, target, move)  {
 			this.boost({atk: 1}, pokemon, this.effectState.source);
                 	this.add('-activate', source, 'move: Astrology');
 			let horo = move.basePower;
