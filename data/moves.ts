@@ -20959,7 +20959,6 @@ export const Moves: {[moveid: string]: MoveData} = {
 		zMove: {boost: {def: 1}},
 		contestType: "Cool",
 	},
-<<<<<<< Updated upstream
 	awakenpunch: {
 		num: 2019,
 		accuracy: 100,
