@@ -4936,7 +4936,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		//onBeforeMovePriority: 23,
 		onAnyBasePower(basePower, target, source, move) {
 			this.boost({atk: 1});
-			target.volatiles['astrology'].hitCount;
+			target.volatiles['astrology'].duration;
 			if(source.hasAbility('horoscope')) {
 				this.boost({def: 1});
 				target.volatiles['astrologie'].hitCount;
