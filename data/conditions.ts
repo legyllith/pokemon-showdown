@@ -426,7 +426,7 @@ export const Conditions: {[k: string]: ConditionData} = {
 			}
 		},
 	},
-	Astrology: {
+	astrology: {
 		name: 'astrology',
 		noCopy: true,
 			onStart(source) {
