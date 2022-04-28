@@ -21357,7 +21357,6 @@ export const Moves: {[moveid: string]: MoveData} = {
 	zMove: {boost: {spd: 2}},
 	contestType: "Beautiful",
 	},
-
 	astrology: {
 		num: 2029,
 		accuracy: 90,
@@ -21374,7 +21373,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		target: "normal",
 		type: "Water",
 		contestType: "Cute",
-=======
+	},
 	poisonmistterrain: {
 		num: 2019,
 		accuracy: true,
@@ -21429,6 +21428,5 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Poison",
 		zMove: {boost: {def: 1}},
 		contestType: "Beautiful",
->>>>>>> Stashed changes
 	},
 };
