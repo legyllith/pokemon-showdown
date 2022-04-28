@@ -432,41 +432,101 @@ export const Conditions: {[k: string]: ConditionData} = {
 			onStart(source) {
 				this.effectState.hitCount = this.random(12);
                			const value = this.effectState.hitCount
-                		this.add('-activate', source, 'move: Astrology' + value);
+				if (value === 0) {
+                				this.add('-activate', source, 'move: Astrology' + ' you are a Rat');
+				} else if (value === 1)  {
+                				this.add('-activate', source, 'move: Astrology' + 'you are a Dog' );
+				} else if (value === 2)  {
+                				this.add('-activate', source, 'move: Astrology' + 'you are a Goat');
+				} else if (value === 3)  {
+                				this.add('-activate', source, 'move: Astrology' + 'you are a Rabbit');
+				} else if (value === 4)  {
+                				this.add('-activate', source, 'move: Astrology' + 'you are a Pig');
+				} else if (value === 5)  {
+                				this.add('-activate', source, 'move: Astrology' + 'you are a Monkey');
+				} else if (value === 6)  {
+                				this.add('-activate', source, 'move: Astrology' + 'you are a Horse');
+				} else if (value === 7)  {
+                				this.add('-activate', source, 'move: Astrology' + 'you are a Tigger');
+				} else if (value === 8)  {
+                				this.add('-activate', source, 'move: Astrology' + 'you are a Snake');
+				} else if (value === 9)  {
+                				this.add('-activate', source, 'move: Astrology' + 'you are a Rooster');
+				} else if (value === 10)  {
+                				this.add('-activate', source, 'move: Astrology' + 'you are an Ox');
+				} else if (value === 11)  {
+                				this.add('-activate', source, 'move: Astrology' + 'you are a Drago,');
+				}
 			},
 			onRestart(source) {
 				this.effectState.hitCount = this.random(12);
                			const value = this.effectState.hitCount
-                		this.add('-activate', source, 'move: Astrology' + value);
+				if (value === 0) {
+                				this.add('-activate', source, 'move: Astrology' + ' you are a Rat');
+				} else if (value === 1)  {
+                				this.add('-activate', source, 'move: Astrology' + 'you are a Dog' );
+				} else if (value === 2)  {
+                				this.add('-activate', source, 'move: Astrology' + 'you are a Goat');
+				} else if (value === 3)  {
+                				this.add('-activate', source, 'move: Astrology' + 'you are a Rabbit');
+				} else if (value === 4)  {
+                				this.add('-activate', source, 'move: Astrology' + 'you are a Pig');
+				} else if (value === 5)  {
+                				this.add('-activate', source, 'move: Astrology' + 'you are a Monkey');
+				} else if (value === 6)  {
+                				this.add('-activate', source, 'move: Astrology' + 'you are a Horse');
+				} else if (value === 7)  {
+                				this.add('-activate', source, 'move: Astrology' + 'you are a Tigger');
+				} else if (value === 8)  {
+                				this.add('-activate', source, 'move: Astrology' + 'you are a Snake');
+				} else if (value === 9)  {
+                				this.add('-activate', source, 'move: Astrology' + 'you are a Rooster');
+				} else if (value === 10)  {
+                				this.add('-activate', source, 'move: Astrology' + 'you are an Ox');
+				} else if (value === 11)  {
+                				this.add('-activate', source, 'move: Astrology' + 'you are a Drago,');
+				}
 			},
 		onBasePower(basePower,pokemon, target, move) {
-			this.boost({atk: 1}, pokemon, this.effectState.source);
-                	this.add('-activate', pokemon, 'move: Astrology');
-			//let horo = move.basePower;
 			if (move.category === 'Special') {
 				let h = this.effectState.hitCount;
 				if (!(h >= 0 && h <= 12)) return;
                 		this.add('-activate', pokemon, 'move: Astrology' + h);
 					if (h === 0) {
-						this.boost({atk: 1}, pokemon, this.effectState.source);
-						//horo *= 0.75
-						return this.chainModify([1000, 4096]);
+						return this.chainModify([3277, 4096]);
 					} else if (h === 1)  {
-						this.boost({spe: 1}, pokemon, this.effectState.source);
-						//horo *= 2
-						return this.chainModify([4000, 4096]);
+						return this.chainModify([3482, 4096]);
 					}
 					else if (h === 2)  {
-						this.boost({def: 1}, pokemon, this.effectState.source);
-						//horo *= 3
-						return this.chainModify([6000, 4096]);
+						return this.chainModify([3687, 4096]);
 					}
-					else if (h > 2)  {
-						this.boost({def: 1}, pokemon, this.effectState.source);
-						//horo *= 4
-						return this.chainModify([8000, 4096]);
+					else if (h === 3)  {
+						return this.chainModify([3892, 4096]);
 					}
-					//move.basepower = horo
+					else if (h === 4)  {
+						return this.chainModify([4301, 4096]);
+					}
+					else if (h === 5)  {
+						return this.chainModify([4506, 4096]);
+					}
+					else if (h === 6)  {
+						return this.chainModify([4710, 4096]);
+					}
+					else if (h === 7)  {
+						return this.chainModify([4915, 4096]);
+					}
+					else if (h === 8)  {
+						return this.chainModify([5120, 4096]);
+					}
+					else if (h === 9)  {
+						return this.chainModify([5325, 4096]);
+					}
+					else if (h === 10)  {
+						return this.chainModify([5529, 4096]);
+					}
+					else if (h === 11)  {
+						return this.chainModify([5734, 4096]);
+					}
 
 			}
 		},
