@@ -4933,8 +4933,8 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			this.add('-start', source, 'typeadd', 'Psychic', '[from] abilities: Horoscope');
 			source.addVolatile('astrology', this.effectState.target);
 		},
-		onBasePowerPriority: 23,
-		onBasePower(basePower, pokemon, target, move)  {
+		onBeforeMovePriority: 23,
+		onBeforeMove(pokemon, target, move)  {
 			this.boost({atk: 1});
 			let horo = move.basePower;
 			if (move.category === 'Special') {
