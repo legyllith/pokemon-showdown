@@ -4933,38 +4933,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			this.add('-start', source, 'typeadd', 'Psychic', '[from] abilities: Horoscope');
 			source.addVolatile('astrology', this.effectState.target);
 		},
-		onBeforeMovePriority: 23,
-		onBeforeMove(pokemon, target, move)  {
-			this.boost({atk: 1});
-			let horo = move.basePower;
-			if (move.category === 'Special') {
-				let h = pokemon.volatiles['astrology']?.hitCount;
-				if (!(h >= 0 && h <= 12)) return;
-                		this.add('-activate', source, 'move: Astrology' + h);
-					if (h === 0) {
-						this.boost({atk: 1});
-						horo *= 0.75
-						//return this.chainModify([1000, 4096]);
-					} else if (h === 1)  {
-						this.boost({spe: 1});
-						horo *= 2
-						//return this.chainModify([4000, 4096]);
-					}
-					else if (h === 2)  {
-						this.boost({def: 1});
-						horo *= 3
-						//return this.chainModify([6000, 4096]);
-					}
-					else if (h > 2)  {
-						this.boost({def: 1});
-						horo *= 4
-						//return this.chainModify([8000, 4096]);
-					}
-					move.basepower = horo
-
-			}
-			
-		},
+		//onBeforeMovePriority: 23,
 		onResidual(pokemon) {
 				pokemon.addVolatile('astrology', this.effectState.target);
 		},
