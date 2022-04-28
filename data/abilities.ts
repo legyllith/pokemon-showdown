@@ -4934,6 +4934,10 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			source.addVolatile('astrology', this.effectState.target);
 		},
 		//onBeforeMovePriority: 23,
+		onAnyBasePower(basePower, target, source, move) {
+			this.boost({atk: 1});
+			if(source.hasAbility('horoscope')) source.volatiles['astrologie'].hitCount;
+		},		
 		onResidual(pokemon) {
 				pokemon.addVolatile('astrology', this.effectState.target);
 		},
