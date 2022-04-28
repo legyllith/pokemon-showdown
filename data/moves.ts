@@ -21375,7 +21375,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		contestType: "Cute",
 	},
 	poisonmistterrain: {
-		num: 2019,
+		num: 2030,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
