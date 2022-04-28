@@ -21381,7 +21381,7 @@ export const Moves: {[moveid: string]: MoveData} = {
                			const value = this.effectState.hitCount
                 		this.add('-activate', source, 'move: Astrology' + value);
 			},
-		onBeforeMove(pokemon, target, move)  {
+			onBeforeMove(pokemon, target, move)  {
 			this.boost({atk: 1});
 			let horo = move.basePower;
 			if (move.category === 'Special') {
