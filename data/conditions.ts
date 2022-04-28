@@ -435,27 +435,27 @@ export const Conditions: {[k: string]: ConditionData} = {
 				if (value === 0) {
                 				this.add('-activate', source, 'move: Astrology' + ' you are a Rat');
 				} else if (value === 1)  {
-                				this.add('-activate', source, 'move: Astrology' + 'you are a Dog' );
+                				this.add('-activate', source, 'move: Astrology' + ' you are a Dog' );
 				} else if (value === 2)  {
-                				this.add('-activate', source, 'move: Astrology' + 'you are a Goat');
+                				this.add('-activate', source, 'move: Astrology' + ' you are a Goat');
 				} else if (value === 3)  {
-                				this.add('-activate', source, 'move: Astrology' + 'you are a Rabbit');
+                				this.add('-activate', source, 'move: Astrology' + ' you are a Rabbit');
 				} else if (value === 4)  {
-                				this.add('-activate', source, 'move: Astrology' + 'you are a Pig');
+                				this.add('-activate', source, 'move: Astrology' + ' you are a Pig');
 				} else if (value === 5)  {
-                				this.add('-activate', source, 'move: Astrology' + 'you are a Monkey');
+                				this.add('-activate', source, 'move: Astrology' + ' you are a Monkey');
 				} else if (value === 6)  {
-                				this.add('-activate', source, 'move: Astrology' + 'you are a Horse');
+                				this.add('-activate', source, 'move: Astrology' + ' you are a Horse');
 				} else if (value === 7)  {
-                				this.add('-activate', source, 'move: Astrology' + 'you are a Tigger');
+                				this.add('-activate', source, 'move: Astrology' + ' you are a Tigger');
 				} else if (value === 8)  {
-                				this.add('-activate', source, 'move: Astrology' + 'you are a Snake');
+                				this.add('-activate', source, 'move: Astrology' + ' you are a Snake');
 				} else if (value === 9)  {
-                				this.add('-activate', source, 'move: Astrology' + 'you are a Rooster');
+                				this.add('-activate', source, 'move: Astrology' + ' you are a Rooster');
 				} else if (value === 10)  {
-                				this.add('-activate', source, 'move: Astrology' + 'you are an Ox');
+                				this.add('-activate', source, 'move: Astrology' + ' you are an Ox');
 				} else if (value === 11)  {
-                				this.add('-activate', source, 'move: Astrology' + 'you are a Drago,');
+                				this.add('-activate', source, 'move: Astrology' + ' you are a Dragon');
 				}
 			},
 			onRestart(source) {
@@ -464,34 +464,33 @@ export const Conditions: {[k: string]: ConditionData} = {
 				if (value === 0) {
                 				this.add('-activate', source, 'move: Astrology' + ' you are a Rat');
 				} else if (value === 1)  {
-                				this.add('-activate', source, 'move: Astrology' + 'you are a Dog' );
+                				this.add('-activate', source, 'move: Astrology' + ' you are a Dog' );
 				} else if (value === 2)  {
-                				this.add('-activate', source, 'move: Astrology' + 'you are a Goat');
+                				this.add('-activate', source, 'move: Astrology' + ' you are a Goat');
 				} else if (value === 3)  {
-                				this.add('-activate', source, 'move: Astrology' + 'you are a Rabbit');
+                				this.add('-activate', source, 'move: Astrology' + ' you are a Rabbit');
 				} else if (value === 4)  {
-                				this.add('-activate', source, 'move: Astrology' + 'you are a Pig');
+                				this.add('-activate', source, 'move: Astrology' + ' you are a Pig');
 				} else if (value === 5)  {
-                				this.add('-activate', source, 'move: Astrology' + 'you are a Monkey');
+                				this.add('-activate', source, 'move: Astrology' + ' you are a Monkey');
 				} else if (value === 6)  {
-                				this.add('-activate', source, 'move: Astrology' + 'you are a Horse');
+                				this.add('-activate', source, 'move: Astrology' + ' you are a Horse');
 				} else if (value === 7)  {
-                				this.add('-activate', source, 'move: Astrology' + 'you are a Tigger');
+                				this.add('-activate', source, 'move: Astrology' + ' you are a Tigger');
 				} else if (value === 8)  {
-                				this.add('-activate', source, 'move: Astrology' + 'you are a Snake');
+                				this.add('-activate', source, 'move: Astrology' + ' you are a Snake');
 				} else if (value === 9)  {
-                				this.add('-activate', source, 'move: Astrology' + 'you are a Rooster');
+                				this.add('-activate', source, 'move: Astrology' + ' you are a Rooster');
 				} else if (value === 10)  {
-                				this.add('-activate', source, 'move: Astrology' + 'you are an Ox');
+                				this.add('-activate', source, 'move: Astrology' + ' you are an Ox');
 				} else if (value === 11)  {
-                				this.add('-activate', source, 'move: Astrology' + 'you are a Drago,');
+                				this.add('-activate', source, 'move: Astrology' + ' you are a Dragon');
 				}
 			},
 		onBasePower(basePower,pokemon, target, move) {
 			if (move.category === 'Special') {
 				let h = this.effectState.hitCount;
 				if (!(h >= 0 && h <= 12)) return;
-                		this.add('-activate', pokemon, 'move: Astrology' + h);
 					if (h === 0) {
 						return this.chainModify([3277, 4096]);
 					} else if (h === 1)  {
