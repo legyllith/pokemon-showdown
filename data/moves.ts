@@ -13339,9 +13339,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 			onTryHit(target, source, move) {
 				if (!move.flags['protect']) {
 					if (['gmaxoneblow', 'gmaxrapidflow'].includes(move.id)) return;
-					if (move.isZ || move.isMax || this.field.isTerrain('poisonmistterrain')) target.getMoveHitData(move).zBrokeProtect = true;
+					if (move.isZ || move.isMax) target.getMoveHitData(move).zBrokeProtect = true;
 					return;
-				}
+                		} else if (this.field.isTerrain('poisonmistterrain')) {
+					target.getMoveHitData(move).zBrokeProtect = true;
+					return;
+                		}
 				if (move.smartTarget) {
 					move.smartTarget = false;
 				} else {
