@@ -21433,13 +21433,17 @@ export const Moves: {[moveid: string]: MoveData} = {
 						return this.chainModify([1536, 4096]);
 					}
 					return this.chainModify(0.25);
-					
-					this.debug('poison mist terrain boost');
-					return this.chainModify(1.5);
 				}
-				if (defender.runEffectiveness(move) > 0) {
-					this.debug('Filter neutralize');
-					return this.chainModify(0.75);
+				else {
+					if (move.type === 'Poison') {
+						if (defender.runEffectiveness(move) > 0) {
+							return this.chainModify([4608, 4096]);
+						}
+						return this.chainModify([6144, 4096]);
+					}
+					if (defender.runEffectiveness(move) > 0) {
+						return this.chainModify([3072, 4096]);
+					}
 				}
 			},
 			onFieldStart(field, source, effect) {
