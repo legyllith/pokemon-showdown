@@ -21425,17 +21425,21 @@ export const Moves: {[moveid: string]: MoveData} = {
 			},
 			onBasePowerPriority: 6,
 			onBasePower(basePower, attacker, defender, move) {
-				if (move.type === 'Poison' && attacker.isGrounded()) {
+				if (defender.getMoveHitData(move).zBrokeProtect){
+					if (move.type === 'Poison') {
+						if (defender.runEffectiveness(move) > 0) {
+							return this.chainModify([1152, 4096]);
+						}
+						return this.chainModify([1536, 4096]);
+					}
+					return this.chainModify(0.25);
+					
 					this.debug('poison mist terrain boost');
 					return this.chainModify(1.5);
 				}
 				if (defender.runEffectiveness(move) > 0) {
 					this.debug('Filter neutralize');
 					return this.chainModify(0.75);
-					this.boost({spa: 1});
-				}
-				if (defender.getMoveHitData(move).zBrokeProtect){
-					return this.chainModify(0.25);
 				}
 			},
 			onFieldStart(field, source, effect) {
@@ -21448,9 +21452,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 			onResidualOrder: 5,
 			onResidualSubOrder: 2,
 			onResidual(pokemon) {
-				if (!pokemon.hasType('Poison') && pokemon.isGrounded()) {
+				if (pokemon.hasType('Normal')) {
+					this.heal(pokemon.baseMaxhp / 16, pokemon, pokemon);
+				} 
+				if (!pokemon.hasType('Poison')) {
 					const typeMod = this.clampIntRange(pokemon.runEffectiveness(this.dex.getActiveMove('poisonmistterrain')), -6, 6);
-					this.damage(pokemon.maxhp * Math.pow(2, typeMod) / 8);
+					this.damage(pokemon.maxhp * Math.pow(2, typeMod) / 12);
 				}
 			},
 			onFieldResidualOrder: 27,
