@@ -21434,6 +21434,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 					this.debug('Filter neutralize');
 					return this.chainModify(0.75);
 				}
+				if (defender.getMoveHitData(move).zBrokeProtect){
+					return this.chainModify(0.25);
+				}
 			},
 			onFieldStart(field, source, effect) {
 				if (effect?.effectType === 'Ability') {
