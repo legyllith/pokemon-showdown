@@ -955,9 +955,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 			onTryHit(target, source, move) {
 				if (!move.flags['protect']) {
 					if (['gmaxoneblow', 'gmaxrapidflow'].includes(move.id)) return;
-					if (move.isZ || move.isMax || this.field.isTerrain('poisonmistterrain')) target.getMoveHitData(move).zBrokeProtect = true;
+					if (move.isZ || move.isMax) target.getMoveHitData(move).zBrokeProtect = true;
 					return;
-				}
+                } else if (this.field.isTerrain('poisonmistterrain')) {
+					target.getMoveHitData(move).zBrokeProtect = true;
+					return;
+                	}
 				if (move.smartTarget) {
 					move.smartTarget = false;
 				} else {
@@ -9411,11 +9414,14 @@ export const Moves: {[moveid: string]: MoveData} = {
 			},
 			onTryHitPriority: 3,
 			onTryHit(target, source, move) {
-				if (!move.flags['protect'] || move.category === 'Status') {
+				if (!move.flags['protect']) {
 					if (['gmaxoneblow', 'gmaxrapidflow'].includes(move.id)) return;
-					if (move.isZ || move.isMax || this.field.isTerrain('poisonmistterrain')) target.getMoveHitData(move).zBrokeProtect = true;
+					if (move.isZ || move.isMax) target.getMoveHitData(move).zBrokeProtect = true;
 					return;
-				}
+                } else if (this.field.isTerrain('poisonmistterrain')) {
+					target.getMoveHitData(move).zBrokeProtect = true;
+					return;
+                	}
 				if (move.smartTarget) {
 					move.smartTarget = false;
 				} else {
@@ -10423,9 +10429,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 			onTryHit(target, source, move) {
 				if (!move.flags['protect']) {
 					if (['gmaxoneblow', 'gmaxrapidflow'].includes(move.id)) return;
-					if (move.isZ || move.isMax || this.field.isTerrain('poisonmistterrain')) target.getMoveHitData(move).zBrokeProtect = true;
+					if (move.isZ || move.isMax) target.getMoveHitData(move).zBrokeProtect = true;
 					return;
-				}
+                } else if (this.field.isTerrain('poisonmistterrain')) {
+					target.getMoveHitData(move).zBrokeProtect = true;
+					return;
+                	}
 				if (move && (move.target === 'self' || move.category === 'Status')) return;
 				this.add('-activate', target, 'move: Mat Block', move.name);
 				const lockedmove = source.getVolatile('lockedmove');
@@ -12255,11 +12264,14 @@ export const Moves: {[moveid: string]: MoveData} = {
 			},
 			onTryHitPriority: 3,
 			onTryHit(target, source, move) {
-				if (!move.flags['protect'] || move.category === 'Status') {
+				if (!move.flags['protect']) {
 					if (['gmaxoneblow', 'gmaxrapidflow'].includes(move.id)) return;
-					if (move.isZ || move.isMax || this.field.isTerrain('poisonmistterrain')) target.getMoveHitData(move).zBrokeProtect = true;
+					if (move.isZ || move.isMax) target.getMoveHitData(move).zBrokeProtect = true;
 					return;
-				}
+                } else if (this.field.isTerrain('poisonmistterrain')) {
+					target.getMoveHitData(move).zBrokeProtect = true;
+					return;
+                	}
 				if (move.smartTarget) {
 					move.smartTarget = false;
 				} else {
@@ -13341,10 +13353,10 @@ export const Moves: {[moveid: string]: MoveData} = {
 					if (['gmaxoneblow', 'gmaxrapidflow'].includes(move.id)) return;
 					if (move.isZ || move.isMax) target.getMoveHitData(move).zBrokeProtect = true;
 					return;
-                		} else if (this.field.isTerrain('poisonmistterrain')) {
+                } else if (this.field.isTerrain('poisonmistterrain')) {
 					target.getMoveHitData(move).zBrokeProtect = true;
 					return;
-                		}
+                	}
 				if (move.smartTarget) {
 					move.smartTarget = false;
 				} else {
@@ -13834,9 +13846,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 				if (move.priority <= 0.1) return;
 				if (!move.flags['protect']) {
 					if (['gmaxoneblow', 'gmaxrapidflow'].includes(move.id)) return;
-					if (move.isZ || move.isMax || this.field.isTerrain('poisonmistterrain')) target.getMoveHitData(move).zBrokeProtect = true;
+					if (move.isZ || move.isMax) target.getMoveHitData(move).zBrokeProtect = true;
 					return;
-				}
+                } else if (this.field.isTerrain('poisonmistterrain')) {
+					target.getMoveHitData(move).zBrokeProtect = true;
+					return;
+                	}
 				this.add('-activate', target, 'move: Quick Guard');
 				const lockedmove = source.getVolatile('lockedmove');
 				if (lockedmove) {
@@ -16794,9 +16809,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 			onTryHit(target, source, move) {
 				if (!move.flags['protect']) {
 					if (['gmaxoneblow', 'gmaxrapidflow'].includes(move.id)) return;
-					if (move.isZ || move.isMax || this.field.isTerrain('poisonmistterrain')) target.getMoveHitData(move).zBrokeProtect = true;
+					if (move.isZ || move.isMax) target.getMoveHitData(move).zBrokeProtect = true;
 					return;
-				}
+                } else if (this.field.isTerrain('poisonmistterrain')) {
+					target.getMoveHitData(move).zBrokeProtect = true;
+					return;
+                	}
 				if (move.smartTarget) {
 					move.smartTarget = false;
 				} else {
@@ -19825,11 +19843,14 @@ export const Moves: {[moveid: string]: MoveData} = {
 				if (move?.target !== 'allAdjacent' && move.target !== 'allAdjacentFoes') {
 					return;
 				}
-				if (move.isZ || move.isMax || this.field.isTerrain('poisonmistterrain')) {
+				if (!move.flags['protect']) {
 					if (['gmaxoneblow', 'gmaxrapidflow'].includes(move.id)) return;
+					if (move.isZ || move.isMax) target.getMoveHitData(move).zBrokeProtect = true;
+					return;
+                } else if (this.field.isTerrain('poisonmistterrain')) {
 					target.getMoveHitData(move).zBrokeProtect = true;
 					return;
-				}
+                	}
 				this.add('-activate', target, 'move: Wide Guard');
 				const lockedmove = source.getVolatile('lockedmove');
 				if (lockedmove) {
@@ -21404,13 +21425,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 			},
 			onBasePowerPriority: 6,
 			onBasePower(basePower, attacker, defender, move) {
+				const typeMod = this.clampIntRange(pokemon.runEffectiveness(this.dex.getActiveMove(move)), -6, 6);
 				if (move.type === 'Poison' && attacker.isGrounded()) {
 					this.debug('poison mist terrain boost');
 					return this.chainModify(1.5);
 				}
-			},
-			onSourceModifyDamage(damage, attacker, defender, move) {
-				const typeMod = this.clampIntRange(pokemon.runEffectiveness(this.dex.getActiveMove(move)), -6, 6);
 				if (defender.getMoveHitData(move).typeMod > 0) {
 					this.debug('Filter neutralize');
 					return this.chainModify(0.75);

@@ -1713,7 +1713,7 @@ export class BattleActions {
 		// Final modifier. Modifiers that modify damage after min damage check, such as Life Orb.
 		baseDamage = this.battle.runEvent('ModifyDamage', pokemon, target, move, baseDamage);
 
-		if (move.isZOrMaxPowered && target.getMoveHitData(move).zBrokeProtect) {
+		if ((move.isZOrMaxPowered||this.field.isTerrain('poisonmistterrain')) && target.getMoveHitData(move).zBrokeProtect) {
 			baseDamage = this.battle.modify(baseDamage, 0.25);
 			this.battle.add('-zbroken', target);
 		}
