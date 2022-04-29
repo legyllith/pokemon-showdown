@@ -1913,4 +1913,20 @@ export const Rulesets: {[k: string]: FormatData} = {
 			}
 		}
 	},
+	poisonmistterrainrule: {
+		effectType: 'Rule',
+		name: 'Poison Mist Terrain Rule',
+		desc: 'The fight start on Poison Mist Terrain',
+		onSwitchIn(pokemon) {
+			if(this.field.IsFirstTimeSettingCustomTerrain) {
+				this.field.setTerrain('poisonmistterrain');
+				this.field.IsFirstTimeSettingCustomTerrain = false;
+			}
+		},
+		onResidual(pokemon){
+			if(this.field.isTerrain('')) {
+				this.field.setTerrain('poisonmistterrain');
+			}
+		}
+	},
 };

@@ -27,7 +27,7 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 8] Standard Normal Battle",
 		mod: 'gen8',
-		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 25'],
+		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 30'],
 		
 	},
 	{
@@ -49,15 +49,15 @@ export const Formats: FormatList = [
 		
 	},
 	{
-		name: "[Gen 8] Boss",
+		name: "[Gen 8] Tournament 4",
 		mod: 'gen8',
-		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 25', '! EV Limit'],
+		ruleset: ['Standard NatDex', 'Species Clause', 'Dynamax Clause', 'Adjust Level = 30', 'Poison Mist Terrain Rule', 'Item Clause'],
 		
 	},
 	{
-		name: "[Gen 8] Test",
+		name: "[Gen 8] Boss",
 		mod: 'gen8',
-		ruleset: ['Standard NatDex', 'Species Clause', 'Dynamax Clause', 'Adjust Level = 25', 'Item Clause'],
+		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 30', '! EV Limit'],
 		
 	},
 	{
@@ -67,7 +67,7 @@ export const Formats: FormatList = [
 		name: "[Gen 8] Standard Double Battle",
 		gameType: 'doubles',
 		mod: 'gen8',
-		ruleset: ['Standard NatDex', 'Species Clause', 'Dynamax Clause', 'Adjust Level = 25'],
+		ruleset: ['Standard NatDex', 'Species Clause', 'Dynamax Clause', 'Adjust Level = 30'],
 		
 	},
 	{
@@ -77,6 +77,6 @@ export const Formats: FormatList = [
 		name: "[Gen 8] Standard Multi Battle",
 		mod: 'gen8',
 		gameType: 'multi',
-		ruleset: ['Max Team Size = 3','Standard NatDex', 'Dynamax Clause', 'Adjust Level = 25'],
+		ruleset: ['Max Team Size = 3','Standard NatDex', 'Dynamax Clause', 'Adjust Level = 30'],
 	},
 	];

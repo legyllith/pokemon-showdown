@@ -1996,8 +1996,10 @@ export const Moves: {[moveid: string]: MoveData} = {
 				newType = 'Ground';
 			} else if (this.field.isTerrain('caveterrain')) {
 				newType = 'Rock';
-			}else if (this.field.isTerrain('beachterrain')) {
+			} else if (this.field.isTerrain('beachterrain')) {
 				newType = 'Normal';
+			} else if (this.field.isTerrain('poisonmistterrain')) {
+				newType = 'Poison';
 			}
 			if (target.getTypes().join() === newType || !target.setType(newType)) return false;
 			this.add('-start', target, 'typechange', newType);
@@ -12003,8 +12005,10 @@ export const Moves: {[moveid: string]: MoveData} = {
 				move = 'sandtomb';
 			} else if (this.field.isTerrain('caveterrain')) {
 				move = 'rocktomb';
-			}else if (this.field.isTerrain('beachterrain')) {
+			} else if (this.field.isTerrain('beachterrain')) {
 				move = 'weatherball';
+			} else if (this.field.isTerrain('poisonmistterrain')) {
+				move = 'acidspray';
 			}
 			this.actions.useMove(move, pokemon, target);
 			return null;
@@ -15158,11 +15162,15 @@ export const Moves: {[moveid: string]: MoveData} = {
 					chance: 30,
 					volatileStatus: 'flinch',
 				});
-			}
-			else if (this.field.isTerrain('beachterrain')) {
+			} else if (this.field.isTerrain('beachterrain')) {
 				move.secondaries.push({
 					chance: 30,
 					drain: [1, 2],
+				});
+			} else if (this.field.isTerrain('poisonmistterrain')) {
+				move.secondaries.push({
+					chance: 30,
+					status: 'psn',
 				});
 			}
 		},
@@ -18423,6 +18431,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 			case 'caveterrain':
 				move.type = 'Rock';
 				break;
+			case 'poisonmistterrain':
+				move.type = 'Poison';
+				break;
 			}
 		},
 		onModifyMove(move, pokemon) {
@@ -21396,7 +21407,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 				}
 			},
 			onSourceModifyDamage(damage, attacker, defender, move) {
-				if (target.getMoveHitData(move).typeMod > 0) {
+				if (defender.getMoveHitData(move).typeMod > 0) {
 					this.debug('Filter neutralize');
 					return this.chainModify(0.75);
 				}
