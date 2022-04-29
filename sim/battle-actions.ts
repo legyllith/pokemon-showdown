@@ -1,4 +1,5 @@
 import {Dex, toID} from './dex';
+import {Field} from './field';
 
 const CHOOSABLE_TARGETS = new Set(['normal', 'any', 'adjacentAlly', 'adjacentAllyOrSelf', 'adjacentFoe']);
 
