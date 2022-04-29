@@ -21407,6 +21407,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 				}
 			},
 			onSourceModifyDamage(damage, attacker, defender, move) {
+				const typeMod = this.clampIntRange(pokemon.runEffectiveness(this.dex.getActiveMove(move)), -6, 6);
 				if (defender.getMoveHitData(move).typeMod > 0) {
 					this.debug('Filter neutralize');
 					return this.chainModify(0.75);
