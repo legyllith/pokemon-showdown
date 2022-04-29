@@ -21425,7 +21425,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			},
 			onBasePowerPriority: 6,
 			onBasePower(basePower, attacker, defender, move) {
-				const typeMod = this.clampIntRange(defender.runEffectiveness(move)), -6, 6);
+				const typeMod = this.clampIntRange(defender.runEffectiveness(move), -6, 6);
 				if (move.type === 'Poison' && attacker.isGrounded()) {
 					this.debug('poison mist terrain boost');
 					return this.chainModify(1.5);
