@@ -21432,6 +21432,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 				if (defender.runEffectiveness(move) > 0) {
 					this.debug('Filter neutralize');
 					return this.chainModify(0.75);
+					this.boost({spa: 1});
 				}
 				if (defender.getMoveHitData(move).zBrokeProtect){
 					return this.chainModify(0.25);
