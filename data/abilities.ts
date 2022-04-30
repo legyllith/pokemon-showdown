@@ -4949,7 +4949,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			this.add('-activate', pokemon, 'ability: Suction Cups');
 			return null;
 		},
-		onStart(source) {const boost: SparseBoostsTable = {};
+		onStart(source) {
 			let stats: BoostID[] = [];
 			const boost: SparseBoostsTable = {};
 			let statPlus: BoostID;
