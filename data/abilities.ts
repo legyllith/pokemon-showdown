@@ -4946,7 +4946,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	millennialweight: {
 		onDragOutPriority: 1,
 		onDragOut(pokemon) {
-			this.add('-activate', pokemon, 'ability: Suction Cups');
+			this.add('-activate', pokemon, 'ability: Millennial Weight');
 			return null;
 		},
 		onStart(source) {
@@ -4964,7 +4964,6 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			this.boost(boost);
 		},
 		isBreakable: true,
-		name: "Suction Cups",
 		name: "Millennial Weight",
 		rating: 5,
 		num: 2015,
