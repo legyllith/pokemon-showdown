@@ -4950,6 +4950,8 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			return null;
 		},
 		onStart(source) {const boost: SparseBoostsTable = {};
+			let stats: BoostID[] = [];
+			const boost: SparseBoostsTable = {};
 			let statPlus: BoostID;
 			for (statPlus in source.boosts) {
 				if (statPlus === 'accuracy' || statPlus === 'evasion') continue;
