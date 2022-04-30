@@ -87117,6 +87117,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			hail: ["8M", "7M", "6M", "5M", "4M", "3M"],
 			haze: ["8E", "7E", "6E", "5E", "4E"],
 			hiddenpower: ["7M", "6M", "5M", "4M", "3M"],
+			millennialhelp: ["8L1"],
 			naturalgift: ["4M"],
 			pound: ["8L1"],
 			raindance: ["8L34"],

@@ -7006,4 +7006,9 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "astrology attack",
 		shortDesc: "astrolgy attack",
 	},
+	millennialhelp: {
+		name: "Millennial Help",
+		desc: "The user is replaced with another Pokemon in its party, boosting randomly une stat before. The selected Pokemon has the user's stat stage changes, confusion, and certain move effects transferred to it.",
+		shortDesc: "User switches,boosting randomly une stat before, passing stat changes and more.",
+	},
 };
