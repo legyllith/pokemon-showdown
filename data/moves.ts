@@ -21501,6 +21501,18 @@ export const Moves: {[moveid: string]: MoveData} = {
 		flags: {},
 		self: {
 			onHit(source) {
+				let stats: BoostID[] = [];
+				const boost: SparseBoostsTable = {};
+				let statPlus: BoostID;
+				for (statPlus in source.boosts) {
+					if (statPlus === 'accuracy' || statPlus === 'evasion') continue;
+					if (source.boosts[statPlus] < 6) {
+						stats.push(statPlus);
+					}
+				}
+				let randomStat: BoostID | undefined = stats.length ? this.sample(stats) : undefined;
+				if (randomStat) boost[randomStat] = 1;
+				this.boost(boost);
 				source.skipBeforeSwitchOutEventFlag = true;
 			},
 		},
