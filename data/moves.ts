@@ -13665,7 +13665,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		basePower: 0,
 		basePowerCallback(pokemon, target) {
 			let power = 60 + 20 * target.positiveBoosts();
-			if (power > 200) power = 200;
+			if (power > 300) power = 300;
 			return power;
 		},
 		category: "Physical",
@@ -21508,5 +21508,29 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Normal",
 		zMove: {effect: 'clearnegativeboost'},
 		contestType: "Cute",
+	},
+	smite: {
+		num: 386,
+		accuracy: 100,
+		basePower: 0,
+		basePowerCallback(pokemon, target) {
+			let power = 60 + 20 * target.positiveBoosts();
+			if (power > 300) power = 300;
+			return power;
+		},
+		category: "Physical",
+		onEffectiveness(typeMod, target, type, move) {
+			return typeMod + this.dex.getEffectiveness('Fairy', type);
+		},
+		name: "Smite",
+		pp: 5,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		secondary: null,
+		target: "normal",
+		type: "Electric",
+		zMove: {basePower: 160},
+		maxMove: {basePower: 130},
+		contestType: "Cool",
 	},
 };

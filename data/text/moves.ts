@@ -7011,4 +7011,9 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "The user is replaced with another Pokemon in its party, boosting randomly une stat before. The selected Pokemon has the user's stat stage changes, confusion, and certain move effects transferred to it.",
 		shortDesc: "User switches,boosting randomly une stat before, passing stat changes and more.",
 	},
+	smite: {
+		name: "Smite",
+		desc: "This move combines Fairy in its type effectiveness against the target.",
+		shortDesc: "Combines Fairy in its type effectiveness.",
+	},
 };
