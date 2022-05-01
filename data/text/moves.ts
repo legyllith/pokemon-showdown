@@ -7013,7 +7013,7 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	thundersmite: {
 		name: "Thunder Smite",
-		desc: "This move combines Fairy in its type effectiveness against the target.",
-		shortDesc: "Combines Fairy in its type effectiveness.",
+		desc: "This move combines Fairy in its type effectiveness against the target.power is up by ennemy boost (+20 per boost max 300)",
+		shortDesc: "Combines Fairy in its type effectiveness.Powet is up by ennemy boost",
 	},
 };
