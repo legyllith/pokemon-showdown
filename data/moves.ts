@@ -21509,7 +21509,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		zMove: {effect: 'clearnegativeboost'},
 		contestType: "Cute",
 	},
-	smite: {
+	thundersmite: {
 		num: 2031,
 		accuracy: 100,
 		basePower: 0,
@@ -21522,7 +21522,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		onEffectiveness(typeMod, target, type, move) {
 			return typeMod + this.dex.getEffectiveness('Fairy', type);
 		},
-		name: "Smite",
+		name: "Thunder Smite",
 		pp: 5,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
