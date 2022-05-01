@@ -21510,7 +21510,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		contestType: "Cute",
 	},
 	smite: {
-		num: 386,
+		num: 2031,
 		accuracy: 100,
 		basePower: 0,
 		basePowerCallback(pokemon, target) {
