@@ -4943,5 +4943,30 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 2.5,
 		num: 2014,
 	},
+	millennialweight: {
+		onDragOutPriority: 1,
+		onDragOut(pokemon) {
+			this.add('-activate', pokemon, 'ability: Millennial Weight');
+			return null;
+		},
+		onStart(source) {
+			let stats: BoostID[] = [];
+			const boost: SparseBoostsTable = {};
+			let statPlus: BoostID;
+			for (statPlus in source.boosts) {
+				if (statPlus === 'accuracy' || statPlus === 'evasion') continue;
+				if (source.boosts[statPlus] < 6) {
+					stats.push(statPlus);
+				}
+			}
+			let randomStat: BoostID | undefined = stats.length ? this.sample(stats) : undefined;
+			if (randomStat) boost[randomStat] = 1;
+			this.boost(boost);
+		},
+		isBreakable: true,
+		name: "Millennial Weight",
+		rating: 5,
+		num: 2015,
+	},
 	
 };

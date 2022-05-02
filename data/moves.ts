@@ -13665,7 +13665,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		basePower: 0,
 		basePowerCallback(pokemon, target) {
 			let power = 60 + 20 * target.positiveBoosts();
-			if (power > 200) power = 200;
+			if (power > 300) power = 300;
 			return power;
 		},
 		category: "Physical",
@@ -21433,13 +21433,17 @@ export const Moves: {[moveid: string]: MoveData} = {
 						return this.chainModify([1536, 4096]);
 					}
 					return this.chainModify(0.25);
-					
-					this.debug('poison mist terrain boost');
-					return this.chainModify(1.5);
 				}
-				if (defender.runEffectiveness(move) > 0) {
-					this.debug('Filter neutralize');
-					return this.chainModify(0.75);
+				else {
+					if (move.type === 'Poison') {
+						if (defender.runEffectiveness(move) > 0) {
+							return this.chainModify([4608, 4096]);
+						}
+						return this.chainModify([6144, 4096]);
+					}
+					if (defender.runEffectiveness(move) > 0) {
+						return this.chainModify([3072, 4096]);
+					}
 				}
 			},
 			onFieldStart(field, source, effect) {
@@ -21471,5 +21475,62 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Poison",
 		zMove: {boost: {def: 1}},
 		contestType: "Beautiful",
+	},
+	millennialhelp: {
+		num: 2031,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Millennial Help",
+		pp: 40,
+		priority: 0,
+		flags: {},
+		self: {
+			onHit(source) {
+				let stats: BoostID[] = [];
+				const boost: SparseBoostsTable = {};
+				let statPlus: BoostID;
+				for (statPlus in source.boosts) {
+					if (statPlus === 'accuracy' || statPlus === 'evasion') continue;
+					if (source.boosts[statPlus] < 6) {
+						stats.push(statPlus);
+					}
+				}
+				let randomStat: BoostID | undefined = stats.length ? this.sample(stats) : undefined;
+				if (randomStat) boost[randomStat] = 1;
+				this.boost(boost);
+				source.skipBeforeSwitchOutEventFlag = true;
+			},
+		},
+		selfSwitch: 'copyvolatile',
+		secondary: null,
+		target: "self",
+		type: "Normal",
+		zMove: {effect: 'clearnegativeboost'},
+		contestType: "Cute",
+	},
+	thundersmite: {
+		num: 2031,
+		accuracy: 100,
+		basePower: 0,
+		basePowerCallback(pokemon, target) {
+			let power = 60 + 20 * target.positiveBoosts();
+			if (power > 300) power = 300;
+			return power;
+		},
+		category: "Physical",
+		onEffectiveness(typeMod, target, type, move) {
+			return typeMod + this.dex.getEffectiveness('Fairy', type);
+		},
+		name: "Thunder Smite",
+		pp: 5,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		secondary: null,
+		target: "normal",
+		type: "Electric",
+		zMove: {basePower: 160},
+		maxMove: {basePower: 130},
+		contestType: "Cool",
 	},
 };

@@ -1799,4 +1799,8 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		name: "Horoscope",
 		shortDesc: "randomly change the spea of user before move",
 	},
+	millennialweight: {
+		name: "Millennial Weight",
+		shortDesc: "this pokemon can not be swap by opposant and gain aandom stats on enter",
+	},
 };

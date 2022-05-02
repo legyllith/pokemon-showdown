@@ -6746,4 +6746,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	somniflore: {
 		tier: "OU",
 	},
+	grottenus: {
+		tier: "OU",
+	},
 };
