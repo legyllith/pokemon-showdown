@@ -87159,7 +87159,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			hiddenpower: ["7M", "6M", "5M", "4M", "3M"],
 			headsmash: ["7L55"],
 			leafstorm: ["7L49"],
-			leachseed: ["7L9"],
+			leechseed: ["7L9"],
 			meteorbeam: ["8T"],
 			megadrain: ["8L18"],
 			millennialhelp: ["8L1"],
