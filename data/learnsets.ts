@@ -61154,6 +61154,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			lick: ["7L10", "6L10"],
 			lowkick: ["7T", "6T"],
 			pound: ["7L1", "6L1"],
+			poisonsting: ["8T"],
 			poweruppunch: ["6M"],
 			protect: ["7M", "6M"],
 			quickattack: ["7L8", "6L8"],

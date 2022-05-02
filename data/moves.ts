@@ -12939,7 +12939,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	poisonsting: {
 		num: 40,
 		accuracy: 100,
-		basePower: 15,
+		basePower: 30,
 		category: "Physical",
 		name: "Poison Sting",
 		pp: 35,
@@ -12949,6 +12949,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 			if (this.field.isTerrain('beachterrain')) {
 				move.basePower = 75;
 				move.type = "Bug";
+			}
+			if (this.field.isTerrain('poisonmistterrain')) {
+				move.basePower = 60;
 			}
 		},
 		secondary: {
@@ -21428,18 +21431,18 @@ export const Moves: {[moveid: string]: MoveData} = {
 				if (defender.getMoveHitData(move).zBrokeProtect){
 					if (move.type === 'Poison') {
 						if (defender.runEffectiveness(move) > 0) {
-							return this.chainModify([1152, 4096]);
+							return this.chainModify([998, 4096]);
 						}
-						return this.chainModify([1536, 4096]);
+						return this.chainModify([1331, 4096]);
 					}
 					return this.chainModify(0.25);
 				}
 				else {
 					if (move.type === 'Poison') {
 						if (defender.runEffectiveness(move) > 0) {
-							return this.chainModify([4608, 4096]);
+							return this.chainModify([1993, 4096]);
 						}
-						return this.chainModify([6144, 4096]);
+						return this.chainModify([5324, 4096]);
 					}
 					if (defender.runEffectiveness(move) > 0) {
 						return this.chainModify([3072, 4096]);
