@@ -562,7 +562,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		weightkg: 6,
 		color: "Yellow",
 		eggGroups: ["Undiscovered"],
-		gen: 6,
 	},
 	pikachurockstar: {
 		num: 25,
@@ -578,7 +577,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "Yellow",
 		eggGroups: ["Undiscovered"],
 		changesFrom: "Pikachu-Cosplay",
-		gen: 6,
 	},
 	pikachubelle: {
 		num: 25,
@@ -594,7 +592,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "Yellow",
 		eggGroups: ["Undiscovered"],
 		changesFrom: "Pikachu-Cosplay",
-		gen: 6,
 	},
 	pikachupopstar: {
 		num: 25,
@@ -610,7 +607,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "Yellow",
 		eggGroups: ["Undiscovered"],
 		changesFrom: "Pikachu-Cosplay",
-		gen: 6,
 	},
 	pikachuphd: {
 		num: 25,
@@ -626,7 +622,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "Yellow",
 		eggGroups: ["Undiscovered"],
 		changesFrom: "Pikachu-Cosplay",
-		gen: 6,
 	},
 	pikachulibre: {
 		num: 25,
@@ -642,7 +637,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "Yellow",
 		eggGroups: ["Undiscovered"],
 		changesFrom: "Pikachu-Cosplay",
-		gen: 6,
 	},
 	pikachuoriginal: {
 		num: 25,
@@ -657,7 +651,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		weightkg: 6,
 		color: "Yellow",
 		eggGroups: ["Undiscovered"],
-		gen: 7,
 	},
 	pikachuhoenn: {
 		num: 25,
@@ -672,7 +665,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		weightkg: 6,
 		color: "Yellow",
 		eggGroups: ["Undiscovered"],
-		gen: 7,
 	},
 	pikachusinnoh: {
 		num: 25,
@@ -687,7 +679,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		weightkg: 6,
 		color: "Yellow",
 		eggGroups: ["Undiscovered"],
-		gen: 7,
 	},
 	pikachuunova: {
 		num: 25,
@@ -702,7 +693,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		weightkg: 6,
 		color: "Yellow",
 		eggGroups: ["Undiscovered"],
-		gen: 7,
 	},
 	pikachukalos: {
 		num: 25,
@@ -717,7 +707,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		weightkg: 6,
 		color: "Yellow",
 		eggGroups: ["Undiscovered"],
-		gen: 7,
 	},
 	pikachualola: {
 		num: 25,
@@ -732,7 +721,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		weightkg: 6,
 		color: "Yellow",
 		eggGroups: ["Undiscovered"],
-		gen: 7,
 	},
 	pikachupartner: {
 		num: 25,
@@ -747,7 +735,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		weightkg: 6,
 		color: "Yellow",
 		eggGroups: ["Undiscovered"],
-		gen: 7,
 	},
 	pikachustarter: {
 		num: 25,
@@ -789,7 +776,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		weightkg: 6,
 		color: "Yellow",
 		eggGroups: ["Undiscovered"],
-		gen: 8,
 	},
 	raichu: {
 		num: 26,
@@ -3489,7 +3475,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		weightkg: 2,
 		color: "Yellow",
 		eggGroups: ["Undiscovered"],
-		gen: 4,
 	},
 	cleffa: {
 		num: 173,
@@ -8675,7 +8660,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		eggGroups: ["Undiscovered"],
 		requiredItems: ["Pixie Plate", "Fairium Z"],
 		changesFrom: "Arceus",
-		gen: 6,
 	},
 	arceusfighting: {
 		num: 493,
@@ -11374,7 +11358,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		eggGroups: ["Undiscovered"],
 		requiredAbility: "Battle Bond",
 		battleOnly: "Greninja",
-		gen: 7,
 	},
 	bunnelby: {
 		num: 659,
@@ -12406,7 +12389,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "Black",
 		eggGroups: ["Undiscovered"],
 		changesFrom: "Zygarde",
-		gen: 7,
 	},
 	zygardecomplete: {
 		num: 718,
@@ -12423,7 +12405,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		eggGroups: ["Undiscovered"],
 		requiredAbility: "Power Construct",
 		battleOnly: ["Zygarde", "Zygarde-10%"],
-		gen: 7,
 	},
 	diancie: {
 		num: 719,

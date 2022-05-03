@@ -59287,6 +59287,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	cobalion: {
 		learnset: {
+			smite: ["8L35"],
 			aerialace: ["7M", "6M", "5M"],
 			airslash: ["8M"],
 			block: ["7T", "6T", "5T"],
@@ -59371,6 +59372,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	terrakion: {
 		learnset: {
+			smite: ["8L35"],
 			aerialace: ["7M", "6M", "5M"],
 			airslash: ["8M"],
 			block: ["7T", "6T", "5T"],
@@ -59453,6 +59455,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	virizion: {
 		learnset: {
+			smite: ["8L35"],
 			aerialace: ["7M", "6M", "5M"],
 			airslash: ["8M"],
 			block: ["7T", "6T", "5T"],
@@ -60282,6 +60285,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	keldeo: {
 		learnset: {
+			smite: ["8L35"],
 			aerialace: ["7M", "6M", "5M"],
 			airslash: ["8M"],
 			aquajet: ["8L1", "7L1", "6L1", "6S2", "6S3", "5L1", "5S0", "5S1"],
