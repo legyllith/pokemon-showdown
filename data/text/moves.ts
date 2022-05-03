@@ -7016,4 +7016,19 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "This move combines Fairy in its type effectiveness against the target.power is up by ennemy boost (+20 per boost max 300)",
 		shortDesc: "Combines Fairy in its type effectiveness.Powet is up by ennemy boost",
 	},
+	barbbarrage: {
+		name: "Barb Barrage",
+		desc: "This move double power if ennemys have statu, and have 30% chance to poison",
+		shortDesc: "30% chance to psn, twice power if target have status",
+	},
+	shelter: {
+		name: "Shelter",
+		desc: "Lowers the target's accuracy by 1 stage. And rise your def by 1",
+		shortDesc: "Lowers the target's accuracy by 1. Up your def by 1",
+	},
+	psyshieldbash: {
+		name: "psyshieldbash",
+		desc: "30% chance to up by 1 stage def and def spe",
+		shortDesc: "30% to up by 1 def and spd",
+	},
 };

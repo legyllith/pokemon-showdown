@@ -16108,7 +16108,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		flags: {},
 		sleepUsable: true,
 		onTry(source) {
-			return source.status === 'slp' || (source.hasAbility('comatose') && !this.field.isTerrain('electricterrain'));
+			return source.status === 'drw' || source.status === 'slp' || (source.hasAbility('comatose') && !this.field.isTerrain('electricterrain'));
 		},
 		onHit(pokemon) {
 			const noSleepTalk = [
@@ -16442,7 +16442,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1},
 		sleepUsable: true,
 		onTry(source) {
-			return source.status === 'slp' || (source.hasAbility('comatose') && !this.field.isTerrain('electricterrain'));
+			return source.status === 'drw' || source.status === 'slp' || (source.hasAbility('comatose') && !this.field.isTerrain('electricterrain'));
 		},
 		secondary: {
 			chance: 30,
@@ -21535,5 +21535,74 @@ export const Moves: {[moveid: string]: MoveData} = {
 		zMove: {basePower: 160},
 		maxMove: {basePower: 130},
 		contestType: "Cool",
+	},
+	barbbarrage: {
+		num: 2032,
+		accuracy: 100,
+		basePower: 60,
+		category: "Physical",
+		name: "Barb Barrage",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (pokemon.status) {
+				return this.chainModify(2);
+			}
+		},
+		secondary: {
+			chance: 30,
+			status: 'psn',
+		},
+		target: "normal",
+		type: "Poison",
+		contestType: "Beautiful",
+	},
+	shelter: {
+		num: 2033,
+		accuracy: 100,
+		basePower: 0,
+		category: "Status",
+		name: "Shelter",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, reflectable: 1, mirror: 1},
+		boosts: {
+			accuracy: -1,
+		},
+		secondary: {
+			chance: 100,
+			self: {
+				boosts: {
+					def: 1,
+				},
+			},
+		},
+		target: "normal",
+		type: "Steel",
+		zMove: {boost: {evasion: 1}},
+		contestType: "Cute",
+	},
+	psyshieldbash: {
+		num: 2034,
+		accuracy: 90,
+		basePower: 70,
+		category: "Physical",
+		name: "Psyshield Bash",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		secondary: {
+			chance: 30,
+			self: {
+				boosts: {
+					def: 1,
+					spd: 1,
+				},
+			},
+		},
+		target: "normal",
+		type: "Psychic",
+		contestType: "Clever",
 	},
 };
