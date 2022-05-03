@@ -7006,4 +7006,30 @@ export const Items: {[itemid: string]: ItemData} = {
 		num: 2000,
 		gen: 8,
 	},
+	luxitet: {
+		name: "Luxite T",
+		spritenum: 1185,
+		megaStone: "Luxray-Mega-T",
+		megaEvolves: "Luxray",
+		itemUser: ["Luxray"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 2001,
+		gen: 8,
+	},
+	luxiteg: {
+		name: "Luxite G",
+		spritenum: 1186,
+		megaStone: "Luxray-Mega-G",
+		megaEvolves: "Luxray",
+		itemUser: ["Luxray"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 2002,
+		gen: 8,
+	},
 };

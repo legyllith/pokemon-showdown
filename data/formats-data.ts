@@ -6749,4 +6749,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	grottenus: {
 		tier: "OU",
 	},
+	luxraymegat: {
+		tier: "OU",
+	},
+	luxraymegag: {
+		tier: "OU",
+	},
 };
