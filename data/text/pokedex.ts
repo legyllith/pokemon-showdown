@@ -3941,4 +3941,10 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	grottenus: {
 		name: "Grottenus",
 	},
+	luxraymegat: {
+		name: "Luxray-Mega-T",
+	},
+	luxraymegag: {
+		name: "Luxray-Mega-G",
+	},
 };

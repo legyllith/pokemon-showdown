@@ -7146,6 +7146,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "Blue",
 		prevo: "Luxio",
 		evoLevel: 30,
+		otherFormes: ["Luxray-Mega-T", "Luxray-Mega-G"],
+		formeOrder: ["luxray", "Luxray-Mega-T", "Luxray-Mega-G"],
 		eggGroups: ["Field"],
 	},
 	luxraymegat: {
@@ -18474,11 +18476,5 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		weightkg: 400,
 		color: "Green",
 		eggGroups: ["Monster", "Grass"],
-	},
-	luxraymegat: {
-		name: "Luxray-Mega-T",
-	},
-	luxraymegag: {
-		name: "Luxray-Mega-G",
 	},
 };
