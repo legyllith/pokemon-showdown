@@ -503,6 +503,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	growlithe: {
 		tier: "LC",
 	},
+	growlithehisui: {
+		tier: "PU",
+		doublesTier: "(DUU)",
+	},
 	arcanine: {
 		randomBattleMoves: ["closecombat", "extremespeed", "flareblitz", "morningsun", "toxic", "wildcharge", "willowisp"],
 		randomBattleLevel: 82,
@@ -510,6 +514,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomDoubleBattleLevel: 84,
 		tier: "NU",
 		doublesTier: "DUU",
+	},
+	arcaninehisui: {
+		tier: "PU",
+		doublesTier: "(DUU)",
 	},
 	poliwag: {
 		tier: "LC",
@@ -830,7 +838,15 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "PU",
 		doublesTier: "(DUU)",
 	},
+	voltorbhisui: {
+		tier: "PU",
+		doublesTier: "(DUU)",
+	},
 	electrode: {
+		tier: "PU",
+		doublesTier: "(DUU)",
+	},
+	electrodehisui: {
 		tier: "PU",
 		doublesTier: "(DUU)",
 	},
@@ -1431,6 +1447,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "PU",
 		doublesTier: "(DUU)",
 	},
+	typhlosionhisui: {
+		tier: "PU",
+		doublesTier: "(DUU)",
+	},
 	totodile: {
 		tier: "PU",
 		doublesTier: "(DUU)",
@@ -1679,6 +1699,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "(PU)",
 		doublesTier: "(DUU)",
 	},
+	qwilfishhisui: {
+		tier: "(PU)",
+		doublesTier: "(DUU)",
+	},
 	shuckle: {
 		randomBattleMoves: ["encore", "knockoff", "stealthrock", "stickyweb", "toxic"],
 		randomBattleLevel: 86,
@@ -1701,6 +1725,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	},
 	sneasel: {
 		tier: "NFE",
+	},
+	sneaselhisui: {
+		tier: "PU",
+		doublesTier: "(DUU)",
 	},
 	weavile: {
 		randomBattleMoves: ["iceshard", "iciclecrash", "knockoff", "lowkick", "swordsdance"],
@@ -3149,11 +3177,19 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Uber",
 		doublesTier: "DUber",
 	},
+	dialgaorigin: {
+		tier: "Uber",
+		doublesTier: "DUber",
+	},
 	palkia: {
 		randomBattleMoves: ["dracometeor", "fireblast", "hydropump", "spacialrend", "thunderwave"],
 		randomBattleLevel: 74,
 		randomDoubleBattleMoves: ["fireblast", "hydropump", "protect", "spacialrend", "thunderbolt", "thunderwave"],
 		randomDoubleBattleLevel: 74,
+		tier: "Uber",
+		doublesTier: "DUber",
+	},
+	palkiaorigin: {
 		tier: "Uber",
 		doublesTier: "DUber",
 	},
@@ -3314,6 +3350,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		doublesTier: "(DUU)",
 	},
 	samurott: {
+		tier: "PU",
+		doublesTier: "(DUU)",
+	},
+	samurotthisui: {
 		tier: "PU",
 		doublesTier: "(DUU)",
 	},
@@ -3550,6 +3590,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "(PU)",
 		doublesTier: "(DUU)",
 	},
+	lilliganthisui: {
+		tier: "(PU)",
+		doublesTier: "(DUU)",
+	},
 	basculin: {
 		randomBattleMoves: ["aquajet", "crunch", "flipturn", "headsmash", "liquidation", "psychicfangs"],
 		randomBattleLevel: 86,
@@ -3563,6 +3607,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomBattleLevel: 86,
 		randomDoubleBattleMoves: ["aquajet", "flipturn", "headsmash", "icebeam", "liquidation", "protect", "psychicfangs", "superpower"],
 		randomDoubleBattleLevel: 86,
+		tier: "(PU)",
+		doublesTier: "(DUU)",
+	},
+	basculinwhitestriped: {
 		tier: "(PU)",
 		doublesTier: "(DUU)",
 	},
@@ -3707,9 +3755,17 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	zorua: {
 		tier: "LC",
 	},
+	zoruahisui: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+	},
 	zoroark: {
 		randomBattleMoves: ["darkpulse", "flamethrower", "nastyplot", "sludgebomb", "trick"],
 		randomDoubleBattleMoves: ["darkpulse", "flamethrower", "focusblast", "nastyplot", "protect", "sludgebomb"],
+		tier: "NU",
+		doublesTier: "(DUU)",
+	},
+	zoroarkhisui: {
 		tier: "NU",
 		doublesTier: "(DUU)",
 	},
@@ -4019,6 +4075,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomBattleLevel: 82,
 		randomDoubleBattleMoves: ["bravebird", "closecombat", "protect", "roost", "tailwind"],
 		randomDoubleBattleLevel: 82,
+		tier: "NU",
+		doublesTier: "(DUU)",
+	},
+	braviaryhisui: {
 		tier: "NU",
 		doublesTier: "(DUU)",
 	},
@@ -4532,11 +4592,19 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	sliggoo: {
 		tier: "NFE",
 	},
+	sliggoohisui: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+	},
 	goodra: {
 		randomBattleMoves: ["dracometeor", "earthquake", "fireblast", "powerwhip", "sludgebomb", "thunderbolt"],
 		randomBattleLevel: 82,
 		randomDoubleBattleMoves: ["breakingswipe", "dracometeor", "fireblast", "muddywater", "powerwhip", "protect", "sludgebomb", "thunderbolt"],
 		randomDoubleBattleLevel: 85,
+		tier: "NU",
+		doublesTier: "(DUU)",
+	},
+	goodrahisui: {
 		tier: "NU",
 		doublesTier: "(DUU)",
 	},
@@ -4611,6 +4679,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomBattleLevel: 86,
 		randomDoubleBattleMoves: ["avalanche", "bodypress", "curse", "highhorsepower", "protect", "recover"],
 		randomDoubleBattleLevel: 88,
+		tier: "(PU)",
+		doublesTier: "(DUU)",
+	},
+	avalugghisui: {
 		tier: "(PU)",
 		doublesTier: "(DUU)",
 	},
@@ -4705,6 +4777,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomDoubleBattleMoves: ["bravebird", "leafblade", "protect", "shadowsneak", "spiritshackle", "swordsdance"],
 		randomDoubleBattleLevel: 88,
 		randomBattleNoDynamaxMoves: ["leafblade", "roost", "shadowsneak", "spiritshackle", "swordsdance", "uturn"],
+		tier: "NU",
+		doublesTier: "(DUU)",
+	},
+	decidueyehisui: {
 		tier: "NU",
 		doublesTier: "(DUU)",
 	},
@@ -6143,6 +6219,42 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomDoubleBattleLevel: 68,
 		tier: "Uber",
 		doublesTier: "DUber",
+	},
+	wyrdeer: {
+		tier: "(PU)",
+		doublesTier: "(DUU)",
+	},
+	kleavor: {
+		tier: "(PU)",
+		doublesTier: "(DUU)",
+	},
+	ursaluna: {
+		tier: "(PU)",
+		doublesTier: "(DUU)",
+	},
+	basculegion: {
+		tier: "(PU)",
+		doublesTier: "(DUU)",
+	},
+	basculegionf: {
+		tier: "(PU)",
+		doublesTier: "(DUU)",
+	},
+	sneasler: {
+		tier: "(PU)",
+		doublesTier: "(DUU)",
+	},
+	overqwil: {
+		tier: "(PU)",
+		doublesTier: "(DUU)",
+	},
+	enamorus: {
+		tier: "(PU)",
+		doublesTier: "(DUU)",
+	},
+	enamorustherian: {
+		tier: "(PU)",
+		doublesTier: "(DUU)",
 	},
 	missingno: {
 		isNonstandard: "Custom",
