@@ -21605,4 +21605,244 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Psychic",
 		contestType: "Clever",
 	},
+	direclaw: {
+		num: 2035,
+		accuracy: 100,
+		basePower: 60,
+		category: "Physical",
+		name: "Dire Claw",
+		pp: 15,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		secondary: {
+			chance: 50,
+			onHit(target, source) {
+				const result = this.random(3);
+				if (result === 0) {
+					target.trySetStatus('psn', source);
+				} else if (result === 1) {
+					target.trySetStatus('par', source);
+				} else {
+					target.trySetStatus('drw', source);
+				}
+			},
+		},
+		target: "normal",
+		type: "Poison",
+		contestType: "Beautiful",
+	},
+	powershift: {
+		num: 2036,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Power Shift",
+		pp: 10,
+		priority: 0,
+		flags: {snatch: 1},
+		volatileStatus: 'powershift',
+		condition: {
+			onStart(pokemon) {
+				this.add('-start', pokemon, 'Power Shift');
+				const newatk = pokemon.storedStats.def;
+				const newdef = pokemon.storedStats.atk;
+				const newspa = pokemon.storedStats.spd;
+				const newspd = pokemon.storedStats.spa;
+				pokemon.storedStats.atk = newatk;
+				pokemon.storedStats.def = newdef;
+				pokemon.storedStats.spa = newspa;
+				pokemon.storedStats.spd = newspd;
+			},
+			onCopy(pokemon) {
+				const newatk = pokemon.storedStats.def;
+				const newdef = pokemon.storedStats.atk;
+				const newspa = pokemon.storedStats.spd;
+				const newspd = pokemon.storedStats.spa;
+				pokemon.storedStats.atk = newatk;
+				pokemon.storedStats.def = newdef;
+				pokemon.storedStats.spa = newspa;
+				pokemon.storedStats.spd = newspd;
+			},
+			onEnd(pokemon) {
+				this.add('-end', pokemon, 'Power Shift');
+				const newatk = pokemon.storedStats.def;
+				const newdef = pokemon.storedStats.atk;
+				const newspa = pokemon.storedStats.spd;
+				const newspd = pokemon.storedStats.spa;
+				pokemon.storedStats.atk = newatk;
+				pokemon.storedStats.def = newdef;
+				pokemon.storedStats.spa = newspa;
+				pokemon.storedStats.spd = newspd;
+			},
+			onRestart(pokemon) {
+				pokemon.removeVolatile('Power Shift');
+			},
+		},
+		secondary: null,
+		target: "self",
+		type: "Normal",
+		zMove: {boost: {atk: 1}},
+		contestType: "Clever",
+	},
+	stoneaxe: {
+		num: 2037,
+		accuracy: 90,
+		basePower: 65,
+		category: "Physical",
+		name: "Stone Axe",
+		pp: 15,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		critRatio: 2,
+		secondary: {
+			chance: 100,
+			volatileStatus: 'splinters',
+		},
+		target: "normal",
+		type: "Rock",
+		contestType: "Beautiful",
+	},
+	springtidestorm: {
+		num: 2038,
+		accuracy: 80,
+		basePower: 95,
+		category: "Special",
+		name: "Springtide Storm",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		onModifyMove(move, pokemon) {
+			if (pokemon.species.id == 'enamorustherian') {
+				move.secondaries = [];
+				move.secondaries.push({
+					chance: 30,
+					boosts: {
+						def: -1,
+						spd: -1,
+					},
+				});
+			}
+		},
+		secondary: {
+			chance: 30,
+			self: {
+				boosts: {
+					spa: 1,
+					spd: 1,
+				},
+			},
+		},
+		target: "normal",
+		type: "Fairy",
+		contestType: "Beautiful",
+	},
+	mysticalpower: {
+		num: 2039,
+		accuracy: 90,
+		basePower: 70,
+		category: "Special",
+		name: "Springtide Storm",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		onModifyMove(move, pokemon) {
+			const atk = pokemon.getStat('atk', false, true);
+			const spa = pokemon.getStat('spa', false, true);
+			const def = pokemon.getStat('def', false, true);
+			const spd = pokemon.getStat('spd', false, true);
+			const offense = atk+spa;
+			const defense = def+spd;
+			if (offense > defense || (offense === defense && this.random(2) === 0)) {
+				move.secondaries = [];
+				move.secondaries.push({
+					chance: 100,
+					self: {
+						boosts: {
+							spa: 1,
+						},
+					},
+				});
+			}
+		},
+		secondary: {
+			chance: 100,
+			self: {
+				boosts: {
+					spd: 1,
+				},
+			},
+		},
+		target: "normal",
+		type: "Psychic",
+		contestType: "Beautiful",
+	},
+	ragingfury: {
+		num: 2040,
+		accuracy: 85,
+		basePower: 90,
+		category: "Physical",
+		name: "Raging Fury",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		self: {
+			volatileStatus: 'lockedmove',
+		},
+		onAfterMove(pokemon) {
+			if (pokemon.volatiles['lockedmove'] && pokemon.volatiles['lockedmove'].duration === 1) {
+				pokemon.removeVolatile('lockedmove');
+			}
+		},
+		secondary: null,
+		target: "randomNormal",
+		type: "Fire",
+		contestType: "Cool",
+	},
+	wavecrash: {
+		num: 2041,
+		accuracy: 100,
+		basePower: 75,
+		category: "Physical",
+		name: "Wave Crash",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		recoil: [33, 100],
+		secondary: {
+			chance: 100,
+			self: {
+				boosts: {
+					spe: 1,
+				},
+			},
+		},
+		target: "normal",
+		type: "Water",
+		contestType: "Cool",
+	},
+	chloroblast: {
+		num: 2042,
+		accuracy: 95,
+		basePower: 120,
+		category: "Special",
+		name: "Chloroblast",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		MindBlownRecoil: true,
+		onAfterMove(pokemon, target, move) {
+			if (move.mindBlownRecoil && !move.multihit) {
+				this.damage(Math.round(pokemon.maxhp / 2), pokemon, pokemon, this.dex.conditions.get('Chloroblast'), true);
+			}
+		},
+		self: {
+			boosts: {
+				spe: -1,
+			},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Grass",
+		contestType: "Tough",
+	},
 };
