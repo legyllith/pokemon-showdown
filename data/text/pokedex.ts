@@ -3947,4 +3947,28 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	luxraymegag: {
 		name: "Luxray-Mega-G",
 	},
+	clovenix: {
+		name: "Clovenixs",
+	},
+	draglys: {
+		name: "Dragalys",
+	},
+	ceroin: {
+		name: "Ceroin",
+	},
+	clogin: {
+		name: "Clogin",,
+	},
+	cloginsun: {
+		name: "Clogin-Sun",
+	},
+	cloginrain: {
+		name: "Clogin-Rain",
+	},
+	cloginhail: {
+		name: "Clogin-Hail",
+	},
+	cloginsand: {
+		name: "Clogin-Sand",
+	},
 };

@@ -6867,4 +6867,28 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	luxraymegag: {
 		tier: "OU",
 	},
+	clovenix: {
+		tier: "OU",
+	},
+	draglys: {
+		tier: "OU",
+	},
+	ceroin: {
+		tier: "OU",
+	},
+	clogin: {
+		tier: "OU",
+	},
+	cloginsun: {
+		tier: "OU",
+	},
+	cloginrain: {
+		tier: "OU",
+	},
+	cloginhail: {
+		tier: "OU",
+	},
+	cloginsand: {
+		tier: "OU",
+	},
 };

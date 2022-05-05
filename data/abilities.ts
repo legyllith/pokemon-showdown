@@ -1160,25 +1160,30 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				}
 		},
 		onUpdate(pokemon) {
-			if (pokemon.baseSpecies.baseSpecies !== 'Castform' || pokemon.transformed) return;
+			if (pokemon.transformed) return;
 			let forme = null;
 			switch (pokemon.effectiveWeather()) {
 			case 'sunnyday':
 			case 'desolateland':
-				if (pokemon.species.id !== 'castformsunny') forme = 'Castform-Sunny';
+				if (pokemon.species.id !== 'castformsunny' && pokemon.baseSpecies.baseSpecies === 'Castform') forme = 'Castform-Sunny';
+				if (pokemon.species.id !== 'cloginsun' && pokemon.baseSpecies.baseSpecies === 'Clogin') forme = 'Clogin-Sun';
 				break;
 			case 'raindance':
 			case 'primordialsea':
-				if (pokemon.species.id !== 'castformrainy') forme = 'Castform-Rainy';
+				if (pokemon.species.id !== 'castformrainy' && pokemon.baseSpecies.baseSpecies === 'Castform') forme = 'Castform-Rainy';
+				if (pokemon.species.id !== 'cloginrain' && pokemon.baseSpecies.baseSpecies === 'Clogin') forme = 'Clogin-Rain';
 				break;
 			case 'hail':
-				if (pokemon.species.id !== 'castformsnowy') forme = 'Castform-Snowy';
+				if (pokemon.species.id !== 'castformsnowy' && pokemon.baseSpecies.baseSpecies === 'Castform') forme = 'Castform-Snowy';
+				if (pokemon.species.id !== 'cloginhail' && pokemon.baseSpecies.baseSpecies === 'Clogin') forme = 'Clogin-Hail';
 				break;
 			case 'sandstorm':
-				if (pokemon.species.id !== 'castformsandy') forme = 'Castform-Sandy';
+				if (pokemon.species.id !== 'castformsandy' && pokemon.baseSpecies.baseSpecies !== 'Castform') forme = 'Castform-Sandy';
+				if (pokemon.species.id !== 'cloginsand' && pokemon.baseSpecies.baseSpecies !== 'Clogin') forme = 'Clogin-Sand';
 				break;
 			default:
-				if (pokemon.species.id !== 'castform') forme = 'Castform';
+				if (pokemon.species.id !== 'castform' && pokemon.baseSpecies.baseSpecies !== 'Castform') forme = 'Castform';
+				if (pokemon.species.id !== 'clogin' && pokemon.baseSpecies.baseSpecies !== 'Clogin') forme = 'Clogin';
 				break;
 			}
 			if (pokemon.isActive && forme) {
