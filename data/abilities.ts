@@ -1178,12 +1178,12 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				if (pokemon.species.id !== 'cloginhail' && pokemon.baseSpecies.baseSpecies === 'Clogin') forme = 'Clogin-Hail';
 				break;
 			case 'sandstorm':
-				if (pokemon.species.id !== 'castformsandy' && pokemon.baseSpecies.baseSpecies !== 'Castform') forme = 'Castform-Sandy';
-				if (pokemon.species.id !== 'cloginsand' && pokemon.baseSpecies.baseSpecies !== 'Clogin') forme = 'Clogin-Sand';
+				if (pokemon.species.id !== 'castformsandy' && pokemon.baseSpecies.baseSpecies === 'Castform') forme = 'Castform-Sandy';
+				if (pokemon.species.id !== 'cloginsand' && pokemon.baseSpecies.baseSpecies === 'Clogin') forme = 'Clogin-Sand';
 				break;
 			default:
-				if (pokemon.species.id !== 'castform' && pokemon.baseSpecies.baseSpecies !== 'Castform') forme = 'Castform';
-				if (pokemon.species.id !== 'clogin' && pokemon.baseSpecies.baseSpecies !== 'Clogin') forme = 'Clogin';
+				if (pokemon.species.id !== 'castform' && pokemon.baseSpecies.baseSpecies === 'Castform') forme = 'Castform';
+				if (pokemon.species.id !== 'clogin' && pokemon.baseSpecies.baseSpecies === 'Clogin') forme = 'Clogin';
 				break;
 			}
 			if (pokemon.isActive && forme) {
