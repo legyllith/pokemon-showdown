@@ -7031,4 +7031,9 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "30% chance to up by 1 stage def and def spe",
 		shortDesc: "30% to up by 1 def and spd",
 	},
+	ragingfury: {
+		name: "Raging Fury",
+		desc: "tony",
+		shortDesc: "tony",
+	},
 };

@@ -21785,15 +21785,26 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
-		self: {
-			volatileStatus: 'lockedmove',
+		condition: {
+			duration: 2,
+			onSourceBasePower(basePower, attacker, defender, move) {
+				return this.chainModify([5376, 4096]);
+			},
+			onBeforeMove(pokemon, target, move) {
+				
+				this.boost({spa: 1});
+				if (move.id  === 'ragingfury'){
+					this.boost({spa: 1});
+					move.basepower = 135;
+				}
+			},
 		},
-		onAfterMove(pokemon) {
-			if (pokemon.volatiles['lockedmove'] && pokemon.volatiles['lockedmove'].duration === 1) {
-				pokemon.removeVolatile('lockedmove');
-			}
+		secondary: {
+			chance: 100,
+			self: {
+				volatileStatus: 'ragingfury',
+			},
 		},
-		secondary: null,
 		target: "randomNormal",
 		type: "Fire",
 		contestType: "Cool",
