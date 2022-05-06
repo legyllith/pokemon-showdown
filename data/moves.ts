@@ -21787,15 +21787,20 @@ export const Moves: {[moveid: string]: MoveData} = {
 		flags: {contact: 1, protect: 1, mirror: 1},
 		condition: {
 			duration: 2,
+			onStart() {
+				this.effectState.duration = 2;
+			},
+			onRestart() {
+				this.effectState.duration = 2;
+			},
 			onSourceBasePower(basePower, attacker, defender, move) {
 				return this.chainModify([5376, 4096]);
 			},
 			onBeforeMove(pokemon, target, move) {
 				if (move.id  === 'ragingfury'){
-					move.basePower = 180;
+					move.basePower = 135;
 				}
 				else {
-					this.boost({spa: 1});
 					pokemon.removeVolatile('ragingfury');
 				}
 			},
