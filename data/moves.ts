@@ -21791,11 +21791,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 				return this.chainModify([5376, 4096]);
 			},
 			onBeforeMove(pokemon, target, move) {
-				
-				this.boost({spa: 1});
 				if (move.id  === 'ragingfury'){
+					move.basePower = 180;
+				}
+				else {
 					this.boost({spa: 1});
-					move.basepower = 135;
+					pokemon.removeVolatile('ragingfury');
 				}
 			},
 		},
