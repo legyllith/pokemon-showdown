@@ -21794,7 +21794,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 				this.effectState.duration = 2;
 			},
 			onSourceBasePower(basePower, attacker, defender, move) {
-				return this.chainModify([5376, 4096]);
+				return this.chainModify([5448, 4096]);
 			},
 			onBeforeMove(pokemon, target, move) {
 				if (move.id  === 'ragingfury'){
