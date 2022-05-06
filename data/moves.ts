@@ -21789,9 +21789,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 			duration: 2,
 			onStart() {
 				this.effectState.duration = 2;
+                		this.add('-activate', source, 'move: Raging Fury' + ' your pokemon is fixated on using Raging Furry');
 			},
 			onRestart() {
 				this.effectState.duration = 2;
+                		this.add('-activate', source, 'move: Raging Fury' + ' your pokemon is fixated on using Raging Furry');
 			},
 			onSourceBasePower(basePower, attacker, defender, move) {
 				return this.chainModify([5448, 4096]);
