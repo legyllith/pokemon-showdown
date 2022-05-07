@@ -6903,4 +6903,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	hypnotradessar: {
 		tier: "OU",
 	},
+	sneaselhisuif: {
+		tier: "OU",
+	},
 };
