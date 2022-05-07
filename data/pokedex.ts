@@ -19093,7 +19093,9 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	drowzeetradessar: {
 		num: 96,
 		name: "Drowzee-Tradessar",
-		types: ["Psychic"],
+		types: ["Ground","Psychic"],
+		baseSpecies: "Drowzee",
+		forme: "Tradessar",
 		baseStats: {hp: 60, atk: 48, def: 45, spa: 43, spd: 90, spe: 42},
 		abilities: {0: "Big Dream", 1: "Forewarn", H: "Inner Focus"},
 		heightm: 1,
@@ -19105,7 +19107,9 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	hypnotradessar: {
 		num: 97,
 		name: "Hypno-Tradessar",
-		types: ["Psychic"],
+		types: ["Ground","Psychic"],
+		baseSpecies: "Hypno",
+		forme: "Tradessar",
 		baseStats: {hp: 85, atk: 73, def: 70, spa: 73, spd: 115, spe: 67},
 		abilities: {0: "Big Dream", 1: "Forewarn", H: "Inner Focus"},
 		heightm: 1.6,
