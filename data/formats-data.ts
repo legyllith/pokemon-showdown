@@ -6891,4 +6891,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	cloginsand: {
 		tier: "OU",
 	},
+	smoochumtradessar: {
+		tier: "OU",
+	},
+	jynxtradessar: {
+		tier: "OU",
+	},
 };

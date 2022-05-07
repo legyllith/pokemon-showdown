@@ -3971,4 +3971,10 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	cloginsand: {
 		name: "Clogin-Sand",
 	},
+	smoochumtradessar: {
+		name: "Smoochum-Tradessar",
+	},
+	jynxtradessar: {
+		name: "Jynx-Tradessar",
+	},
 };
