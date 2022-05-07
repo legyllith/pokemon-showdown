@@ -6897,4 +6897,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	jynxtradessar: {
 		tier: "OU",
 	},
+	drowzeetradessar: {
+		tier: "OU",
+	},
+	hypnotradessar: {
+		tier: "OU",
+	},
 };

@@ -4977,5 +4977,42 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 5,
 		num: 2015,
 	},
+	bigdream: {
+		onStart(pokemon) {
+			this.setStatus('drw', target, pokemon, null, true);
+			this.statusState.time = 3;
+			this.statusState.startTime = 3;
+			let activated = false;
+			for (const target of pokemon.adjacentFoes()) {
+				if (!activated) {
+					this.add('-ability', pokemon, 'Big Dream', 'status');
+					activated = true;
+				}
+				if (target.volatiles['substitute']) {
+					this.add('-immune', target);
+				} else {
+					this.setStatus('drw', target, pokemon, null, true);
+					this.statusState.time = 3;
+					this.statusState.startTime = 3;
+				}
+			}
+			for (const allyActive of pokemon.adjacentAllies()) {
+				if (!activated) {
+					this.add('-ability', pokemon, 'Big Dream', 'status');
+					activated = true;
+				}
+				if (target.volatiles['substitute']) {
+					this.add('-immune', target);
+				} else {
+					this.setStatus('drw', target, pokemon, null, true);
+					this.statusState.time = 3;
+					this.statusState.startTime = 3;
+				}
+			}
+		},
+		name: "Big Dream",
+		rating: 3.5,
+		num: 2016,
+	},
 	
 };

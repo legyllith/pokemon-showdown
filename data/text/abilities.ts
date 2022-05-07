@@ -1803,4 +1803,9 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		name: "Millennial Weight",
 		shortDesc: "this pokemon can not be swap by opposant and gain aandom stats on enter",
 	},
+	intimidate: {
+		name: "Intimidate",
+		desc: "On switch-in, all pokemon become drw 2 turn. Pokemon behind a substitute are immune.",
+		shortDesc: "On switch-in, all pokemon become drw 2 turn.",
+	},
 };

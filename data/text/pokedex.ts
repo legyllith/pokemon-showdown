@@ -3977,4 +3977,10 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	jynxtradessar: {
 		name: "Jynx-Tradessar",
 	},
+	drowzeetradessar: {
+		name: "Drowzee-Tradessar",
+	},
+	hypnotradessar: {
+		name: "Hypno-Tradessar",
+	},
 };
