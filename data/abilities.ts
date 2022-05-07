@@ -4979,7 +4979,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	bigdream: {
 		onStart(pokemon) {
-			this.setStatus('drw', target, pokemon, null, true);
+			this.setStatus('drw', pokemon, pokemon, null, true);
 			this.statusState.time = 3;
 			this.statusState.startTime = 3;
 			let activated = false;
