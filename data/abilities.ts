@@ -4979,9 +4979,9 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	bigdream: {
 		onStart(pokemon) {
-			this.setStatus('drw', pokemon, pokemon, null, true);
-			this.statusState.time = 3;
-			this.statusState.startTime = 3;
+			pokemon.setStatus('drw', pokemon, pokemon, null, true);
+			pokemon.statusState.time = 3;
+			pokemon.statusState.startTime = 3;
 			let activated = false;
 			for (const target of pokemon.adjacentFoes()) {
 				if (!activated) {
@@ -4991,9 +4991,9 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				if (target.volatiles['substitute']) {
 					this.add('-immune', target);
 				} else {
-					this.setStatus('drw', target, pokemon, null, true);
-					this.statusState.time = 3;
-					this.statusState.startTime = 3;
+					target.setStatus('drw', target, pokemon, null, true);
+					target.statusState.time = 3;
+					target.statusState.startTime = 3;
 				}
 			}
 			for (const allyActive of pokemon.adjacentAllies()) {
@@ -5001,12 +5001,12 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 					this.add('-ability', pokemon, 'Big Dream', 'status');
 					activated = true;
 				}
-				if (target.volatiles['substitute']) {
+				if (allyActive.volatiles['substitute']) {
 					this.add('-immune', target);
 				} else {
-					this.setStatus('drw', target, pokemon, null, true);
-					this.statusState.time = 3;
-					this.statusState.startTime = 3;
+					allyActive.setStatus('drw', allyActive, pokemon, null, true);
+					allyActive.statusState.time = 3;
+					allyActive.statusState.startTime = 3;
 				}
 			}
 		},
