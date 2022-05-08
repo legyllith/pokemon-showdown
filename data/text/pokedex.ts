@@ -3986,4 +3986,13 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	sneaselhisuif: {
 		name: "Sneasel-Hisuif",
 	},
+	flabeberaott: {
+		name: "Flabe\u0301be\u0301-Raott",
+	},
+	floetteraott: {
+		name: "Floette-Raott",
+	},
+	florgesraott: {
+		name: "Florges-Raott",
+	},
 };
