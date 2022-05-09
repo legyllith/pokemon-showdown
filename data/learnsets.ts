@@ -87063,6 +87063,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	gastrodonnorth: {
 		learnset: {
+			dragonbreath: ["8M"],
 			freezedry: ["8T"],
 			iciclespear: ["8T"],
 			dragontail: ["8T"],
@@ -87136,6 +87137,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	gastrodonsouth: {
 		learnset: {
+			dragonbreath: ["8M"],
 			flamethrower: ["8T"],
 			clangingscales: ["8T"],
 			dragontail: ["8T"],
