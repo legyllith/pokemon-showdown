@@ -86729,7 +86729,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			tailwind: ["8L40"],
 			trumpcard: ["8L50"],
 			boomburst: ["8L50"],
-			dualwingbeat ["8T"],
+			dualwingbeat: ["8T"],
 			headsmash: ["8L55"],
 			strangesteam: ["8L55"],
 			swagger: ["8M"],
