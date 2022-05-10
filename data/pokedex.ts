@@ -19187,7 +19187,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		types: ["Dragon", "Fairy"],
 		gender: "F",
 		baseStats: {hp: 96, atk: 117, def: 100, spa: 117, spd: 100, spe: 70},
-		abilities: {0: "Flame Body", H: "Multiscale"},
+		abilities: {0: "Pixilate", H: "Multiscale"},
 		heightm: 2.2,
 		weightkg: 210,
 		color: "Pink",
