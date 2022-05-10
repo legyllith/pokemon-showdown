@@ -88490,7 +88490,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	dracalass: {
 		learnset: {
 			moonblast: ["8L55"],
-			floroalhealing: ["8L55"],
+			floralhealing: ["8L55"],
 			sweetkiss: ["8L40"],
 			mistyexplosion: ["8T"],
 			aromaticmist: ["8L60"],
