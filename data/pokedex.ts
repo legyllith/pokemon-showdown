@@ -3198,7 +3198,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "Blue",
 		prevo: "Dratini",
 		evoLevel: 30,
-		evos: ["Dragonite"],
+		evos: ["Dragonite","dracalass"],
 		eggGroups: ["Water 1", "Dragon"],
 	},
 	dragonite: {
@@ -19180,5 +19180,18 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		evoType: "useItem",
 		evoItem: "dark Stone",
 		eggGroups: ["Fairy"],
+	},
+	dracalass: {
+		num: 1857,
+		name: "Dracalass",
+		types: ["Dragon", "Fairy"],
+		baseStats: {hp: 96, atk: 117, def: 100, spa: 117, spd: 100, spe: 70},
+		abilities: {0: "Pixilate", H: "Multiscale"},
+		heightm: 2.2,
+		weightkg: 210,
+		color: "Pink",
+		prevo: "Dragonair",
+		evoLevel: 55,
+		eggGroups: ["Water 1", "Dragon"],
 	},
 };

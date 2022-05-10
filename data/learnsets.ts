@@ -88487,4 +88487,13 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			afteryou: ["7T", "6T"],
 		},
 	},
+	dracalass: {
+		learnset: {
+			moonblast: ["8L55"],
+			floroalhealing: ["8L55"],
+			sweetkiss: ["8L40"],
+			mistyexplosion: ["8T"],
+			aromaticmist: ["8L60"],
+		},
+	},
 };

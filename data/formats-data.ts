@@ -6915,4 +6915,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	florgesraott: {
 		tier: "OU",
 	},
+	dracalass: {
+		tier: "OU",
+	},
 };
