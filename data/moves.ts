@@ -21864,4 +21864,61 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Grass",
 		contestType: "Tough",
 	},
+	weatherprediction: {
+		num: 2043,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Weather Prediction",
+		pp: 10,
+		priority: 0,
+		flags: {},
+		onTryHit(target, pokemon) {
+			const result = this.random(4);
+			if (result === 0) {
+				move = 'raindance';
+			} else if (result === 1) {
+				move = 'sunnyday';
+			} else if (result === 2) {
+				move = 'hail';
+			} else {
+				move = 'sandstorm';
+			}
+			this.actions.useMove(move, pokemon);
+			return null;
+		},
+		secondary: null,
+		target: "all",
+		type: "Normal",
+		zMove: {boost: {spe: 1}},
+		contestType: "Beautiful",
+	},
+	weathersong: {
+		num: 2044,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Weather Song",
+		pp: 10,
+		priority: 0,
+		flags: {},
+		onTryHit(target, pokemon) {
+			let move = 'naturepower';
+			if (['sunnyday', 'desolateland'].includes(pokemon.effectiveWeather()) {
+				move = 'insectswarm';
+			} else if (['raindance', 'primordialsea'].includes(pokemon.effectiveWeather()) {
+				move = 'thunder';
+			} else if (this.field.isWeather('hail')) {
+				move = 'auroraveil';
+			} else if (this.field.isWeather('sandstorm')) {
+				move = 'erosion';
+			} 
+			this.actions.useMove(move, pokemon, target);
+			return null;
+		},
+		secondary: null,
+		target: "normal",
+		type: "Normal",
+		contestType: "Beautiful",
+	},
 };
