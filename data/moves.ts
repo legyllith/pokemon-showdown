@@ -21904,13 +21904,13 @@ export const Moves: {[moveid: string]: MoveData} = {
 		flags: {},
 		onTryHit(target, pokemon) {
 			let move = 'naturepower';
-			if (['sunnyday', 'desolateland'].includes(pokemon.effectiveWeather()) {
+			if (['sunnyday', 'desolateland'].includes(pokemon.effectiveWeather())) {
 				move = 'insectswarm';
-			} else if (['raindance', 'primordialsea'].includes(pokemon.effectiveWeather()) {
+			} else if (['raindance', 'primordialsea'].includes(pokemon.effectiveWeather())) {
 				move = 'thunder';
-			} else if (this.field.isWeather('hail')) {
+			} else if (this.field.isWeather('hail'))) {
 				move = 'auroraveil';
-			} else if (this.field.isWeather('sandstorm')) {
+			} else if (this.field.isWeather('sandstorm'))) {
 				move = 'erosion';
 			} 
 			this.actions.useMove(move, pokemon, target);
