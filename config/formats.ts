@@ -57,7 +57,7 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 8] Boss",
 		mod: 'gen8',
-		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 30', '! EV Limit'],
+		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 40', '! EV Limit'],
 		
 	},
 	{
@@ -67,7 +67,7 @@ export const Formats: FormatList = [
 		name: "[Gen 8] Standard Double Battle",
 		gameType: 'doubles',
 		mod: 'gen8',
-		ruleset: ['Standard NatDex', 'Species Clause', 'Dynamax Clause', 'Adjust Level = 30'],
+		ruleset: ['Standard NatDex', 'Species Clause', 'Dynamax Clause', 'Adjust Level = 40'],
 		
 	},
 	{
@@ -77,6 +77,12 @@ export const Formats: FormatList = [
 		name: "[Gen 8] Standard Multi Battle",
 		mod: 'gen8',
 		gameType: 'multi',
-		ruleset: ['Max Team Size = 3','Standard NatDex', 'Dynamax Clause', 'Adjust Level = 30'],
+		ruleset: ['Max Team Size = 3','Standard NatDex', 'Dynamax Clause', 'Adjust Level = 40'],
+	},
+	{
+		name: "[Gen 8] Boss",
+		mod: 'gen8',
+		ruleset: ['Max Team Size = 3', 'Standard NatDex', 'Dynamax Clause', 'Adjust Level = 40', '! EV Limit'],
+		
 	},
 	];

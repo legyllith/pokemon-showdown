@@ -6918,4 +6918,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	dracalass: {
 		tier: "OU",
 	},
+	farfuke: {
+		tier: "OU",
+	},
 };

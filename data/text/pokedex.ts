@@ -3998,4 +3998,7 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	dracalass: {
 		name: "Dracalass",
 	},
+	farfuke: {
+		name: "farfuke",
+	},
 };
