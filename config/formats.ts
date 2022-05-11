@@ -80,7 +80,7 @@ export const Formats: FormatList = [
 		ruleset: ['Max Team Size = 3','Standard NatDex', 'Dynamax Clause', 'Adjust Level = 40'],
 	},
 	{
-		name: "[Gen 8] Boss",
+		name: "[Gen 8] Boss multi",
 		mod: 'gen8',
 		ruleset: ['Max Team Size = 3', 'Standard NatDex', 'Dynamax Clause', 'Adjust Level = 40', '! EV Limit'],
 		
