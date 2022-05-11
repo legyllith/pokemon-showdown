@@ -16090,7 +16090,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 15,
 		priority: 0,
 		flags: {powder: 1, protect: 1, reflectable: 1, mirror: 1},
-		status: 'frz',
+		status: 'slp',
 		secondary: null,
 		target: "normal",
 		type: "Grass",
