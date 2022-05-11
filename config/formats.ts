@@ -82,6 +82,7 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 8] Boss multi",
 		mod: 'gen8',
+		gameType: 'multi',
 		ruleset: ['Max Team Size = 3', 'Standard NatDex', 'Dynamax Clause', 'Adjust Level = 40', '! EV Limit'],
 		
 	},
