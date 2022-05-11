@@ -17262,6 +17262,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			wonderroom: ["8M", "7T"],
 			wringout: ["7L49", "6L49", "5L49", "4L44"],
 			zenheadbutt: ["8M", "7T", "6T", "5T", "4T"],
+		},
 	},
 	elekid: {
 		learnset: {
