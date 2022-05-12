@@ -21878,6 +21878,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {},
 		onTryHit(target, pokemon) {
+			let move = 'sandstorm';
 			const result = this.random(4);
 			if (result === 0) {
 				move = 'raindance';
