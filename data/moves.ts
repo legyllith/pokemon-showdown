@@ -21878,19 +21878,16 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {},
 		onTryHit(target, pokemon) {
-			let move = 'sandstorm';
 			const result = this.random(4);
 			if (result === 0) {
-				move = 'raindance';
+				this.field.setWeather('raindance');
 			} else if (result === 1) {
-				move = 'sunnyday';
+				this.field.setWeather('sunnyday');
 			} else if (result === 2) {
-				move = 'hail';
+				this.field.setWeather('hail');
 			} else {
-				move = 'sandstorm';
+				this.field.setWeather('sandstorm');
 			}
-			this.actions.useMove(move, pokemon, target);
-			return null;
 		},
 		secondary: null,
 		target: "all",
