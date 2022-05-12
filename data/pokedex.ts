@@ -17864,7 +17864,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		name: "Insaeon",
 		types: ["Fire", "Bug"],
 		genderRatio: {M: 0.875, F: 0.125},
-		baseStats: {hp: 83, atk: 112, def: 73, spa: 90, spd: 88, spe: 92},
+		baseStats: {hp: 84, atk: 107, def: 80, spa: 90, spd: 90, spe: 89},
 		abilities: {0: "Blaze", H: "Berserk"},
 		heightm: 1,
 		weightkg: 250.5,
