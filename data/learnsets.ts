@@ -88417,7 +88417,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			swagger: ["8M"],
 			takedown: ["8M"],
 			toxic: ["8M"],
-			takle: ["8L1"],
+			tackle: ["8L1"],
 			autotomize: ["8L1"],
 			snatch: ["8L1"],
 			sweetkiss: ["8L6"],
