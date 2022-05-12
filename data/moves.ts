@@ -21878,14 +21878,20 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {},
 		onTryHit(target, pokemon) {
+			this.boost({spe: -1});
 			const result = this.random(4);
+			this.boost({spe: 3});
 			if (result === 0) {
+				this.boost({def: -1});
 				this.field.setWeather('raindance');
 			} else if (result === 1) {
+				this.boost({def: 1});
 				this.field.setWeather('sunnyday');
 			} else if (result === 2) {
+				this.boost({def: 3});
 				this.field.setWeather('hail');
 			} else {
+				this.boost({def: 4});
 				this.field.setWeather('sandstorm');
 			}
 		},
