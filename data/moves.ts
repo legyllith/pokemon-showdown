@@ -21889,7 +21889,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			} else {
 				move = 'sandstorm';
 			}
-			this.actions.useMove(move, pokemon);
+			this.actions.useMove(move, pokemon, target);
 			return null;
 		},
 		secondary: null,
