@@ -20959,6 +20959,10 @@ export const Moves: {[moveid: string]: MoveData} = {
 		onModifyMove(move) {
 			if (this.field.isWeather('sandstorm')) move.accuracy = true;
 		},
+		secondary: {
+			chance: 30,
+			volatileStatus: 'healblock',
+		},
 		target: "allAdjacentFoes",
 		type: "Ground",
 		contestType: "Beautiful",
@@ -21919,6 +21923,21 @@ export const Moves: {[moveid: string]: MoveData} = {
 		secondary: null,
 		target: "normal",
 		type: "Normal",
+		contestType: "Beautiful",
+	},
+	twilightlight: {
+		num: 2045,
+		accuracy: 90,
+		basePower: 140,
+		category: "Special",
+		name: "Twilight Light",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		recoil: [1, 2],
+		secondary: null,
+		target: "normal",
+		type: "Ghost",
 		contestType: "Beautiful",
 	},
 };

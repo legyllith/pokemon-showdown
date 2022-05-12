@@ -7036,4 +7036,19 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "tony",
 		shortDesc: "tony",
 	},
+	weatherprediction: {
+		name: "Weather Prediction",
+		desc: "randomly put sandstorm, hail, rain or Sunny Day",
+		shortDesc: "put a weather randomly",
+	},
+	weathersong: {
+		name: "Weather Song",
+		desc: "this song have effect depending of climate, on sun it is insextswarm, on rain thunder, on hail aurora veil and on sandstorme erosion no climate is naturepower",
+		shortDesc: "effect depend of weather",
+	},
+	twilightlight: {
+		name: "Twilight Light",
+		desc: "If the target lost HP, the user takes recoil damage equal to 1/2 the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 1/2 recoil.",
+	},
 };
