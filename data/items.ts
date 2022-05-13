@@ -7038,12 +7038,14 @@ export const Items: {[itemid: string]: ItemData} = {
 		fling: {
 			basePower: 80,
 		},
-		onModifySpDPriority: 1,
+		onModifySpDPriority: 2,
 		onModifySpD(spd) {
+			this.boost({spe: 2});
 			return this.chainModify(1.5);
 		},
-		onModifyDefPriority: 1,
+		onModifyDefPriority: 2,
 		onModifyDef(def) {
+			this.boost({spe: 1});
 			return this.chainModify(1.5);
 		},
 		num: 2003,
