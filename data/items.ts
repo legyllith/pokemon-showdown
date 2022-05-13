@@ -7043,7 +7043,7 @@ export const Items: {[itemid: string]: ItemData} = {
 			return this.chainModify(1.5);
 		},
 		onModifyDefPriority: 1,
-		onModifyDef(spd) {
+		onModifyDef(def) {
 			return this.chainModify(1.5);
 		},
 		num: 2003,
