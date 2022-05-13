@@ -2341,4 +2341,16 @@ export const ItemsText: {[k: string]: ItemText} = {
 		name: "Awakening Glove",
 		desc: "If held by a pokemon with Awaken punch move, he gain fighting type.",
 	},
+	luxitet: {
+		name: "Luxite T",
+		desc: "mega gems of luxray.",
+	},
+	luxiteg: {
+		name: "Luxite G",
+		desc: "mega gems of luxray.",
+	},
+	bullshit: {
+		name: "Bullshit",
+		desc: "bullshit",
+	},
 };

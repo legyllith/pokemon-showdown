@@ -7032,4 +7032,21 @@ export const Items: {[itemid: string]: ItemData} = {
 		num: 2002,
 		gen: 8,
 	},
+	bullshit: {
+		name: "Bullshit",
+		spritenum: 1186,
+		fling: {
+			basePower: 80,
+		},
+		onModifySpDPriority: 1,
+		onModifySpD(spd) {
+			return this.chainModify(1.5);
+		},
+		onModifyDefPriority: 1,
+		onModifyDef(spd) {
+			return this.chainModify(1.5);
+		},
+		num: 2003,
+		gen: 8,
+	},
 };

@@ -9462,6 +9462,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		flags: {contact: 1, protect: 1, mirror: 1},
 		onBasePower(basePower, source, target, move) {
 			const item = target.getItem();
+			if (item.id === 'bullshit') {
+				return this.chainModify(1);
+			}
 			if (!this.singleEvent('TakeItem', item, target.itemState, target, target, move, item)) return;
 			if (item.id) {
 				return this.chainModify(1.5);
@@ -9469,6 +9472,10 @@ export const Moves: {[moveid: string]: MoveData} = {
 		},
 		onAfterHit(target, source) {
 			if (source.hp) {
+				const itemd = target.getItem();
+				if (itemd.id === 'bullshit') {
+					return null;
+				}
 				const item = target.takeItem();
 				if (item) {
 					this.add('-enditem', target, item.name, '[from] move: Knock Off', '[of] ' + source);
