@@ -3887,7 +3887,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		flags: {protect: 1, mirror: 1, heal: 1},
 		drain: [1, 2],
 		onTryImmunity(target) {
-			return target.status === 'slp' || (target.hasAbility('comatose') && !this.field.isTerrain('electricterrain'));
+			return target.status === 'slp' || target.status === 'drw' || (target.hasAbility('comatose') && !this.field.isTerrain('electricterrain'));
 		},
 		secondary: null,
 		target: "normal",
@@ -12108,7 +12108,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		condition: {
 			noCopy: true,
 			onStart(pokemon) {
-				if (pokemon.status !== 'slp' && (!pokemon.hasAbility('comatose') || this.field.isTerrain('electricterrain'))) {
+				if ((pokemon.status !== 'slp' || pokemon.status !== 'drw') && (!pokemon.hasAbility('comatose') || this.field.isTerrain('electricterrain'))) {
 					return false;
 				}
 				this.add('-start', pokemon, 'Nightmare');
@@ -21945,7 +21945,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		basePower: 0,
 		basePowerCallback(pokemon, target, move) {
 			const nbfun = target.side.pokemon.filter(ally => ally === pokemon || ally.fainted || ally.status);
-			return 20 + 60*nbfun.length;
+			return 40 + 40*nbfun.length;
 		},
 		category: "Physical",
 		name: "Mortuary Earth",
