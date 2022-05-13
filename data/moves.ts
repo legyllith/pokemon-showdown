@@ -21943,7 +21943,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		accuracy: 100,
 		basePower: 0,
 		basePowerCallback(pokemon, target, move) {
-			const nbfun = target.side.pokemon.filter(ally => ally === pokemon || ally.fainted && ally.status);
+			const nbfun = target.side.pokemon.filter(ally => ally === pokemon || ally.fainted || ally.status);
 			return 20 + 60*nbfun.length;
 		},
 		category: "Physical",
