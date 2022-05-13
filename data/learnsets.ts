@@ -88104,6 +88104,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			wish: ["3S0"],
 			zapcannon: ["7E"],
 			zenheadbutt: ["7T", "7L41", "6T", "6L41", "5T", "5L41", "4T", "4L50"],
+			mortuaryearth: ["8M"],
 		},
 	},
 	hypnotradessar: {

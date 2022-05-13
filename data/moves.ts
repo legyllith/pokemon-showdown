@@ -21938,4 +21938,25 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Ghost",
 		contestType: "Beautiful",
 	},
+	mortuaryearth: {
+		num: 2046,
+		accuracy: 100,
+		basePower: 0,
+		basePowerCallback(pokemon, target, move) {
+			const nbfun = target.side.pokemon.filter(ally => ally === pokemon || ally.fainted && ally.status);
+			return 20 + 60*nbfun.length;
+		},
+		category: "Physical",
+		name: "Mortuary Earth",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, allyanim: 1},
+		onAfterMoveSecondarySelf(pokemon, target, move) {
+			if (!target || target.fainted || target.hp <= 0) this..damage(source.baseMaxhp, source, source);
+		},
+		secondary: null,
+		target: "normal",
+		type: "Ground",
+		contestType: "Clever",
+	},
 };

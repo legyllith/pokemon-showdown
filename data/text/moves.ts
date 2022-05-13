@@ -7051,4 +7051,9 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "If the target lost HP, the user takes recoil damage equal to 1/2 the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "Has 1/2 recoil.",
 	},
+	mortuaryearth: {
+		name: "Mortuary Earth",
+		desc: "the damage up by 40 for each ennemy pokemon that have status or that is fainted.",
+		shortDesc: "if you not kill opponent kill yourself.",
+	},
 };
