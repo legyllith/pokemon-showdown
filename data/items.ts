@@ -7040,13 +7040,15 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		onModifySpDPriority: 2,
 		onModifySpD(spd) {
-			this.boost({spe: 2});
 			return this.chainModify(1.5);
 		},
 		onModifyDefPriority: 2,
 		onModifyDef(def) {
-			this.boost({spe: 1});
 			return this.chainModify(1.5);
+		},
+		onResidualSubOrder: 4,
+		onResidual(pokemon) {
+			this.heal(pokemon.baseMaxhp / 16);
 		},
 		num: 2003,
 		gen: 8,
