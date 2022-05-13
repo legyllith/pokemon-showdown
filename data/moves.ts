@@ -21947,7 +21947,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			const nbfun = target.side.pokemon.filter(ally => ally === pokemon || ally.fainted || ally.status);
 			return 40 + 40*nbfun.length;
 		},
-		category: "Physical",
+		category: "Special",
 		name: "Mortuary Earth",
 		pp: 10,
 		priority: 0,
