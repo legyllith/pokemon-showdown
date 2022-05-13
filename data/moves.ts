@@ -21952,7 +21952,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1, allyanim: 1},
 		onAfterMoveSecondarySelf(pokemon, target, move) {
-			if (!target || target.fainted || target.hp <= 0) this.damage(source.baseMaxhp, source, source);
+			if (!target || !target.fainted || target.hp > 0) this.damage(source.baseMaxhp, source, source);
 		},
 		secondary: null,
 		target: "normal",
