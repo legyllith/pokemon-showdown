@@ -19017,10 +19017,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 			return !target.hasAbility('stickyhold');
 		},
 		onHit(target, source, move) {
-			const yourItem = target.takeItem(source);
-			if (yourItem.id === 'bullshit') {
+			const yourItemD = target.getItem(source);
+			if (yourItemD.id === 'bullshit') {
 				return;
 			}
+			const yourItem = target.takeItem(source);
 			const myItem = source.takeItem();
 			if (target.item || source.item || (!yourItem && !myItem)) {
 				if (yourItem) target.item = yourItem.id;
