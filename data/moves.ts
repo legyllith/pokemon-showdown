@@ -19018,6 +19018,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		},
 		onHit(target, source, move) {
 			const yourItem = target.takeItem(source);
+			if (yourItem.id === 'bullshit') {
+				return;
+			}
 			const myItem = source.takeItem();
 			if (target.item || source.item || (!yourItem && !myItem)) {
 				if (yourItem) target.item = yourItem.id;
