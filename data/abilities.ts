@@ -2027,6 +2027,9 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (target !== source && move.category !== 'Status') {
 				if (source.item || source.volatiles['gem'] || move.id === 'fling') return;
 				const yourItem = target.takeItem(source);
+				if (yourItem.id === 'bullshit') {
+					return;
+				}
 				if (!yourItem) return;
 				if (!source.setItem(yourItem)) {
 					target.item = yourItem.id; // bypass setItem so we don't break choicelock or anything

@@ -21296,7 +21296,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			},
 		},
 		secondary: {
-			chance: 100,
+			chance: 20,
 			status: 'drw',
 		},
 		target: "normal",
