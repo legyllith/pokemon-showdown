@@ -27,7 +27,7 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 8] Standard Normal Battle",
 		mod: 'gen8',
-		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 30'],
+		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 40'],
 		
 	},
 	{
@@ -68,6 +68,13 @@ export const Formats: FormatList = [
 		gameType: 'doubles',
 		mod: 'gen8',
 		ruleset: ['Standard NatDex', 'Species Clause', 'Dynamax Clause', 'Adjust Level = 40'],
+		
+	},
+	{
+		name: "[Gen 8] Tournament 5",
+		gameType: 'doubles',
+		mod: 'gen8',
+		ruleset: ['Standard NatDex', 'Species Clause', 'Dynamax Clause', 'Adjust Level = 40', 'Item Clause', 'Burning Terrain Rule'],
 		
 	},
 	{
