@@ -88309,4 +88309,9 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			hyperbeam: ["8T"],
 		},
 	},
+	torterrakansai: {
+		learnset: {
+			irontail: ["8T"],
+		},
+	},
 };

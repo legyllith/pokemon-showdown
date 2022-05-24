@@ -4001,4 +4001,7 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	farfuke: {
 		name: "farfuke",
 	},
+	torterrakansai: {
+		name: "Torterra-Kansai",
+	},
 };

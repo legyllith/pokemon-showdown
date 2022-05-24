@@ -6921,4 +6921,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	farfuke: {
 		tier: "OU",
 	},
+	torterrakansai: {
+		tier: "OU",
+	},
 };
