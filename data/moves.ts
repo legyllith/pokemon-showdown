@@ -21990,7 +21990,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			onStart(target, source) {
 				this.effectState.duration = 4;
                 		this.add('-activate', source, 'move: Ceaseless Edge' + ' Your pokemon is endommaged');
-				this.effectState.splinters = Math.floor(Math.floor(Math.floor(Math.floor(2 * source.level / 5 + 2) * 25 * source.getStat('atk', false, true)) / target.getStat('def', false, true)) / 50) +2);
+				this.effectState.splinters = (Math.floor(Math.floor(Math.floor(Math.floor(2 * source.level / 5 + 2) * 25 * source.getStat('atk', false, true)) / target.getStat('def', false, true)) / 50) +2);
 			},
 			onBeforeMove(pokemon, target, move) {
 				const damage = this.damage(this.effectState.splinters, pokemon, pokemon);
