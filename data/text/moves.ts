@@ -7056,4 +7056,9 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "the damage up by 40 for each ennemy pokemon that have status or that is fainted.",
 		shortDesc: "if you not kill opponent kill yourself.",
 	},
+	ceaselessedge: {
+		name: "Ceaseless Edge",
+		desc: "high critical, deal damage during 4 turn.",
+		shortDesc: "high critical, deal damage during 4 turn.",
+	},
 };

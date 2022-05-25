@@ -21344,7 +21344,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			chance: 20,
 			self: {
 				boosts: {
-					att: 1,
+					atk: 1,
 				},
 			},
 		},
@@ -21973,5 +21973,35 @@ export const Moves: {[moveid: string]: MoveData} = {
 		target: "normal",
 		type: "Ground",
 		contestType: "Clever",
+	},
+	ceaselessedge: {
+		num: 2047,
+		accuracy: 65,
+		basePower: 90,
+		category: "Physical",
+		name: "Ceaseless Edge",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		critRatio: 2,
+		condition: {
+			duration: 4,
+			noCopy: true,
+			onStart(target, source) {
+				this.effectState.duration = 4;
+                		this.add('-activate', source, 'move: Ceaseless Edge' + ' Your pokemon is endommaged');
+				this.effectState.splinters = Math.floor(Math.floor(Math.floor(Math.floor(2 * source.level / 5 + 2) * 25 * source.getStat('atk', false, true)) / target.getStat('def', false, true)) / 50) +2)
+			},
+			onBeforeMove(pokemon, target, move) {
+				const damage = this.damage(this.effectState.splinters, pokemon, pokemon);
+			},
+		},
+		secondary: {
+			chance: 100,
+			volatileStatus: 'ceaselessedge',
+		},
+		target: "randomNormal",
+		type: "Fire",
+		contestType: "Cool",
 	},
 };
