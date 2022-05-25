@@ -21987,9 +21987,10 @@ export const Moves: {[moveid: string]: MoveData} = {
 		condition: {
 			duration: 4,
 			noCopy: true,
-			onStart(target, source) {
+			onStart(target, source, sourceEffect) {
 				this.effectState.duration = 4;
-                		this.add('-activate', source, 'move: Ceaseless Edge' + ' Your pokemon is endommaged');
+				this.effectState.type = sourceEffect.type;
+                		this.add('-activate', source, 'move: Ceaseless Edge' + ' Your pokemon is endommaged' + this.effectState.type);
 				this.effectState.splinters = (Math.floor(Math.floor(Math.floor(Math.floor(2 * source.level / 5 + 2) * 25 * source.getStat('atk', false, true)) / target.getStat('def', false, true)) / 50) +2);
 			},
 			onBeforeMove(pokemon, target, move) {
@@ -22001,7 +22002,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			volatileStatus: 'ceaselessedge',
 		},
 		target: "randomNormal",
-		type: "Fire",
+		type: "Dark",
 		contestType: "Cool",
 	},
 };
