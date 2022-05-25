@@ -21976,8 +21976,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	ceaselessedge: {
 		num: 2047,
-		accuracy: 65,
-		basePower: 90,
+		accuracy: 90,
+		basePower: 65,
 		category: "Physical",
 		name: "Ceaseless Edge",
 		pp: 10,
