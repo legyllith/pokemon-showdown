@@ -21994,19 +21994,8 @@ export const Moves: {[moveid: string]: MoveData} = {
                 		this.add('-activate', source, 'move: Ceaseless Edge' + ' Your pokemon is endommaged' + this.effectState.type);
 				this.effectState.splinters = ((Math.floor(Math.floor(Math.floor(Math.floor(2 * source.level / 5 + 2) * 25 * source.getStat('atk', false, true)) / target.getStat('def', false, true)) / 50) +2)* Math.pow(2, typeMod));
 			},
-			onModifyMove(pokemon, target, move) {
-				if(pokemon === target){
-					return;
-				}
-				if (!move.secondaries) {
-					move.secondaries = [];
-				}
-				move.secondaries.push({
-					chance: 100,
-					onHit(target, source, move) {
-						const damage = this.damage(this.effectState.splinters, pokemon, pokemon);
-					},
-				});
+			onAfterMove(pokemon, target, move) {
+				const damage = this.damage(this.effectState.splinters, pokemon, pokemon);
 			},
 		},
 		secondary: {
