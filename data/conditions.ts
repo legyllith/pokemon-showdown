@@ -260,6 +260,22 @@ export const Conditions: {[k: string]: ConditionData} = {
 			}
 		},
 	},
+	frb: {
+		name: 'frb',
+		effectType: 'Status',
+		onStart(target, source, sourceEffect) {
+			if (sourceEffect && sourceEffect.effectType === 'Ability') {
+				this.add('-status', target, 'frb', '[from] ability: ' + sourceEffect.name, '[of] ' + source);
+			} else {
+				this.add('-status', target, 'frb');
+			}
+		},
+		// Damage reduction is handled directly in the sim/battle-action.js damage function
+		onResidualOrder: 10,
+		onResidual(pokemon) {
+			this.damage(pokemon.baseMaxhp / 16);
+		},
+	},
 	flinch: {
 		name: 'flinch',
 		duration: 1,
