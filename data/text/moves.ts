@@ -7066,4 +7066,14 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "heal block and deal damage during 4 turn.",
 		shortDesc: "heal block, deal damage during 4 turn.",
 	},
+	bittermalice: {
+		name: "Bitter Malice",
+		desc: "Power doubles if the target has a non-volatile status condition.30% chance of frost bite",
+		shortDesc: "Power doubles if the target has a status ailment.30% frb",
+	},
+	infernalparade: {
+		name: "Infernal Parade",
+		desc: "Power doubles if the target has a non-volatile status condition.30% chance of frost bite",
+		shortDesc: "Power doubles if the target has a status ailment.30% frb",
+	},
 };

@@ -21993,7 +21993,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		contestType: "Cool",
 	},
 	tetanus: {
-		num: 2047,
+		num: 2048,
 		accuracy: 100,
 		basePower: 20,
 		category: "Physical",
@@ -22012,5 +22012,59 @@ export const Moves: {[moveid: string]: MoveData} = {
 		target: "randomNormal",
 		type: "Steel",
 		contestType: "Cool",
+	},
+	bittermalice: {
+		num: 2049,
+		accuracy: 100,
+		basePower: 60,
+		basePowerCallback(pokemon, target, move) {
+			if (target.status || (target.hasAbility('comatose') && !this.field.isTerrain('electricterrain'))) return move.basePower * 2;
+			return move.basePower;
+		},
+		category: "Physical",
+		name: "Bitter Malice",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		onModifyMove(move, source, target) {
+			if (this.field.isTerrain('beachterrain')) {
+				move.basePower = 40;
+			}
+		},
+		secondary: {
+			chance: 100,
+			status: 'frb',
+		},
+		target: "normal",
+		type: "Ghost",
+		zMove: {basePower: 160},
+		contestType: "Clever",
+	},
+	infernalparade: {
+		num: 2050,
+		accuracy: 100,
+		basePower: 60,
+		basePowerCallback(pokemon, target, move) {
+			if (target.status || (target.hasAbility('comatose') && !this.field.isTerrain('electricterrain'))) return move.basePower * 2;
+			return move.basePower;
+		},
+		category: "Physical",
+		name: "Infernal Parade",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		onModifyMove(move, source, target) {
+			if (this.field.isTerrain('beachterrain')) {
+				move.basePower = 40;
+			}
+		},
+		secondary: {
+			chance: 30,
+			status: 'brn',
+		},
+		target: "normal",
+		type: "Ghost",
+		zMove: {basePower: 160},
+		contestType: "Clever",
 	},
 };
