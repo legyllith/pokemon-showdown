@@ -19219,7 +19219,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		forme: "Kansai",
 		types: ["Grass", "Steel"],
 		genderRatio: {M: 0.875, F: 0.125},
-		baseStats: {hp: 90, atk: 10, def: 105, spa: 75, spd: 105, spe: 50},
+		baseStats: {hp: 90, atk: 105, def: 105, spa: 75, spd: 105, spe: 50},
 		abilities: {0: "Overgrow", H: "Anger Point"},
 		heightm: 2.3,
 		weightkg: 518,
