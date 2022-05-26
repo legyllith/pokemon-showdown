@@ -88312,6 +88312,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	torterrakansai: {
 		learnset: {
 			irontail: ["8T"],
+			tetanus: ["8L36"],
 		},
 	},
 };

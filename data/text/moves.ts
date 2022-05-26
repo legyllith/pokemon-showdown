@@ -7061,4 +7061,9 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "high critical, deal damage during 4 turn.",
 		shortDesc: "high critical, deal damage during 4 turn.",
 	},
+	tetanus: {
+		name: "Tetanus",
+		desc: "heal block and deal damage during 4 turn.",
+		shortDesc: "heal block, deal damage during 4 turn.",
+	},
 };

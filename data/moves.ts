@@ -21984,26 +21984,33 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
 		critRatio: 2,
-		condition: {
-			duration: 4,
-			noCopy: true,
-			onStart(target, source, sourceEffect) {
-				this.effectState.duration = 4;
-				this.effectState.type = sourceEffect.type;
-				const typeMod = this.clampIntRange(target.runEffectiveness(this.effectState.type), -6, 6);
-                		this.add('-activate', source, 'move: Ceaseless Edge' + ' Your pokemon is endommaged' + this.effectState.type);
-				this.effectState.splinters = ((Math.floor(Math.floor(Math.floor(Math.floor(2 * source.level / 5 + 2) * 25 * source.getStat('atk', false, true)) / target.getStat('def', false, true)) / 50) +2)* Math.pow(2, typeMod));
-			},
-			onAfterMove(pokemon, target, move) {
-				const damage = this.damage(this.effectState.splinters, pokemon, pokemon);
-			},
-		},
 		secondary: {
 			chance: 100,
-			volatileStatus: 'ceaselessedge',
+			volatileStatus: 'splinters',
 		},
 		target: "randomNormal",
 		type: "Dark",
+		contestType: "Cool",
+	},
+	tetanus: {
+		num: 2047,
+		accuracy: 100,
+		basePower: 20,
+		category: "Physical",
+		name: "Tetanus",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		critRatio: 2,
+		secondary:[ {
+			chance: 100,
+			volatileStatus: 'splinters',
+		},{
+			chance: 100,
+			volatileStatus: 'healblock',
+		},],
+		target: "randomNormal",
+		type: "Steel",
 		contestType: "Cool",
 	},
 };
