@@ -21998,17 +21998,15 @@ export const Moves: {[moveid: string]: MoveData} = {
 		basePower: 20,
 		category: "Physical",
 		name: "Tetanus",
+		volatileStatus: 'healblock',
 		pp: 10,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
 		critRatio: 2,
-		secondary:[ {
+		secondary:{
 			chance: 100,
 			volatileStatus: 'splinters',
-		},{
-			chance: 100,
-			volatileStatus: 'healblock',
-		},],
+		},
 		target: "randomNormal",
 		type: "Steel",
 		contestType: "Cool",
