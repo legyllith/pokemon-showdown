@@ -22002,7 +22002,6 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
-		critRatio: 2,
 		secondary:{
 			chance: 100,
 			volatileStatus: 'splinters',
@@ -22064,5 +22063,49 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Ghost",
 		zMove: {basePower: 160},
 		contestType: "Clever",
+	},
+	wavecrash: {
+		num: 2051,
+		accuracy: 100,
+		basePower: 75,
+		category: "Physical",
+		name: "Wave Crash",
+		pp: 15,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		recoil: [1, 3],
+		secondary: {
+			chance: 100,
+			self: {
+				boosts: {
+					spe: 1,
+				},
+			},
+		},
+		target: "normal",
+		type: "Electric",
+		contestType: "Tough",
+	},
+	esperwing: {
+		num: 2052,
+		accuracy: 90,
+		basePower: 75,
+		category: "Physical",
+		name: "Esper Wing",
+		pp: 15,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		critRatio: 2,
+		secondary: {
+			chance: 70,
+			self: {
+				boosts: {
+					spe: 1,
+				},
+			},
+		},
+		target: "normal",
+		type: "Electric",
+		contestType: "Tough",
 	},
 };

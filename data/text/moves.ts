@@ -7076,4 +7076,19 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "Power doubles if the target has a non-volatile status condition.30% chance of frost bite",
 		shortDesc: "Power doubles if the target has a status ailment.30% frb",
 	},
+	stoneaxe: {
+		name: "Stone Axe",
+		desc: "high critical, deal damage during 4 turn.",
+		shortDesc: "high critical, deal damage during 4 turn.",
+	},
+	wavecrash: {
+		name: "Wave Crash",
+		desc: "Has a 100% chance to raise the user's Speed by 1 stage. Have a recoil of 1/3",
+		shortDesc: "100% chance to raise your Spe by 1. 1/3 Recoil",
+	},
+	esperwing: {
+		name: "Esper Wing",
+		desc: "Has a 70% chance to raise the user's Speed by 1 stage. Have an high critical ratio",
+		shortDesc: "70% chance to raise your Spe by 1. high crit",
+	},
 };
