@@ -22083,7 +22083,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			},
 		},
 		target: "normal",
-		type: "Electric",
+		type: "Water",
 		contestType: "Tough",
 	},
 	esperwing: {
@@ -22105,7 +22105,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			},
 		},
 		target: "normal",
-		type: "Electric",
+		type: "Psychic",
 		contestType: "Tough",
 	},
 };
