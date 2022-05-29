@@ -22159,18 +22159,18 @@ export const Moves: {[moveid: string]: MoveData} = {
 		critRatio: 2,
 		secondary: {
 			chance: 100,
-			onHit() {
+			onHit(source) {
 				const result = this.random(5);
 				if (result === 0) {
-					this.boost({atk: 2, def: 1});
+					source.boost({atk: 2, def: 1});
 				} else if (result === 1) {
-					this.boost({atk: 1, def: 2});
+					source.boost({atk: 1, def: 2});
 				} else if (result === 2) {
-					this.boost({spa: 2, spd: 1});
+					source.boost({spa: 2, spd: 1});
 				} else if (result === 3) {
-					this.boost({spa: 1, spd: 2});
+					source.boost({spa: 1, spd: 2});
 				} else {
-					this.boost({spa: 1, spd: 1, atk: 1, def: 1});
+					source.boost({spa: 1, spd: 1, atk: 1, def: 1});
 				}
 			},
 		},
