@@ -22108,4 +22108,74 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Psychic",
 		contestType: "Tough",
 	},
+	triplearrows: {
+		num: 2053,
+		accuracy: 100,
+		basePower: 50,
+		category: "Physical",
+		name: "Triple Arrows",
+		pp: 15,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		critRatio: 2,
+		secondary: {
+			chance: 100,
+			boosts: {
+				def: -1,
+			},
+		},
+		target: "normal",
+		type: "Fighting",
+		contestType: "Tough",
+	},
+	headlongrush: {
+		num: 2054,
+		accuracy: 100,
+		basePower: 100,
+		category: "Physical",
+		name: "Headlong Rush",
+		pp: 15,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		secondary: {
+			chance: 170,
+			boosts: {
+				def: -1,
+			},
+		},
+		target: "normal",
+		type: "Ground",
+		contestType: "Tough",
+	},
+	victorydance: {
+		num: 2055,
+		accuracy: 100,
+		basePower: 50,
+		category: "Status",
+		name: "Victory Dance",
+		pp: 15,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		critRatio: 2,
+		secondary: {
+			chance: 100,
+			onHit() {
+				const result = this.random(5);
+				if (result === 0) {
+					this.boost({atk: 2, def: 1});
+				} else if (result === 1) {
+					this.boost({atk: 1, def: 2});
+				} else if (result === 2) {
+					this.boost({spa: 2, spd: 1});
+				} else if (result === 3) {
+					this.boost({spa: 1, spd: 2});
+				} else {
+					this.boost({spa: 1, spd: 1, atk: 1, def: 1});
+				}
+			},
+		},
+		target: "normal",
+		type: "Fighting",
+		contestType: "Tough",
+	},
 };

@@ -7091,4 +7091,19 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "Has a 70% chance to raise the user's Speed by 1 stage. Have an high critical ratio",
 		shortDesc: "70% chance to raise your Spe by 1. high crit",
 	},
+	triplearrows: {
+		name: "Triple Arrows",
+		desc: "Has a 100% chance to downgrade defense of opponente by 1. Have an high critical ratio",
+		shortDesc: "100% chance to downgrade defense by 1. high crit",
+	},
+	headlongrush: {
+		name: "Headlong Rush",
+		desc: "Has a 70% chance to downgrade defense of opponente by 1.",
+		shortDesc: "70% chance to downgrade defense by 1.",
+	},
+	victorydance: {
+		name: "Victory Dance",
+		desc: "Gain random boost between spd spa def spd.",
+		shortDesc: "Gain random boost between spd spa def spd.",
+	},
 };

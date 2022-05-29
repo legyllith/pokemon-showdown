@@ -823,6 +823,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			gyroball: ["8M", "7M", "6M", "5M", "4M"],
 			hail: ["8M", "7M", "6M", "5M", "4M", "3M"],
 			headbutt: ["8E", "7E", "4T"],
+			headlongrush: ["8L57"],
 			helpinghand: ["8M"],
 			hiddenpower: ["7M", "7E", "6M", "5M", "4M", "3M"],
 			hydropump: ["8M", "8L45", "8E", "7L49", "7E", "6L48", "5L48", "4L44", "3L53"],
