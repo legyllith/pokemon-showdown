@@ -191,7 +191,7 @@ export const Conditions: {[k: string]: ConditionData} = {
 		name: 'splinters',
 		// this is a volatile status
 			duration: 4,
-			noCopy: true,
+			noCopy: true, //not copy by baton pass
 			onStart(target, source, sourceEffect) {
 				this.effectState.duration = 4;
 				this.effectState.type = sourceEffect.type;
@@ -204,7 +204,8 @@ export const Conditions: {[k: string]: ConditionData} = {
 				this.add('-end', target, 'splinters');
 			},
 			onAfterMove(pokemon, target, move) {
-				const damage = this.damage(this.effectState.splinters, pokemon, pokemon);
+				const activeMove = {id: this.toID('splitered'), effectType: 'Move', type: this.effectState.type};
+				this.damage(this.effectState.splinters, pokemon, pokemon, activeMove as ActiveMove);
 			},
 	},
 	drw: {
