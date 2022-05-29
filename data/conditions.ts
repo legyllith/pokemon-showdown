@@ -198,6 +198,10 @@ export const Conditions: {[k: string]: ConditionData} = {
 				const typeMod = this.clampIntRange(target.runEffectiveness(this.effectState.type), -6, 6);
                 		this.add('-activate', source, 'move: Ceaseless Edge' + ' Your pokemon is endommaged' + this.effectState.type);
 				this.effectState.splinters = ((Math.floor(Math.floor(Math.floor(Math.floor(2 * source.level / 5 + 2) * 25 * source.getStat('atk', false, true)) / target.getStat('def', false, true)) / 50) +2)* Math.pow(2, typeMod));
+				this.add('-start', target, 'splinters');
+			},
+			onEnd(target) {
+				this.add('-end', target, 'splinters');
 			},
 			onAfterMove(pokemon, target, move) {
 				const damage = this.damage(this.effectState.splinters, pokemon, pokemon);
