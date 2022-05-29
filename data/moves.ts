@@ -22150,7 +22150,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	victorydance: {
 		num: 2055,
 		accuracy: 100,
-		basePower: 50,
+		basePower: 0,
 		category: "Status",
 		name: "Victory Dance",
 		pp: 15,
@@ -22176,7 +22176,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 				chance: 50,
 				self: {
 					boosts: {
-						att: 1,
+						atk: 1,
 					},
 				},
 			},{
@@ -22190,7 +22190,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 				chance: 10,
 				self: {
 					boosts: {
-						att: 1,
+						atk: 1,
 					},
 				},
 			},{
