@@ -203,6 +203,9 @@ export const Conditions: {[k: string]: ConditionData} = {
 			onEnd(target) {
 				this.add('-end', target, 'splinters');
 			},
+			onSwap(target) {
+				this.add('-end', target, 'splinters');
+			},
 			onAfterMove(pokemon, target, move) {
 				const activeMove = {id: this.toID('splitered'), effectType: 'Move', type: this.effectState.type};
 				this.damage(this.effectState.splinters, pokemon, pokemon, activeMove as ActiveMove);
