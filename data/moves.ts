@@ -22138,7 +22138,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {
-			chance: 170,
+			chance: 70,
 			boosts: {
 				def: -1,
 			},
@@ -22157,23 +22157,51 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
 		critRatio: 2,
-		secondary: {
-			chance: 100,
-			onHit(source) {
-				const result = this.random(5);
-				if (result === 0) {
-					source.boost({atk: 2, def: 1});
-				} else if (result === 1) {
-					source.boost({atk: 1, def: 2});
-				} else if (result === 2) {
-					source.boost({spa: 2, spd: 1});
-				} else if (result === 3) {
-					source.boost({spa: 1, spd: 2});
-				} else {
-					source.boost({spa: 1, spd: 1, atk: 1, def: 1});
-				}
+		secondaries: [
+			{
+				chance: 50,
+				self: {
+					boosts: {
+						def: 1,
+					},
+				},
+			}, {
+				chance: 50,
+				self: {
+					boosts: {
+						spd: 1,
+					},
+				},
+			}, {
+				chance: 50,
+				self: {
+					boosts: {
+						att: 1,
+					},
+				},
+			},{
+				chance: 50,
+				self: {
+					boosts: {
+						spa: 1,
+					},
+				},
+			},{
+				chance: 10,
+				self: {
+					boosts: {
+						att: 1,
+					},
+				},
+			},{
+				chance: 10,
+				self: {
+					boosts: {
+						spa: 1,
+					},
+				},
 			},
-		},
+		],
 		target: "normal",
 		type: "Fighting",
 		contestType: "Tough",
