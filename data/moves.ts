@@ -22142,6 +22142,22 @@ export const Moves: {[moveid: string]: MoveData} = {
 				},
 			},
 		],
+		volatileStatus: 'victorydance',
+		condition: {
+			onStart(target) {
+				this.add('-start', pokemon, 'Victory Dance');
+			},
+			onModifyAtkPriority: 5,
+			onModifyAtk(atk, attacker, defender, move) {
+				this.debug('Victory Dance boost');
+				return this.chainModify(1.5);
+			},
+			onModifySpAPriority: 5,
+			onModifySpA(atk, attacker, defender, move) {
+					this.debug('Victory Dance boost');
+					return this.chainModify(1.5);
+			},
+		},
 		target: "normal",
 		type: "Fighting",
 		contestType: "Tough",
