@@ -18574,7 +18574,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		types: ["Dragon"],
 		genderRatio: {M: 0.875, F: 0.125},
 		baseStats: {hp: 60, atk: 65, def: 110, spa: 130 , spd: 95, spe: 65},
-		abilities: {0: "Water Absorb", H: "Hydration"},
+		abilities: {0: "Drakonize", H: "Berserk"},
 		heightm: 1,
 		weightkg: 40,
 		color: "Blue",

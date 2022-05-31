@@ -84193,7 +84193,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			doubleedge: ["7L55", "7E", "6L55", "6E", "5L55", "5E", "4L46", "4E", "3T"],
 			doublekick: ["7E", "6E", "5E", "4E"],
 			doubleteam: ["7M", "7E", "6M", "5M", "4M", "3M"],
-			dracorage: ["8L28"],
+			dragonrage: ["8L28"],
 			ember: ["7L10", "7E", "6L10", "5L10", "4L10", "3L12"],
 			endure: ["7E", "4M", "3T"],
 			eruption: ["7L64", "6L58", "5L58", "4L49"],
