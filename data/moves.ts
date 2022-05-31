@@ -21980,7 +21980,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		basePower: 65,
 		category: "Physical",
 		name: "Ceaseless Edge",
-		pp: 10,
+		pp: 15,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
 		critRatio: 2,
@@ -21988,7 +21988,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			chance: 100,
 			volatileStatus: 'splinters',
 		},
-		target: "randomNormal",
+		target: "normal",
 		type: "Dark",
 		contestType: "Cool",
 	},
@@ -22006,7 +22006,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			chance: 100,
 			volatileStatus: 'splinters',
 		},
-		target: "randomNormal",
+		target: "normal",
 		type: "Steel",
 		contestType: "Cool",
 	},
@@ -22018,23 +22018,17 @@ export const Moves: {[moveid: string]: MoveData} = {
 			if (target.status || (target.hasAbility('comatose') && !this.field.isTerrain('electricterrain'))) return move.basePower * 2;
 			return move.basePower;
 		},
-		category: "Physical",
+		category: "Special",
 		name: "Bitter Malice",
-		pp: 10,
+		pp: 15,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
-		onModifyMove(move, source, target) {
-			if (this.field.isTerrain('beachterrain')) {
-				move.basePower = 40;
-			}
-		},
 		secondary: {
 			chance: 30,
 			status: 'frb',
 		},
 		target: "normal",
 		type: "Ghost",
-		zMove: {basePower: 160},
 		contestType: "Clever",
 	},
 	infernalparade: {
@@ -22045,59 +22039,31 @@ export const Moves: {[moveid: string]: MoveData} = {
 			if (target.status || (target.hasAbility('comatose') && !this.field.isTerrain('electricterrain'))) return move.basePower * 2;
 			return move.basePower;
 		},
-		category: "Physical",
+		category: "Special",
 		name: "Infernal Parade",
-		pp: 10,
+		pp: 15,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
-		onModifyMove(move, source, target) {
-			if (this.field.isTerrain('beachterrain')) {
-				move.basePower = 40;
-			}
-		},
 		secondary: {
 			chance: 30,
 			status: 'brn',
 		},
 		target: "normal",
 		type: "Ghost",
-		zMove: {basePower: 160},
 		contestType: "Clever",
-	},
-	wavecrash: {
-		num: 2051,
-		accuracy: 100,
-		basePower: 75,
-		category: "Physical",
-		name: "Wave Crash",
-		pp: 15,
-		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1},
-		recoil: [1, 3],
-		secondary: {
-			chance: 100,
-			self: {
-				boosts: {
-					spe: 1,
-				},
-			},
-		},
-		target: "normal",
-		type: "Water",
-		contestType: "Tough",
 	},
 	esperwing: {
 		num: 2052,
 		accuracy: 90,
 		basePower: 75,
-		category: "Physical",
+		category: "Special",
 		name: "Esper Wing",
-		pp: 15,
+		pp: 10,
 		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1},
+		flags: {protect: 1, mirror: 1},
 		critRatio: 2,
 		secondary: {
-			chance: 70,
+			chance: 100,
 			self: {
 				boosts: {
 					spe: 1,
@@ -22116,14 +22082,18 @@ export const Moves: {[moveid: string]: MoveData} = {
 		name: "Triple Arrows",
 		pp: 15,
 		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1},
-		critRatio: 2,
-		secondary: {
+		flags: {protect: 1, mirror: 1},
+		secondaries: [
+			{
 			chance: 100,
 			boosts: {
 				def: -1,
+				},
+			}, {
+			chance: 100,
+			volatileStatus:	"focusenergy",
 			},
-		},
+		],
 		target: "normal",
 		type: "Fighting",
 		contestType: "Tough",
@@ -22134,11 +22104,10 @@ export const Moves: {[moveid: string]: MoveData} = {
 		basePower: 100,
 		category: "Physical",
 		name: "Headlong Rush",
-		pp: 15,
+		pp: 5,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
-		secondary: {
-			chance: 70,
+		self: {
 			boosts: {
 				def: -1,
 			},
@@ -22149,55 +22118,26 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	victorydance: {
 		num: 2055,
-		accuracy: 100,
+		accuracy: true,
 		basePower: 0,
 		category: "Status",
 		name: "Victory Dance",
-		pp: 15,
+		pp: 10,
 		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1},
-		critRatio: 2,
+		flags: {snatch: 1},
 		secondaries: [
 			{
-				chance: 50,
+				chance: 100,
 				self: {
 					boosts: {
 						def: 1,
 					},
 				},
 			}, {
-				chance: 50,
-				self: {
-					boosts: {
-						spd: 1,
-					},
-				},
-			}, {
-				chance: 50,
+				chance: 100,
 				self: {
 					boosts: {
 						atk: 1,
-					},
-				},
-			},{
-				chance: 50,
-				self: {
-					boosts: {
-						spa: 1,
-					},
-				},
-			},{
-				chance: 10,
-				self: {
-					boosts: {
-						atk: 1,
-					},
-				},
-			},{
-				chance: 10,
-				self: {
-					boosts: {
-						spa: 1,
 					},
 				},
 			},
