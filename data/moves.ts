@@ -21803,13 +21803,13 @@ export const Moves: {[moveid: string]: MoveData} = {
 		flags: {contact: 1, protect: 1, mirror: 1},
 		condition: {
 			duration: 2,
-			onStart() {
+			onStart(pokemon) {
 				this.effectState.duration = 2;
-                		this.add('-activate', source, 'move: Raging Fury' + ' your pokemon is fixated on using Raging Furry');
+                		this.add('-activate', pokemon, 'move: Raging Fury' + ' your pokemon is fixated on using Raging Furry');
 			},
-			onRestart() {
+			onRestart(pokemon) {
 				this.effectState.duration = 2;
-                		this.add('-activate', source, 'move: Raging Fury' + ' your pokemon is fixated on using Raging Furry');
+                		this.add('-activate', pokemon, 'move: Raging Fury' + ' your pokemon is fixated on using Raging Furry');
 			},
 			onSourceBasePower(basePower, attacker, defender, move) {
 				return this.chainModify([5448, 4096]);
