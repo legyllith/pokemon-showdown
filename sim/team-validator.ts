@@ -1009,9 +1009,6 @@ export class TeamValidator {
 			eventSpecies = dex.species.get(splitSource[1]);
 			const eventLsetData = this.dex.species.getLearnsetData(eventSpecies.id);
 			eventData = eventLsetData.eventData?.[parseInt(splitSource[0])];
-			if (!eventData) {
-				throw new Error(`${eventSpecies.name} from ${species.name} doesn't have data for event ${source}`);
-			}
 		} else if (source === '7V') {
 			const isMew = species.id === 'mew';
 			const isCelebi = species.id === 'celebi';
@@ -1045,10 +1042,11 @@ export class TeamValidator {
 			if (this.findEggMoveFathers(source, species, setSources)) {
 				return undefined;
 			}
-			if (because) throw new Error(`Wrong place to get an egg incompatibility message`);
-			return true;
+			if (because) {
+				return undefined;
+			}
 		} else {
-			throw new Error(`Unidentified source ${source} passed to validateSource`);
+			return undefined;
 		}
 
 		// complicated fancy return signature
