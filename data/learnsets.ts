@@ -86618,10 +86618,10 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	hermeon: {
 		learnset: {
 			lightscreen: ["8L1"],
-			reflect: ["8L1"],
+			charge: ["8L1"],
 			futuresight: ["8L1"],
 			disarmingvoice: ["8L5"],
-			taunt: ["8L10"],
+			thunderwave: ["8L10"],
 			gust: ["8L15"],
 			defog: ["8L20"],
 			featherdance: ["8L25"],
