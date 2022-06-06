@@ -18558,7 +18558,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		name: "Hermeon",
 		types: ["Flying"],
 		genderRatio: {M: 0.875, F: 0.125},
-		baseStats: {hp: 95, atk: 60, def: 65, spa: 65, spd: 110, spe: 130},
+		baseStats: {hp: 60, atk: 65, def: 95, spa: 65, spd: 110, spe: 130},
 		abilities: {0: "Aerilate", H: "Prankster"},
 		heightm: 1,
 		weightkg: 15,
