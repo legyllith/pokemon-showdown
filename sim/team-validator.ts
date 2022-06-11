@@ -1122,7 +1122,7 @@ export class TeamValidator {
 			if (!getAll) return true;
 			fathers.push(father.id);
 		}
-		if (!getAll) return true;
+		if (!getAll) return false;
 		return (!fathers.length && eggGen < 6) ? null : fathers;
 	}
 
