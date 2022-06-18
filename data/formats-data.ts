@@ -6924,4 +6924,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	torterrakansai: {
 		tier: "OU",
 	},
+	teddiursatradessar: {
+		tier: "OU",
+	},
+	ursaringtradessar: {
+		tier: "OU",
+	},
 };
