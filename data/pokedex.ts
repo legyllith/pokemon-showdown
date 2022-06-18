@@ -19235,7 +19235,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	teddiursatradessar: {
 		num: 216,
 		name: "Teddiursa-Tradessar",
-		baseSpecies: "Tradessar",
+		baseSpecies: "Teddiursa",
+		Forme: "Tradessar",
 		types: ["Rock","Dark"],
 		baseStats: {hp: 70, atk: 65, def: 55, spa: 40, spd: 50, spe: 50},
 		abilities: {0: "Cute Charm", 1: "Anger Point", H: "Pickup"},
@@ -19248,7 +19249,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	ursaringtradessar: {
 		num: 217,
 		name: "Ursaring-Tradessar",
-		baseSpecies: "Tradessar",
+		baseSpecies: "Ursaring",
+		Forme: "Tradessar",
 		types: ["Rock","Dark"],
 		baseStats: {hp: 100, atk: 110, def: 95, spa: 50, spd: 80, spe: 65},
 		abilities: {0: "Strong Jaw", 1: "Anger Point", H: "Unnerve"},
