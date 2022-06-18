@@ -87138,6 +87138,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			tackle: ["8L15", "7L15", "6L15", "5L15", "4L15", "3L15"],
 			toxic: ["7M", "6M", "5M", "4M", "3M"],
 			weatherball: ["8L1"],
+			mortuaryearth: ["8M"],
 		},
 	},
 	wyrdeer: {
