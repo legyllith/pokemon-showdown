@@ -384,6 +384,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		flags: {contact: 1, protect: 1, mirror: 1},
 		onModifyMove(move, pokemon) {
 			if (this.field.isTerrain('beachterrain')) move.basePower = 90;
+			if (this.field.isTerrain('submarineterrain')) move.basePower = 140;
 		},
 		secondary: {
 			chance: 100,
@@ -2003,6 +2004,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 				newType = 'Normal';
 			} else if (this.field.isTerrain('poisonmistterrain')) {
 				newType = 'Poison';
+			} else if (this.field.isTerrain('submarineterrain')) {
+				newType = 'Water';
 			}
 			if (target.getTypes().join() === newType || !target.setType(newType)) return false;
 			this.add('-start', target, 'typechange', newType);
@@ -12025,6 +12028,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 				move = 'weatherball';
 			} else if (this.field.isTerrain('poisonmistterrain')) {
 				move = 'acidspray';
+			} else if (this.field.isTerrain('submarineterrain')) {
+				move = 'anchorshot';
 			}
 			this.actions.useMove(move, pokemon, target);
 			return null;
@@ -15199,6 +15204,13 @@ export const Moves: {[moveid: string]: MoveData} = {
 				move.secondaries.push({
 					chance: 30,
 					status: 'psn',
+				});
+			} else if (this.field.isTerrain('submarineterrain')) {
+				move.secondaries.push({
+					chance: 30,
+					boosts: {
+						def: -1,
+					},
 				});
 			}
 		},
@@ -18464,6 +18476,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 				break;
 			case 'poisonmistterrain':
 				move.type = 'Poison';
+				break;
+			case 'submarineterrain':
+				move.type = 'Water';
 				break;
 			}
 		},
@@ -22161,5 +22176,62 @@ export const Moves: {[moveid: string]: MoveData} = {
 		target: "normal",
 		type: "Fighting",
 		contestType: "Tough",
+	},
+	submarineterrain: {
+		num: 2056,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Submarine Terrain",
+		pp: 10,
+		priority: 0,
+		flags: {nonsky: 1},
+		terrain: 'submarineterrain',
+		condition: {
+			duration: 99,
+			durationCallback(source, effect) {
+				return 99;
+			},
+			onBasePowerPriority: 6,
+			onBasePower(basePower, attacker, defender, move) {
+				if (move.type === 'Steel') {
+					return this.chainModify([5324, 4096]);
+				}
+			},
+			onFieldStart(field, source, effect) {
+				if (effect?.effectType === 'Ability') {
+					this.add('-fieldstart', 'move: Submarine Terrain', '[from] ability: ' + effect, '[of] ' + source);
+				} else {
+					this.add('-fieldstart', 'move: Submarine Terrain');
+				}
+			},
+			onModifyMove(move, pokemon) {
+				if (move.secondaries && move.id !== 'secretpower') {
+					this.debug('doubling secondary chance');
+					for (const secondary of move.secondaries) {
+						if (pokemon.hasAbility('serenegrace') && secondary.volatileStatus === 'flinch') continue;
+						if (secondary.chance) secondary.chance *= 2;
+					}
+					if (move.self?.chance) move.self.chance *= 2;
+				}
+			},
+			onResidualOrder: 5,
+			onResidualSubOrder: 2,
+			onResidual(pokemon) {
+				if (pokemon.hasType('Water')) {
+					this.heal(pokemon.baseMaxhp / 16, pokemon, pokemon);
+				}
+			},
+			onFieldResidualOrder: 27,
+			onFieldResidualSubOrder: 7,
+			onFieldEnd() {
+				this.add('-fieldend', 'move: Submarine Terrain');
+			},
+		},
+		secondary: null,
+		target: "all",
+		type: "Water",
+		zMove: {boost: {def: 1}},
+		contestType: "Beautiful",
 	},
 };

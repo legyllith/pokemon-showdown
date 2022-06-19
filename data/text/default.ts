@@ -351,10 +351,16 @@ export const DefaultText: {[k: string]: DefaultText} = {
 		start: "  Corrosive mist settles on the field!",
 		end: "  The poison disappeared from the battlefield.",
 		damage: "  [POKEMON] inhaled the gas!",
+		heal: "  [POKEMON]'s HP was restored.",
 	},
 	beachterrain: {
 		start: "  It's fun time, the beach side episode begin",
 		end: "  Too short :( Hope you had fun",
+	},
+	submarineterrain: {
+		start: "  We all live in a yellow submarine!",
+		end: "  Aye-aye, sir, aye-aye.",
+		heal: "  [POKEMON]'s HP was restored.",
 	},
 
 	// field effects

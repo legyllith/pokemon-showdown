@@ -93,4 +93,11 @@ export const Formats: FormatList = [
 		ruleset: ['Max Team Size = 3', 'Standard NatDex', 'Dynamax Clause', 'Adjust Level = 45', '! EV Limit'],
 		
 	},
+	{
+		name: "[Gen 8] Tournament 6",
+		gameType: 'multi',
+		mod: 'gen8',
+		ruleset: ['Standard NatDex', 'Species Clause', 'Dynamax Clause', 'Adjust Level = 45', 'Item Clause', 'Submarine Terrain Rule'],
+		
+	},
 	];

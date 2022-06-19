@@ -1929,4 +1929,20 @@ export const Rulesets: {[k: string]: FormatData} = {
 			}
 		}
 	},
+	submarineterrainrule: {
+		effectType: 'Rule',
+		name: 'Submarine Terrain Rule',
+		desc: 'The fight start on Submarine Terrain',
+		onSwitchIn(pokemon) {
+			if(this.field.IsFirstTimeSettingCustomTerrain) {
+				this.field.setTerrain('submarineterrain');
+				this.field.IsFirstTimeSettingCustomTerrain = false;
+			}
+		},
+		onResidual(pokemon){
+			if(this.field.isTerrain('')) {
+				this.field.setTerrain('submarineterrain');
+			}
+		}
+	},
 };
