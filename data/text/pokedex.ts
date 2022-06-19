@@ -4004,4 +4004,11 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	torterrakansai: {
 		name: "Torterra-Kansai",
 	},
+
+	teddiursatradessar: {
+		name: "Teddiursa-Tradessar",
+	},
+	ursaringtradessar: {
+		name: "Ursaring-Tradessar",
+	},
 };
