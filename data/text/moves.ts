@@ -7106,4 +7106,24 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "Gain random boost between spd spa def spd.",
 		shortDesc: "Gain random boost between spd spa def spd.",
 	},
+	coldfear: {
+		name: "Cold Fear",
+		desc: "Frost bite the target.",
+		shortDesc: "Frost Bite the target.",
+	},
+	seaice: {
+		name: "Sea Ice",
+		desc: "Hits adjacent Pokemon.",
+		shortDesc: "Hits adjacent Pokemon.",
+	},
+	madweapon: {
+		name: "Mad Weapon",
+		desc: "Hits adjacent Pokemon. High critical ration",
+		shortDesc: "Hits adjacent Pokemon High Crit.",
+	},
+	madberzerk: {
+		name: "Mad Berzerk",
+		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times.",
+		shortDesc: "Hits 2-5 times in one turn, all adjacent.",
+	},
 };

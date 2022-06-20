@@ -22234,4 +22234,81 @@ export const Moves: {[moveid: string]: MoveData} = {
 		zMove: {boost: {def: 1}},
 		contestType: "Beautiful",
 	},
+	coldfear: {
+		num: 2057,
+		accuracy: 85,
+		basePower: 0,
+		category: "Status",
+		name: "Cold Fear",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, reflectable: 1, mirror: 1},
+		onModifyMove(move, pokemon, target) {
+			if (this.field.isTerrain('burningterrain')) {
+				move.accuracy = 50;
+			}
+		},
+		status: 'frz',
+		secondary: null,
+		target: "normal",
+		type: "Ghost",
+		zMove: {boost: {spa: 1}},
+		contestType: "Beautiful",
+	},
+	seaice: {
+		num: 2058,
+		accuracy: 100,
+		basePower: 90,
+		category: "Special",
+		name: "Sea Ice",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, nonsky: 1},
+		onModifyMove(move, source, target) {
+			if (this.field.isTerrain('beachterrain')) {
+				move.basePower = 60;
+			}
+		},
+		secondary: null,
+		target: "allAdjacent",
+		type: "Ice",
+		contestType: "Beautiful",
+	},
+	madweapon: {
+		num: 2059,
+		accuracy: 100,
+		basePower: 70,
+		category: "Special",
+		name: "Mad Weapon",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, nonsky: 1},
+		critRatio: 2,
+		onModifyMove(move, source, target) {
+			if (this.field.isTerrain('beachterrain')) {
+				move.basePower = 40;
+			}
+		},
+		secondary: null,
+		target: "allAdjacent",
+		type: "Electric",
+		contestType: "Beautiful",
+	},
+	madberzerk: {
+		num: 2060,
+		accuracy: 100,
+		basePower: 25,
+		category: "Physical",
+		name: "Mad Berzerk",
+		pp: 30,
+		priority: 0,
+		flags: {bullet: 1, protect: 1, mirror: 1},
+		multihit: [2, 5],
+		secondary: null,
+		target: "allAdjacent",
+		type: "Fighting",
+		zMove: {basePower: 140},
+		maxMove: {basePower: 130},
+		contestType: "Cool",
+	},
 };
