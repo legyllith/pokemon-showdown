@@ -22278,7 +22278,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		num: 2059,
 		accuracy: 100,
 		basePower: 70,
-		category: "Special",
+		category: "Physical",
 		name: "Mad Weapon",
 		pp: 15,
 		priority: 0,
