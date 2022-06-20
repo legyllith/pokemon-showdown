@@ -22248,7 +22248,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 				move.accuracy = 50;
 			}
 		},
-		status: 'frz',
+		status: 'frb',
 		secondary: null,
 		target: "normal",
 		type: "Ghost",
