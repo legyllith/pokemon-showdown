@@ -18919,7 +18919,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		name: "Somniflore",
 		types: ["Grass", "Dark"],
 		baseStats: {hp: 95, atk: 90, def: 90, spa: 90, spd: 90, spe: 35},
-		abilities: {0: "Rain Dish", H: "drowsyspore"},
+		abilities: {0: "Rain Dish", H: "Drowsy Spore"},
 		heightm: 1.2,
 		weightkg: 18.6,
 		color: "Purple",
