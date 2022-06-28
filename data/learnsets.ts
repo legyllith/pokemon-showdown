@@ -40368,6 +40368,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			entrainment: ["7E", "6E"],
 			facade: ["7M", "6M", "5M", "4M", "3M"],
 			flail: ["7L26", "6L27", "5L31", "4L46", "3L40"],
+			fly: ["7M"],
 			frustration: ["7M", "6M", "5M", "4M", "3M"],
 			hail: ["7M", "6M", "5M", "4M", "3M"],
 			healpulse: ["7E", "6E", "5E"],
