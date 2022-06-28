@@ -528,7 +528,47 @@ export const Conditions: {[k: string]: ConditionData} = {
 				}
 			},
 		onBasePower(basePower,pokemon, target, move) {
-			if (move.category === 'Special') {
+			if (move.category === 'Physical') {
+				let h = this.effectState.hitCount;
+				if (!(h >= 0 && h <= 12)) return;
+					if (h === 0) {
+						return this.chainModify([5120, 4096]);
+					} else if (h === 1)  {
+						return this.chainModify([4915, 4096]);
+					}
+					else if (h === 2)  {
+						return this.chainModify([4710, 4096]);
+					}
+					else if (h === 3)  {
+						return this.chainModify([4506, 4096]);
+					}
+					else if (h === 4)  {
+						return this.chainModify([4301, 4096]);
+					}
+					else if (h === 5)  {
+						return this.chainModify([3686, 4096]);
+					}
+					else if (h === 6)  {
+						return this.chainModify([3481, 4096]);
+					}
+					else if (h === 7)  {
+						return this.chainModify([3276, 4096]);
+					}
+					else if (h === 8)  {
+						return this.chainModify([3072, 4096]);
+					}
+					else if (h === 9)  {
+						return this.chainModify([2867, 4096]);
+					}
+					else if (h === 10)  {
+						return this.chainModify([2662, 4096]);
+					}
+					else if (h === 11)  {
+						return this.chainModify([2458, 4096]);
+					}
+
+			}
+		if (move.category === 'Special') {
 				let h = this.effectState.hitCount;
 				if (!(h >= 0 && h <= 12)) return;
 					if (h === 0) {

@@ -5042,4 +5042,28 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 4,
 		num: 2017,
 	},
+	celestialfire: {
+		onStart(source) {
+			if (source.hasType('Fire')) return false;
+			if (!source.addType('Fire')) return false;
+			this.add('-start', source, 'typeadd', 'Fire', '[from] abilities: Celestial Fire');
+		},
+		onModifyAtkPriority: 5,
+		onModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Flying') {
+				this.debug('Celestial Fire boost');
+				return this.chainModify(1.5);
+			}
+		},
+		onModifySpAPriority: 5,
+		onModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Flying') {
+				this.debug('Celestial Fire boost');
+				return this.chainModify(1.5);
+			}
+		},
+		name: "Celestial FIre",
+		rating: 3,
+		num: 2018,
+	},
 };

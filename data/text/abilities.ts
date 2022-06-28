@@ -1803,9 +1803,19 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		name: "Millennial Weight",
 		shortDesc: "this pokemon can not be swap by opposant and gain aandom stats on enter",
 	},
-	intimidate: {
-		name: "Intimidate",
+	bigdream: {
+		name: "Big Dream",
 		desc: "On switch-in, all pokemon become drw 2 turn. Pokemon behind a substitute are immune.",
 		shortDesc: "On switch-in, all pokemon become drw 2 turn.",
+	},
+	drakonize: {
+		name: "Drakonize",
+		desc: "Normal attack become Dragon and boost by 30%.",
+		shortDesc: "Normal attack become Dragon and boost by 30%.",
+	},
+	celestialfire: {
+		name: "Celestial Fire",
+		desc: "Gain fire type and a stab on flying type.",
+		shortDesc: "Gain fire type and a stab on flying type.",
 	},
 };
