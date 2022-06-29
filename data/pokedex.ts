@@ -19007,7 +19007,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	clogin: {
 		num: 1856,
 		name: "Clogin",
-		types: ["Psychic"],
+		types: ["Psychic","Ice"],
 		baseStats: {hp: 95, atk: 69, def: 69, spa: 69, spd: 69, spe: 85},
 		abilities: {0: "Forecast"},
 		heightm: 1.4,
