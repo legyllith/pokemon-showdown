@@ -22317,7 +22317,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		basePower: 50,
 		category: "Physical",
 		name: "Snow Plank",
-		pp: 12,
+		pp: 10,
 		priority: 1,
 		flags: {contact: 1, protect: 1, mirror: 1},
 		onEffectiveness(typeMod, target, type) {
