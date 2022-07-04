@@ -7040,11 +7040,16 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		onStart(source) {
 						if (source.species.name === 'Delibird'){
-							source.boost({def: 1});
-							source.boost({spd: 1});
+							this.boost({def: 1});
+							this.boost({spd: 1});
 							source.formeChange('delibirdbullshit');
 						}
 					
+		},
+		onSourceModifyAccuracyPriority: -2,
+		onSourceModifyAccuracy(accuracy, target) {
+				this.debug('Bullshit boosting accuracy');
+				return this.chainModify([4500, 4096]);
 		},
 		onModifySpDPriority: 2,
 		onModifySpD(spd) {
