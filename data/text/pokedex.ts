@@ -905,6 +905,9 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	delibird: {
 		name: "Delibird",
 	},
+	delibirdbullshit: {
+		name: "Delibird-Bullshit",
+	},
 	mantine: {
 		name: "Mantine",
 	},
@@ -4010,5 +4013,14 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	},
 	ursaringtradessar: {
 		name: "Ursaring-Tradessar",
+	},
+	skiin: {
+		name: "Skiin",
+	},
+	penskoin: {
+		name: "Penskoin",
+	},
+	demoliski: {
+		name: "Demoliski",
 	},
 };

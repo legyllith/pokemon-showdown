@@ -1808,6 +1808,9 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "(PU)",
 		doublesTier: "(DUU)",
 	},
+	delibirdbullshit: {
+		tier: "(PU)",
+	},
 	mantyke: {
 		tier: "LC",
 	},
@@ -6928,6 +6931,16 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "OU",
 	},
 	ursaringtradessar: {
+		tier: "OU",
+	},
+	
+	skiin: {
+		tier: "OU",
+	},
+	penskoin: {
+		tier: "OU",
+	},
+	demoliski: {
 		tier: "OU",
 	},
 };

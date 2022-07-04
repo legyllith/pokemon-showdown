@@ -22311,4 +22311,21 @@ export const Moves: {[moveid: string]: MoveData} = {
 		maxMove: {basePower: 130},
 		contestType: "Cool",
 	},
+	snowplank: {
+		num: 2061,
+		accuracy: 100,
+		basePower: 50,
+		category: "Physical",
+		name: "Snow Plank",
+		pp: 12,
+		priority: 1,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		onEffectiveness(typeMod, target, type) {
+			if (type === 'Flying') return 1;
+		},
+		secondary: null,
+		target: "normal",
+		type: "Grass",
+		contestType: "Cool",
+	},
 };
