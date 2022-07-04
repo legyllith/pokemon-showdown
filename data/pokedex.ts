@@ -19300,6 +19300,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "White",
 		prevo: "Blue",
 		evoLevel: 25,
+		prevo: "skiin",
 		evos: ["Demoliski"],
 		eggGroups: ["Water 1", "Field"],
 	},
