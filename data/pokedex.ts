@@ -19346,8 +19346,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		weightkg: 89,
 		color: "Blue",
 		eggGroups: ["Water 1", "Field"],
-		otherFormes: ["Eiscue-Noice"],
-		formeOrder: ["Eiscue", "Eiscue-Noice"],
 	},
 	eiscueproelosnoice: {
 		num: 875,
