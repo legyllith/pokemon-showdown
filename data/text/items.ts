@@ -2353,4 +2353,8 @@ export const ItemsText: {[k: string]: ItemText} = {
 		name: "Bullshit",
 		desc: "bullshit",
 	},
+	empoleonite: {
+		name: "Empoleonite",
+		desc: "mega gems of Empoleon.",
+	},
 };

@@ -1517,6 +1517,9 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	empoleon: {
 		name: "Empoleon",
 	},
+	empoleonmega: {
+		name: "Empoleon-Mega",
+	},
 	starly: {
 		name: "Starly",
 	},
@@ -4022,5 +4025,11 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	},
 	demoliski: {
 		name: "Demoliski",
+	},
+	eiscueproelos: {
+		name: "Eiscue-Proelos",
+	},
+	eiscueproelosnoice: {
+		name: "Eiscue-Proelos-Noice",
 	},
 };

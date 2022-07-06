@@ -1580,6 +1580,11 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				this.effectState.busted = false;
 				pokemon.formeChange('Eiscue', this.effect, true);
 			}
+			if (this.field.isWeather('hail') && pokemon.species.id === 'eiscueproelosnoice' && !pokemon.transformed) {
+				this.add('-activate', pokemon, 'ability: Ice Face');
+				this.effectState.busted = false;
+				pokemon.formeChange('Eiscue-Proelos', this.effect, true);
+			}
 		},
 		onDamagePriority: 1,
 		onDamage(damage, target, source, effect) {
@@ -1591,10 +1596,19 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				this.effectState.busted = true;
 				return 0;
 			}
+			if (
+				effect && effect.effectType === 'Move' && effect.category === 'Physical' &&
+				target.species.id === 'eiscueproelos' && !target.transformed
+			) {
+				this.add('-activate', target, 'ability: Ice Face');
+				this.effectState.busted = true;
+				return 0;
+			}
 		},
 		onCriticalHit(target, type, move) {
 			if (!target) return;
 			if (move.category !== 'Physical' || target.species.id !== 'eiscue' || target.transformed) return;
+			if (move.category !== 'Physical' || target.species.id !== 'eiscueproelos' || target.transformed) return;
 			if (target.volatiles['substitute'] && !(move.flags['bypasssub'] || move.infiltrates)) return;
 			if (!target.runImmunity(move.type)) return;
 			return false;
@@ -1602,6 +1616,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onEffectiveness(typeMod, target, type, move) {
 			if (!target) return;
 			if (move.category !== 'Physical' || target.species.id !== 'eiscue' || target.transformed) return;
+			if (move.category !== 'Physical' || target.species.id !== 'eiscueproelos' || target.transformed) return;
 
 			const hitSub = target.volatiles['substitute'] && !move.flags['bypasssub'] && !(move.infiltrates && this.gen >= 6);
 			if (hitSub) return;
@@ -1613,6 +1628,9 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (pokemon.species.id === 'eiscue' && this.effectState.busted) {
 				pokemon.formeChange('Eiscue-Noice', this.effect, true);
 			}
+			if (pokemon.species.id === 'eiscueproelos' && this.effectState.busted) {
+				pokemon.formeChange('Eiscue-Proelos-Noice', this.effect, true);
+			}
 		},
 		onAnyWeatherStart() {
 			const pokemon = this.effectState.target;
@@ -1621,6 +1639,11 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				this.add('-activate', pokemon, 'ability: Ice Face');
 				this.effectState.busted = false;
 				pokemon.formeChange('Eiscue', this.effect, true);
+			}
+			if (this.field.isWeather('hail') && pokemon.species.id === 'eiscueproelosnoice' && !pokemon.transformed) {
+				this.add('-activate', pokemon, 'ability: Ice Face');
+				this.effectState.busted = false;
+				pokemon.formeChange('Eiscue-Proelos', this.effect, true);
 			}
 		},
 		isBreakable: true,

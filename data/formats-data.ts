@@ -2812,6 +2812,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "PU",
 		doublesTier: "(DUU)",
 	},
+	empoleonmega: {
+		tier: "PU",
+		doublesTier: "(DUU)",
+	},
 	starly: {
 		tier: "PU",
 		doublesTier: "(DUU)",
@@ -6941,6 +6945,12 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "OU",
 	},
 	demoliski: {
+		tier: "OU",
+	},
+	eiscueproelos: {
+		tier: "OU",
+	},
+	eiscueproelosnoice: {
 		tier: "OU",
 	},
 };

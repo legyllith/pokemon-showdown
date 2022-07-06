@@ -7066,4 +7066,17 @@ export const Items: {[itemid: string]: ItemData} = {
 		num: 2003,
 		gen: 8,
 	},
+	Empoleonite: {
+		name: "Empoleonite",
+		spritenum: 1187,
+		megaStone: "Empoleon-Mega",
+		megaEvolves: "Empoleon",
+		itemUser: ["Empoleon"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 2004,
+		gen: 8,
+	},
 };
