@@ -1632,8 +1632,8 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				pokemon.formeChange('Eiscue-Proelos-Noice', this.effect, true);
 				for (const target of pokemon.foes()) {
 					target.setStatus('confusion', target, pokemon, null, true);
-					target.statusState.time = 3;
-					target.statusState.startTime = 3;
+					target.statusState.time = 2;
+					target.statusState.startTime = 2;
 				}
 			}
 		},
