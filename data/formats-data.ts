@@ -6950,7 +6950,4 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	eiscueproelos: {
 		tier: "OU",
 	},
-	eiscueproelosnoice: {
-		tier: "OU",
-	},
 };

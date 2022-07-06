@@ -1630,6 +1630,11 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			}
 			if (pokemon.species.id === 'eiscueproelos' && this.effectState.busted) {
 				pokemon.formeChange('Eiscue-Proelos-Noice', this.effect, true);
+				for (const target of pokemon.foes()) {
+					target.setStatus('confusion', target, pokemon, null, true);
+					target.statusState.time = 3;
+					target.statusState.startTime = 3;
+				}
 			}
 		},
 		onAnyWeatherStart() {
