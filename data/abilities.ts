@@ -1602,6 +1602,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			) {
 				this.add('-activate', target, 'ability: Ice Face');
 				this.effectState.busted = true;
+				source.addVolatile('confusion');
 				return 0;
 			}
 		},
@@ -1630,9 +1631,6 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			}
 			if (pokemon.species.id === 'eiscueproelos' && this.effectState.busted) {
 				pokemon.formeChange('Eiscue-Proelos-Noice', this.effect, true);
-				for (const target of pokemon.foes()) {
-					target.addVolatile('confusion');
-				}
 			}
 		},
 		onAnyWeatherStart() {
