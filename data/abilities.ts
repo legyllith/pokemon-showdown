@@ -1602,8 +1602,12 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			) {
 				this.add('-activate', target, 'ability: Ice Face');
 				this.effectState.busted = true;
-				source.addVolatile('confusion');
 				return 0;
+			}
+		},
+		onDamagingHit(damage, target, source, move) {
+			if (move.category === 'Physical') {
+					source.addVolatile('confusion');
 			}
 		},
 		onCriticalHit(target, type, move) {
