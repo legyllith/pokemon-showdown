@@ -88707,6 +88707,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			weatherball: ["8M", "8L12"],
 			whirlpool: ["8M"],
 			zenheadbutt: ["8M"],
+			shadowclaw: ["8M"],
 		},
 	},
 };
