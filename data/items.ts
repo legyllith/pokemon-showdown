@@ -7066,7 +7066,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		num: 2003,
 		gen: 8,
 	},
-	Empoleonite: {
+	empoleonite: {
 		name: "Empoleonite",
 		spritenum: 1187,
 		megaStone: "Empoleon-Mega",
