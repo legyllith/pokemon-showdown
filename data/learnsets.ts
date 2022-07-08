@@ -88664,6 +88664,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	eiscueproelos: {
 		learnset: {
+			toxic: ["3L1"],
 			agility: ["8M"],
 			amnesia: ["8M", "8L30"],
 			aquaring: ["8E"],
