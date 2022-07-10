@@ -13302,10 +13302,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 15,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
-		onModifyMove(move, pokemon) {
+		onModifyMove(move, pokemon, source) {
 			if (this.field.isTerrain('beachterrain')) move.boosts = {def: 1};
-			const yourItemD = pokemon.getItem(pokemon);
+			const yourItemD = this.getItem(source);
 			if (yourItemD.id === 'bullshit') {
+				this.boost({def: 1});
 				move.type = "Rock";
 			}
 		},
