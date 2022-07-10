@@ -7048,16 +7048,19 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		onSourceModifyAccuracyPriority: -2,
 		onSourceModifyAccuracy(accuracy, target) {
+				if (this.status === 'tox') {
+					this.cureStatus();
+				}
 				this.debug('Bullshit boosting accuracy');
 				return this.chainModify([4500, 4096]);
 		},
 		onModifySpDPriority: 2,
 		onModifySpD(spd) {
-			return this.chainModify(1.5);
+			return this.chainModify([1800, 4096]);
 		},
 		onModifyDefPriority: 2,
 		onModifyDef(def) {
-			return this.chainModify(1.5);
+			return this.chainModify([1800, 4096]);
 		},
 		onResidualSubOrder: 4,
 		onResidual(pokemon) {
