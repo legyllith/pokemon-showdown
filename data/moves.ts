@@ -13303,7 +13303,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
 		onModifyType(move, pokemon, source) {
-			const yourItemD = source.getItem(source);
+			const yourItemD = pokemon.getItem();
 			if (yourItemD.id === 'bullshit') {
 				this.boost({def: 1});
 				move.type = "Rock";
