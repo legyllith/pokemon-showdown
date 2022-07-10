@@ -7048,9 +7048,6 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		onSourceModifyAccuracyPriority: -2,
 		onSourceModifyAccuracy(accuracy, target) {
-				if (this.status === 'tox') {
-					this.cureStatus();
-				}
 				this.debug('Bullshit boosting accuracy');
 				return this.chainModify([4500, 4096]);
 		},
@@ -7064,6 +7061,9 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		onResidualSubOrder: 4,
 		onResidual(pokemon) {
+				if (this.status === 'tox') {
+					this.cureStatus();
+				}
 			this.heal(pokemon.baseMaxhp / 16);
 		},
 		num: 2003,
