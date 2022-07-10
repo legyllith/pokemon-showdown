@@ -7061,9 +7061,9 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		onResidualSubOrder: 4,
 		onResidual(pokemon) {
-				if (this.status === 'tox') {
-					this.cureStatus();
-				}
+			if (pokemon.status === 'tox') {
+				pokemon.cureStatus();
+			}
 			this.heal(pokemon.baseMaxhp / 16);
 		},
 		num: 2003,
