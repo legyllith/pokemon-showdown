@@ -13304,6 +13304,10 @@ export const Moves: {[moveid: string]: MoveData} = {
 		flags: {protect: 1, mirror: 1},
 		onModifyMove(move, pokemon) {
 			if (this.field.isTerrain('beachterrain')) move.boosts = {def: 1};
+			const yourItemD = pokemon.getItem(pokemon);
+			if (yourItemD.id === 'bullshit') {
+				move.type = "Rock";
+			}
 		},
 		onModifyMove(move, pokemon, target) {
 			const rand = this.random(10);
