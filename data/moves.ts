@@ -2817,6 +2817,10 @@ export const Moves: {[moveid: string]: MoveData} = {
 			if (source.item || source.volatiles['gem']) {
 				return;
 			}
+			const yourItemD = target.getItem(source);
+			if (yourItemD.id === 'bullshit') {
+				return;
+			}
 			const yourItem = target.takeItem(source);
 			if (!yourItem) {
 				return;
@@ -21393,8 +21397,8 @@ export const Moves: {[moveid: string]: MoveData} = {
                 if (move.id === 'stealthrock') {
                     source.actions.useMove('rockthrow', target, source);
                 }
-                if (move.id === 'stealthice') {
-                    source.actions.useMove('powdersnow', target, source);
+                else if (move.id === 'stealthice') {
+                    this.actions.useMove('powdersnow', target, source);
                 }
                 const newMove = this.dex.getActiveMove(move.id);
                 newMove.hasBounced = true;
@@ -21409,8 +21413,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 		if (move.id === 'stealthrock') {
                     this.actions.useMove('rockthrow', target, source);
                 }
-                if (move.id === 'stealthice') {
-                    source.actions.useMove('powdersnow', target, source);
+                else if (move.id === 'stealthice') {
+                    this.actions.useMove('powdersnow', target, source);
                 }
                 const newMove = this.dex.getActiveMove(move.id);
                 newMove.hasBounced = true;
