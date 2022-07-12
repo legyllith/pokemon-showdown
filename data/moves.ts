@@ -20857,7 +20857,6 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Psychic",
 		contestType: "Tough",
 	},
-	
 	pokerface: {
 		num: 2012,
 		accuracy: 100,
@@ -22336,6 +22335,29 @@ export const Moves: {[moveid: string]: MoveData} = {
 		secondary: null,
 		target: "normal",
 		type: "Grass",
+		contestType: "Cool",
+	},
+	mortuarybeak: {
+		num: 2062,
+		accuracy: 100,
+		basePower: 60,
+		onBasePower(basePower, attacker, defender, move) {
+			let type = pokemon.getTypes()[0];
+			if (type === "Ice"){
+				move.basePower = 80;
+			},
+		},
+		category: "Physical",
+		name: "Mortuary Beak",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, bypasssub: 1},
+		onEffectiveness(typeMod, target, type, move) {
+			return typeMod + this.dex.getEffectiveness('Ice', type);
+		},
+		secondary: null,
+		target: "randomNormal",
+		type: "Ghost",
 		contestType: "Cool",
 	},
 };

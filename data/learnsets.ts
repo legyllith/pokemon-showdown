@@ -2016,6 +2016,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			uturn: ["8E", "7M", "6M", "5M", "4M"],
 			whirlwind: ["7E"],
 			workup: ["7M", "5M"],
+			mortuarybeak: ["8M"],
 		},
 		encounters: [
 			{generation: 1, level: 19},
@@ -20091,6 +20092,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	articuno: {
 		learnset: {
+			mortuarybeak: ["8M"],
 			aerialace: ["7M", "6M", "5M", "4M", "3M"],
 			aerialsurge: ["8L40"],
 			agility: ["8M", "8L20", "8E", "7L36", "7E", "6L36", "5L36", "4L36", "4S3", "4S4", "3L25", "3S0", "3S1"],
@@ -20195,6 +20197,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	articunogalar: {
 		learnset: {
+			mortuarybeak: ["8M"],
 			agility: ["8M", "8L20"],
 			airslash: ["8M"],
 			aerialsurge: ["8L35"],
@@ -25191,6 +25194,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	honchkrow: {
 		learnset: {
+			mortuarybeak: ["8M"],
 			aerialace: ["7M", "6M", "5M", "4M"],
 			aircutter: ["4T"],
 			astonish: ["7L1", "6L1", "5L1", "4L1"],
@@ -27850,6 +27854,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			waterpulse: ["7T", "6T", "4M", "3M"],
 			weatherball: ["8M"],
 			coldfear: ["8L49"],
+			mortuarybeak: ["8M"],
 		},
 		eventData: [
 			{generation: 3, level: 10, gender: "M", moves: ["present"], pokeball: "pokeball"},
@@ -42581,6 +42586,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			whirlpool: ["7L32", "7S5", "6L32", "5L32", "4M", "4L32"],
 			workup: ["7M"],
 			yawn: ["7E", "6E", "5E", "4E"],
+			mortuarybeak: ["8M"],
 		},
 		eventData: [
 			{generation: 5, level: 10, gender: "M", isHidden: true, moves: ["pound", "growl", "bubble"]},
@@ -50461,6 +50467,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	unfezant: {
 		learnset: {
+			mortuarybeak: ["8M"],
 			aerialace: ["7M", "6M", "5M"],
 			agility: ["8M"],
 			aircutter: ["8L16", "7L15", "6L15", "5L15"],
@@ -58696,6 +58703,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	mandibuzz: {
 		learnset: {
+			mortuarybeak: ["8M"],
 			aerialace: ["7M", "6M", "5M"],
 			airslash: ["8M", "8L42", "7L41", "6L41", "5L41"],
 			assurance: ["8M"],
@@ -67585,6 +67593,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	oricorio: {
 		learnset: {
+			mortuarybeak: ["8M"],
 			acrobatics: ["7M"],
 			aerialace: ["7M"],
 			agility: ["7L46"],
@@ -76092,6 +76101,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			weatherball: ["8M", "8L12"],
 			whirlpool: ["8M"],
 			zenheadbutt: ["8M"],
+			mortuarybeak: ["8M"],
 		},
 	},
 	indeedee: {
@@ -86579,6 +86589,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			tackle: ["8L15", "7L15", "6L15", "5L15", "4L15", "3L15"],
 			toxic: ["7M", "6M", "5M", "4M", "3M"],
 			waterfall: ["8M", "7M", "6M", "5M", "4M", "3M"],
+			mortuarybeak: ["8M"],
 		},
 	},
 	pengwace: {
@@ -87889,6 +87900,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			swagger: ["8M"],
 			takedown: ["8M"],
 			toxic: ["8M"],
+			mortuarybeak: ["8M"],
 		},
 	},
 	clogin: {
@@ -88660,6 +88672,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			takedown: ["8M"],
 			triplekick: ["8L21"],
 			toxic: ["8M"],
+			mortuarybeak: ["8M"],
 		},
 	},
 	penskoin: {
@@ -88721,6 +88734,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			whirlpool: ["8M"],
 			zenheadbutt: ["8M"],
 			shadowclaw: ["8M"],
+			mortuarybeak: ["8M"],
 		},
 	},
 };

@@ -7131,4 +7131,9 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "High prio, super effectif on fly.",
 		shortDesc: "high prio, super effectif on fly.",
 	},
+	mortuarybeak: {
+		name: "Mortuary Beak",
+		desc: "adding ice type, base power is up to 80 for ice pokemon.",
+		shortDesc: "add ice type, base power : 80 for ice pokemon.",
+	},
 };
