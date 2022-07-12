@@ -22345,7 +22345,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			let type = pokemon.getTypes()[0];
 			if (type === "Ice"){
 				move.basePower = 80;
-			},
+			}
 		},
 		category: "Physical",
 		name: "Mortuary Beak",
