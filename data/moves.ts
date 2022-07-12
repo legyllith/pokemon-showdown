@@ -22342,7 +22342,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		accuracy: 100,
 		basePower: 60,
 		onBasePower(basePower, attacker, defender, move) {
-			let type = pokemon.getTypes()[0];
+			let type = attacker.getTypes()[0];
 			if (type === "Ice"){
 				move.basePower = 80;
 			}
