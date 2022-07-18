@@ -55,6 +55,12 @@ export const Formats: FormatList = [
 		
 	},
 	{
+		name: "[Gen 8] Tournament 4",
+		mod: 'gen8',
+		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 50', 'Ice Cave Terrain Rule', 'Item Clause'],
+		
+	},
+	{
 		name: "[Gen 8] Boss",
 		mod: 'gen8',
 		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 50', '! EV Limit'],
