@@ -22358,6 +22358,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 			if (type === "Ice"){
 				move.basePower = 200;
 			}
+			if (attacker.getTypes().length === 2){
+				let type = attacker.getTypes()[1];
+				if (type === "Ice"){
+					move.basePower = 200;
+				}
+			}
 		},
 		category: "Physical",
 		name: "Mortuary Beak",
