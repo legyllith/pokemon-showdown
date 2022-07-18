@@ -22394,6 +22394,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 						return this.chainModify([410, 4096]);
 					} else {
 					return this.chainModify([5324, 4096]);
+					}
 				}
 			},
 			onFieldStart(field, source, effect) {
