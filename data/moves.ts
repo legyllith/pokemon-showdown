@@ -22356,7 +22356,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		onBasePower(basePower, attacker, defender, move) {
 			let type = attacker.getTypes()[0];
 			if (type === "Ice"){
-				move.basePower = 80;
+				move.basePower = 200;
 			}
 		},
 		category: "Physical",
