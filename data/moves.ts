@@ -22405,9 +22405,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 			},
 			onFieldStart(field, source, effect) {
 				if (effect?.effectType === 'Ability') {
-					this.add('-fieldstart', 'move: Submarine Terrain', '[from] ability: ' + effect, '[of] ' + source);
+					this.add('-fieldstart', 'move: Ice Cave Terrain', '[from] ability: ' + effect, '[of] ' + source);
 				} else {
-					this.add('-fieldstart', 'move: Submarine Terrain');
+					this.add('-fieldstart', 'move: Ice Cave Terrain');
 				}
 			},
 			onFieldResidualOrder: 27,
