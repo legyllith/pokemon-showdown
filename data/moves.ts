@@ -22396,7 +22396,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			onBasePowerPriority: 6,
 			onBasePower(basePower, attacker, defender, move) {
 				if (move.type === 'Ghost') {
-					if (defender.hasType('Ice') === 'Ice') {
+					if (defender.hasType('Ice')) {
 						return this.chainModify([410, 4096]);
 					} else {
 					return this.chainModify([5324, 4096]);
@@ -22409,6 +22409,14 @@ export const Moves: {[moveid: string]: MoveData} = {
 				} else {
 					this.add('-fieldstart', 'move: Ice Cave Terrain');
 				}
+			},
+			onStartPriority: -1,
+			onStart(source) {
+				for (const action of this.queue) {
+					if (action.choice === 'runPrimal' && action.pokemon === source && source.species.id === 'groudon') return;
+					if (action.choice !== 'runSwitch' && action.choice !== 'runPrimal') break;
+				}
+				this.field.setWeather('sunnyday');
 			},
 			onFieldResidualOrder: 27,
 			onFieldResidualSubOrder: 7,
