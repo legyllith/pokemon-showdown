@@ -86596,11 +86596,16 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 		learnset: {
 			flamecharge: ["8L25"],
 			icywind: ["8L25"],
+			seaice: ["8L36"],
 		},
 	},
 	jetweng: {
 		learnset: {
 			moonblast: ["8L40"],
+			aquatail: ["8L44"],
+			flamethrower: ["8L49"],
+			overheat: ["8L55"],
+			heatcrash: ["8M"],
 		},
 	},
 	astraleon: {
