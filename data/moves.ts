@@ -22396,7 +22396,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			onBasePowerPriority: 6,
 			onBasePower(basePower, attacker, defender, move) {
 				if (move.type === 'Ghost') {
-					if (defender.type === 'Ice') {
+					if (defender.hasType('Ice') === 'Ice') {
 						return this.chainModify([410, 4096]);
 					} else {
 					return this.chainModify([5324, 4096]);
