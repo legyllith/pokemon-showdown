@@ -22410,14 +22410,6 @@ export const Moves: {[moveid: string]: MoveData} = {
 					this.add('-fieldstart', 'move: Ice Cave Terrain');
 				}
 			},
-			onStartPriority: -1,
-			onStart(source) {
-				for (const action of this.queue) {
-					if (action.choice === 'runPrimal' && action.pokemon === source && source.species.id === 'groudon') return;
-					if (action.choice !== 'runSwitch' && action.choice !== 'runPrimal') break;
-				}
-				this.field.setWeather('sunnyday');
-			},
 			onFieldResidualOrder: 27,
 			onFieldResidualSubOrder: 7,
 			onFieldEnd() {
