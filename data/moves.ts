@@ -22356,14 +22356,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		onBasePower(basePower, attacker, defender, move) {
 			let type = attacker.getTypes()[0];
 			if (type === "Ice"){
-				this.boost({spa: 1});
-					return this.chainModify([10000, 4096]);
+				return this.chainModify([5461, 4096]);
 			}
 			if (attacker.getTypes().length === 2){
 				let type = attacker.getTypes()[1];
 				if (type === "Ice"){
-					this.boost({spa: 1});
-					return this.chainModify([10000, 4096]);
+					return this.chainModify([5461, 4096]);
 				}
 			}
 		},
