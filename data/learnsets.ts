@@ -87910,8 +87910,27 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	clogin: {
 		learnset: {
+			madweapon: ["8L1"],
+			avalanche: ["8M"]
 			weathersong: ["8L1"],
 			weatherprediction: ["8L1"],
+			ironhead: ["8M"],
+			flashcannon: ["8M"],
+			steelwings: ["8L20"],
+			spiritbreak: ["8L60"],
+			playrough: ["8M"],
+			mistyexplosion: ["8T"],
+			haze: ["8L40"],
+			seaice: ["8L45"],
+			iceshard: ["8L50"],
+			icywind: ["8L17"],
+			icybeam: ["8L43"],
+			lunge: ["8L60"],
+			pollenpuff: ["8M"],
+			fellstinger: ["8L58"],
+			chargebeam: ["8L22"],
+			thunder: ["8L40"],
+			psychic: ["8M"],
 		},
 	},
 	smoochumtradessar: {
