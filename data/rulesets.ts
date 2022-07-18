@@ -1945,7 +1945,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 			}
 		}
 	},
-	icecaverule: {
+	icecaveterrainrule: {
 		effectType: 'Rule',
 		name: 'Ice Cave Terrain Rule',
 		desc: 'The fight start on Ice Cave Terrain',
