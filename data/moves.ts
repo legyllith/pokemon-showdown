@@ -2006,6 +2006,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 				newType = 'Poison';
 			} else if (this.field.isTerrain('submarineterrain')) {
 				newType = 'Water';
+			} else if (this.field.isTerrain('icecaveterrain')) {
+				newType = 'Ice';
 			}
 			if (target.getTypes().join() === newType || !target.setType(newType)) return false;
 			this.add('-start', target, 'typechange', newType);
@@ -12034,6 +12036,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 				move = 'acidspray';
 			} else if (this.field.isTerrain('submarineterrain')) {
 				move = 'anchorshot';
+			} else if (this.field.isTerrain('icecaveterrain')) {
+				move = 'iceball';
 			}
 			this.actions.useMove(move, pokemon, target);
 			return null;
@@ -15221,6 +15225,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 					boosts: {
 						def: -1,
 					},
+				});
+			} else if (this.field.isTerrain('icecaveterrain')) {
+				move.secondaries.push({
+					chance: 30,
+					status: 'frb',
 				});
 			}
 		},
@@ -18489,6 +18498,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 				break;
 			case 'submarineterrain':
 				move.type = 'Water';
+				break;
+			case 'icecaveterrain':
+				move.type = 'Ice';
 				break;
 			}
 		},
@@ -22359,5 +22371,48 @@ export const Moves: {[moveid: string]: MoveData} = {
 		target: "randomNormal",
 		type: "Ghost",
 		contestType: "Cool",
+	},
+	icecaveterrain: {
+		num: 2063,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Ice Cave Terrain",
+		pp: 10,
+		priority: 0,
+		flags: {nonsky: 1},
+		terrain: 'icecaveterrain',
+		condition: {
+			duration: 99,
+			durationCallback(source, effect) {
+				return 99;
+			},
+			onBasePowerPriority: 6,
+			onBasePower(basePower, attacker, defender, move) {
+				if (move.type === 'Ghost') {
+					if (defender.type === 'Ice') {
+						return this.chainModify([410, 4096]);
+					} else {
+					return this.chainModify([5324, 4096]);
+				}
+			},
+			onFieldStart(field, source, effect) {
+				if (effect?.effectType === 'Ability') {
+					this.add('-fieldstart', 'move: Submarine Terrain', '[from] ability: ' + effect, '[of] ' + source);
+				} else {
+					this.add('-fieldstart', 'move: Submarine Terrain');
+				}
+			},
+			onFieldResidualOrder: 27,
+			onFieldResidualSubOrder: 7,
+			onFieldEnd() {
+				this.add('-fieldend', 'move: Submarine Terrain');
+			},
+		},
+		secondary: null,
+		target: "all",
+		type: "Ice",
+		zMove: {boost: {def: 1}},
+		contestType: "Beautiful",
 	},
 };

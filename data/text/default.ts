@@ -362,6 +362,10 @@ export const DefaultText: {[k: string]: DefaultText} = {
 		end: "  Aye-aye, sir, aye-aye.",
 		heal: "  [POKEMON]'s HP was restored.",
 	},
+	icecaveterrain: {
+		start: "  The ice glows white in the mountain tonight",
+		end: "  Let it go, let it go",
+	},
 
 	// field effects
 	gravity: {
