@@ -87911,7 +87911,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	clogin: {
 		learnset: {
 			madweapon: ["8L1"],
-			avalanche: ["8M"]
+			avalanche: ["8M"],
 			weathersong: ["8L1"],
 			weatherprediction: ["8L1"],
 			ironhead: ["8M"],
