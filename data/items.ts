@@ -7082,4 +7082,17 @@ export const Items: {[itemid: string]: ItemData} = {
 		num: 2004,
 		gen: 8,
 	},
+	lucarioproenite: {
+		name: "Lucarioproenite",
+		spritenum: 1188,
+		megaStone: "Lucario-Mega-Proelos",
+		megaEvolves: "Lucario",
+		itemUser: ["Empoleon"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 2004,
+		gen: 8,
+	},
 };
