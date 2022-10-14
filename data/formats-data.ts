@@ -6937,7 +6937,6 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	ursaringtradessar: {
 		tier: "OU",
 	},
-	
 	skiin: {
 		tier: "OU",
 	},
@@ -6948,6 +6947,15 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "OU",
 	},
 	eiscueproelos: {
+		tier: "OU",
+	},
+	rioluproelos: {
+		tier: "OU",
+	},
+	lucarioproelos: {
+		tier: "OU",
+	},
+	lucariomegaproelos: {
 		tier: "OU",
 	},
 };

@@ -4032,4 +4032,13 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	eiscueproelosnoice: {
 		name: "Eiscue-Proelos-Noice",
 	},
+	rioluproelos: {
+		name: "Riolu-Proelos",
+	},
+	lucarioproelos: {
+		name: "Lucario-Proelos",
+	},
+	lucariomegaproelos: {
+		name: "Lucario-Mega-Proelos",
+	},
 };
