@@ -87924,7 +87924,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			seaice: ["8L45"],
 			iceshard: ["8L50"],
 			icywind: ["8L17"],
-			icybeam: ["8L43"],
+			icebeam: ["8L43"],
 			lunge: ["8L60"],
 			pollenpuff: ["8M"],
 			fellstinger: ["8L58"],
