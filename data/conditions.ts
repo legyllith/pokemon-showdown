@@ -726,9 +726,11 @@ export const Conditions: {[k: string]: ConditionData} = {
 			//}
 			if(this.effectState.item) return;
 			this.effectState.item = item.id
-			this.effectState.duration = 3;
+			this.effectState.trueDuration = 3;
 		},
 		onResidual(pokemon) {
+			this.effectState.duration = 99;
+			this.effectState.trueDuration--;
 			if (this.effectState.trueDuration > 1) return;
 			const item2 = this.dex.items.get(this.effectState.item) 
 			if (item2.isBerry) {
