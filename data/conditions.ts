@@ -734,7 +734,6 @@ export const Conditions: {[k: string]: ConditionData} = {
 			if (item2.isBerry) {
 				this.add('-enditem', pokemon, item2.name, '[from] stealeat', '[abilities] Cud Chew', '[of] ' + pokemon);
 				if (this.singleEvent('Eat', item2, null, pokemon, null, null)) {
-					this.boost({spa: 1});
 					this.runEvent('EatItem', pokemon, null, null, item2);
 					if (item2.id === 'leppaberry') target.staleness = 'external';
 				}
