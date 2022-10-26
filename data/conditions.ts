@@ -725,11 +725,13 @@ export const Conditions: {[k: string]: ConditionData} = {
 			//	}
 			//}
 			if(this.effectState.item) return;
-			this.effectState.item = item.id
+			//this.add('-activate', pokemon, 'move: Astrology' + ' you are a Rat');
+			this.effectState.item = item.id;
 			this.effectState.trueDuration = 3;
 		},
 		onResidual(pokemon) {
 			this.effectState.duration = 99;
+			if (this.effectState.trueDuration > 0) this.effectState.item = '';
 			this.effectState.trueDuration--;
 			if (this.effectState.trueDuration > 1) return;
 			const item2 = this.dex.items.get(this.effectState.item) 
