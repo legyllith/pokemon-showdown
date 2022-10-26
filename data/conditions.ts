@@ -716,18 +716,10 @@ export const Conditions: {[k: string]: ConditionData} = {
 		name: 'cudchew',
 		duration: 99,
 		onEatItem(item, pokemon) {
-			//if (item.isBerry) {
-			//	this.add('-enditem', pokemon, item.name, '[from] stealeat', '[abilities] Cud Chew', '[of] ' + pokemon);
-			//	if (this.singleEvent('Eat', item, null, pokemon, null, null)) {
-			//		this.boost({def: 1});
-			//		this.runEvent('EatItem', pokemon, null, null, item);
-			//		if (item.id === 'leppaberry') target.staleness = 'external';
-			//	}
+			//if (this.effectState.trueDuration > 1){
+			//	this.effectState.item = '';
+			//	return;
 			//}
-			if (this.effectState.trueDuration > 1){
-				this.effectState.item = '';
-				return;
-			}
 			if(this.effectState.item) return;
 			//this.add('-activate', pokemon, 'move: Astrology' + ' you are a Rat');
 			this.effectState.item = item.id;
