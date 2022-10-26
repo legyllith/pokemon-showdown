@@ -759,6 +759,7 @@ export const Conditions: {[k: string]: ConditionData} = {
 						if (item3.id === 'leppaberry') target.staleness = 'external';
 					}
 				}
+				this.effectState.trueDuration2 = 89;
 				return;
 			}
 			this.effectState.trueDuration = 99;
