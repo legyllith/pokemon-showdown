@@ -716,7 +716,7 @@ export const Conditions: {[k: string]: ConditionData} = {
 		name: 'cudchew',
 		duration: 99,
 		onEatItem(item, pokemon) {
-			if(this.effectState.trueDuration && !this.effectState.trueDuration>90) {
+			if(this.effectState.trueDuration && this.effectState.trueDuration<90) {
 				if(this.effectState.trueDuration == 99) return;
 				this.effectState.item2 = item.id;
 				this.effectState.trueDuration2 = 3;
