@@ -721,7 +721,6 @@ export const Conditions: {[k: string]: ConditionData} = {
 					if(this.effectState.trueDuration>90) return;
 						this.effectState.item = item.id;
 						this.effectState.trueDuration = 3;
-						if(this.effectState.trueDuration2>90)this.effectState.trueDuration2 = 89;
 				}
 					else {
 						if(this.effectState.trueDuration2>90) return;
