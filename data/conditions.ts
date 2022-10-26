@@ -741,7 +741,17 @@ export const Conditions: {[k: string]: ConditionData} = {
 			if(this.effectState.trueDuration > 80){
 				this.effectState.trueDuration = 89;
 			}
-			if (this.effectState.trueDuration > 1 || this.effectState.trueDuration < 1) return;
+			if (this.effectState.trueDuration > 1 || this.effectState.trueDuration < 1) {
+				if (this.effectState.trueDuration2 > 1 || this.effectState.trueDuration2 < 1) return;
+				const item3 = this.dex.items.get(this.effectState.item2) 
+				if (item3.isBerry) {
+					if (this.singleEvent('Eat', item3, null, pokemon, null, null)) {
+						this.runEvent('EatItem', pokemon, null, null, item3);
+						if (item3.id === 'leppaberry') target.staleness = 'external';
+					}
+				}
+				return;
+			}
 			this.effectState.trueDuration = 99;
 			const item2 = this.dex.items.get(this.effectState.item) 
 			if (item2.isBerry) {
@@ -750,14 +760,6 @@ export const Conditions: {[k: string]: ConditionData} = {
 					if (item2.id === 'leppaberry') target.staleness = 'external';
 				}
 			this.effectState.trueDuration = 89;
-			}
-			if (this.effectState.trueDuration2 > 1 || this.effectState.trueDuration2 < 1) return;
-			const item3 = this.dex.items.get(this.effectState.item2) 
-			if (item3.isBerry) {
-				if (this.singleEvent('Eat', item3, null, pokemon, null, null)) {
-					this.runEvent('EatItem', pokemon, null, null, item3);
-					if (item3.id === 'leppaberry') target.staleness = 'external';
-				}
 			}
 		},
 	},
