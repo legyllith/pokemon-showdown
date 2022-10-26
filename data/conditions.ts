@@ -739,7 +739,6 @@ export const Conditions: {[k: string]: ConditionData} = {
 			this.effectState.trueDuration = 99;
 			const item2 = this.dex.items.get(this.effectState.item) 
 			if (item2.isBerry) {
-				//this.add('-enditem', pokemon, item2.name, '[from] stealeat', '[abilities] Cud Chew', '[of] ' + pokemon);
 				if (this.singleEvent('Eat', item2, null, pokemon, null, null)) {
 					this.runEvent('EatItem', pokemon, null, null, item2);
 					if (item2.id === 'leppaberry') target.staleness = 'external';
@@ -749,7 +748,6 @@ export const Conditions: {[k: string]: ConditionData} = {
 			if (this.effectState.trueDuration2 > 1 || this.effectState.trueDuration2 < 1) return;
 			const item3 = this.dex.items.get(this.effectState.item2) 
 			if (item3.isBerry) {
-				//this.add('-enditem', pokemon, item3.name, '[from] stealeat', '[abilities] Cud Chew', '[of] ' + pokemon);
 				if (this.singleEvent('Eat', item3, null, pokemon, null, null)) {
 					this.runEvent('EatItem', pokemon, null, null, item3);
 					if (item3.id === 'leppaberry') target.staleness = 'external';
