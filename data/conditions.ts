@@ -725,7 +725,7 @@ export const Conditions: {[k: string]: ConditionData} = {
 			//	}
 			//}
 			this.effectState.item = item.id
-			const item2 = this.dex.item.get(this.effectState.item) 
+			const item2 = this.dex.items.get(this.effectState.item) 
 			if (item2.isBerry) {
 				this.add('-enditem', pokemon, item2.name, '[from] stealeat', '[abilities] Cud Chew', '[of] ' + pokemon);
 				if (this.singleEvent('Eat', item2, null, pokemon, null, null)) {
