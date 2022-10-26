@@ -731,6 +731,7 @@ export const Conditions: {[k: string]: ConditionData} = {
 		onResidual(pokemon) {
 			this.effectState.duration = 99;
 			this.effectState.trueDuration--;
+			this.effectState.trueDuration2--;
 			if(this.effectState.trueDuration > 90){
 				this.effectState.trueDuration = 99;
 			}
@@ -747,6 +748,15 @@ export const Conditions: {[k: string]: ConditionData} = {
 					if (item2.id === 'leppaberry') target.staleness = 'external';
 				}
 			this.effectState.trueDuration = 89;
+			}
+			if (this.effectState.trueDuration2 > 1 || this.effectState.trueDuration2 < 1) return;
+			const item3 = this.dex.items.get(this.effectState.item2) 
+			if (item3.isBerry) {
+				this.add('-enditem', pokemon, item3.name, '[from] stealeat', '[abilities] Cud Chew', '[of] ' + pokemon);
+				if (this.singleEvent('Eat', item3, null, pokemon, null, null)) {
+					this.runEvent('EatItem', pokemon, null, null, item2);
+					if (item3.id === 'leppaberry') target.staleness = 'external';
+				}
 			}
 		},
 	},
