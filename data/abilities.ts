@@ -5100,9 +5100,9 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onResidual(pokemon) {
 			if (pokemon.hp && !pokemon.item && this.dex.items.get(pokemon.lastItem).isBerry) {
 					//pokemon.setItem(pokemon.lastItem);
-					this.runEvent('EatItem', source, null, null, pokemon.lastItem);
+					this.runEvent('EatItem', pokemon, null, null, pokemon.lastItem);
 					pokemon.lastItem = '';
-					this.add('-item', pokemon, pokemon.getItem(), '[from] ability: Harvest');
+					//this.add('-item', pokemon, pokemon.getItem(), '[from] ability: Harvest');
 					//this.setAbility('ruminated');
 			}
 		},
