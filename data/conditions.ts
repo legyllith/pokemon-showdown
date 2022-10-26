@@ -734,7 +734,7 @@ export const Conditions: {[k: string]: ConditionData} = {
 					if (item2.id === 'leppaberry') target.staleness = 'external';
 				}
 			}
-			this.effectState.duration = 2,
+			this.effectState.duration = 2;
 		},
 		onResidual(pokemon) {
 			if (this.effectState.trueDuration > 1) return;
