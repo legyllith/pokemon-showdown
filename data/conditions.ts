@@ -725,6 +725,10 @@ export const Conditions: {[k: string]: ConditionData} = {
 			//	}
 			//}
 			this.effectState.item = item.id
+			this.effectState.duration = 2;
+		},
+		onResidual(pokemon) {
+			if (this.effectState.trueDuration > 1) return;
 			const item2 = this.dex.items.get(this.effectState.item) 
 			if (item2.isBerry) {
 				this.add('-enditem', pokemon, item2.name, '[from] stealeat', '[abilities] Cud Chew', '[of] ' + pokemon);
@@ -734,10 +738,6 @@ export const Conditions: {[k: string]: ConditionData} = {
 					if (item2.id === 'leppaberry') target.staleness = 'external';
 				}
 			}
-			this.effectState.duration = 2;
-		},
-		onResidual(pokemon) {
-			if (this.effectState.trueDuration > 1) return;
 		},
 	},
 
