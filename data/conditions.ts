@@ -721,8 +721,10 @@ export const Conditions: {[k: string]: ConditionData} = {
 					if(this.effectState.trueDuration>90) return;
 						this.effectState.item = item.id;
 						this.effectState.trueDuration = 3;
+						this.effectState.trueDuration2 = 89;
 				}
 					else {
+						if(this.effectState.trueDuration2>90) return;
 						this.effectState.item2 = item.id;
 						this.effectState.trueDuration2 = 3;
 					}
@@ -741,8 +743,15 @@ export const Conditions: {[k: string]: ConditionData} = {
 			if(this.effectState.trueDuration > 80){
 				this.effectState.trueDuration = 89;
 			}
+			if(this.effectState.trueDuration2 > 90){
+				this.effectState.trueDuration = 99;
+			}
+			if(this.effectState.trueDuration2 > 80){
+				this.effectState.trueDuration = 89;
+			}
 			if (this.effectState.trueDuration > 1 || this.effectState.trueDuration < 1) {
 				if (this.effectState.trueDuration2 > 1 || this.effectState.trueDuration2 < 1) return;
+				this.effectState.trueDuration2 = 99;
 				const item3 = this.dex.items.get(this.effectState.item2) 
 				if (item3.isBerry) {
 					if (this.singleEvent('Eat', item3, null, pokemon, null, null)) {
