@@ -720,16 +720,25 @@ export const Conditions: {[k: string]: ConditionData} = {
 			//	this.effectState.item = '';
 			//	return;
 			//}
-			if(this.effectState.trueDuration && this.effectState.trueDuration>2) return;
-			//this.add('-activate', pokemon, 'move: Astrology' + ' you are a Rat');
-			this.effectState.item = item.id;
-			this.effectState.trueDuration = 3;
+			if(this.effectState.trueDuration && !this.effectState.trueDuration>90) 
+				this.effectState.item2 = item.id;
+				this.effectState.trueDuration2 = 3;
+			else{
+				this.effectState.item = item.id;
+				this.effectState.trueDuration = 3;
+			}
 		},
 		onResidual(pokemon) {
 			this.effectState.duration = 99;
-			
 			this.effectState.trueDuration--;
+			if(this.effectState.trueDuration > 90){
+				this.effectState.trueDuration = 99;
+			}
+			if(this.effectState.trueDuration > 80){
+				this.effectState.trueDuration = 89;
+			}
 			if (this.effectState.trueDuration > 1 || this.effectState.trueDuration < 1) return;
+			this.effectState.trueDuration = 99;
 			const item2 = this.dex.items.get(this.effectState.item) 
 			if (item2.isBerry) {
 				this.add('-enditem', pokemon, item2.name, '[from] stealeat', '[abilities] Cud Chew', '[of] ' + pokemon);
@@ -737,6 +746,7 @@ export const Conditions: {[k: string]: ConditionData} = {
 					this.runEvent('EatItem', pokemon, null, null, item2);
 					if (item2.id === 'leppaberry') target.staleness = 'external';
 				}
+			this.effectState.trueDuration = 89;
 			}
 		},
 	},
