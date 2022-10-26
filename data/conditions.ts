@@ -720,10 +720,10 @@ export const Conditions: {[k: string]: ConditionData} = {
 			//	this.effectState.item = '';
 			//	return;
 			//}
-			if(this.effectState.trueDuration && !this.effectState.trueDuration>90) 
+			if(this.effectState.trueDuration && !this.effectState.trueDuration>90) {
 				this.effectState.item2 = item.id;
 				this.effectState.trueDuration2 = 3;
-			else{
+			} else {
 				this.effectState.item = item.id;
 				this.effectState.trueDuration = 3;
 			}
