@@ -726,7 +726,7 @@ export const Conditions: {[k: string]: ConditionData} = {
 			//}
 			if (this.effectState.trueDuration > 1){
 				this.effectState.item = '';
-				reutrn;
+				return;
 			}
 			if(this.effectState.item) return;
 			//this.add('-activate', pokemon, 'move: Astrology' + ' you are a Rat');
