@@ -712,6 +712,37 @@ export const Conditions: {[k: string]: ConditionData} = {
 			return this.chainModify([5325, 4096]);
 		},
 	},
+	cudchew: {
+		name: 'cudchew',
+		duration: 99,
+		onStart(pokemon) {
+			this.effectState.time
+		},
+		onEatItem(item, pokemon) {
+			if (item.isBerry) {
+				this.add('-enditem', pokemon, item.name, '[from] stealeat', '[abilities] Cud Chew', '[of] ' + pokemon);
+				if (this.singleEvent('Eat', item, null, pokemon, null, null)) {
+					this.boost({def: 1});
+					this.runEvent('EatItem', pokemon, null, null, item);
+					if (item.id === 'leppaberry') target.staleness = 'external';
+				}
+			}
+			this.effectState.item.id = item.id
+			const item2 = this.dex.item.get(this.effectState.item.id) 
+			if (item2.isBerry) {
+				this.add('-enditem', pokemon, item2.name, '[from] stealeat', '[abilities] Cud Chew', '[of] ' + pokemon);
+				if (this.singleEvent('Eat', item2, null, pokemon, null, null)) {
+					this.boost({spa: 1});
+					this.runEvent('EatItem', pokemon, null, null, item2);
+					if (item2.id === 'leppaberry') target.staleness = 'external';
+				}
+			}
+			this.effectState.duration = 2,
+		},
+		onResidual(pokemon) {
+			if (this.effectState.trueDuration > 1) return;
+		},
+	},
 
 	// weather is implemented here since it's so important to the game
 

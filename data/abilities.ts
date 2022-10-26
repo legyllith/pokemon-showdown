@@ -5095,15 +5095,8 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	cudchew: {
 		name: "Cud Chew",
-		onEatItem(item, pokemon) {
-			if (pokemon.lastItem.isBerry) {
-				this.add('-enditem', pokemon, pokemon.lastItem.name, '[from] stealeat', '[abilities] Cud Chew', '[of] ' + pokemon);
-				if (this.singleEvent('Eat', pokemon.lastItem, null, pokemon, null, null)) {
-					this.boost({att: 1});
-					this.runEvent('EatItem', pokemon, null, null, pokemon.lastItem);
-					if (pokemon.lastItem.id === 'leppaberry') target.staleness = 'external';
-				}
-			}
+		onStart(source) {
+			source.addVolatile('cudchew');
 		},
 		rating: 4,
 		num: 2018,
