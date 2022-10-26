@@ -715,9 +715,6 @@ export const Conditions: {[k: string]: ConditionData} = {
 	cudchew: {
 		name: 'cudchew',
 		duration: 99,
-		onStart(pokemon) {
-			this.effectState.time
-		},
 		onEatItem(item, pokemon) {
 			if (item.isBerry) {
 				this.add('-enditem', pokemon, item.name, '[from] stealeat', '[abilities] Cud Chew', '[of] ' + pokemon);
