@@ -5093,4 +5093,25 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 3,
 		num: 2018,
 	},
+	cudchew: {
+		name: "Cud Chew",
+		onResidualOrder: 28,
+		onResidualSubOrder: 2,
+		onResidual(pokemon) {
+			if (pokemon.hp && !pokemon.item && this.dex.items.get(pokemon.lastItem).isBerry) {
+					//pokemon.setItem(pokemon.lastItem);
+					this.runEvent('EatItem', source, null, null, pokemon.lastItem);
+					pokemon.lastItem = '';
+					this.add('-item', pokemon, pokemon.getItem(), '[from] ability: Harvest');
+					//this.setAbility('ruminated');
+			}
+		},
+		rating: 4,
+		num: 2018,
+	},
+	ruminated: {
+		name: "Ruminated",
+		rating: 0,
+		num: 2019,
+	},
 };

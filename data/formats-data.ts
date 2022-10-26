@@ -6958,4 +6958,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	lucariomegaproelos: {
 		tier: "OU",
 	},
+	farigiraf: {
+		tier: "OU",
+	},
 };

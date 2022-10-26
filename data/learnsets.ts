@@ -88966,4 +88966,10 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			zenheadbutt: ["8M", "7T", "6T", "5T", "4T"],
 		},
 	},
+	farigiraf: {
+		learnset: {
+			solarbeam: ["7M", "6M", "5M", "4M", "3M"],
+			blazekick: ["8M", "4S1"],
+		},
+	},
 };

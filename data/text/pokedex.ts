@@ -4041,4 +4041,7 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	lucariomegaproelos: {
 		name: "Lucario-Mega-Proelos",
 	},
+	farigiraf: {
+		name: "Farigiraf",
+	},
 };
