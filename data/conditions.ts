@@ -724,6 +724,10 @@ export const Conditions: {[k: string]: ConditionData} = {
 			//		if (item.id === 'leppaberry') target.staleness = 'external';
 			//	}
 			//}
+			if (this.effectState.trueDuration > 1){
+				this.effectState.item = '';
+				reutrn;
+			}
 			if(this.effectState.item) return;
 			//this.add('-activate', pokemon, 'move: Astrology' + ' you are a Rat');
 			this.effectState.item = item.id;
@@ -731,7 +735,7 @@ export const Conditions: {[k: string]: ConditionData} = {
 		},
 		onResidual(pokemon) {
 			this.effectState.duration = 99;
-			if (this.effectState.trueDuration > 0) this.effectState.item = '';
+			
 			this.effectState.trueDuration--;
 			if (this.effectState.trueDuration > 1) return;
 			const item2 = this.dex.items.get(this.effectState.item) 
