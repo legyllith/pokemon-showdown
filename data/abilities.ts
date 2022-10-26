@@ -5096,35 +5096,13 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	cudchew: {
 		name: "Cud Chew",
 		onEatItem(item, pokemon) {
+			if (pokemon.lastItem.isBerry) {
+				this.add('-enditem', pokemon, pokemon.lastItem.name, '[from] stealeat', '[abilities] Cud Chew', '[of] ' + pokemon);
+				if (this.singleEvent('Eat', pokemon.lastItem, null, pokemon, null, null)) {
 					this.boost({att: 1});
-			if (item.isBerry) {
-					this.boost({att: 1});
-			this.add('-enditem', pokemon, item.name, '[from] stealeat', '[abilities] Cud Chew', '[of] ' + pokemon);
-			if (this.singleEvent('Eat', item, null, pokemon, null, null)) {
-					this.boost({att: 1});
-					this.runEvent('EatItem', pokemon, null, null, item);
-					if (item.id === 'leppaberry') target.staleness = 'external';
+					this.runEvent('EatItem', pokemon, null, null, pokemon.lastItem);
+					if (pokemon.lastItem.id === 'leppaberry') target.staleness = 'external';
 				}
-			}
-		},
-		onResidualOrder: 28,
-		onResidualSubOrder: 2,
-		onResidual(pokemon) {
-			if (pokemon.hp && !pokemon.item && this.dex.items.get(pokemon.lastItem).isBerry) {
-					//pokemon.setItem(pokemon.lastItem);
-					this.boost({spa: 1});
-					const item = pokemon.lastItem;
-					this.add('-enditem', pokemon, item.name, '[from] stealeat', '[abilities] Cud Chew', '[of] ' + pokemon);
-					
-					if (this.singleEvent('Eat', item, null, pokemon, null, null)) {
-						this.boost({def: 1});
-						this.runEvent('EatItem', pokemon, null, null, item);
-						if (item.id === 'leppaberry') target.staleness = 'external';
-					}
-					if (item.onEat) source.ateBerry = true;
-					pokemon.lastItem = '';
-					//this.add('-item', pokemon, pokemon.getItem(), '[from] ability: Harvest');
-					//this.setAbility('ruminated');
 			}
 		},
 		rating: 4,
