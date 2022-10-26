@@ -720,7 +720,7 @@ export const Conditions: {[k: string]: ConditionData} = {
 			//	this.effectState.item = '';
 			//	return;
 			//}
-			if(this.effectState.item) return;
+			if(this.effectState.trueDuration && this.effectState.trueDuration>2) return;
 			//this.add('-activate', pokemon, 'move: Astrology' + ' you are a Rat');
 			this.effectState.item = item.id;
 			this.effectState.trueDuration = 3;
