@@ -5095,6 +5095,18 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	cudchew: {
 		name: "Cud Chew",
+		onEatItem(item, pokemon) {
+					this.boost({att: 1});
+			if (item.isBerry) {
+					this.boost({att: 1});
+			this.add('-enditem', pokemon, item.name, '[from] stealeat', '[abilities] Cud Chew', '[of] ' + pokemon);
+			if (this.singleEvent('Eat', item, null, pokemon, null, null)) {
+					this.boost({att: 1});
+					this.runEvent('EatItem', pokemon, null, null, item);
+					if (item.id === 'leppaberry') target.staleness = 'external';
+				}
+			}
+		},
 		onResidualOrder: 28,
 		onResidualSubOrder: 2,
 		onResidual(pokemon) {
