@@ -5100,7 +5100,9 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onResidual(pokemon) {
 			if (pokemon.hp && !pokemon.item && this.dex.items.get(pokemon.lastItem).isBerry) {
 					//pokemon.setItem(pokemon.lastItem);
+					this.boost({spa: 1});
 					if (this.singleEvent('Eat', pokemon.lastItem, null, pokemon, null, null)) {
+						this.boost({def: 1});
 						this.runEvent('EatItem', pokemon, null, null, pokemon.lastItem);
 						if (pokemon.lastItem.id === 'leppaberry') target.staleness = 'external';
 					}
