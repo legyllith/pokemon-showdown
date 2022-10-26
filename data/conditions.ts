@@ -729,7 +729,7 @@ export const Conditions: {[k: string]: ConditionData} = {
 			this.effectState.duration = 99;
 			
 			this.effectState.trueDuration--;
-			if (this.effectState.trueDuration > 1) return;
+			if (this.effectState.trueDuration > 1 || this.effectState.trueDuration < 1) return;
 			const item2 = this.dex.items.get(this.effectState.item) 
 			if (item2.isBerry) {
 				this.add('-enditem', pokemon, item2.name, '[from] stealeat', '[abilities] Cud Chew', '[of] ' + pokemon);
