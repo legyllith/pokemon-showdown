@@ -1818,4 +1818,14 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		desc: "Gain fire type and a stab on flying type.",
 		shortDesc: "Gain fire type and a stab on flying type.",
 	},
+	cudchew: {
+		name: "Cud Chew",
+		desc: "eat bearry one turn after... again.",
+		shortDesc: "eat bearry one turn after... again.",
+	},
+	ruminated: {
+		name: "Ruminated",
+		desc: "useless",
+		shortDesc: "useless",
+	},
 };
