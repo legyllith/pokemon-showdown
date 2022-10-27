@@ -1437,8 +1437,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onResidualOrder: 28,
 		onResidualSubOrder: 2,
 		onResidual(pokemon) {
-			if (this.field.isWeather(['sunnyday', 'desolateland']) || this.randomChance(1, 2) || this.field.isTerrain('flowergardenterraintwo')|| this.field.isTerrain('flowergardenterrainthree')|| this.field.isTerrain('flowergardenterrainfour')|| this.field.isTerrain('flowergardenterrainfive'))) {
-			) {
+			if (this.field.isWeather(['sunnyday', 'desolateland']) || this.randomChance(1, 2) || this.field.isTerrain('flowergardenterraintwo')|| this.field.isTerrain('flowergardenterrainthree')|| this.field.isTerrain('flowergardenterrainfour')|| this.field.isTerrain('flowergardenterrainfive')) {
 				if (pokemon.hp && !pokemon.item && this.dex.items.get(pokemon.lastItem).isBerry) {
 					pokemon.setItem(pokemon.lastItem);
 					pokemon.lastItem = '';
