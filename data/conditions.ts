@@ -718,7 +718,7 @@ export const Conditions: {[k: string]: ConditionData} = {
 		onEatItem(item, pokemon) {
 			if(this.effectState.trueDuration) {
 				if(this.effectState.trueDuration>80){
-                			this.add('-activate', pokemon, 'move: Astrology' + ' baie 1 et 2 on ete mangé?');
+                			this.add('-activate', pokemon, 'move: Astrology' + ' baie 1 et 2 on ete mangé?' + this.effectState.trueDuration);
 					if(this.effectState.trueDuration>90) return;
                 			this.add('-activate', pokemon, 'move: Astrology' + ' baie 1 oui');
 					if(this.effectState.trueDuration2>90) return;
