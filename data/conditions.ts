@@ -719,7 +719,7 @@ export const Conditions: {[k: string]: ConditionData} = {
 			if(this.effectState.trueDuration) {
 				if(this.effectState.trueDuration>80){
                 			this.add('-activate', pokemon, 'move: Astrology' + ' baie 1 et 2 on ete mangé?' + this.effectState.trueDuration);
-					if(this.effectState.trueDuration>90) return;
+					//if(this.effectState.trueDuration>90) return;
                 			this.add('-activate', pokemon, 'move: Astrology' + ' baie 1 oui');
 					if(this.effectState.trueDuration2>90) return;
                 			this.add('-activate', pokemon, 'move: Astrology' + ' baie 1 et 2 mangé');
@@ -763,9 +763,9 @@ export const Conditions: {[k: string]: ConditionData} = {
                 		this.add('-activate', pokemon, 'move: Astrology' + ' you are a test1');
 				if (this.effectState.trueDuration2 > 1 || this.effectState.trueDuration2 < 1) return;
                 		this.add('-activate', pokemon, 'move: Astrology' + ' you are a test2');
-				this.effectState.trueDuration2 = 99;
 				const item3 = this.dex.items.get(this.effectState.item2) 
 				if (item3.isBerry) {
+					this.effectState.trueDuration2 = 99;
 					if (this.singleEvent('Eat', item3, null, pokemon, null, null)) {
 						this.runEvent('EatItem', pokemon, null, null, item3);
 						if (item3.id === 'leppaberry') target.staleness = 'external';
@@ -775,9 +775,9 @@ export const Conditions: {[k: string]: ConditionData} = {
 				return;
 			}
                 	this.add('-activate', pokemon, 'move: Astrology' + ' you are a test3');
-			this.effectState.trueDuration = 99;
 			const item2 = this.dex.items.get(this.effectState.item) 
 			if (item2.isBerry) {
+				this.effectState.trueDuration = 99;
 				if (this.singleEvent('Eat', item2, null, pokemon, null, null)) {
 					this.runEvent('EatItem', pokemon, null, null, item2);
 					if (item2.id === 'leppaberry') target.staleness = 'external';
