@@ -788,6 +788,10 @@ export const Conditions: {[k: string]: ConditionData} = {
 			target.removeVolatile(this.effectState.trueDuration);
 			target.removeVolatile(this.effectState.trueDuration2);
 		},
+		onStart(target) {
+			this.effectState.trueDuration=89;
+			this.effectState.trueDuration2=89;
+		},
 	},
 
 	// weather is implemented here since it's so important to the game
