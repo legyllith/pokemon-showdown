@@ -734,6 +734,12 @@ export const Conditions: {[k: string]: ConditionData} = {
 			}
 		},
 		onResidual(pokemon) {
+			if (!pokemon.hasAbility('cudchew')){
+				this.effectState.trueDuration = 99;
+				this.effectState.trueDuration2 = 99;
+				pokemon.removeVolatile('cudchew');
+				return;
+			}
 			this.effectState.duration = 99;
 			this.effectState.trueDuration--;
 			this.effectState.trueDuration2--;
