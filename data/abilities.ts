@@ -1881,8 +1881,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	leafguard: {
 		onSetStatus(status, target, source, effect) {
-			if (['sunnyday', 'desolateland'].includes(target.effectiveWeather()) || this.field.isTerrain('flowergardenterraintwo')|| this.field.isTerrain('flowergardenterrainthree')|| this.field.isTerrain('flowergardenterrainfour')|| this.field.isTerrain('flowergardenterrainfive'))) {
-			) {
+			if (['sunnyday', 'desolateland'].includes(target.effectiveWeather()) || this.field.isTerrain('flowergardenterraintwo')|| this.field.isTerrain('flowergardenterrainthree')|| this.field.isTerrain('flowergardenterrainfour')|| this.field.isTerrain('flowergardenterrainfive')) {
 				if ((effect as Move)?.status) {
 					this.add('-immune', target, '[from] ability: Leaf Guard');
 				}
