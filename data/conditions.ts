@@ -718,15 +718,18 @@ export const Conditions: {[k: string]: ConditionData} = {
 		onEatItem(item, pokemon) {
 			if(this.effectState.trueDuration) {
 				if(this.effectState.trueDuration>80){
+                			this.add('-activate', pokemon, 'move: Astrology' + ' baie 1 et 2 on ete mangé?');
 					if(this.effectState.trueDuration>90) return;
+                			this.add('-activate', pokemon, 'move: Astrology' + ' baie 1 oui');
 					if(this.effectState.trueDuration2>90) return;
                 			this.add('-activate', pokemon, 'move: Astrology' + ' baie 1 et 2 mangé');
 					this.effectState.item = item.id;
 					this.effectState.trueDuration = 3;
 					}
 				else {
-                			this.add('-activate', pokemon, 'move: Astrology' + ' baie 1 mangé');
+                			this.add('-activate', pokemon, 'move: Astrology' + ' baie 1 mangé a été manger?');
 					if(this.effectState.trueDuration2>90) return;
+                			this.add('-activate', pokemon, 'move: Astrology' + ' baie 1 mangé');
 					this.effectState.item2 = item.id;
 					this.effectState.trueDuration2 = 3;
 				}
