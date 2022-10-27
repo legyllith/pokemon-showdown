@@ -718,28 +718,22 @@ export const Conditions: {[k: string]: ConditionData} = {
 		onEatItem(item, pokemon) {
 			if(this.effectState.trueDuration) {
 				if(this.effectState.trueDuration>80){
-					if(this.effectState.trueDuration>90) return;
 					if(this.effectState.trueDuration2>90) return;
-                			this.add('-activate', pokemon, 'move: Astrology' + ' baie 1 et 2 mangé');
 					this.effectState.item = item.id;
 					this.effectState.trueDuration = 3;
 					}
 				else {
-                			this.add('-activate', pokemon, 'move: Astrology' + ' baie 1 mangé');
 					if(this.effectState.trueDuration2>90) return;
 					this.effectState.item2 = item.id;
 					this.effectState.trueDuration2 = 3;
 				}
 			} else {
-                		this.add('-activate', pokemon, 'move: Astrology' + ' aucune baie mangé');
 				this.effectState.item = item.id;
 				this.effectState.trueDuration = 3;
 			}
 		},
 		onResidual(pokemon) {
 			if (!pokemon.hasAbility('cudchew')){
-				this.effectState.trueDuration = 89;
-				this.effectState.trueDuration2 = 89;
 				pokemon.removeVolatile('cudchew');
 				return;
 			}
@@ -759,12 +753,10 @@ export const Conditions: {[k: string]: ConditionData} = {
 				this.effectState.trueDuration2 = 89;
 			}
 			if (this.effectState.trueDuration > 1 || this.effectState.trueDuration < 1) {
-                		this.add('-activate', pokemon, 'move: Astrology' + ' you are a test1');
 				if (this.effectState.trueDuration2 > 1 || this.effectState.trueDuration2 < 1) return;
-                		this.add('-activate', pokemon, 'move: Astrology' + ' you are a test2');
-				this.effectState.trueDuration2 = 99;
 				const item3 = this.dex.items.get(this.effectState.item2) 
 				if (item3.isBerry) {
+					this.effectState.trueDuration2 = 99;
 					if (this.singleEvent('Eat', item3, null, pokemon, null, null)) {
 						this.runEvent('EatItem', pokemon, null, null, item3);
 						if (item3.id === 'leppaberry') target.staleness = 'external';
@@ -773,16 +765,19 @@ export const Conditions: {[k: string]: ConditionData} = {
 				this.effectState.trueDuration2 = 89;
 				return;
 			}
-                	this.add('-activate', pokemon, 'move: Astrology' + ' you are a test3');
-			this.effectState.trueDuration = 99;
 			const item2 = this.dex.items.get(this.effectState.item) 
 			if (item2.isBerry) {
+				this.effectState.trueDuration = 99;
 				if (this.singleEvent('Eat', item2, null, pokemon, null, null)) {
 					this.runEvent('EatItem', pokemon, null, null, item2);
 					if (item2.id === 'leppaberry') target.staleness = 'external';
 				}
 			this.effectState.trueDuration = 89;
 			}
+		},
+		onEnd(target) {
+			target.removeVolatile(this.effectState.trueDuration);
+			target.removeVolatile(this.effectState.trueDuration2);
 		},
 	},
 
