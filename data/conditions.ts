@@ -756,9 +756,9 @@ export const Conditions: {[k: string]: ConditionData} = {
 				this.effectState.trueDuration2 = 89;
 			}
 			if (this.effectState.trueDuration > 1 || this.effectState.trueDuration < 1) {
-                		this.add('-activate', source, 'move: Astrology' + ' you are a test1');
+                		this.add('-activate', pokemon, 'move: Astrology' + ' you are a test1');
 				if (this.effectState.trueDuration2 > 1 || this.effectState.trueDuration2 < 1) return;
-                		this.add('-activate', source, 'move: Astrology' + ' you are a test2');
+                		this.add('-activate', pokemon, 'move: Astrology' + ' you are a test2');
 				this.effectState.trueDuration2 = 99;
 				const item3 = this.dex.items.get(this.effectState.item2) 
 				if (item3.isBerry) {
@@ -770,7 +770,7 @@ export const Conditions: {[k: string]: ConditionData} = {
 				this.effectState.trueDuration2 = 89;
 				return;
 			}
-                	this.add('-activate', source, 'move: Astrology' + ' you are a test3');
+                	this.add('-activate', pokemon, 'move: Astrology' + ' you are a test3');
 			this.effectState.trueDuration = 99;
 			const item2 = this.dex.items.get(this.effectState.item) 
 			if (item2.isBerry) {
