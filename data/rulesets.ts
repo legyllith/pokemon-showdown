@@ -1960,4 +1960,20 @@ export const Rulesets: {[k: string]: FormatData} = {
 			this.field.setTerrain('icecaveterrain');
 		}
 	},
+	flowergardenterrainrule: {
+		effectType: 'Rule',
+		name: 'Flower Garden Terrain Rule',
+		desc: 'The fight start on Flower Garden Terrain',
+		onSwitchIn(pokemon) {
+			if(this.field.IsFirstTimeSettingCustomTerrain) {
+				this.field.setTerrain('flowergardenterrainone');
+				this.field.IsFirstTimeSettingCustomTerrain = false;
+			}
+		},
+		onResidual(pokemon){
+			if(this.field.isTerrain('')) {
+				this.field.setTerrain('flowergardenterrainone');
+			}
+		}
+	},
 };

@@ -420,7 +420,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	chlorophyll: {
 		onModifySpe(spe, pokemon) {
-			if (['sunnyday', 'desolateland'].includes(pokemon.effectiveWeather())) {
+			if (['sunnyday', 'desolateland'].includes(pokemon.effectiveWeather()) || this.field.isTerrain('flowergardenterrainfour')|| this.field.isTerrain('flowergardenterrainfive')) {
 				return this.chainModify(2);
 			}
 		},
@@ -1058,7 +1058,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onUpdate(pokemon) {
 			if (!pokemon.isActive || pokemon.baseSpecies.baseSpecies !== 'Cherrim' || pokemon.transformed) return;
 			if (!pokemon.hp) return;
-			if (['sunnyday', 'desolateland'].includes(pokemon.effectiveWeather())) {
+			if (['sunnyday', 'desolateland'].includes(pokemon.effectiveWeather()) || this.field.isTerrain('flowergardenterrainone')|| this.field.isTerrain('flowergardenterraintwo')|| this.field.isTerrain('flowergardenterrainthree')|| this.field.isTerrain('flowergardenterrainfour')|| this.field.isTerrain('flowergardenterrainfive')) {
 				if (pokemon.species.id !== 'cherrimsunshine') {
 					pokemon.formeChange('Cherrim-Sunshine', this.effect, false, '[msg]');
 				}
@@ -1071,14 +1071,14 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onAllyModifyAtkPriority: 3,
 		onAllyModifyAtk(atk, pokemon) {
 			if (this.effectState.target.baseSpecies.baseSpecies !== 'Cherrim') return;
-			if (['sunnyday', 'desolateland'].includes(pokemon.effectiveWeather())) {
+			if (['sunnyday', 'desolateland'].includes(pokemon.effectiveWeather()) || this.field.isTerrain('flowergardenterrainone')|| this.field.isTerrain('flowergardenterraintwo')|| this.field.isTerrain('flowergardenterrainthree')|| this.field.isTerrain('flowergardenterrainfour')|| this.field.isTerrain('flowergardenterrainfive')) {
 				return this.chainModify(1.5);
 			}
 		},
 		onAllyModifySpDPriority: 4,
 		onAllyModifySpD(spd, pokemon) {
 			if (this.effectState.target.baseSpecies.baseSpecies !== 'Cherrim') return;
-			if (['sunnyday', 'desolateland'].includes(pokemon.effectiveWeather())) {
+			if (['sunnyday', 'desolateland'].includes(pokemon.effectiveWeather()) || this.field.isTerrain('flowergardenterrainone')|| this.field.isTerrain('flowergardenterraintwo')|| this.field.isTerrain('flowergardenterrainthree')|| this.field.isTerrain('flowergardenterrainfour')|| this.field.isTerrain('flowergardenterrainfive')) {
 				return this.chainModify(1.5);
 			}
 		},
@@ -1437,7 +1437,8 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onResidualOrder: 28,
 		onResidualSubOrder: 2,
 		onResidual(pokemon) {
-			if (this.field.isWeather(['sunnyday', 'desolateland']) || this.randomChance(1, 2)) {
+			if (this.field.isWeather(['sunnyday', 'desolateland']) || this.randomChance(1, 2) || this.field.isTerrain('flowergardenterraintwo')|| this.field.isTerrain('flowergardenterrainthree')|| this.field.isTerrain('flowergardenterrainfour')|| this.field.isTerrain('flowergardenterrainfive'))) {
+			) {
 				if (pokemon.hp && !pokemon.item && this.dex.items.get(pokemon.lastItem).isBerry) {
 					pokemon.setItem(pokemon.lastItem);
 					pokemon.lastItem = '';
@@ -1881,7 +1882,8 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	leafguard: {
 		onSetStatus(status, target, source, effect) {
-			if (['sunnyday', 'desolateland'].includes(target.effectiveWeather())) {
+			if (['sunnyday', 'desolateland'].includes(target.effectiveWeather()) || this.field.isTerrain('flowergardenterraintwo')|| this.field.isTerrain('flowergardenterrainthree')|| this.field.isTerrain('flowergardenterrainfour')|| this.field.isTerrain('flowergardenterrainfive'))) {
+			) {
 				if ((effect as Move)?.status) {
 					this.add('-immune', target, '[from] ability: Leaf Guard');
 				}
@@ -1889,7 +1891,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			}
 		},
 		onTryAddVolatile(status, target) {
-			if (status.id === 'yawn' && ['sunnyday', 'desolateland'].includes(target.effectiveWeather())) {
+			if (status.id === 'yawn' && (['sunnyday', 'desolateland'].includes(target.effectiveWeather()) || this.field.isTerrain('flowergardenterraintwo')|| this.field.isTerrain('flowergardenterrainthree')|| this.field.isTerrain('flowergardenterrainfour')|| this.field.isTerrain('flowergardenterrainfive'))) {
 				this.add('-immune', target, '[from] ability: Leaf Guard');
 				return null;
 			}
@@ -2185,6 +2187,21 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 					break;
 				case 'icecaveterrain':
 					newType = 'Ice';
+					break;
+				case 'flowergardenterrainone':
+					newType = 'Grass';
+					break;
+				case 'flowergardenterraintwo':
+					newType = 'Grass';
+					break;
+				case 'flowergardenterrainthree':
+					newType = 'Grass';
+					break;
+				case 'flowergardenterrainfour':
+					newType = 'Grass';
+					break;
+				case 'flowergardenterrainfive':
+					newType = 'Grass';
 					break;
 				}
 				if (!newType || pokemon.getTypes().join() === newType || !pokemon.setType(newType)) return;
@@ -2575,14 +2592,14 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	overgrow: {
 		onModifyAtkPriority: 5,
 		onModifyAtk(atk, attacker, defender, move) {
-			if (move.type === 'Grass' && attacker.hp <= attacker.maxhp / 3) {
+			if (move.type === 'Grass' && (attacker.hp <= attacker.maxhp / 3 || this.field.isTerrain('flowergardenterraintwo')|| this.field.isTerrain('flowergardenterrainthree')|| this.field.isTerrain('flowergardenterrainfour')|| this.field.isTerrain('flowergardenterrainfive'))) {
 				this.debug('Overgrow boost');
 				return this.chainModify(1.5);
 			}
 		},
 		onModifySpAPriority: 5,
 		onModifySpA(atk, attacker, defender, move) {
-			if (move.type === 'Grass' && attacker.hp <= attacker.maxhp / 3) {
+			if (move.type === 'Grass' && (attacker.hp <= attacker.maxhp / 3 || this.field.isTerrain('flowergardenterraintwo')|| this.field.isTerrain('flowergardenterrainthree')|| this.field.isTerrain('flowergardenterrainfour')|| this.field.isTerrain('flowergardenterrainfive'))) {
 				this.debug('Overgrow boost');
 				return this.chainModify(1.5);
 			}
@@ -3915,14 +3932,14 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	swarm: {
 		onModifyAtkPriority: 5,
 		onModifyAtk(atk, attacker, defender, move) {
-			if (move.type === 'Bug' && attacker.hp <= attacker.maxhp / 3) {
+			if (move.type === 'Bug' && (attacker.hp <= attacker.maxhp / 3 || this.field.isTerrain('flowergardenterrainone')|| this.field.isTerrain('flowergardenterraintwo')|| this.field.isTerrain('flowergardenterrainthree')|| this.field.isTerrain('flowergardenterrainfour')|| this.field.isTerrain('flowergardenterrainfive'))) {
 				this.debug('Swarm boost');
 				return this.chainModify(1.5);
 			}
 		},
 		onModifySpAPriority: 5,
 		onModifySpA(atk, attacker, defender, move) {
-			if (move.type === 'Bug' && attacker.hp <= attacker.maxhp / 3) {
+			if (move.type === 'Bug' && (attacker.hp <= attacker.maxhp / 3 || this.field.isTerrain('flowergardenterrainone')|| this.field.isTerrain('flowergardenterraintwo')|| this.field.isTerrain('flowergardenterrainthree')|| this.field.isTerrain('flowergardenterrainfour')|| this.field.isTerrain('flowergardenterrainfive'))) {
 				this.debug('Swarm boost');
 				return this.chainModify(1.5);
 			}

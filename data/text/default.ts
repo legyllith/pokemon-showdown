@@ -366,6 +366,26 @@ export const DefaultText: {[k: string]: DefaultText} = {
 		start: "  The ice glows white in the mountain tonight",
 		end: "  Let it go, let it go",
 	},
+	flowergardenterrainone: {
+		start: "  Seeds line the field",
+		end: "  You will grow back, my friends",
+	},
+	flowergardenterraintwo: {
+		start: "  Seeds begin to grow",
+		end: "  You will grow back, my friends",
+	},
+	flowergardenterrainthree: {
+		start: "  First flowers appear",
+		end: "  You will grow back, my friends",
+	},
+	flowergardenterrainfour: {
+		start: "  More and more flowers",
+		end: "  You will grow back, my friends",
+	},
+	flowergardenterrainfour: {
+		start: "  Flowers everywhere !",
+		end: "  You will grow back, my friends",
+	},
 
 	// field effects
 	gravity: {

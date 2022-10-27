@@ -2008,6 +2008,16 @@ export const Moves: {[moveid: string]: MoveData} = {
 				newType = 'Water';
 			} else if (this.field.isTerrain('icecaveterrain')) {
 				newType = 'Ice';
+			} else if (this.field.isTerrain('flowergardenterrainone')) {
+				newType = 'Grass';
+			} else if (this.field.isTerrain('flowergardenterraintwo')) {
+				newType = 'Grass';
+			} else if (this.field.isTerrain('flowergardenterrainthree')) {
+				newType = 'Grass';
+			} else if (this.field.isTerrain('flowergardenterrainfour')) {
+				newType = 'Grass';
+			} else if (this.field.isTerrain('flowergardenterrainfive')) {
+				newType = 'Grass';
 			}
 			if (target.getTypes().join() === newType || !target.setType(newType)) return false;
 			this.add('-start', target, 'typechange', newType);
@@ -3029,6 +3039,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 30,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
+		onModifyMove(move, source, target) {
+			if (this.field.isTerrain('flowergardenterrainone')||this.field.isTerrain('flowergardenterraintwo')||this.field.isTerrain('flowergardenterrainthree')||this.field.isTerrain('flowergardenterrainfour')||this.field.isTerrain('flowergardenterrainfive')) {
+				move.basePower = 100;
+			}
+		},
 		secondary: null,
 		target: "normal",
 		type: "Normal",
@@ -5330,6 +5345,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		onModifyMove(move, source, target) {
+			if (this.field.isTerrain('flowergardenterrainthree')||this.field.isTerrain('flowergardenterrainfour')||this.field.isTerrain('flowergardenterrainfive')) {
+				move.basePower = 160;
+			}
+		},
 		self: {
 			boosts: {
 				spa: -2,
@@ -5472,6 +5492,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 			}
 			let success = false;
 			for (const target of targets) {
+				if (this.field.isTerrain('flowergardenterraintwo')||this.field.isTerrain('flowergardenterrainthree')||this.field.isTerrain('flowergardenterrainfour')||this.field.isTerrain('flowergardenterrainfive')){
+					success = this.boost({def: 1, spd: 1}, target, source, move) || success;
+				}
 				success = this.boost({def: 1}, target, source, move) || success;
 			}
 			return success;
@@ -7487,7 +7510,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {snatch: 1},
 		onModifyMove(move, pokemon) {
-			if (['sunnyday', 'desolateland'].includes(pokemon.effectiveWeather())) move.boosts = {atk: 2, spa: 2};
+			if (['sunnyday', 'desolateland'].includes(pokemon.effectiveWeather())||this.field.isTerrain('flowergardenterrainone')||this.field.isTerrain('flowergardenterraintwo')||this.field.isTerrain('flowergardenterrainthree')||this.field.isTerrain('flowergardenterrainfour')||this.field.isTerrain('flowergardenterrainfive')) move.boosts = {atk: 2, spa: 2};
 		},
 		boosts: {
 			atk: 1,
@@ -12038,6 +12061,16 @@ export const Moves: {[moveid: string]: MoveData} = {
 				move = 'anchorshot';
 			} else if (this.field.isTerrain('icecaveterrain')) {
 				move = 'iceball';
+			} else if (this.field.isTerrain('flowergardenterrainone')) {
+				move = 'growth';
+			} else if (this.field.isTerrain('flowergardenterraintwo')) {
+				move = 'growth';
+			} else if (this.field.isTerrain('flowergardenterrainthree')) {
+				move = 'growth';
+			} else if (this.field.isTerrain('flowergardenterrainfour')) {
+				move = 'growth';
+			} else if (this.field.isTerrain('flowergardenterrainfive')) {
+				move = 'petalblizzard';
 			}
 			this.actions.useMove(move, pokemon, target);
 			return null;
@@ -12698,6 +12731,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 15,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		onModifyMove(move, source, target) {
+			if (this.field.isTerrain('flowergardenterrainthree')||this.field.isTerrain('flowergardenterrainfour')||this.field.isTerrain('flowergardenterrainfive')) {
+				move.basePower = 110;
+			}
+		},
 		secondary: null,
 		target: "allAdjacent",
 		type: "Grass",
@@ -12712,6 +12750,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, dance: 1},
+		onModifyMove(move, source, target) {
+			if (this.field.isTerrain('flowergardenterrainthree')||this.field.isTerrain('flowergardenterrainfour')||this.field.isTerrain('flowergardenterrainfive')) {
+				move.basePower = 145;
+			}
+		},
 		self: {
 			volatileStatus: 'lockedmove',
 		},
@@ -14786,7 +14829,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 			}
 			if (!targets.length && !anyAirborne) return false; // Fails when there are no grounded Grass types or airborne Pokemon
 			for (const pokemon of targets) {
-				this.boost({atk: 1, spa: 1}, pokemon, source);
+				if (this.field.isTerrain('flowergardenterrainone')||this.field.isTerrain('flowergardenterraintwo')||this.field.isTerrain('flowergardenterrainthree')||this.field.isTerrain('flowergardenterrainfour')||this.field.isTerrain('flowergardenterrainfive')){
+					this.boost({atk: 2, spa: 2}, pokemon, source);
+				} else {
+					this.boost({atk: 1, spa: 1}, pokemon, source);
+				}
 			}
 		},
 		secondary: null,
@@ -15230,6 +15277,47 @@ export const Moves: {[moveid: string]: MoveData} = {
 				move.secondaries.push({
 					chance: 30,
 					status: 'frb',
+				});
+			} else if (this.field.isTerrain('flowergardenterrainone')) {
+				move.secondaries.push({
+					chance: 30,
+					boosts: {
+						evasion: -1,
+					},
+				});
+			} else if (this.field.isTerrain('flowergardenterraintwo')) {
+				move.secondaries.push({
+					chance: 30,
+					boosts: {
+						evasion: -1,
+					},
+				});
+			} else if (this.field.isTerrain('flowergardenterrainthree')) {
+				move.secondaries.push({
+					chance: 30,
+					boosts: {
+						evasion: -1,
+						def: -1,
+						spd: -1,
+					},
+				});
+			} else if (this.field.isTerrain('flowergardenterrainfour')) {
+				move.secondaries.push({
+					chance: 30,
+					boosts: {
+						evasion: -1,
+						def: -1,
+						spd: -1,
+					},
+				});
+			} else if (this.field.isTerrain('flowergardenterrainfive')) {
+				move.secondaries.push({
+					chance: 30,
+					boosts: {
+						evasion: -2,
+						def: -2,
+						spd: -2,
+					},
 				});
 			}
 		},
@@ -18501,6 +18589,21 @@ export const Moves: {[moveid: string]: MoveData} = {
 				break;
 			case 'icecaveterrain':
 				move.type = 'Ice';
+				break;
+			case 'flowergardenterrainone':
+				move.type = 'Grass';
+				break;
+			case 'flowergardenterraintwo':
+				move.type = 'Grass';
+				break;
+			case 'flowergardenterrainthree':
+				move.type = 'Grass';
+				break;
+			case 'flowergardenterrainfour':
+				move.type = 'Grass';
+				break;
+			case 'flowergardenterrainfive':
+				move.type = 'Grass';
 				break;
 			}
 		},
@@ -22419,6 +22522,267 @@ export const Moves: {[moveid: string]: MoveData} = {
 		secondary: null,
 		target: "all",
 		type: "Ice",
+		zMove: {boost: {def: 1}},
+		contestType: "Beautiful",
+	},
+	flowergardenterrainone: {
+		num: 2064,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Flower Garden Terrain 1",
+		pp: 10,
+		priority: 0,
+		flags: {nonsky: 1},
+		terrain: 'flowergardenterrainone',
+		condition: {
+			duration: 99,
+			durationCallback(source, effect) {
+				return 99;
+			},
+			onBasePowerPriority: 6,
+			onBasePower(basePower, attacker, defender, move) {
+				if (move.type === 'Normal') {
+					return this.chainModify([6144, 4096]);
+				}
+			},
+			onModifyMove(move, attacker, defender) {
+				if (['bloomdoom','growth','ingrain','raindance','rototiller','sunnyday','watersport'].includes(move.id)) {
+					this.field.clearTerrain();
+					this.add('-fieldend', 'move: Flower Garden Terrain 1');
+					this.field.setTerrain('flowergardenterraintwo')
+				}
+			},
+			onFieldStart(field, source, effect) {
+				if (effect?.effectType === 'Ability') {
+					this.add('-fieldstart', 'move: Flower Garden Terrain 1', '[from] ability: ' + effect, '[of] ' + source);
+				} else {
+					this.add('-fieldstart', 'move: Flower Garden Terrain 1');
+				}
+			},
+			onFieldResidualOrder: 27,
+			onFieldResidualSubOrder: 7,
+			onFieldEnd() {
+				this.add('-fieldend', 'move: Flower Garden Terrain 1');
+			},
+		},
+		secondary: null,
+		target: "all",
+		type: "Grass",
+		zMove: {boost: {def: 1}},
+		contestType: "Beautiful",
+	},
+	flowergardenterraintwo: {
+		num: 2065,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Flower Garden Terrain 2",
+		pp: 10,
+		priority: 0,
+		flags: {nonsky: 1},
+		terrain: 'flowergardenterraintwo',
+		condition: {
+			duration: 99,
+			durationCallback(source, effect) {
+				return 99;
+			},
+			onBasePowerPriority: 6,
+			onBasePower(basePower, attacker, defender, move) {
+				if (move.type === 'Grass') {
+					return this.chainModify([4506, 4096]);
+				} else if (move.type === 'Bug') {
+					return this.chainModify([6144, 4096]);
+				}
+			},
+			onModifyMove(move, attacker, defender) {
+				if (['bloomdoom','growth','ingrain','raindance','rototiller','sunnyday','watersport'].includes(move.id)) {
+					this.field.clearTerrain();
+					this.add('-fieldend', 'move: Flower Garden Terrain 2');
+					this.field.setTerrain('flowergardenterrainthree')
+				} else if (['cut','xscissor','aciddownpour'].includes(move.id)) {
+					this.field.clearTerrain();
+					this.add('-fieldend', 'move: Flower Garden Terrain 2');
+					this.field.setTerrain('flowergardenterrainone')
+				}
+			},
+			onFieldStart(field, source, effect) {
+				if (effect?.effectType === 'Ability') {
+					this.add('-fieldstart', 'move: Flower Garden Terrain 2', '[from] ability: ' + effect, '[of] ' + source);
+				} else {
+					this.add('-fieldstart', 'move: Flower Garden Terrain 2');
+				}
+			},
+			onFieldResidualOrder: 27,
+			onFieldResidualSubOrder: 7,
+			onFieldEnd() {
+				this.add('-fieldend', 'move: Flower Garden Terrain 2');
+			},
+		},
+		secondary: null,
+		target: "all",
+		type: "Grass",
+		zMove: {boost: {def: 1}},
+		contestType: "Beautiful",
+	},
+	flowergardenterrainthree: {
+		num: 2066,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Flower Garden Terrain 3",
+		pp: 10,
+		priority: 0,
+		flags: {nonsky: 1},
+		terrain: 'flowergardenterrainthree',
+		condition: {
+			duration: 99,
+			durationCallback(source, effect) {
+				return 99;
+			},
+			onBasePowerPriority: 6,
+			onBasePower(basePower, attacker, defender, move) {
+				if (move.type === 'Grass') {
+					return this.chainModify([5325, 4096]);
+				} else if (move.type === 'Bug') {
+					return this.chainModify([6144, 4096]);
+				} else if (move.type === 'Fire') {
+					return this.chainModify([6144, 4096]);
+				}
+			},
+			onModifyMove(move, attacker, defender) {
+				if (['bloomdoom','growth','ingrain','raindance','rototiller','sunnyday','watersport'].includes(move.id)) {
+					this.field.clearTerrain();
+					this.add('-fieldend', 'move: Flower Garden Terrain 3');
+					this.field.setTerrain('flowergardenterrainfour')
+				} else if (['cut','xscissor','aciddownpour'].includes(move.id)) {
+					this.field.clearTerrain();
+					this.add('-fieldend', 'move: Flower Garden Terrain 3');
+					this.field.setTerrain('flowergardenterraintwo')
+				}
+			},
+			onFieldStart(field, source, effect) {
+				if (effect?.effectType === 'Ability') {
+					this.add('-fieldstart', 'move: Flower Garden Terrain 3', '[from] ability: ' + effect, '[of] ' + source);
+				} else {
+					this.add('-fieldstart', 'move: Flower Garden Terrain 3');
+				}
+			},
+			onFieldResidualOrder: 27,
+			onFieldResidualSubOrder: 7,
+			onFieldEnd() {
+				this.add('-fieldend', 'move: Flower Garden Terrain 3');
+			},
+		},
+		secondary: null,
+		target: "all",
+		type: "Grass",
+		zMove: {boost: {def: 1}},
+		contestType: "Beautiful",
+	},
+	flowergardenterrainfour: {
+		num: 2067,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Flower Garden Terrain 4",
+		pp: 10,
+		priority: 0,
+		flags: {nonsky: 1},
+		terrain: 'flowergardenterrainfour',
+		condition: {
+			duration: 99,
+			durationCallback(source, effect) {
+				return 99;
+			},
+			onBasePowerPriority: 6,
+			onBasePower(basePower, attacker, defender, move) {
+				if (move.type === 'Grass') {
+					return this.chainModify([6144, 4096]);
+				} else if (move.type === 'Bug') {
+					return this.chainModify([8192, 4096]);
+				} else if (move.type === 'Fire') {
+					return this.chainModify([6144, 4096]);
+				}
+			},
+			onModifyMove(move, attacker, defender) {
+				if (['bloomdoom','growth','ingrain','raindance','rototiller','sunnyday','watersport'].includes(move.id)) {
+					this.field.clearTerrain();
+					this.add('-fieldend', 'move: Flower Garden Terrain 4');
+					this.field.setTerrain('flowergardenterrainfive')
+				} else if (['cut','xscissor','aciddownpour'].includes(move.id)) {
+					this.field.clearTerrain();
+					this.add('-fieldend', 'move: Flower Garden Terrain 4');
+					this.field.setTerrain('flowergardenterrainthree')
+				}
+			},
+			onFieldStart(field, source, effect) {
+				if (effect?.effectType === 'Ability') {
+					this.add('-fieldstart', 'move: Flower Garden Terrain 4', '[from] ability: ' + effect, '[of] ' + source);
+				} else {
+					this.add('-fieldstart', 'move: Flower Garden Terrain 4');
+				}
+			},
+			onFieldResidualOrder: 27,
+			onFieldResidualSubOrder: 7,
+			onFieldEnd() {
+				this.add('-fieldend', 'move: Flower Garden Terrain 4');
+			},
+		},
+		secondary: null,
+		target: "all",
+		type: "Grass",
+		zMove: {boost: {def: 1}},
+		contestType: "Beautiful",
+	},
+	flowergardenterrainfive: {
+		num: 2068,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Flower Garden Terrain 5",
+		pp: 10,
+		priority: 0,
+		flags: {nonsky: 1},
+		terrain: 'flowergardenterrainfive',
+		condition: {
+			duration: 99,
+			durationCallback(source, effect) {
+				return 99;
+			},
+			onBasePowerPriority: 6,
+			onBasePower(basePower, attacker, defender, move) {
+				if (move.type === 'Grass') {
+					return this.chainModify([8192, 4096]);
+				} else if (move.type === 'Bug') {
+					return this.chainModify([8192, 4096]);
+				} else if (move.type === 'Fire') {
+					return this.chainModify([6144, 4096]);
+				}
+			},
+			onModifyMove(move, attacker, defender) {
+				if (['cut','xscissor','aciddownpour'].includes(move.id)) {
+					this.field.clearTerrain();
+					this.add('-fieldend', 'move: Flower Garden Terrain 5');
+					this.field.setTerrain('flowergardenterrainfour')
+				}
+			},
+			onFieldStart(field, source, effect) {
+				if (effect?.effectType === 'Ability') {
+					this.add('-fieldstart', 'move: Flower Garden Terrain 5', '[from] ability: ' + effect, '[of] ' + source);
+				} else {
+					this.add('-fieldstart', 'move: Flower Garden Terrain 5');
+				}
+			},
+			onFieldResidualOrder: 27,
+			onFieldResidualSubOrder: 7,
+			onFieldEnd() {
+				this.add('-fieldend', 'move: Flower Garden Terrain 5');
+			},
+		},
+		secondary: null,
+		target: "all",
+		type: "Grass",
 		zMove: {boost: {def: 1}},
 		contestType: "Beautiful",
 	},
