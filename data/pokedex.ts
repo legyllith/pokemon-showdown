@@ -8076,6 +8076,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "Blue",
 		evos: ["Lucario"],
 		eggGroups: ["Undiscovered"],
+		otherFormes: ["Riolu-Proelos"],
+		formeOrder: ["Riolu", "Riolu-Proelos"],
 		canHatch: true,
 	},
 	lucario: {
@@ -8092,8 +8094,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		evoType: "levelFriendship",
 		evoCondition: "during the day",
 		eggGroups: ["Field", "Human-Like"],
-		otherFormes: ["Lucario-Mega"],
-		formeOrder: ["Lucario", "Lucario-Mega"],
+		otherFormes: ["Lucario-Mega","Lucario-Proelos"],
+		formeOrder: ["Lucario", "Lucario-Mega","Lucario-Proelos"],
 	},
 	lucariomega: {
 		num: 448,
