@@ -7087,12 +7087,38 @@ export const Items: {[itemid: string]: ItemData} = {
 		spritenum: 1188,
 		megaStone: "Lucario-Mega-Proelos",
 		megaEvolves: "Lucario",
-		itemUser: ["Empoleon"],
+		itemUser: ["Lucario-Proelos"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-		num: 2004,
+		num: 2005,
+		gen: 8,
+	},
+	miltankenite: {
+		name: "Miltankenite",
+		spritenum: 1189,
+		megaStone: "Miltank-Mega",
+		megaEvolves: "Miltank",
+		itemUser: ["Miltank"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 2006,
+		gen: 8,
+	},
+	miltankraonite: {
+		name: "Miltankraonite",
+		spritenum: 1190,
+		megaStone: "Miltank-Mega-Raott",
+		megaEvolves: "Miltank",
+		itemUser: ["Miltank-Raott"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 2007,
 		gen: 8,
 	},
 };

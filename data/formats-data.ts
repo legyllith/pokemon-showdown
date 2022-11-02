@@ -6961,4 +6961,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	farigiraf: {
 		tier: "OU",
 	},
+	miltankmega: {
+		tier: "OU",
+	},
+	miltankmegaraott: {
+		tier: "OU",
+	},
 };

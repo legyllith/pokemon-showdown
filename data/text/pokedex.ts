@@ -4044,4 +4044,10 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	farigiraf: {
 		name: "Farigiraf",
 	},
+	miltankmega: {
+		name: "Miltank-Mega",
+	},
+	miltankmegaraott: {
+		name: "Miltank-Mega-Raott",
+	},
 };
