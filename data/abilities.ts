@@ -2236,24 +2236,6 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 					newType = 'Grass';
 					break;
 				}
-					newType = 'Ice';
-					break;
-				case 'flowergardenterrainone':
-					newType = 'Grass';
-					break;
-				case 'flowergardenterraintwo':
-					newType = 'Grass';
-					break;
-				case 'flowergardenterrainthree':
-					newType = 'Grass';
-					break;
-				case 'flowergardenterrainfour':
-					newType = 'Grass';
-					break;
-				case 'flowergardenterrainfive':
-					newType = 'Grass';
-					break;
-				}
 				if (!newType || pokemon.getTypes().join() === newType || !pokemon.setType(newType)) return;
 				this.add('-start', pokemon, 'typechange', newType, '[from] ability: Mimicry');
 			},
