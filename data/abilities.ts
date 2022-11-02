@@ -926,6 +926,21 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	electricsurge: {
 		onStart(source) {
+			if (this.field.terrain === 'flowergardenterrainone') {
+				return;
+			}
+			if (this.field.terrain === 'flowergardenterraitwo') {
+				return;
+			}
+			if (this.field.terrain === 'flowergardenterraithree') {
+				return;
+			}
+			if (this.field.terrain === 'flowergardenterraifour') {
+				return;
+			}
+			if (this.field.terrain === 'flowergardenterraifive') {
+				return;
+			}
 			this.field.setTerrain('electricterrain');
 		},
 		name: "Electric Surge",
@@ -1377,6 +1392,21 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	grassysurge: {
 		onStart(source) {
+			if (this.field.terrain === 'flowergardenterrainone') {
+				return;
+			}
+			if (this.field.terrain === 'flowergardenterraitwo') {
+				return;
+			}
+			if (this.field.terrain === 'flowergardenterraithree') {
+				return;
+			}
+			if (this.field.terrain === 'flowergardenterraifour') {
+				return;
+			}
+			if (this.field.terrain === 'flowergardenterraifive') {
+				return;
+			}
 			this.field.setTerrain('grassyterrain');
 		},
 		name: "Grassy Surge",
@@ -2184,6 +2214,28 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 					newType = 'Water';
 					break;
 				case 'icecaveterrain':
+				case 'submarineterrain':
+					newType = 'Water';
+					break;
+				case 'icecaveterrain':
+					newType = 'Ice';
+					break;
+				case 'flowergardenterrainone':
+					newType = 'Grass';
+					break;
+				case 'flowergardenterraintwo':
+					newType = 'Grass';
+					break;
+				case 'flowergardenterrainthree':
+					newType = 'Grass';
+					break;
+				case 'flowergardenterrainfour':
+					newType = 'Grass';
+					break;
+				case 'flowergardenterrainfive':
+					newType = 'Grass';
+					break;
+				}
 					newType = 'Ice';
 					break;
 				case 'flowergardenterrainone':
@@ -2255,6 +2307,21 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	mistysurge: {
 		onStart(source) {
+			if (this.field.terrain === 'flowergardenterrainone') {
+				return;
+			}
+			if (this.field.terrain === 'flowergardenterraitwo') {
+				return;
+			}
+			if (this.field.terrain === 'flowergardenterraithree') {
+				return;
+			}
+			if (this.field.terrain === 'flowergardenterraifour') {
+				return;
+			}
+			if (this.field.terrain === 'flowergardenterraifive') {
+				return;
+			}
 			this.field.setTerrain('mistyterrain');
 		},
 		name: "Misty Surge",
@@ -2959,6 +3026,21 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	psychicsurge: {
 		onStart(source) {
+			if (this.field.terrain === 'flowergardenterrainone') {
+				return;
+			}
+			if (this.field.terrain === 'flowergardenterraitwo') {
+				return;
+			}
+			if (this.field.terrain === 'flowergardenterraithree') {
+				return;
+			}
+			if (this.field.terrain === 'flowergardenterraifour') {
+				return;
+			}
+			if (this.field.terrain === 'flowergardenterraifive') {
+				return;
+			}
 			this.field.setTerrain('psychicterrain');
 		},
 		name: "Psychic Surge",
@@ -4758,6 +4840,21 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	desertsurge: {
 		onStart(source) {
+			if (this.field.terrain === 'flowergardenterrainone') {
+				return;
+			}
+			if (this.field.terrain === 'flowergardenterraitwo') {
+				return;
+			}
+			if (this.field.terrain === 'flowergardenterraithree') {
+				return;
+			}
+			if (this.field.terrain === 'flowergardenterraifour') {
+				return;
+			}
+			if (this.field.terrain === 'flowergardenterraifive') {
+				return;
+			}
 			this.field.setTerrain('desertterrain');
 		},
 		name: "Desert Surge",
@@ -4800,6 +4897,34 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				return null;
 			}
 			if (target !== source && this.field.terrain === 'poisonmistterrain' && move.type === 'Poison') {
+				this.add('-immune', target, '[from] ability: Fun Player');
+				return null;
+			}
+			if (target !== source && this.field.terrain === 'submarineterrain' && move.type === 'Water') {
+				this.add('-immune', target, '[from] ability: Fun Player');
+				return null;
+			}
+			if (target !== source && this.field.terrain === 'icecaveterrain' && move.type === 'Ice') {
+				this.add('-immune', target, '[from] ability: Fun Player');
+				return null;
+			}
+			if (target !== source && this.field.terrain === 'flowergardenterrainone' && move.type === 'Bug') {
+				this.add('-immune', target, '[from] ability: Fun Player');
+				return null;
+			}
+			if (target !== source && this.field.terrain === 'flowergardenterraitwo' && move.type === 'Bug') {
+				this.add('-immune', target, '[from] ability: Fun Player');
+				return null;
+			}
+			if (target !== source && this.field.terrain === 'flowergardenterraithree' && move.type === 'Bug') {
+				this.add('-immune', target, '[from] ability: Fun Player');
+				return null;
+			}
+			if (target !== source && this.field.terrain === 'flowergardenterraifour' && move.type === 'Bug') {
+				this.add('-immune', target, '[from] ability: Fun Player');
+				return null;
+			}
+			if (target !== source && this.field.terrain === 'flowergardenterraifive' && move.type === 'Bug') {
 				this.add('-immune', target, '[from] ability: Fun Player');
 				return null;
 			}
