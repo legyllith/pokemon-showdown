@@ -1828,4 +1828,9 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		desc: "useless",
 		shortDesc: "useless",
 	},
+	solarmilk: {
+		name: "Solar Milk",
+		desc: "If Sunny Day is active, this Pokemon's Special Attack and Attack is multiplied by 1.5 and it loses 1/8 of its maximum HP, rounded down, at the end of each turn. If this Pokemon is holding Utility Umbrella, its Special Attack and attack remains the same and it does not lose any HP.",
+		shortDesc: "If Sunny Day is active, this Pokemon's Sp. Atk and Atk is 1.5x; loses 1/8 max HP per turn.",
+	}
 };

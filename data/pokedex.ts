@@ -19449,7 +19449,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		types: ["Poison","Psychic"],
 		gender: "F",
 		baseStats: {hp: 100, atk: 90, def: 110, spa: 90, spd: 100, spe: 105},
-		abilities: {0: "Harvest"},
+		abilities: {0: "Solar Milk"},
 		heightm: 1.2,
 		weightkg: 75.5,
 		color: "Purple",
