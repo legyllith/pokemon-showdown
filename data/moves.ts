@@ -22530,7 +22530,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
-		name: "Flower Garden Terrain 1",
+		name: "Flower Garden Terrain One",
 		pp: 10,
 		priority: 0,
 		flags: {nonsky: 1},
@@ -22549,21 +22549,21 @@ export const Moves: {[moveid: string]: MoveData} = {
 			onModifyMove(move, attacker, defender) {
 				if (['bloomdoom','growth','ingrain','raindance','rototiller','sunnyday','watersport'].includes(move.id)) {
 					this.field.clearTerrain();
-					this.add('-fieldend', 'move: Flower Garden Terrain 1');
+					this.add('-fieldend', 'move: Flower Garden Terrain One');
 					this.field.setTerrain('flowergardenterraintwo')
 				}
 			},
 			onFieldStart(field, source, effect) {
 				if (effect?.effectType === 'Ability') {
-					this.add('-fieldstart', 'move: Flower Garden Terrain 1', '[from] ability: ' + effect, '[of] ' + source);
+					this.add('-fieldstart', 'move: Flower Garden Terrain One', '[from] ability: ' + effect, '[of] ' + source);
 				} else {
-					this.add('-fieldstart', 'move: Flower Garden Terrain 1');
+					this.add('-fieldstart', 'move: Flower Garden Terrain One');
 				}
 			},
 			onFieldResidualOrder: 27,
 			onFieldResidualSubOrder: 7,
 			onFieldEnd() {
-				this.add('-fieldend', 'move: Flower Garden Terrain 1');
+				this.add('-fieldend', 'move: Flower Garden Terrain One');
 			},
 		},
 		secondary: null,
@@ -22577,7 +22577,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
-		name: "Flower Garden Terrain 2",
+		name: "Flower Garden Terrain Two",
 		pp: 10,
 		priority: 0,
 		flags: {nonsky: 1},
@@ -22598,25 +22598,25 @@ export const Moves: {[moveid: string]: MoveData} = {
 			onModifyMove(move, attacker, defender) {
 				if (['bloomdoom','growth','ingrain','raindance','rototiller','sunnyday','watersport'].includes(move.id)) {
 					this.field.clearTerrain();
-					this.add('-fieldend', 'move: Flower Garden Terrain 2');
+					this.add('-fieldend', 'move: Flower Garden Terrain Two');
 					this.field.setTerrain('flowergardenterrainthree')
 				} else if (['cut','xscissor','aciddownpour'].includes(move.id)) {
 					this.field.clearTerrain();
-					this.add('-fieldend', 'move: Flower Garden Terrain 2');
+					this.add('-fieldend', 'move: Flower Garden Terrain Two');
 					this.field.setTerrain('flowergardenterrainone')
 				}
 			},
 			onFieldStart(field, source, effect) {
 				if (effect?.effectType === 'Ability') {
-					this.add('-fieldstart', 'move: Flower Garden Terrain 2', '[from] ability: ' + effect, '[of] ' + source);
+					this.add('-fieldstart', 'move: Flower Garden Terrain Two', '[from] ability: ' + effect, '[of] ' + source);
 				} else {
-					this.add('-fieldstart', 'move: Flower Garden Terrain 2');
+					this.add('-fieldstart', 'move: Flower Garden Terrain Two');
 				}
 			},
 			onFieldResidualOrder: 27,
 			onFieldResidualSubOrder: 7,
 			onFieldEnd() {
-				this.add('-fieldend', 'move: Flower Garden Terrain 2');
+				this.add('-fieldend', 'move: Flower Garden Terrain Two');
 			},
 		},
 		secondary: null,
@@ -22630,7 +22630,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
-		name: "Flower Garden Terrain 3",
+		name: "Flower Garden Terrain Three",
 		pp: 10,
 		priority: 0,
 		flags: {nonsky: 1},
@@ -22653,25 +22653,25 @@ export const Moves: {[moveid: string]: MoveData} = {
 			onModifyMove(move, attacker, defender) {
 				if (['bloomdoom','growth','ingrain','raindance','rototiller','sunnyday','watersport'].includes(move.id)) {
 					this.field.clearTerrain();
-					this.add('-fieldend', 'move: Flower Garden Terrain 3');
+					this.add('-fieldend', 'move: Flower Garden Terrain Three');
 					this.field.setTerrain('flowergardenterrainfour')
 				} else if (['cut','xscissor','aciddownpour'].includes(move.id)) {
 					this.field.clearTerrain();
-					this.add('-fieldend', 'move: Flower Garden Terrain 3');
+					this.add('-fieldend', 'move: Flower Garden Terrain Three');
 					this.field.setTerrain('flowergardenterraintwo')
 				}
 			},
 			onFieldStart(field, source, effect) {
 				if (effect?.effectType === 'Ability') {
-					this.add('-fieldstart', 'move: Flower Garden Terrain 3', '[from] ability: ' + effect, '[of] ' + source);
+					this.add('-fieldstart', 'move: Flower Garden Terrain Three', '[from] ability: ' + effect, '[of] ' + source);
 				} else {
-					this.add('-fieldstart', 'move: Flower Garden Terrain 3');
+					this.add('-fieldstart', 'move: Flower Garden Terrain Three');
 				}
 			},
 			onFieldResidualOrder: 27,
 			onFieldResidualSubOrder: 7,
 			onFieldEnd() {
-				this.add('-fieldend', 'move: Flower Garden Terrain 3');
+				this.add('-fieldend', 'move: Flower Garden Terrain Three');
 			},
 		},
 		secondary: null,
@@ -22685,7 +22685,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
-		name: "Flower Garden Terrain 4",
+		name: "Flower Garden Terrain Four",
 		pp: 10,
 		priority: 0,
 		flags: {nonsky: 1},
@@ -22708,25 +22708,25 @@ export const Moves: {[moveid: string]: MoveData} = {
 			onModifyMove(move, attacker, defender) {
 				if (['bloomdoom','growth','ingrain','raindance','rototiller','sunnyday','watersport'].includes(move.id)) {
 					this.field.clearTerrain();
-					this.add('-fieldend', 'move: Flower Garden Terrain 4');
+					this.add('-fieldend', 'move: Flower Garden Terrain Four');
 					this.field.setTerrain('flowergardenterrainfive')
 				} else if (['cut','xscissor','aciddownpour'].includes(move.id)) {
 					this.field.clearTerrain();
-					this.add('-fieldend', 'move: Flower Garden Terrain 4');
+					this.add('-fieldend', 'move: Flower Garden Terrain Four');
 					this.field.setTerrain('flowergardenterrainthree')
 				}
 			},
 			onFieldStart(field, source, effect) {
 				if (effect?.effectType === 'Ability') {
-					this.add('-fieldstart', 'move: Flower Garden Terrain 4', '[from] ability: ' + effect, '[of] ' + source);
+					this.add('-fieldstart', 'move: Flower Garden Terrain Four', '[from] ability: ' + effect, '[of] ' + source);
 				} else {
-					this.add('-fieldstart', 'move: Flower Garden Terrain 4');
+					this.add('-fieldstart', 'move: Flower Garden Terrain Four');
 				}
 			},
 			onFieldResidualOrder: 27,
 			onFieldResidualSubOrder: 7,
 			onFieldEnd() {
-				this.add('-fieldend', 'move: Flower Garden Terrain 4');
+				this.add('-fieldend', 'move: Flower Garden Terrain Four');
 			},
 		},
 		secondary: null,
@@ -22740,7 +22740,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
-		name: "Flower Garden Terrain 5",
+		name: "Flower Garden Terrain Five",
 		pp: 10,
 		priority: 0,
 		flags: {nonsky: 1},
@@ -22763,21 +22763,21 @@ export const Moves: {[moveid: string]: MoveData} = {
 			onModifyMove(move, attacker, defender) {
 				if (['cut','xscissor','aciddownpour'].includes(move.id)) {
 					this.field.clearTerrain();
-					this.add('-fieldend', 'move: Flower Garden Terrain 5');
+					this.add('-fieldend', 'move: Flower Garden Terrain Five');
 					this.field.setTerrain('flowergardenterrainfour')
 				}
 			},
 			onFieldStart(field, source, effect) {
 				if (effect?.effectType === 'Ability') {
-					this.add('-fieldstart', 'move: Flower Garden Terrain 5', '[from] ability: ' + effect, '[of] ' + source);
+					this.add('-fieldstart', 'move: Flower Garden Terrain Five', '[from] ability: ' + effect, '[of] ' + source);
 				} else {
-					this.add('-fieldstart', 'move: Flower Garden Terrain 5');
+					this.add('-fieldstart', 'move: Flower Garden Terrain Five');
 				}
 			},
 			onFieldResidualOrder: 27,
 			onFieldResidualSubOrder: 7,
 			onFieldEnd() {
-				this.add('-fieldend', 'move: Flower Garden Terrain 5');
+				this.add('-fieldend', 'move: Flower Garden Terrain Five');
 			},
 		},
 		secondary: null,
