@@ -3892,23 +3892,15 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		},
 		onStart(source) {
 			if (this.field.isTerrain('flowergardenterrainone')) {
-					this.field.clearTerrain();
-					this.add('-fieldend', 'move: Flower Garden Terrain One');
 					this.field.setTerrain('flowergardenterraintwo')
 			}
-			else if (this.field.isTerrain('flowergardenterraitwo')) {
-					this.field.clearTerrain();
-					this.add('-fieldend', 'move: Flower Garden Terrain Two');
+			if (this.field.isTerrain('flowergardenterraitwo')) {
 					this.field.setTerrain('flowergardenterrainthree')
 			}
-			else if (this.field.isTerrain('flowergardenterraithree')) {
-					this.field.clearTerrain();
-					this.add('-fieldend', 'move: Flower Garden Terrain Three');
+			if (this.field.isTerrain('flowergardenterraithree')) {
 					this.field.setTerrain('flowergardenterrainfour')
 			}
 			else if (this.field.isTerrain('flowergardenterraifour')) {
-					this.field.clearTerrain();
-					this.add('-fieldend', 'move: Flower Garden Terrain Four');
 					this.field.setTerrain('flowergardenterrainfive')
 			}
 		},
