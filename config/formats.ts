@@ -84,6 +84,13 @@ export const Formats: FormatList = [
 		
 	},
 	{
+		name: "[Gen 8] Tournament 8",
+		gameType: 'doubles',
+		mod: 'gen8',
+		ruleset: ['Standard NatDex', 'Species Clause', 'Dynamax Clause', 'Adjust Level = 55', 'Item Clause', 'Flower Garden Terrain Rule'],
+		
+	},
+	{
 		section: "Multi Battles",
 	},
 	{
