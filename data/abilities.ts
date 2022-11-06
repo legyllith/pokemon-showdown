@@ -856,6 +856,18 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				if (action.choice !== 'runSwitch' && action.choice !== 'runPrimal') break;
 			}
 			this.field.setWeather('raindance');
+			if (this.field.isTerrain('flowergardenterrainone')) {
+					this.field.setTerrain('flowergardenterraintwo')
+			}
+			if (this.field.isTerrain('flowergardenterraintwo')) {
+					this.field.setTerrain('flowergardenterrainthree')
+			}
+			if (this.field.isTerrain('flowergardenterraithree')) {
+					this.field.setTerrain('flowergardenterrainfour')
+			}
+			else if (this.field.isTerrain('flowergardenterrainfour')) {
+					this.field.setTerrain('flowergardenterrainfive')
+			}
 		},
 		name: "Drizzle",
 		rating: 4,
@@ -868,6 +880,18 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				if (action.choice !== 'runSwitch' && action.choice !== 'runPrimal') break;
 			}
 			this.field.setWeather('sunnyday');
+			if (this.field.isTerrain('flowergardenterrainone')) {
+					this.field.setTerrain('flowergardenterraintwo')
+			}
+			if (this.field.isTerrain('flowergardenterraintwo')) {
+					this.field.setTerrain('flowergardenterrainthree')
+			}
+			if (this.field.isTerrain('flowergardenterraithree')) {
+					this.field.setTerrain('flowergardenterrainfour')
+			}
+			else if (this.field.isTerrain('flowergardenterrainfour')) {
+					this.field.setTerrain('flowergardenterrainfive')
+			}
 		},
 		name: "Drought",
 		rating: 4,
@@ -929,16 +953,16 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (this.field.isTerrain('flowergardenterrainone')) {
 				return;
 			}
-			if (this.field.isTerrain('flowergardenterraitwo')) {
+			if (this.field.isTerrain('flowergardenterraintwo')) {
 				return;
 			}
-			if (this.field.isTerrain('flowergardenterraithree')) {
+			if (this.field.isTerrain('flowergardenterrainthree')) {
 				return;
 			}
-			if (this.field.isTerrain('flowergardenterraifour')) {
+			if (this.field.isTerrain('flowergardenterrainfour')) {
 				return;
 			}
-			if (this.field.isTerrain('flowergardenterraifive')) {
+			if (this.field.isTerrain('flowergardenterrainfive')) {
 				return;
 			}
 			this.field.setTerrain('electricterrain');
@@ -1069,6 +1093,18 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	flowergift: {
 		onStart(pokemon) {
 			delete this.effectState.forme;
+			if (this.field.isTerrain('flowergardenterrainone')) {
+					this.field.setTerrain('flowergardenterraintwo')
+			}
+			if (this.field.isTerrain('flowergardenterraintwo')) {
+					this.field.setTerrain('flowergardenterrainthree')
+			}
+			if (this.field.isTerrain('flowergardenterraithree')) {
+					this.field.setTerrain('flowergardenterrainfour')
+			}
+			else if (this.field.isTerrain('flowergardenterrainfour')) {
+					this.field.setTerrain('flowergardenterrainfive')
+			}
 		},
 		onUpdate(pokemon) {
 			if (!pokemon.isActive || pokemon.baseSpecies.baseSpecies !== 'Cherrim' || pokemon.transformed) return;
@@ -1103,6 +1139,20 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 122,
 	},
 	flowerveil: {
+		onStart(pokemon) {
+			if (this.field.isTerrain('flowergardenterrainone')) {
+					this.field.setTerrain('flowergardenterraintwo')
+			}
+			if (this.field.isTerrain('flowergardenterraintwo')) {
+					this.field.setTerrain('flowergardenterrainthree')
+			}
+			if (this.field.isTerrain('flowergardenterraithree')) {
+					this.field.setTerrain('flowergardenterrainfour')
+			}
+			else if (this.field.isTerrain('flowergardenterrainfour')) {
+					this.field.setTerrain('flowergardenterrainfive')
+			}
+		},
 		onAllyBoost(boost, target, source, effect) {
 			if ((source && target === source) || !target.hasType('Grass')) return;
 			let showMsg = false;
@@ -1395,13 +1445,13 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (this.field.isTerrain('flowergardenterrainone')) {
 				return;
 			}
-			if (this.field.isTerrain('flowergardenterraitwo')) {
+			if (this.field.isTerrain('flowergardenterraintwo')) {
 				return;
 			}
 			if (this.field.isTerrain('flowergardenterraithree')) {
 				return;
 			}
-			if (this.field.isTerrain('flowergardenterraifour')) {
+			if (this.field.isTerrain('flowergardenterrainfour')) {
 				return;
 			}
 			if (this.field.isTerrain('flowergardenterraifive')) {
@@ -2292,16 +2342,16 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (this.field.isTerrain('flowergardenterrainone')) {
 				return;
 			}
-			if (this.field.isTerrain('flowergardenterraitwo')) {
+			if (this.field.isTerrain('flowergardenterraintwo')) {
 				return;
 			}
-			if (this.field.isTerrain('flowergardenterraithree')) {
+			if (this.field.isTerrain('flowergardenterrainthree')) {
 				return;
 			}
-			if (this.field.isTerrain('flowergardenterraifour')) {
+			if (this.field.isTerrain('flowergardenterrainfour')) {
 				return;
 			}
-			if (this.field.isTerrain('flowergardenterraifive')) {
+			if (this.field.isTerrain('flowergardenterrainfive')) {
 				return;
 			}
 			this.field.setTerrain('mistyterrain');
@@ -3008,20 +3058,19 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	psychicsurge: {
 		onStart(source) {
-			
 			if (this.field.isTerrain('flowergardenterrainone')) {
 				return;
 			}
-			if (this.field.isTerrain('flowergardenterraitwo')) {
+			if (this.field.isTerrain('flowergardenterraintwo')) {
 				return;
 			}
-			if (this.field.isTerrain('flowergardenterraithree')) {
+			if (this.field.isTerrain('flowergardenterrainthree')) {
 				return;
 			}
-			if (this.field.isTerrain('flowergardenterraifour')) {
+			if (this.field.isTerrain('flowergardenterrainfour')) {
 				return;
 			}
-			if (this.field.isTerrain('flowergardenterraifive')) {
+			if (this.field.isTerrain('flowergardenterrainfive')) {
 				return;
 			}
 			this.field.setTerrain('psychicterrain');
@@ -3894,13 +3943,13 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (this.field.isTerrain('flowergardenterrainone')) {
 					this.field.setTerrain('flowergardenterraintwo')
 			}
-			if (this.field.isTerrain('flowergardenterraitwo')) {
+			if (this.field.isTerrain('flowergardenterraintwo')) {
 					this.field.setTerrain('flowergardenterrainthree')
 			}
 			if (this.field.isTerrain('flowergardenterraithree')) {
 					this.field.setTerrain('flowergardenterrainfour')
 			}
-			else if (this.field.isTerrain('flowergardenterraifour')) {
+			else if (this.field.isTerrain('flowergardenterrainfour')) {
 					this.field.setTerrain('flowergardenterrainfive')
 			}
 		},
@@ -4840,16 +4889,16 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (this.field.isTerrain('flowergardenterrainone')) {
 				return;
 			}
-			if (this.field.isTerrain('flowergardenterraitwo')) {
+			if (this.field.isTerrain('flowergardenterraintwo')) {
 				return;
 			}
-			if (this.field.isTerrain('flowergardenterraithree')) {
+			if (this.field.isTerrain('flowergardenterrainthree')) {
 				return;
 			}
-			if (this.field.isTerrain('flowergardenterraifour')) {
+			if (this.field.isTerrain('flowergardenterrainfour')) {
 				return;
 			}
-			if (this.field.isTerrain('flowergardenterraifive')) {
+			if (this.field.isTerrain('flowergardenterrainfive')) {
 				return;
 			}
 			this.field.setTerrain('desertterrain');
@@ -4909,7 +4958,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				this.add('-immune', target, '[from] ability: Fun Player');
 				return null;
 			}
-			if (target !== source && this.field.terrain === 'flowergardenterraitwo' && move.type === 'Bug') {
+			if (target !== source && this.field.terrain === 'flowergardenterraintwo' && move.type === 'Bug') {
 				this.add('-immune', target, '[from] ability: Fun Player');
 				return null;
 			}
@@ -4917,7 +4966,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				this.add('-immune', target, '[from] ability: Fun Player');
 				return null;
 			}
-			if (target !== source && this.field.terrain === 'flowergardenterraifour' && move.type === 'Bug') {
+			if (target !== source && this.field.terrain === 'flowergardenterrainfour' && move.type === 'Bug') {
 				this.add('-immune', target, '[from] ability: Fun Player');
 				return null;
 			}
