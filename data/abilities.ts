@@ -1092,14 +1092,13 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	flowergift: {
 		onStart(pokemon) {
-			delete this.effectState.forme;
 			if (this.field.isTerrain('flowergardenterrainone')) {
 					this.field.setTerrain('flowergardenterraintwo')
 			}
-			if (this.field.isTerrain('flowergardenterraintwo')) {
+			else if (this.field.isTerrain('flowergardenterraintwo')) {
 					this.field.setTerrain('flowergardenterrainthree')
 			}
-			if (this.field.isTerrain('flowergardenterraithree')) {
+			else if (this.field.isTerrain('flowergardenterrainthree')) {
 					this.field.setTerrain('flowergardenterrainfour')
 			}
 			else if (this.field.isTerrain('flowergardenterrainfour')) {
@@ -1143,10 +1142,10 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (this.field.isTerrain('flowergardenterrainone')) {
 					this.field.setTerrain('flowergardenterraintwo')
 			}
-			if (this.field.isTerrain('flowergardenterraintwo')) {
+			else if (this.field.isTerrain('flowergardenterraintwo')) {
 					this.field.setTerrain('flowergardenterrainthree')
 			}
-			if (this.field.isTerrain('flowergardenterraithree')) {
+			else if (this.field.isTerrain('flowergardenterrainthree')) {
 					this.field.setTerrain('flowergardenterrainfour')
 			}
 			else if (this.field.isTerrain('flowergardenterrainfour')) {
@@ -3943,10 +3942,10 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (this.field.isTerrain('flowergardenterrainone')) {
 					this.field.setTerrain('flowergardenterraintwo')
 			}
-			if (this.field.isTerrain('flowergardenterraintwo')) {
+			else if (this.field.isTerrain('flowergardenterraintwo')) {
 					this.field.setTerrain('flowergardenterrainthree')
 			}
-			if (this.field.isTerrain('flowergardenterraithree')) {
+			else if (this.field.isTerrain('flowergardenterrainthree')) {
 					this.field.setTerrain('flowergardenterrainfour')
 			}
 			else if (this.field.isTerrain('flowergardenterrainfour')) {
@@ -4962,7 +4961,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				this.add('-immune', target, '[from] ability: Fun Player');
 				return null;
 			}
-			if (target !== source && this.field.terrain === 'flowergardenterraithree' && move.type === 'Bug') {
+			if (target !== source && this.field.terrain === 'flowergardenterrainthree' && move.type === 'Bug') {
 				this.add('-immune', target, '[from] ability: Fun Player');
 				return null;
 			}
