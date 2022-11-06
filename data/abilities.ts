@@ -859,10 +859,10 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (this.field.isTerrain('flowergardenterrainone')) {
 					this.field.setTerrain('flowergardenterraintwo')
 			}
-			if (this.field.isTerrain('flowergardenterraintwo')) {
+			else if (this.field.isTerrain('flowergardenterraintwo')) {
 					this.field.setTerrain('flowergardenterrainthree')
 			}
-			if (this.field.isTerrain('flowergardenterraithree')) {
+			else if (this.field.isTerrain('flowergardenterrainthree')) {
 					this.field.setTerrain('flowergardenterrainfour')
 			}
 			else if (this.field.isTerrain('flowergardenterrainfour')) {
@@ -883,10 +883,10 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (this.field.isTerrain('flowergardenterrainone')) {
 					this.field.setTerrain('flowergardenterraintwo')
 			}
-			if (this.field.isTerrain('flowergardenterraintwo')) {
+			else if (this.field.isTerrain('flowergardenterraintwo')) {
 					this.field.setTerrain('flowergardenterrainthree')
 			}
-			if (this.field.isTerrain('flowergardenterraithree')) {
+			else if (this.field.isTerrain('flowergardenterrainthree')) {
 					this.field.setTerrain('flowergardenterrainfour')
 			}
 			else if (this.field.isTerrain('flowergardenterrainfour')) {
@@ -4770,6 +4770,20 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: -4,
 	},
 	hiddenbloom: {
+		onStart(source) {
+			if (this.field.isTerrain('flowergardenterrainone')) {
+					this.field.setTerrain('flowergardenterraintwo')
+			}
+			else if (this.field.isTerrain('flowergardenterraintwo')) {
+					this.field.setTerrain('flowergardenterrainthree')
+			}
+			else if (this.field.isTerrain('flowergardenterrainthree')) {
+					this.field.setTerrain('flowergardenterrainfour')
+			}
+			else if (this.field.isTerrain('flowergardenterrainfour')) {
+					this.field.setTerrain('flowergardenterrainfive')
+			}
+		},
 		onPrepareHit(source, target, move) {
 			if (move.type === 'Grass') {
 				this.debug('Hidden Bloom');
