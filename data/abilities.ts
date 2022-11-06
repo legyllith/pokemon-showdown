@@ -857,15 +857,19 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			}
 			this.field.setWeather('raindance');
 			if (this.field.isTerrain('flowergardenterrainone')) {
+					this.add('-fieldend', 'move: Flower Garden Terrain One');
 					this.field.setTerrain('flowergardenterraintwo')
 			}
 			else if (this.field.isTerrain('flowergardenterraintwo')) {
+					this.add('-fieldend', 'move: Flower Garden Terrain Two');
 					this.field.setTerrain('flowergardenterrainthree')
 			}
 			else if (this.field.isTerrain('flowergardenterrainthree')) {
+					this.add('-fieldend', 'move: Flower Garden Terrain Three');
 					this.field.setTerrain('flowergardenterrainfour')
 			}
 			else if (this.field.isTerrain('flowergardenterrainfour')) {
+					this.add('-fieldend', 'move: Flower Garden Terrain Four');
 					this.field.setTerrain('flowergardenterrainfive')
 			}
 		},
@@ -881,15 +885,19 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			}
 			this.field.setWeather('sunnyday');
 			if (this.field.isTerrain('flowergardenterrainone')) {
+					this.add('-fieldend', 'move: Flower Garden Terrain One');
 					this.field.setTerrain('flowergardenterraintwo')
 			}
 			else if (this.field.isTerrain('flowergardenterraintwo')) {
+					this.add('-fieldend', 'move: Flower Garden Terrain Two');
 					this.field.setTerrain('flowergardenterrainthree')
 			}
 			else if (this.field.isTerrain('flowergardenterrainthree')) {
+					this.add('-fieldend', 'move: Flower Garden Terrain Three');
 					this.field.setTerrain('flowergardenterrainfour')
 			}
 			else if (this.field.isTerrain('flowergardenterrainfour')) {
+					this.add('-fieldend', 'move: Flower Garden Terrain Four');
 					this.field.setTerrain('flowergardenterrainfive')
 			}
 		},
@@ -1092,16 +1100,21 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	flowergift: {
 		onStart(pokemon) {
+			delete this.effectState.forme;
 			if (this.field.isTerrain('flowergardenterrainone')) {
+					this.add('-fieldend', 'move: Flower Garden Terrain One');
 					this.field.setTerrain('flowergardenterraintwo')
 			}
 			else if (this.field.isTerrain('flowergardenterraintwo')) {
+					this.add('-fieldend', 'move: Flower Garden Terrain Two');
 					this.field.setTerrain('flowergardenterrainthree')
 			}
 			else if (this.field.isTerrain('flowergardenterrainthree')) {
+					this.add('-fieldend', 'move: Flower Garden Terrain Three');
 					this.field.setTerrain('flowergardenterrainfour')
 			}
 			else if (this.field.isTerrain('flowergardenterrainfour')) {
+					this.add('-fieldend', 'move: Flower Garden Terrain Four');
 					this.field.setTerrain('flowergardenterrainfive')
 			}
 		},
@@ -1140,15 +1153,19 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	flowerveil: {
 		onStart(pokemon) {
 			if (this.field.isTerrain('flowergardenterrainone')) {
+					this.add('-fieldend', 'move: Flower Garden Terrain One');
 					this.field.setTerrain('flowergardenterraintwo')
 			}
 			else if (this.field.isTerrain('flowergardenterraintwo')) {
+					this.add('-fieldend', 'move: Flower Garden Terrain Two');
 					this.field.setTerrain('flowergardenterrainthree')
 			}
 			else if (this.field.isTerrain('flowergardenterrainthree')) {
+					this.add('-fieldend', 'move: Flower Garden Terrain Three');
 					this.field.setTerrain('flowergardenterrainfour')
 			}
 			else if (this.field.isTerrain('flowergardenterrainfour')) {
+					this.add('-fieldend', 'move: Flower Garden Terrain Four');
 					this.field.setTerrain('flowergardenterrainfive')
 			}
 		},
@@ -4772,15 +4789,19 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	hiddenbloom: {
 		onStart(source) {
 			if (this.field.isTerrain('flowergardenterrainone')) {
+					this.add('-fieldend', 'move: Flower Garden Terrain One');
 					this.field.setTerrain('flowergardenterraintwo')
 			}
 			else if (this.field.isTerrain('flowergardenterraintwo')) {
+					this.add('-fieldend', 'move: Flower Garden Terrain Two');
 					this.field.setTerrain('flowergardenterrainthree')
 			}
 			else if (this.field.isTerrain('flowergardenterrainthree')) {
+					this.add('-fieldend', 'move: Flower Garden Terrain Three');
 					this.field.setTerrain('flowergardenterrainfour')
 			}
 			else if (this.field.isTerrain('flowergardenterrainfour')) {
+					this.add('-fieldend', 'move: Flower Garden Terrain Four');
 					this.field.setTerrain('flowergardenterrainfive')
 			}
 		},
