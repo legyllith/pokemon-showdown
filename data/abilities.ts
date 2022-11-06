@@ -929,16 +929,16 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (this.field.isTerrain('flowergardenterrainone')) {
 				return;
 			}
-			if (this.field.terrain.isTerrain('flowergardenterraitwo')) {
+			if (this.field.isTerrain('flowergardenterraitwo')) {
 				return;
 			}
-			if (this.field.terrain.isTerrain('flowergardenterraithree')) {
+			if (this.field.isTerrain('flowergardenterraithree')) {
 				return;
 			}
-			if (this.field.terrain.isTerrain('flowergardenterraifour')) {
+			if (this.field.isTerrain('flowergardenterraifour')) {
 				return;
 			}
-			if (this.field.terrain.isTerrain('flowergardenterraifive')) {
+			if (this.field.isTerrain('flowergardenterraifive')) {
 				return;
 			}
 			this.field.setTerrain('electricterrain');
@@ -1395,16 +1395,16 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (this.field.isTerrain('flowergardenterrainone')) {
 				return;
 			}
-			if (this.field.terrain.isTerrain('flowergardenterraitwo')) {
+			if (this.field.isTerrain('flowergardenterraitwo')) {
 				return;
 			}
-			if (this.field.terrain.isTerrain('flowergardenterraithree')) {
+			if (this.field.isTerrain('flowergardenterraithree')) {
 				return;
 			}
-			if (this.field.terrain.isTerrain('flowergardenterraifour')) {
+			if (this.field.isTerrain('flowergardenterraifour')) {
 				return;
 			}
-			if (this.field.terrain.isTerrain('flowergardenterraifive')) {
+			if (this.field.isTerrain('flowergardenterraifive')) {
 				return;
 			}
 			this.field.setTerrain('grassyterrain');
@@ -2292,16 +2292,16 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (this.field.isTerrain('flowergardenterrainone')) {
 				return;
 			}
-			if (this.field.terrain.isTerrain('flowergardenterraitwo')) {
+			if (this.field.isTerrain('flowergardenterraitwo')) {
 				return;
 			}
-			if (this.field.terrain.isTerrain('flowergardenterraithree')) {
+			if (this.field.isTerrain('flowergardenterraithree')) {
 				return;
 			}
-			if (this.field.terrain.isTerrain('flowergardenterraifour')) {
+			if (this.field.isTerrain('flowergardenterraifour')) {
 				return;
 			}
-			if (this.field.terrain.isTerrain('flowergardenterraifive')) {
+			if (this.field.isTerrain('flowergardenterraifive')) {
 				return;
 			}
 			this.field.setTerrain('mistyterrain');
@@ -3012,16 +3012,16 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (this.field.isTerrain('flowergardenterrainone')) {
 				return;
 			}
-			if (this.field.terrain.isTerrain('flowergardenterraitwo')) {
+			if (this.field.isTerrain('flowergardenterraitwo')) {
 				return;
 			}
-			if (this.field.terrain.isTerrain('flowergardenterraithree')) {
+			if (this.field.isTerrain('flowergardenterraithree')) {
 				return;
 			}
-			if (this.field.terrain.isTerrain('flowergardenterraifour')) {
+			if (this.field.isTerrain('flowergardenterraifour')) {
 				return;
 			}
-			if (this.field.terrain.isTerrain('flowergardenterraifive')) {
+			if (this.field.isTerrain('flowergardenterraifive')) {
 				return;
 			}
 			this.field.setTerrain('psychicterrain');
@@ -3896,17 +3896,17 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 					this.add('-fieldend', 'move: Flower Garden Terrain One');
 					this.field.setTerrain('flowergardenterraintwo')
 			}
-			else if (this.field.terrain.isTerrain('flowergardenterraitwo')) {
+			else if (this.field.isTerrain('flowergardenterraitwo')) {
 					this.field.clearTerrain();
 					this.add('-fieldend', 'move: Flower Garden Terrain Two');
 					this.field.setTerrain('flowergardenterrainthree')
 			}
-			else if (this.field.terrain.isTerrain('flowergardenterraithree')) {
+			else if (this.field.isTerrain('flowergardenterraithree')) {
 					this.field.clearTerrain();
 					this.add('-fieldend', 'move: Flower Garden Terrain Three');
 					this.field.setTerrain('flowergardenterrainfour')
 			}
-			else if (this.field.terrain.isTerrain('flowergardenterraifour')) {
+			else if (this.field.isTerrain('flowergardenterraifour')) {
 					this.field.clearTerrain();
 					this.add('-fieldend', 'move: Flower Garden Terrain Four');
 					this.field.setTerrain('flowergardenterrainfive')
@@ -4848,16 +4848,16 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (this.field.isTerrain('flowergardenterrainone')) {
 				return;
 			}
-			if (this.field.terrain.isTerrain('flowergardenterraitwo')) {
+			if (this.field.isTerrain('flowergardenterraitwo')) {
 				return;
 			}
-			if (this.field.terrain.isTerrain('flowergardenterraithree')) {
+			if (this.field.isTerrain('flowergardenterraithree')) {
 				return;
 			}
-			if (this.field.terrain.isTerrain('flowergardenterraifour')) {
+			if (this.field.isTerrain('flowergardenterraifour')) {
 				return;
 			}
-			if (this.field.terrain.isTerrain('flowergardenterraifive')) {
+			if (this.field.isTerrain('flowergardenterraifive')) {
 				return;
 			}
 			this.field.setTerrain('desertterrain');
