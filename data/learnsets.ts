@@ -86651,6 +86651,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			madweapon: ["8L50"],
 			evospectro: ["8M"],
 			shadowball: ["8M"],
+			shrodingerbox: ["8L28"],
 		},
 	},
 	galleon: {
