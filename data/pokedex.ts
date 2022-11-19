@@ -18872,7 +18872,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		forme: "Tradessar",
 		types: ["Grass","Psychic"],
 		baseStats: {hp: 35, atk: 40, def: 28, spa: 40, spd: 50, spe: 25},
-		abilities: {0: "Mind Gifted", 1: "Keen Eye", H: "Huge Power"},
+		abilities: {0: "Mind Gifted", 1: "Drought", H: "Huge Power"},
 		heightm: 0.8,
 		weightkg: 6,
 		color: "Brown",
@@ -19491,7 +19491,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		requiredItem: "Lucariotradessarite",
 	},
 	starmieproelos: {
-		num: 122,
+		num: 121,
 		name: "Starmie-Proelos",
 		baseSpecies: "Starmie",
 		forme: "Proelos",

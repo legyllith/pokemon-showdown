@@ -86652,6 +86652,8 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			evospectro: ["8M"],
 			shadowball: ["8M"],
 			shrodingerbox: ["8L28"],
+			signalbeam: ["8L26"],
+			sharingan: ["8L45"],
 		},
 	},
 	galleon: {
@@ -87935,6 +87937,8 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			chargebeam: ["8L22"],
 			thunder: ["8L40"],
 			psychic: ["8M"],
+			heartstamp: ["8L50"],
+			esperwing: ["8L60"],
 		},
 	},
 	smoochumtradessar: {
