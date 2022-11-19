@@ -5319,12 +5319,12 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		},
 		name: "Cud Chew",
 		rating: 4,
-		num: 2018,
+		num: 2019,
 	},
 	ruminated: {
 		name: "Ruminated",
 		rating: 0,
-		num: 2019,
+		num: 2020,
 	},
 	solarmilk: {
 		onModifyAtkPriority: 5,
@@ -5347,6 +5347,21 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		},
 		name: "Solar Milk",
 		rating: 2,
-		num:2020,
+		num:2021,
+	},
+	totalmadness: {
+		onPrepareHit(source, target, move) {
+			if (move.category === 'Special') {
+				this.debug('Total madness');
+				this.boost({atk: 1});
+			}
+			else if (move.category === 'Physical') {
+				this.debug('Total madness');
+				this.boost({spa: 1});
+			}
+		},
+		name: "Total Madness",
+		rating: 4,
+		num: 2022,
 	},
 };
