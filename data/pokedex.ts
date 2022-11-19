@@ -2645,6 +2645,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		evoType: "useItem",
 		evoItem: "Water Stone",
 		eggGroups: ["Water 3"],
+		otherFormes: ["Starmie-Proelos"],
+		formeOrder: ["Starmie", "Starmie-Proelos"],
 	},
 	mrmime: {
 		num: 122,
@@ -18554,7 +18556,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		types: ["Ghost"],
 		genderRatio: {M: 0.875, F: 0.125},
 		baseStats: {hp: 130, atk: 65, def: 60, spa: 65, spd: 95, spe: 110},
-		abilities: {0: "Water Absorb", H: "Hydration"},
+		abilities: {0: "Curse Body", H: "Total Madness"},
 		heightm: 1,
 		weightkg: 6,
 		color: "Blue",
