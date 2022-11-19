@@ -22801,7 +22801,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {bullet: 1, protect: 1, mirror: 1},
 		onHit(target, source, move) {
-                    this.actions.useMove('lick', target, source);
+                    this.actions.useMove('lick',source ,target );
 		},
 		target: "normal",
 		type: "Ghost",

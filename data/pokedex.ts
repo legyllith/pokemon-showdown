@@ -19491,7 +19491,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		requiredItem: "Lucariotradessarite",
 	},
 	starmieproelos: {
-		num: 121,
+		num: 122,
 		name: "Starmie-Proelos",
 		baseSpecies: "Starmie",
 		forme: "Proelos",
