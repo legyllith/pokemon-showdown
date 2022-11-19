@@ -5355,7 +5355,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				this.debug('Total madness');
 				this.boost({atk: 1});
 			}
-			if (move.category === 'Physical" ) {
+			else if (move.category === 'Physical') {
 				this.debug('Total madness');
 				this.boost({spa: 1});
 			}
