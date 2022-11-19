@@ -7136,4 +7136,9 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "adding ice type, base power is up to 80 for ice pokemon.",
 		shortDesc: "add ice type, base power : 80 for ice pokemon.",
 	},
+	evospectro: {
+		name: "Evo Spectro",
+		desc: "Also use lick.",
+		shortDesc: "also use lick.",
+	},
 };

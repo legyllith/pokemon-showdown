@@ -22791,4 +22791,20 @@ export const Moves: {[moveid: string]: MoveData} = {
 		zMove: {boost: {def: 1}},
 		contestType: "Beautiful",
 	},
+	evospectro: {
+		num: 2069,
+		accuracy: 100,
+		basePower: 80,
+		category: "Special",
+		name: "Evo Spectro",
+		pp: 15,
+		priority: 0,
+		flags: {bullet: 1, protect: 1, mirror: 1},
+		onHit(target, source, move) {
+                    this.actions.useMove('lick', target, source);
+		},
+		target: "normal",
+		type: "Ghost",
+		contestType: "Clever",
+	},
 };

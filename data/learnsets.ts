@@ -86648,6 +86648,9 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	eidoleon: {
 		learnset: {
 			lick: ["8L15"],
+			madweapon: ["8L50"],
+			evospectro: ["8M"],
+			shadowball: ["8M"],
 		},
 	},
 	galleon: {
