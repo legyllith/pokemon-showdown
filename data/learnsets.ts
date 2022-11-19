@@ -88972,4 +88972,14 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			blazekick: ["8M", "4S1"],
 		},
 	},
+	lucariotradessar: {
+			shadowclaw: ["8M", "7M", "6M", "5M", "5S3", "4M"],
+	},
+	starmieproelos: {
+			stealthrock: ["8T"],
+			rocktomb: ["8L50"],
+			rockslide: ["8L50"],
+			seismictoss: ["3T"],
+			stonedge: ["8L50"],
+	},
 };

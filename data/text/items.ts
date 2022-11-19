@@ -2361,7 +2361,6 @@ export const ItemsText: {[k: string]: ItemText} = {
 		name: "Lucarioproenite",
 		desc: "mega gems of Proelos Lucario.",
 	},
-	
 	miltankenite: {
 		name: "Miltankenite",
 		desc: "mega gems of Miltank.",
@@ -2369,5 +2368,9 @@ export const ItemsText: {[k: string]: ItemText} = {
 	miltankraonite: {
 		name: "Miltankraonite",
 		desc: "mega gems of Miltank raott.",
+	},
+	lucariotradessarite: {
+		name: "Lucariotradessarite",
+		desc: "mega gems of lucario tradessar.",
 	},
 };

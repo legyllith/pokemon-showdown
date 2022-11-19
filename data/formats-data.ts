@@ -6967,4 +6967,13 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	miltankmegaraott: {
 		tier: "OU",
 	},
+	lucariotradessar: {
+		tier: "OU",
+	},
+	lucariomegatradessar: {
+		tier: "OU",
+	},
+	starmieproelos: {
+		tier: "OU",
+	},
 };
