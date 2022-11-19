@@ -88981,17 +88981,13 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 		},
 	},
 	lucariotradessar: {
-		learnset: {
 			shadowclaw: ["8M", "7M", "6M", "5M", "5S3", "4M"],
-		},
 	},
 	starmieproelos: {
-		learnset: {
 			stealthrock: ["8T"],
 			rocktomb: ["8L50"],
 			rockslide: ["8L50"],
 			seismictoss: ["3T"],
-			stonedge: ["8L50"],
-		},
+			stoneedge: ["8L50"],
 	},
 };
