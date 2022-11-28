@@ -3956,7 +3956,7 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	clovenix: {
 		name: "Clovenixs",
 	},
-	draglys: {
+	dragalys: {
 		name: "Dragalys",
 	},
 	ceroin: {

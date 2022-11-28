@@ -18226,7 +18226,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		forme: "Summer",
 		types: ["Bug", "Grass"],
 		baseStats: {hp: 138, atk: 69, def: 69, spa: 91, spd: 65, spe: 89},
-		abilities: {0: "Anticipation", H: "Overcoat"},
+		abilities: {0: "Sap Of Immortality"},
 		heightm: 0.5,
 		weightkg: 6.5,
 		color: "Purple",
@@ -19010,7 +19010,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	},
 	clovenix: {
 		num: 1853,
-		name: "Clovenixs",
+		name: "Clovenix",
 		types: ["Grass", "Rock"],
 		baseStats: {hp: 104, atk: 65, def: 86, spa: 65, spd: 93, spe: 40},
 		abilities: {0: "Millennial Weight"},
@@ -19019,7 +19019,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "Green",
 		eggGroups: ["Monster", "Grass"],
 	},
-	draglys: {
+	dragalys: {
 		num: 1854,
 		name: "Dragalys",
 		types: ["Grass", "Rock"],

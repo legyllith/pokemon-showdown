@@ -6877,7 +6877,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	clovenix: {
 		tier: "OU",
 	},
-	draglys: {
+	dragalys: {
 		tier: "OU",
 	},
 	ceroin: {

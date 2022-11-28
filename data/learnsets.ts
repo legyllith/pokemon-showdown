@@ -83775,6 +83775,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			waterpledge: ["8T", "7T", "6T", "5T"],
 			waterpulse: ["8L15", "7T", "7L25", "6T", "6L25", "5L25", "4M", "4L25", "3M"],
 			waterspout: ["8E", "7E", "6E", "5E", "4E"],
+			wavecrash: ["8L57"],
 			weatherball: ["8M"],
 			whirlpool: ["8M", "7E", "4M"],
 			withdraw: ["8L6", "8E", "7L10", "7E", "6L10", "6S3", "5L10", "5S1", "4L10", "3L10", "3S0"],
@@ -85755,11 +85756,13 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	neruku: {
 		learnset: {
 			revelationdance: ["8L40"],
+			aromaticmist: ["8L40"]
 		},
 	},
 	nerukuautumn: {
 		learnset: {
 			revelationdance: ["8L40"],
+			trickroom: ["8M"],
 		},
 	},
 	nerukuwinter: {
@@ -85771,6 +85774,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	nerukusummer: {
 		learnset: {
 			revelationdance: ["8L40"],
+			tailglow: ["8L40"],
 		},
 	},
 	meowthraott: {
@@ -87838,7 +87842,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			weatherball: ["8L1"],
 		},
 	},
-	draglys: {
+	dragalys: {
 		learnset: {
 			ancientpower: ["8L16"],
 			aromatherapy: ["8L42"],
