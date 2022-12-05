@@ -18631,7 +18631,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		types: ["Fighting"],
 		genderRatio: {M: 0.875, F: 0.125},
 		baseStats: {hp: 95, atk: 130, def: 110, spa: 60 , spd: 65, spe: 65},
-		abilities: {0: "Water Absorb", H: "Hydration"},
+		abilities: {0: "Serene Grace", H: "Cud Chew"},
 		heightm: 1,
 		weightkg: 40,
 		color: "Brown",

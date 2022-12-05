@@ -86773,6 +86773,10 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	champeon: {
 		learnset: {
 			brickbreak: ["8L15"],
+			hammerarm: ["8L50"],
+			wakeupstap: ["8L50"],
+			triplekick: ["8L50"],
+			skittersmack: ["8L50"],
 		},
 	},
 	poiseon: {
@@ -87926,7 +87930,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			weatherprediction: ["8L1"],
 			ironhead: ["8M"],
 			flashcannon: ["8M"],
-			steelwings: ["8L20"],
+			steelwing: ["8L20"],
 			spiritbreak: ["8L60"],
 			playrough: ["8M"],
 			mistyexplosion: ["8T"],
@@ -88709,6 +88713,8 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			triplekick: ["8L21"],
 			toxic: ["8M"],
 			mortuarybeak: ["8M"],
+			powerwhip: ["8L60"],
+			iciclecrash: ["8L60"],
 		},
 	},
 	penskoin: {
