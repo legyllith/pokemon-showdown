@@ -1948,6 +1948,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 					this.boost({atk: 2});
 				} else {
 				this.boost({atk: 1});
+				}
 			}
 		},
 		name: "Justified",
