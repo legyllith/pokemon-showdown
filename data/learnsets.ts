@@ -86774,7 +86774,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 		learnset: {
 			brickbreak: ["8L15"],
 			hammerarm: ["8L50"],
-			wakeupstap: ["8L50"],
+			wakeupslap: ["8L50"],
 			triplekick: ["8L50"],
 			skittersmack: ["8L50"],
 		},
