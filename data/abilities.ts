@@ -1944,6 +1944,9 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	justified: {
 		onDamagingHit(damage, target, source, move) {
 			if (move.type === 'Dark') {
+				if (this.field.isTerrain("holyterrain")){
+					this.boost({atk: 2});
+				} else {
 				this.boost({atk: 1});
 			}
 		},

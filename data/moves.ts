@@ -224,6 +224,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, distance: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify([5324, 4096]);
+			}
+		},
 		critRatio: 2,
 		secondary: null,
 		target: "any",
@@ -405,6 +411,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify(1.5);
+			}
+		},
 		secondary: {
 			chance: 10,
 			self: {
@@ -1107,6 +1119,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 5,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify([5324, 4096]);
+			}
+		},
 		secondary: null,
 		target: "normal",
 		type: "Steel",
@@ -1120,6 +1138,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 5,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify([5324, 4096]);
+			}
+		},
 		secondary: null,
 		target: "normal",
 		type: "Steel",
@@ -2980,6 +3004,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 5,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify([5324, 4096]);
+			}
+		},
 		secondary: null,
 		target: "normal",
 		type: "Normal",
@@ -3309,6 +3339,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify([5324, 4096]);
+			}
+		},
 		self: {
 			chance: 50,
 			boosts: {
@@ -3704,6 +3740,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 5,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, distance: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify([5324, 4096]);
+			}
+		},
 		self: {
 			boosts: {
 				def: -1,
@@ -3792,6 +3834,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify([5324, 4096]);
+			}
+		},
 		secondary: null,
 		target: "allAdjacentFoes",
 		type: "Dragon",
@@ -4663,6 +4711,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 5,
 		priority: 2,
 		flags: {contact: 1, protect: 1, mirror: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify(1.5);
+			}
+		},
 		secondary: null,
 		target: "normal",
 		type: "Normal",
@@ -5345,6 +5399,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify([5324, 4096]);
+			}
+		},
 		onModifyMove(move, source, target) {
 			if (this.field.isTerrain('flowergardenterrainthree')||this.field.isTerrain('flowergardenterrainfour')||this.field.isTerrain('flowergardenterrainfive')) {
 				move.basePower = 160;
@@ -5828,6 +5888,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify([5324, 4096]);
+			}
+		},
 		secondary: {
 			chance: 10,
 			status: 'frz',
@@ -6132,6 +6198,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 1,
 		priority: 0,
 		flags: {},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify([5324, 4096]);
+			}
+		},
 		isZ: "mewniumz",
 		secondary: {
 			chance: 100,
@@ -6237,6 +6309,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify([5324, 4096]);
+			}
+		},
 		secondary: null,
 		target: "allAdjacentFoes",
 		type: "Ice",
@@ -8791,6 +8869,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 5,
 		priority: 0,
 		flags: {mirror: 1, bypasssub: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify([5324, 4096]);
+			}
+		},
 		breaksProtect: true,
 		secondary: null,
 		target: "normal",
@@ -9339,6 +9423,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify(1.5);
+			}
+		},
 		onModifyType(move, pokemon) {
 			if (pokemon.ignoringItem()) return;
 			const item = pokemon.getItem();
@@ -9528,6 +9618,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, nonsky: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify([5324, 4096]);
+			}
+		},
 		secondary: null,
 		target: "allAdjacentFoes",
 		type: "Ground",
@@ -10138,6 +10234,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify([5324, 4096]);
+			}
+		},
 		secondary: {
 			chance: 50,
 			boosts: {
@@ -10171,6 +10273,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 20,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify(1.5);
+			}
+		},
 		secondary: null,
 		target: "normal",
 		type: "Grass",
@@ -11096,6 +11204,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 1,
 		priority: 0,
 		flags: {},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify([5324, 4096]);
+			}
+		},
 		isZ: "lunaliumz",
 		ignoreAbility: true,
 		secondary: null,
@@ -11611,6 +11725,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 5,
 		priority: 0,
 		flags: {bullet: 1, protect: 1, mirror: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify([5324, 4096]);
+			}
+		},
 		secondary: {
 			chance: 50,
 			boosts: {
@@ -11760,6 +11880,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify([5324, 4096]);
+			}
+		},
 		ignoreAbility: true,
 		secondary: null,
 		target: "normal",
@@ -11970,6 +12096,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify(1.5);
+			}
+		},
 		secondary: {
 			chance: 100,
 			boosts: {
@@ -12010,6 +12142,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 15,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify(1.5);
+			}
+		},
 		onModifyType(move, pokemon) {
 			if (pokemon.ignoringItem()) return;
 			const item = pokemon.getItem();
@@ -12484,6 +12622,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, pulse: 1, mirror: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify([5324, 4096]);
+			}
+		},
 		target: "allAdjacentFoes",
 		type: "Water",
 		contestType: "Beautiful",
@@ -13341,6 +13485,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, nonsky: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify([5324, 4096]);
+			}
+		},
 		target: "allAdjacentFoes",
 		type: "Ground",
 		contestType: "Cool",
@@ -13394,6 +13544,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {recharge: 1, protect: 1, mirror: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify([5324, 4096]);
+			}
+		},
 		self: {
 			volatileStatus: 'mustrecharge',
 		},
@@ -13625,6 +13781,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify([5324, 4096]);
+			}
+		},
 		self: {
 			boosts: {
 				spa: -2,
@@ -13699,6 +13861,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify([5324, 4096]);
+			}
+		},
 		secondary: null,
 		target: "normal",
 		type: "Psychic",
@@ -14297,6 +14465,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify([5324, 4096]);
+			}
+		},
 		secondary: {
 			chance: 10,
 			status: 'slp',
@@ -14510,6 +14684,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 5,
 		priority: 0,
 		flags: {recharge: 1, protect: 1, mirror: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify([5324, 4096]);
+			}
+		},
 		self: {
 			volatileStatus: 'mustrecharge',
 		},
@@ -14885,6 +15065,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, defrost: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify(1.5);
+			}
+		},
 		secondary: {
 			chance: 50,
 			status: 'brn',
@@ -14902,6 +15088,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 15,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify(1.5);
+			}
+		},
 		ignoreEvasion: true,
 		ignoreDefensive: true,
 		secondary: null,
@@ -15201,6 +15393,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 1,
 		priority: 0,
 		flags: {contact: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify([5324, 4096]);
+			}
+		},
 		isZ: "solganiumz",
 		ignoreAbility: true,
 		secondary: null,
@@ -15344,6 +15542,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify([5324, 4096]);
+			}
+		},
 		secondary: null,
 		target: "normal",
 		type: "Fighting",
@@ -16734,6 +16938,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify([5324, 4096]);
+			}
+		},
 		critRatio: 2,
 		secondary: null,
 		target: "normal",
@@ -17835,6 +18045,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 5,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify([5324, 4096]);
+			}
+		},
 		ignoreAbility: true,
 		secondary: null,
 		target: "normal",
@@ -17937,6 +18153,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 5,
 		priority: 0,
 		flags: {contact: 1, protect: 1, punch: 1, mirror: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify([5324, 4096]);
+			}
+		},
 		willCrit: true,
 		multihit: 3,
 		secondary: null,
@@ -18840,6 +19062,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 15,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify([5324, 4096]);
+			}
+		},
 		volatileStatus: 'partiallytrapped',
 		secondary: null,
 		target: "normal",
@@ -18876,6 +19104,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify([5324, 4096]);
+			}
+		},
 		secondary: {
 			chance: 100,
 			boosts: {
@@ -21871,6 +22105,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (this.field.isTerrain('holyterrain')) {
+				this.debug('terrain buff');
+				return this.chainModify([5324, 4096]);
+			}
+		},
 		onModifyMove(move, pokemon) {
 			if (pokemon.species.id == 'enamorustherian') {
 				move.secondaries = [];
@@ -22806,5 +23046,140 @@ export const Moves: {[moveid: string]: MoveData} = {
 		target: "normal",
 		type: "Ghost",
 		contestType: "Clever",
+	},
+	holyterrain: {
+		num: 2070,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Holy Terrain",
+		pp: 10,
+		priority: 0,
+		flags: {nonsky: 1},
+		terrain: 'holyterrain',
+		condition: {
+			duration: 99,
+			durationCallback(source, effect) {
+				return 99;
+			},
+			onBasePowerPriority: 6,
+			onBasePower(basePower, attacker, defender, move) {
+				if (move.type === 'Normal') {
+					return this.chainModify([6144, 4096]);
+				}
+				if (move.type === 'Fairy') {
+					return this.chainModify([6144, 4096]);
+				}
+				if (move.type === 'Psychic') {
+					return this.chainModify([4915, 4096]);
+				}
+				if (move.type === 'Dragon') {
+					return this.chainModify([4915, 4096]);
+				}
+				if (move.type === 'Ghost') {
+					return this.chainModify([2048, 4096]);
+				}
+				if (move.type === 'Dark') {
+					return this.chainModify([2048, 4096]);
+				}
+			},
+			onFieldStart(field, source, effect) {
+				if (effect?.effectType === 'Ability') {
+					this.add('-fieldstart', 'move: Holy Terrain', '[from] ability: ' + effect, '[of] ' + source);
+				} else {
+					this.add('-fieldstart', 'move: Holy Terrain');
+				}
+			},
+			onFieldResidualOrder: 27,
+			onFieldResidualSubOrder: 7,
+			onFieldEnd() {
+				this.add('-fieldend', 'move: Holy Terrain');
+			},
+		},
+		secondary: null,
+		target: "all",
+		type: "Normal",
+		zMove: {boost: {def: 1}},
+		contestType: "Beautiful",
+	},
+	romanticrestorantterrain: {
+		num: 2071,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Romantic Restorant Terrain",
+		pp: 10,
+		priority: 0,
+		flags: {nonsky: 1},
+		terrain: 'romanticrestorantterrain',
+		condition: {
+			duration: 99,
+			durationCallback(source, effect) {
+				return 99;
+			},
+			onBasePowerPriority: 6,
+			onBasePower(basePower, attacker, defender, move) {
+				if (move.type === 'Ghost') {
+					return this.chainModify([5324, 4096]);
+				}
+			},
+			onFieldStart(field, source, effect) {
+				if (effect?.effectType === 'Ability') {
+					this.add('-fieldstart', 'move: Romantic Restorant Terrain', '[from] ability: ' + effect, '[of] ' + source);
+				} else {
+					this.add('-fieldstart', 'move: Romantic Restorant Terrain');
+				}
+			},
+			onFieldResidualOrder: 27,
+			onFieldResidualSubOrder: 7,
+			onFieldEnd() {
+				this.add('-fieldend', 'move: Romantic Restorant Terrain');
+			},
+		},
+		secondary: null,
+		target: "all",
+		type: "Combat",
+		zMove: {boost: {def: 1}},
+		contestType: "Beautiful",
+	},
+	skyterrain: {
+		num: 2072,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Sky Terrain",
+		pp: 10,
+		priority: 0,
+		flags: {nonsky: 1},
+		terrain: 'skyterrain',
+		condition: {
+			duration: 99,
+			durationCallback(source, effect) {
+				return 99;
+			},
+			onBasePowerPriority: 6,
+			onBasePower(basePower, attacker, defender, move) {
+				if (move.type === 'Ghost') {
+					return this.chainModify([5324, 4096]);
+				}
+			},
+			onFieldStart(field, source, effect) {
+				if (effect?.effectType === 'Ability') {
+					this.add('-fieldstart', 'move: Sky Terrain', '[from] ability: ' + effect, '[of] ' + source);
+				} else {
+					this.add('-fieldstart', 'move: Sky Terrain');
+				}
+			},
+			onFieldResidualOrder: 27,
+			onFieldResidualSubOrder: 7,
+			onFieldEnd() {
+				this.add('-fieldend', 'move: Sky Terrain');
+			},
+		},
+		secondary: null,
+		target: "all",
+		type: "Flying",
+		zMove: {boost: {def: 1}},
+		contestType: "Beautiful",
 	},
 };

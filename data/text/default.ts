@@ -386,6 +386,18 @@ export const DefaultText: {[k: string]: DefaultText} = {
 		start: "  Flowers everywhere !",
 		end: "  You will grow back, my friends",
 	},
+	holyterrain: {
+		start: "  Benedictus Sanctus Spiritus...",
+		end: "  Alea Jacta Est...",
+	},
+	romanticrestorantterrain: {
+		start: "  May the odds be ever in your favor.",
+		end: "  End of love",
+	},
+	skyterrain: {
+		start: "  The sky is filled with clouds.",
+		end: "  No more clouds",
+	},
 
 	// field effects
 	gravity: {

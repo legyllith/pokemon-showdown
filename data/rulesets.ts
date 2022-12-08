@@ -1976,4 +1976,52 @@ export const Rulesets: {[k: string]: FormatData} = {
 			}
 		}
 	},
+	holyterrainrule: {
+		effectType: 'Rule',
+		name: 'Holy Terrain Rule',
+		desc: 'The fight start on Holy Terrain',
+		onSwitchIn(pokemon) {
+			if(this.field.IsFirstTimeSettingCustomTerrain) {
+				this.field.setTerrain('holyterrain');
+				this.field.IsFirstTimeSettingCustomTerrain = false;
+			}
+		},
+		onResidual(pokemon){
+			if(this.field.isTerrain('')) {
+				this.field.setTerrain('holyterrain');
+			}
+		}
+	},
+	romanticrestorantterrainrule: {
+		effectType: 'Rule',
+		name: 'Romantic Restorant Terrain Rule',
+		desc: 'The fight start on Romantic Restorant Terrain',
+		onSwitchIn(pokemon) {
+			if(this.field.IsFirstTimeSettingCustomTerrain) {
+				this.field.setTerrain('romanticrestorantterrain');
+				this.field.IsFirstTimeSettingCustomTerrain = false;
+			}
+		},
+		onResidual(pokemon){
+			if(this.field.isTerrain('')) {
+				this.field.setTerrain('romanticrestorantterrain');
+			}
+		}
+	},
+	skyterrainrule: {
+		effectType: 'Rule',
+		name: 'Sky Terrain Rule',
+		desc: 'The fight start on Sky Terrain',
+		onSwitchIn(pokemon) {
+			if(this.field.IsFirstTimeSettingCustomTerrain) {
+				this.field.setTerrain('skyterrain');
+				this.field.IsFirstTimeSettingCustomTerrain = false;
+			}
+		},
+		onResidual(pokemon){
+			if(this.field.isTerrain('')) {
+				this.field.setTerrain('skyterrain');
+			}
+		}
+	},
 };
