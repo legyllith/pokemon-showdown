@@ -691,7 +691,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		condition: {
 			noCopy: true, // doesn't get copied by Baton Pass
 			onStart(pokemon, source, effect) {
-				if ((!(pokemon.gender === 'M' && source.gender === 'F') && !(pokemon.gender === 'F' && source.gender === 'M')) || (this.field.isTerrain === 'romanticrestorantterrain'))
+				if ((!(pokemon.gender === 'M' && source.gender === 'F') && !(pokemon.gender === 'F' && source.gender === 'M')) || (this.field.isTerrain === 'romanticrestorantterrain')) {
 					this.debug('incompatible gender');
 					return false;
 				}
