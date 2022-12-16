@@ -355,6 +355,11 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 201,
 	},
 	bigpecks: {
+		onStart(source) {
+			if (this.field.isTerrain('skyterrain')) {
+				this.boost({def: 1});
+			}
+		},
 		onBoost(boost, target, source, effect) {
 			if (source && target === source) return;
 			if (boost.def && boost.def < 0) {
@@ -942,6 +947,12 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	earlybird: {
 		name: "Early Bird",
+		onUpdate(pokemon) {
+			if (pokemon.status === 'slp' && this.field.isTerrain('skyterrain')) {
+				this.add('-activate', pokemon, 'ability: Early Bird');
+				pokemon.cureStatus();
+			}
+		},
 		// Implemented in statuses.js
 		rating: 1.5,
 		num: 48,
@@ -1365,7 +1376,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	galewings: {
 		onModifyPriority(priority, pokemon, target, move) {
-			if (move?.type === 'Flying' && pokemon.hp === pokemon.maxhp) return priority + 1;
+			if (move?.type === 'Flying' && (pokemon.hp === pokemon.maxhp || this.field.isTerrain('skyterrain'))) return priority + 1;
 		},
 		name: "Gale Wings",
 		rating: 3,
@@ -2011,7 +2022,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		isBreakable: true,
 		name: "Levitate",
 		onStart(source) {
-			if (this.field.isTerrain('romanticrestorantterrain')) {
+			if (this.field.isTerrain('skyterrain')) {
 				this.boost({spe: 1});
 			}
 		},
