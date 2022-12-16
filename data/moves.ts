@@ -691,7 +691,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		condition: {
 			noCopy: true, // doesn't get copied by Baton Pass
 			onStart(pokemon, source, effect) {
-				if (!(pokemon.gender === 'M' && source.gender === 'F') && !(pokemon.gender === 'F' && source.gender === 'M')) {
+				if ((!(pokemon.gender === 'M' && source.gender === 'F') && !(pokemon.gender === 'F' && source.gender === 'M')) || (this.field.isTerrain === 'romanticrestorantterrain'))
 					this.debug('incompatible gender');
 					return false;
 				}
@@ -2042,6 +2042,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 				newType = 'Grass';
 			} else if (this.field.isTerrain('flowergardenterrainfive')) {
 				newType = 'Grass';
+			} else if (this.field.isTerrain('holyterrain')) {
+				newType = 'Dragon';
+			} else if (this.field.isTerrain('romanticrestorantterrain')) {
+				newType = 'Fighting';
+			} else if (this.field.isTerrain('skyterrain')) {
+				newType = 'Flying';
 			}
 			if (target.getTypes().join() === newType || !target.setType(newType)) return false;
 			this.add('-start', target, 'typechange', newType);
@@ -2671,7 +2677,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {snatch: 1},
 		onModifyMove(move, pokemon) {
-			if (this.field.isTerrain('psychicterrain') || this.field.isTerrain('mistyterrain')) move.boosts = {def: 2, spd: 2};
+			if (this.field.isTerrain('psychicterrain') || this.field.isTerrain('mistyterrain') || this.field.isTerrain('holyterrain')) move.boosts = {def: 2, spd: 2};
 		},
 		boosts: {
 			def: 1,
@@ -12214,7 +12220,13 @@ export const Moves: {[moveid: string]: MoveData} = {
 				move = 'growth';
 			} else if (this.field.isTerrain('flowergardenterrainfive')) {
 				move = 'petalblizzard';
-			}
+			} else if (this.field.isTerrain('holyterrain')) {
+				move = 'judgment';
+			} else if (this.field.isTerrain('romanticrestorantterrain')) {
+				move = 'thundersmite';
+			} else if (this.field.isTerrain('skyterrain')) {
+				move = 'skyattack';
+			} 
 			this.actions.useMove(move, pokemon, target);
 			return null;
 		},
@@ -15521,6 +15533,23 @@ export const Moves: {[moveid: string]: MoveData} = {
 						def: -2,
 						spd: -2,
 					},
+				});
+			} else if (this.field.isTerrain('holyterrain')) {
+				move.secondaries.push({
+					chance: 30,
+					boosts: {
+						spa: -1,
+					},
+				});
+			} else if (this.field.isTerrain('romanticrestorantterrain')) {
+				move.secondaries.push({
+					chance: 30,
+					volatileStatus: 'attract',
+				});
+			} else if (this.field.isTerrain('skyterrain')) {
+				move.secondaries.push({
+					chance: 30,
+					volatileStatus: 'confusion',
 				});
 			}
 		},
@@ -18832,6 +18861,15 @@ export const Moves: {[moveid: string]: MoveData} = {
 			case 'flowergardenterrainfive':
 				move.type = 'Grass';
 				break;
+			case 'holyterrain':
+				move.type = 'Dragon';
+				break;
+			case 'romanticrestorantterrain':
+				move.type = 'Fighting';
+				break;
+			case 'skyterrain':
+				move.type = 'Flying';
+				break;
 			}
 		},
 		onModifyMove(move, pokemon) {
@@ -20325,7 +20363,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		condition: {
 			duration: 2,
 			onStart(pokemon, source) {
-				if (this.field.isTerrain('mistyterrain')) {
+				if (this.field.isTerrain('mistyterrain')|| this.field.isTerrain('holyterrain')) {
 					this.effectState.hp = source.maxhp * 0.75;
 				} else {
 					this.effectState.hp = source.maxhp / 2;
@@ -23098,7 +23136,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		},
 		secondary: null,
 		target: "all",
-		type: "Normal",
+		type: "Dragon",
 		zMove: {boost: {def: 1}},
 		contestType: "Beautiful",
 	},
@@ -23119,7 +23157,10 @@ export const Moves: {[moveid: string]: MoveData} = {
 			},
 			onBasePowerPriority: 6,
 			onBasePower(basePower, attacker, defender, move) {
-				if (move.type === 'Ghost') {
+				if (move.type === 'Fighting') {
+					return this.chainModify([5324, 4096]);
+				}
+				if (move.type === 'Fairy') {
 					return this.chainModify([5324, 4096]);
 				}
 			},
@@ -23138,7 +23179,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		},
 		secondary: null,
 		target: "all",
-		type: "Combat",
+		type: "Fighting",
 		zMove: {boost: {def: 1}},
 		contestType: "Beautiful",
 	},
@@ -23159,7 +23200,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			},
 			onBasePowerPriority: 6,
 			onBasePower(basePower, attacker, defender, move) {
-				if (move.type === 'Ghost') {
+				if (move.type === 'Flying') {
 					return this.chainModify([5324, 4096]);
 				}
 			},
