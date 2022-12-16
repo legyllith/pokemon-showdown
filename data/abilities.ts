@@ -586,6 +586,9 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	cursedbody: {
 		onDamagingHit(damage, target, source, move) {
+			if (this.field.isTerrain('holyterrain')){
+				return;
+			}
 			if (source.volatiles['disable']) return;
 			if (!move.isMax && !move.isFutureMove && move.id !== 'struggle') {
 				if (this.randomChance(3, 10)) {
@@ -599,6 +602,10 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	cutecharm: {
 		onDamagingHit(damage, target, source, move) {
+			if (tthis.field.isTerrain('romanticrestorantterrain')){
+				this.boost({spa: 1});
+				this.boost({atk: 1});
+			}
 			if (this.checkMoveMakesContact(move, source, target)) {
 				if (this.randomChance(3, 10)) {
 					source.addVolatile('attract', this.effectState.target);
@@ -2003,6 +2010,11 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		// airborneness implemented in sim/pokemon.js:Pokemon#isGrounded
 		isBreakable: true,
 		name: "Levitate",
+		onStart(source) {
+			if (this.field.isTerrain('romanticrestorantterrain')) {
+				this.boost({spe: 1});
+			}
+		},
 		rating: 3.5,
 		num: 26,
 	},
@@ -2304,6 +2316,15 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 					break;
 				case 'flowergardenterrainfive':
 					newType = 'Grass';
+					break;
+				case 'holyterrain':
+					newType = 'Dragon';
+					break;
+				case 'romanticrestorantterrain':
+					newType = 'Fighting';
+					break;
+				case 'skyterrain':
+					newType = 'Flying';
 					break;
 				}
 				if (!newType || pokemon.getTypes().join() === newType || !pokemon.setType(newType)) return;
@@ -5009,6 +5030,18 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				return null;
 			}
 			if (target !== source && this.field.terrain === 'flowergardenterraifive' && move.type === 'Bug') {
+				this.add('-immune', target, '[from] ability: Fun Player');
+				return null;
+			}
+			if (target !== source && this.field.terrain === 'holyterrain' && move.type === 'Dragon') {
+				this.add('-immune', target, '[from] ability: Fun Player');
+				return null;
+			}
+			if (target !== source && this.field.terrain === 'romanticrestorantterrain' && move.type === 'Fighting') {
+				this.add('-immune', target, '[from] ability: Fun Player');
+				return null;
+			}
+			if (target !== source && this.field.terrain === 'skyterrain' && move.type === 'Flying') {
 				this.add('-immune', target, '[from] ability: Fun Player');
 				return null;
 			}
