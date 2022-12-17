@@ -695,7 +695,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 					this.debug('incompatible gender');
 					return false;
 				}
-				if (!this.runEvent('Attract', pokemon, source)) || (this.field.isTerrain === 'romanticrestorantterrain')) {
+				if (!this.runEvent('Attract', pokemon, source)) {
 					this.debug('Attract event failed');
 					return false;
 				}
