@@ -7141,4 +7141,19 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "Also use lick.",
 		shortDesc: "also use lick.",
 	},
+	evorock: {
+		name: "Evo Rock",
+		desc: "Put stealth Rock.",
+		shortDesc: "Put stealth Rock.",
+	},
+	evosteel: {
+		name: "Evo Steel",
+		desc: "Put steel Rock.",
+		shortDesc: "Put steel Rock.",
+	},
+	evofighto: {
+		name: "Evo Fighto",
+		desc: "Up attack by 1.",
+		shortDesc: "up atk by 1.",
+	},
 };

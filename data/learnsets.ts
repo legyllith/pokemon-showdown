@@ -86647,6 +86647,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			meteorbeam: ["8T"],
 			burningjealousy: ["8T"],
 			mistyexplosion: ["8T"],
+			evorock: ["8M"],
 		},
 	},
 	eidoleon: {
@@ -86663,6 +86664,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	galleon: {
 		learnset: {
 			irondefense: ["8L15"],
+			evosteel: ["8M"],
 		},
 	},
 	lepideon: {
@@ -86777,6 +86779,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			wakeupslap: ["8L50"],
 			triplekick: ["8L50"],
 			skittersmack: ["8L50"],
+			evofighto: ["8M"],
 		},
 	},
 	poiseon: {

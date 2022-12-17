@@ -23077,7 +23077,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		name: "Evo Spectro",
 		pp: 15,
 		priority: 0,
-		flags: {bullet: 1, protect: 1, mirror: 1},
+		flags: {protect: 1, mirror: 1},
 		onHit(target, source, move) {
                     this.actions.useMove('lick',source ,target );
 		},
@@ -23223,4 +23223,68 @@ export const Moves: {[moveid: string]: MoveData} = {
 		zMove: {boost: {def: 1}},
 		contestType: "Beautiful",
 	},
-};
+	evorock: {
+		num: 2073,
+		accuracy: true,
+		basePower: 80,
+		category: "Physical",
+		name: "Evo Rock",
+		pp: 5,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		self: {
+			onHit(source) {
+				for (const side of source.side.foeSidesWithConditions()) {
+					if (defender.side.getSideCondition('stealthice'))return;
+					side.addSideCondition('stealthrock');
+				}
+			},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Rock",
+		contestType: "Cool",
+	},
+	evosteel: {
+		num: 2074,
+		accuracy: true,
+		basePower: 80,
+		category: "Physical",
+		name: "Evo Steel",
+		pp: 5,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		self: {
+			onHit(source) {
+				for (const side of source.side.foeSidesWithConditions()) {
+					side.addSideCondition('gmaxsteelsurge');
+				}
+			},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Steel",
+		contestType: "Cool",
+	},
+	evofighto: {
+		num: 2074,
+		accuracy: true,
+		basePower: 80,
+		category: "Physical",
+		name: "Evo Fighto",
+		pp: 5,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
+		secondary: {
+			chance: 100,
+			self: {
+				boosts: {
+					atk: 1,
+				},
+			},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Fighting",
+		contestType: "Cool",
+	},
