@@ -23235,7 +23235,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		self: {
 			onHit(source) {
 				for (const side of source.side.foeSidesWithConditions()) {
-					if (defender.side.getSideCondition('stealthice'))return;
+					if (side.getSideCondition('stealthice'))return;
 					side.addSideCondition('stealthrock');
 				}
 			},
