@@ -18385,44 +18385,89 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	eeveestarter: {
 		learnset: {
 			baddybad: ["8E", "7T"],
-			bite: ["8E", "7L17"],
 			bouncybubble: ["8E", "7T"],
 			buzzybuzz: ["8E", "7T"],
-			dig: ["8E", "7M"],
-			doubleedge: ["8E", "7L28"],
-			doublekick: ["8E", "7L10"],
-			facade: ["8E", "7M"],
 			freezyfrost: ["8E", "7T"],
 			glitzyglow: ["8E", "7T"],
-			growl: ["8E", "7L1", "7S0"],
-			headbutt: ["8E", "7M"],
-			helpinghand: ["8E", "7M", "7L31"],
-			irontail: ["8E", "7M"],
-			payday: ["8E", "7M"],
-			protect: ["8E", "7M"],
-			quickattack: ["8E", "7L6"],
-			reflect: ["8E", "7M"],
-			rest: ["8E", "7M"],
-			sandattack: ["8E", "7L14"],
 			sappyseed: ["8E", "7T"],
-			shadowball: ["8E", "7M"],
 			sizzlyslide: ["8E", "7T"],
 			sparklyswirl: ["8E", "7T"],
-			substitute: ["8E", "7M"],
-			swift: ["8E", "7L21"],
-			tackle: ["8E", "7L1", "7S0"],
-			tailwhip: ["8E", "7L3", "7S0"],
-			takedown: ["8E", "7L24"],
-			toxic: ["8E", "7M"],
 			veeveevolley: ["8E", "7T"],
+			attract: ["8M", "7M", "7E", "6M", "5M", "4M", "3M"],
+			babydolleyes: ["8L15", "7L9", "6L9"],
+			batonpass: ["8M", "8L35", "7L33", "7E", "6L33", "5L36", "4L36", "3L36"],
+			bide: ["7E"],
+			bite: ["8L25", "8E", "7L17", "7E", "6L17", "5L29", "4L29", "3L30"],
+			bodyslam: ["8M", "7E", "3T"],
+			captivate: ["7E", "6E", "4M"],
+			charm: ["8M", "8L45", "7L29", "7E", "7E", "6L29", "6E", "5L29", "5E", "5D", "4E", "3E"],
+			confide: ["7M", "6M"],
+			copycat: ["8L30"],
+			covet: ["8L1", "7T", "7L1", "7E", "6T", "6L23", "6E", "5T", "5L21", "5E", "4E"],
+			curse: ["8E", "7E", "7E", "6E", "5E", "4E", "3E"],
+			detect: ["8E", "7E", "7E", "6E", "5E", "4E"],
+			dig: ["8M", "8E", "6M", "5M", "4M", "3M"],
+			doubleedge: ["8L50", "8E", "7L37", "7E", "6L37", "5L37", "3T"],
+			doublekick: ["8E", "8E"],
+			doubleteam: ["7M", "7E", "6M", "5M", "4M", "3M"],
+			echoedvoice: ["7M", "6M", "5M"],
+			endure: ["8M", "7E", "7E", "6E", "5E", "4M", "4E", "3T", "3E"],
+			facade: ["8M", "8E", "7M", "6M", "5M", "4M", "3M"],
+			faketears: ["8M", "7E", "6E", "5E", "4E"],
+			flail: ["8E", "7E", "7E", "6E", "5E", "4E", "3E"],
+			focusenergy: ["8M", "7E"],
+			frustration: ["7M", "7E", "6M", "5M", "4M", "3M"],
+			growl: ["8L1", "8E", "7L1", "7E", "6L1", "5L15", "4L15", "3L16"],
+			headbutt: ["8E", "7E", "4T"],
+			healbell: ["7T", "6T", "5T", "4T"],
+			helpinghand: ["8M", "8L1", "8E", "7T", "7L1", "6T", "6L1", "5T", "5L1", "4T", "4L1", "3L1"],
+			hiddenpower: ["7M", "7E", "6M", "5M", "4M", "3M"],
+			hypervoice: ["8M", "7T", "6T", "5T"],
+			irontail: ["8M", "8E", "7T", "7E", "6T", "5T", "4M", "3M"],
+			laserfocus: ["7T"],
+			lastresort: ["8L55", "7T", "7L41", "6T", "6L41", "5T", "5L50", "4T", "4L50"],
+			mimic: ["7E", "3T"],
+			mudslap: ["8E", "7E", "4T", "3T"],
+			naturalgift: ["7E", "6E", "5E", "4M"],
+			payday: ["8M", "8E"],
+			protect: ["8M", "8E", "7M", "7E", "6M", "5M", "4M", "3M"],
+			quickattack: ["8L10", "8E", "7L13", "7E", "6L13", "5L22", "4L22", "3L23"],
+			rage: ["7E"],
+			raindance: ["8M", "7M", "7E", "6M", "5M", "4M", "3M"],
+			reflect: ["8E", "7E"],
+			refresh: ["7L20", "6L20"],
+			rest: ["8M", "8E", "7M", "7E", "6M", "5M", "4M", "3M"],
+			retaliate: ["8M", "6M", "5M"],
+			return: ["7M", "7E", "6M", "5M", "4M", "3M"],
+			round: ["8M", "7M", "6M", "5M"],
+			sandattack: ["8L5", "8E", "7L5", "7E", "6L5", "5L8", "5D", "4L8", "3L8"],
+			secretpower: ["6M", "4M", "3M"],
+			shadowball: ["8M", "8E", "7M", "7E", "6M", "5M", "4M", "3M"],
+			skullbash: ["7E"],
+			sleeptalk: ["8M", "7M", "7E", "6M", "5T", "4M", "3T"],
+			snore: ["8M", "7T", "7E", "6T", "5T", "4T", "3T"],
+			storedpower: ["8M", "7E", "6E", "5E"],
+			substitute: ["8M", "8E", "7M", "7E", "6M", "5M", "4M", "3T"],
+			sunnyday: ["8M", "7M", "7E", "6M", "5M", "4M", "3M"],
+			swagger: ["7M", "7E", "6M", "5M", "4M", "3T"],
+			swift: ["8M", "8L20", "8E", "7L17", "7E", "6L10", "5D", "4T", "3T"],
+			synchronoise: ["7E", "6E", "5E"],
+			tackle: ["8L1", "8E", "7L1", "7E", "6L1", "5L1", "4L1", "3L1"],
+			tailwhip: ["8L1", "8E", "7L1", "7E", "6L1", "5L1", "4L1", "3L1"],
+			takedown: ["8L40", "8E", "7L25", "7E", "6L25", "5L43", "4L43", "3L42"],
+			tickle: ["8E", "7E", "6E", "5E", "4E", "3E"],
+			toxic: ["8E", "7M", "7E", "6M", "5M", "4M", "3M"],
+			trumpcard: ["7L45", "6L45", "5L57", "4L57"],
+			weatherball: ["8M"],
+			wish: ["8E", "7E", "6E", "5E", "4E", "3E"],
+			workup: ["8M", "7M", "5M"],
+			yawn: ["8E", "7E", "6E", "5E", "4E"],
 		},
-		eventData: [
-			{generation: 7, level: 5, perfectIVs: 6, moves: ["tackle", "tailwhip", "growl"], pokeball: "pokeball"},
-		],
 		eventOnly: true,
 	},
 	vaporeon: {
 		learnset: {
+			bouncybubble: ["8L1"],
 			acidarmor: ["8L45", "8E", "7L29", "7E", "6L29", "5L64", "4L64", "3L47"],
 			aquaring: ["8L35", "7L25", "6L25", "5L43", "4L43"],
 			aquatail: ["7T", "6T", "5T", "4T"],
@@ -18525,6 +18570,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	jolteon: {
 		learnset: {
+			buzzybuzz: ["8L1"],
 			agility: ["8M", "8L45", "8E", "7L29", "7E", "6L29", "5L64", "4L64", "3L47"],
 			attract: ["8M", "7M", "7E", "6M", "5M", "4M", "3M"],
 			babydolleyes: ["8L15", "7L9"],
@@ -18622,6 +18668,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	flareon: {
 		learnset: {
+			sizzlyslide: ["8L1"]
 			attract: ["8M", "7M", "7E", "6M", "5M", "4M", "3M"],
 			babydolleyes: ["8L15", "7L9"],
 			batonpass: ["8M", "8L1"],
@@ -18720,6 +18767,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	espeon: {
 		learnset: {
+			glitzyglow: ["8L1"]
 			allyswitch: ["8M", "7T"],
 			attract: ["8M", "7M", "7E", "6M", "5M", "4M", "3M"],
 			babydolleyes: ["8L15", "7L9"],
@@ -18819,6 +18867,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	umbreon: {
 		learnset: {
+			baddybad: ["8L1"]
 			assurance: ["8M", "8L25", "7L25", "6L25", "5L43", "4L43"],
 			attract: ["8M", "7M", "7E", "6M", "5M", "4M", "3M"],
 			babydolleyes: ["8L15", "7L9"],
@@ -18918,6 +18967,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	leafeon: {
 		learnset: {
+			sappyseed: ["8L1"]
 			aerialace: ["7M", "6M", "5M", "4M"],
 			attract: ["8M", "7M", "6M", "5M", "4M"],
 			babydolleyes: ["8L15", "7L9"],
@@ -19010,6 +19060,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	glaceon: {
 		learnset: {
+			freezyfrost: ["8L1"]
 			aquatail: ["7T", "6T", "5T", "4T"],
 			attract: ["8M", "7M", "6M", "5M", "4M"],
 			auroraveil: ["7M", "7S2"],
@@ -64499,6 +64550,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	sylveon: {
 		learnset: {
+			sparklyswirl: ["8L1"]
 			attract: ["8M", "7M", "6M"],
 			babydolleyes: ["8L15", "7L9", "6S1"],
 			batonpass: ["8M", "8L1"],
@@ -87939,6 +87991,10 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	dragalys: {
 		learnset: {
+			dragonpulse: ["8L20"],
+			dracometeor: ["8L20"],
+			dragonclaw: ["8L20"],
+			dragonenergy: ["8L20"],
 			blizzard: ["8L20"],
 			icebeam: ["8L20"],
 			freezedry: ["8L20"],
