@@ -18668,7 +18668,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	flareon: {
 		learnset: {
-			sizzlyslide: ["8L1"]
+			sizzlyslide: ["8L1"],
 			attract: ["8M", "7M", "7E", "6M", "5M", "4M", "3M"],
 			babydolleyes: ["8L15", "7L9"],
 			batonpass: ["8M", "8L1"],
@@ -18767,7 +18767,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	espeon: {
 		learnset: {
-			glitzyglow: ["8L1"]
+			glitzyglow: ["8L1"],
 			allyswitch: ["8M", "7T"],
 			attract: ["8M", "7M", "7E", "6M", "5M", "4M", "3M"],
 			babydolleyes: ["8L15", "7L9"],
@@ -18867,7 +18867,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	umbreon: {
 		learnset: {
-			baddybad: ["8L1"]
+			baddybad: ["8L1"],
 			assurance: ["8M", "8L25", "7L25", "6L25", "5L43", "4L43"],
 			attract: ["8M", "7M", "7E", "6M", "5M", "4M", "3M"],
 			babydolleyes: ["8L15", "7L9"],
@@ -18967,7 +18967,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	leafeon: {
 		learnset: {
-			sappyseed: ["8L1"]
+			sappyseed: ["8L1"],
 			aerialace: ["7M", "6M", "5M", "4M"],
 			attract: ["8M", "7M", "6M", "5M", "4M"],
 			babydolleyes: ["8L15", "7L9"],
@@ -19060,7 +19060,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	glaceon: {
 		learnset: {
-			freezyfrost: ["8L1"]
+			freezyfrost: ["8L1"],
 			aquatail: ["7T", "6T", "5T", "4T"],
 			attract: ["8M", "7M", "6M", "5M", "4M"],
 			auroraveil: ["7M", "7S2"],
@@ -64550,7 +64550,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	sylveon: {
 		learnset: {
-			sparklyswirl: ["8L1"]
+			sparklyswirl: ["8L1"],
 			attract: ["8M", "7M", "6M"],
 			babydolleyes: ["8L15", "7L9", "6S1"],
 			batonpass: ["8M", "8L1"],
