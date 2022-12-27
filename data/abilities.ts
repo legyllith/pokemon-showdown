@@ -607,7 +607,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	cutecharm: {
 		onDamagingHit(damage, target, source, move) {
-			if (tthis.field.isTerrain('romanticrestorantterrain')){
+			if (this.field.isTerrain('romanticrestorantterrain')){
 				this.boost({spa: 1});
 				this.boost({atk: 1});
 			}
