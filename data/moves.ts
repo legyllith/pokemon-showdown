@@ -23267,7 +23267,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		contestType: "Cool",
 	},
 	evofighto: {
-		num: 2074,
+		num: 2075,
 		accuracy: true,
 		basePower: 80,
 		category: "Physical",
@@ -23283,9 +23283,28 @@ export const Moves: {[moveid: string]: MoveData} = {
 				},
 			},
 		},
-		secondary: null,
 		target: "normal",
 		type: "Fighting",
+		contestType: "Cool",
+	},
+	evaereo: {
+		num: 2075,
+		accuracy: true,
+		basePower: 80,
+		category: "Physical",
+		name: "Evareo",
+		pp: 5,
+		priority: 0,
+		volatileStatus: 'aerialsurge',
+		secondary: {
+			chance: 100,
+			self: {
+				volatileStatus: 'aerialsurge',
+			},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Fly",
 		contestType: "Cool",
 	},
 };

@@ -7156,4 +7156,9 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "Up attack by 1.",
 		shortDesc: "up atk by 1.",
 	},
+	evaereo: {
+		name: "Evaereo",
+		desc: "return special traps.",
+		shortDesc: "return special traps.",
+	},
 };
