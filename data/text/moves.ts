@@ -7158,7 +7158,12 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	evaereo: {
 		name: "Evaereo",
-		desc: "return special traps.",
-		shortDesc: "return special traps.",
+		desc: "as tailwind.",
+		shortDesc: "as tailwind.",
+	},
+	evodrake: {
+		name: "Evo Drake",
+		desc: "up spe attack by 1",
+		shortDesc: "up spe attack by 1",
 	},
 };

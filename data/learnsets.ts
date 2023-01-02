@@ -86823,6 +86823,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			toxic: ["7M", "6M"],
 			weatherball: ["8M"],
 			workup: ["8M", "7M"],
+			evodrake: ["8M", "7M"],
 		},
 	},
 	champeon: {

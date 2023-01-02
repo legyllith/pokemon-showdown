@@ -23303,4 +23303,24 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Flying",
 		contestType: "Cool",
 	},
+	evodrake: {
+		num: 2075,
+		accuracy: true,
+		basePower: 80,
+		category: "Special",
+		name: "Evo Drake",
+		pp: 5,
+		priority: 0,
+		secondary: {
+			chance: 100,
+			self: {
+				boosts: {
+					spa: 1,
+				},
+			},
+		},
+		target: "normal",
+		type: "Dragon",
+		contestType: "Cool",
+	},
 };
