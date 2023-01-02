@@ -23295,14 +23295,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		name: "Evaereo",
 		pp: 5,
 		priority: 0,
-		volatileStatus: 'aerialsurge',
 		secondary: {
 			chance: 100,
 			self: {
 				volatileStatus: 'aerialsurge',
 			},
 		},
-		secondary: null,
 		target: "normal",
 		type: "Flying",
 		contestType: "Cool",
