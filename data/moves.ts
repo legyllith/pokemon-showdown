@@ -23292,7 +23292,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		accuracy: true,
 		basePower: 80,
 		category: "Physical",
-		name: "Evareo",
+		name: "Evaereo",
 		pp: 5,
 		priority: 0,
 		volatileStatus: 'aerialsurge',
