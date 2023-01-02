@@ -23304,7 +23304,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Fly",
+		type: "Flying",
 		contestType: "Cool",
 	},
 };
