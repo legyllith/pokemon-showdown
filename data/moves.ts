@@ -4108,6 +4108,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, nonsky: 1},
+		onTry() {
+			return !this.field.isTerrain('skyterrain');
+		},
 		secondary: null,
 		target: "allAdjacent",
 		type: "Ground",
@@ -10505,6 +10508,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 30,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, nonsky: 1},
+		onTry() {
+			return !this.field.isTerrain('skyterrain');
+		},
 		onModifyMove(move, pokemon) {
 			const i = this.random(100);
 			if (i < 5) {
@@ -17131,6 +17137,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 20,
 		priority: 0,
 		flags: {reflectable: 1, nonsky: 1},
+		onTry() {
+			return !this.field.isTerrain('skyterrain');
+		},
 		sideCondition: 'spikes',
 		condition: {
 			// this is a side condition
@@ -17425,6 +17434,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 20,
 		priority: 0,
 		flags: {reflectable: 1},
+		onTry() {
+			return !this.field.isTerrain('skyterrain');
+		},
 		sideCondition: 'stealthrock',
 		onTryMove(attacker, defender, move) {
            		if (defender.side.getSideCondition('stealthice')){
@@ -17707,6 +17719,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		onTry() {
+			return !this.field.isTerrain('skyterrain');
+		},
 		onModifyMove(move, source, target) {
 			if (this.field.isTerrain('beachterrain')) {
 				move.basePower = 70;
@@ -17947,6 +17962,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		volatileStatus: 'substitute',
 		onTry() {
 			return !this.field.isTerrain('beachterrain');
+			return !this.field.isTerrain('skyterrain');
 		},
 		onTryHit(target) {
 			if (target.volatiles['substitute']) {
@@ -19327,6 +19343,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 20,
 		priority: 0,
 		flags: {reflectable: 1, nonsky: 1},
+		onTry() {
+			return !this.field.isTerrain('skyterrain');
+		},
 		sideCondition: 'toxicspikes',
 		condition: {
 			// this is a side condition
