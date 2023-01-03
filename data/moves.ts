@@ -17961,8 +17961,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		flags: {snatch: 1, nonsky: 1},
 		volatileStatus: 'substitute',
 		onTry() {
-			return !this.field.isTerrain('beachterrain');
-			return !this.field.isTerrain('skyterrain');
+			return !(this.field.isTerrain('beachterrain') || this.field.isTerrain('skyterrain'));
 		},
 		onTryHit(target) {
 			if (target.volatiles['substitute']) {
