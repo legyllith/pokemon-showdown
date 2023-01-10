@@ -85052,7 +85052,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			airslash: ["8E", "7L49", "7E", "6L49", "6E", "5L49", "5E", "4L49", "4E"],
 			attract: ["7M", "7E", "6M", "5M", "4M", "3M"],
 			bide: ["7E"],
-			bravebird: ["7E", "6E", "5E", "4E"],
+			bravebird: ["8E","7E", "6E", "5E", "4E"],
 			captivate: ["4M"],
 			confide: ["7M", "6M"],
 			curse: ["7E"],
