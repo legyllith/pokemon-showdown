@@ -61,7 +61,7 @@ export const Formats: FormatList = [
 		
 	},
 	{
-		name: "[Gen 8] Tournament 9",
+		name: "[Gen 8] Romantic Restorant",
 		mod: 'gen8',
 		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 80', 'Romantic Restorant Terrain Rule', 'Item Clause'],
 		
@@ -129,6 +129,13 @@ export const Formats: FormatList = [
 		gameType: 'multi',
 		mod: 'gen8',
 		ruleset: ['Standard NatDex', 'Species Clause', 'Dynamax Clause', 'Adjust Level = 55', 'Item Clause', 'Submarine Terrain Rule'],
+		
+	},
+	{
+		name: "[Gen 8] Tournament 9",
+		gameType: 'multi',
+		mod: 'gen8',
+		ruleset: ['Standard NatDex', 'Species Clause', 'Dynamax Clause', 'Adjust Level = 80', 'Item Clause', 'Romantic Restorant Terrain Rule'],
 		
 	},
 	];
