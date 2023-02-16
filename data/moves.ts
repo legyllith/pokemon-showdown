@@ -23357,6 +23357,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			if (type === "Bird") type = "???";
 			move.type = type;
 			this.field.setWeather('sunnyday');
+			move.secondaries = [];
 			if (type === "Fire"){
 				move.secondaries.push({
 					chance: 100,
