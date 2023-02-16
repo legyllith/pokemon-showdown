@@ -23353,7 +23353,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 5,
 		priority: 0,
 		onHit(target) {
-			if (target.hasType('Grass') && !target.addType('Fire') pokemon.setType(pokemon.getTypes(true).map(type => type === "Grass" ? "Fire" : type));
+			if (target.hasType('Grass') && !target.addType('Fire')) pokemon.setType(pokemon.getTypes(true).map(type => type === "Grass" ? "Fire" : type));
 			if (!target.addType('Fire') && !target.hasType('Grass')) pokemon.setType(pokemon.getTypes(true).map(type => type === "fire" ? "Grass" : type));
 			this.add('-start', pokemon, 'typechange', pokemon.types.join('/'), '[from] move: Tropical Hurrican');
 		},
