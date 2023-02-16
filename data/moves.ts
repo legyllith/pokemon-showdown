@@ -23346,19 +23346,42 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	tropicalhurrican: {
 		num: 2078,
-		accuracy: 100,
+		accuracy: 95,
 		basePower: 120,
 		category: "Special",
 		name: "Tropical Hurrican",
 		pp: 5,
-		priority: 0,
-			self: {
-				onHit(source) {
-					if (source.hasType('Grass') && !source.hasType('Fire')){this.boost({spa: 1}); source.setType(source.getTypes(true).map(type => type === "Grass" ? "Fire" : type));}
-					else if (source.hasType('Fire') && !source.hasType('Grass')){this.boost({atk: 1}); source.setType(source.getTypes(true).map(type => type === "Fire" ? "Grass" : type));}
-					this.add('-start', source, 'typechange', source.types.join('/'), '[from] move: Tropical Hurrican');
-				},
+		flags: {protect: 1, mirror: 1},
+		onModifyType(move, pokemon) {
+			let type = pokemon.getTypes()[0];
+			if (type === "Bird") type = "???";
+			move.type = type;
+			this.field.setWeather('sunnyday');
+			if (type === "Fire"){
+				move.secondaries.push({
+					chance: 100,
+					boosts: {
+						atk: -1,
+						},
+				});
+			}
+			if (type === "Grass"){
+				move.secondaries.push({
+					chance: 100,
+					boosts: {
+						spa: -1,
+						},
+				});
+			}
+		},
+		priority: 1,
+		self: {
+			onHit(source) {
+				if (source.hasType('Grass') && !source.hasType('Fire')){source.setType(source.getTypes(true).map(type => type === "Grass" ? "Fire" : type));}
+				else if (source.hasType('Fire') && !source.hasType('Grass')){source.setType(source.getTypes(true).map(type => type === "Fire" ? "Grass" : type));}
+				this.add('-start', source, 'typechange', source.types.join('/'), '[from] move: Tropical Hurrican');
 			},
+		},
 		secondary: null,
 		target: "normal",
 		type: "Grass",
