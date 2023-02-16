@@ -23309,7 +23309,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		contestType: "Cool",
 	},
 	evaereo: {
-		num: 2075,
+		num: 2076,
 		accuracy: true,
 		basePower: 80,
 		category: "Physical",
@@ -23325,7 +23325,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		contestType: "Cool",
 	},
 	evodrake: {
-		num: 2075,
+		num: 2077,
 		accuracy: true,
 		basePower: 80,
 		category: "Special",
@@ -23342,6 +23342,24 @@ export const Moves: {[moveid: string]: MoveData} = {
 		},
 		target: "normal",
 		type: "Dragon",
+		contestType: "Cool",
+	},
+	tropicalhurrican: {
+		num: 2078,
+		accuracy: 100,
+		basePower: 120,
+		category: "Special",
+		name: "Tropical Hurrican",
+		pp: 5,
+		priority: 0,
+		onHit(target) {
+			if (target.hasType('Grass') && !target.addType('Fire') pokemon.setType(pokemon.getTypes(true).map(type => type === "Grass" ? "Fire" : type));
+			if (!target.addType('Fire') && !target.hasType('Grass')) pokemon.setType(pokemon.getTypes(true).map(type => type === "fire" ? "Grass" : type));
+			this.add('-start', pokemon, 'typechange', pokemon.types.join('/'), '[from] move: Tropical Hurrican');
+		},
+		secondary: null,
+		target: "normal",
+		type: "Plant",
 		contestType: "Cool",
 	},
 };

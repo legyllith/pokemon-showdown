@@ -7166,4 +7166,9 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "up spe attack by 1",
 		shortDesc: "up spe attack by 1",
 	},
+	tropicalhurrican: {
+		name: "Tropical Hurrican",
+		desc: "powerfull attack",
+		shortDesc: "powerfull attack",
+	},
 };

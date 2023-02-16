@@ -39398,6 +39398,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			twister: ["4T"],
 			whirlwind: ["7L21", "6L21", "5L27", "4L27", "3L27"],
 			worryseed: ["7T", "6T", "5T", "4T"],
+			tropicalhurrican: ["7T", "7L50", "7E", "6T", "6L41", "6E", "5T", "5L41", "5E", "4T", "4L41", "4E", "4S0", "3L47"], 
 		},
 		eventData: [
 			{generation: 4, level: 53, gender: "F", nature: "Jolly", abilities: ["chlorophyll"], moves: ["airslash", "synthesis", "sunnyday", "solarbeam"], pokeball: "cherishball"},
