@@ -23359,7 +23359,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Plant",
+		type: "Grass",
 		contestType: "Cool",
 	},
 };
