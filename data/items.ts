@@ -7059,11 +7059,11 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		onModifySpDPriority: 2,
 		onModifySpD(spd) {
-			return this.chainModify([8000, 4096]);
+			return this.chainModify([6200, 4096]);
 		},
 		onModifyDefPriority: 2,
 		onModifyDef(def) {
-			return this.chainModify([8000, 4096]);
+			return this.chainModify([6200, 4096]);
 		},
 		onResidualSubOrder: 4,
 		onResidual(pokemon) {
