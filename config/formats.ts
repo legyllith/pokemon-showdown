@@ -27,55 +27,55 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 8] Standard Normal Battle",
 		mod: 'gen8',
-		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 50'],
+		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 90'],
 		
 	},
 	{
 		name: "[Gen 8] Tournament 1",
 		mod: 'gen8',
-		ruleset: ['Standard NatDex', 'Species Clause', 'Dynamax Clause', 'Adjust Level = 55', 'Electric Terrain Rule'],
+		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 90', 'Electric Terrain Rule'],
 		
 	},
 	{
 		name: "[Gen 8] Tournament 2",
 		mod: 'gen8',
-		ruleset: ['Standard NatDex', 'Species Clause', 'Dynamax Clause', 'Adjust Level = 55', 'Desert Terrain Rule'],
+		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 90', 'Desert Terrain Rule'],
 		
 	},
 	{
 		name: "[Gen 8] Tournament 3",
 		mod: 'gen8',
-		ruleset: ['Standard NatDex', 'Species Clause', 'Dynamax Clause', 'Adjust Level = 55', 'Beach Terrain Rule'],
+		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 90', 'Beach Terrain Rule'],
 		
 	},
 	{
 		name: "[Gen 8] Tournament 4",
 		mod: 'gen8',
-		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 55', 'Poison Mist Terrain Rule', 'Item Clause'],
+		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 90', 'Poison Mist Terrain Rule'],
 		
 	},
 	{
 		name: "[Gen 8] Tournament 7",
 		mod: 'gen8',
-		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 55', 'Ice Cave Terrain Rule', 'Item Clause'],
+		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 90', 'Ice Cave Terrain Rule'],
 		
 	},
 	{
 		name: "[Gen 8] Romantic Restorant",
 		mod: 'gen8',
-		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 80', 'Romantic Restorant Terrain Rule', 'Item Clause'],
+		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 90', 'Romantic Restorant Terrain Rule'],
 		
 	},
 	{
 		name: "[Gen 8] Tournament 10",
 		mod: 'gen8',
-		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 85', 'Sky Terrain Rule', 'Item Clause'],
+		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 90', 'Sky Terrain Rule'],
 		
 	},
 	{
 		name: "[Gen 8] Tournament 12",
 		mod: 'gen8',
-		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 95', 'Holy Terrain Rule', 'Item Clause'],
+		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 90', 'Holy Terrain Rule'],
 		
 	},
 	{
@@ -98,14 +98,14 @@ export const Formats: FormatList = [
 		name: "[Gen 8] Tournament 5",
 		gameType: 'doubles',
 		mod: 'gen8',
-		ruleset: ['Standard NatDex', 'Species Clause', 'Dynamax Clause', 'Adjust Level = 55', 'Item Clause', 'Burning Terrain Rule'],
+		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 90', 'Burning Terrain Rule'],
 		
 	},
 	{
 		name: "[Gen 8] Tournament 8",
 		gameType: 'doubles',
 		mod: 'gen8',
-		ruleset: ['Standard NatDex', 'Species Clause', 'Dynamax Clause', 'Adjust Level = 55', 'Item Clause', 'Flower Garden Terrain Rule'],
+		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 90',  'Flower Garden Terrain Rule'],
 		
 	},
 	{
@@ -128,14 +128,14 @@ export const Formats: FormatList = [
 		name: "[Gen 8] Tournament 6",
 		gameType: 'multi',
 		mod: 'gen8',
-		ruleset: ['Standard NatDex', 'Species Clause', 'Dynamax Clause', 'Adjust Level = 55', 'Item Clause', 'Submarine Terrain Rule'],
+		ruleset: ['Standard NatDex',  'Dynamax Clause', 'Adjust Level = 90',  'Submarine Terrain Rule'],
 		
 	},
 	{
 		name: "[Gen 8] Tournament 9",
 		gameType: 'multi',
 		mod: 'gen8',
-		ruleset: ['Standard NatDex', 'Species Clause', 'Dynamax Clause', 'Adjust Level = 80', 'Item Clause', 'Romantic Restorant Terrain Rule'],
+		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 90',  'Romantic Restorant Terrain Rule'],
 		
 	},
 	];

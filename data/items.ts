@@ -7047,6 +7047,9 @@ export const Items: {[itemid: string]: ItemData} = {
 						if (source.species.name === 'Pidgeot'){
 							source.formeChange('pidgeotmega');
 						}
+						if (source.species.name === 'Venusaur'){
+							source.formeChange('venusaurmega');
+						}
 					
 		},
 		onSourceModifyAccuracyPriority: -2,
