@@ -7044,6 +7044,9 @@ export const Items: {[itemid: string]: ItemData} = {
 							this.boost({spd: 1});
 							source.formeChange('delibirdbullshit');
 						}
+						if (source.species.name === 'Pidgeot'){
+							source.formeChange('pidgeotmega');
+						}
 					
 		},
 		onSourceModifyAccuracyPriority: -2,
