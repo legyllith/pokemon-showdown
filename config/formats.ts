@@ -91,6 +91,12 @@ export const Formats: FormatList = [
 		
 	},
 	{
+		name: "[Gen 8] Flower terrain",
+		mod: 'gen8',
+		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 90',  'Flower Garden Terrain Rule'],
+		
+	},
+	{
 		section: "Double Battles",
 	},
 	{
