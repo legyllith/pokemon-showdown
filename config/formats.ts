@@ -97,6 +97,12 @@ export const Formats: FormatList = [
 		
 	},
 	{
+		name: "[Gen 8] Romantic Restaurant terrain",
+		mod: 'gen8',
+		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Adjust Level = 90',  'Romantic Restorant Terrain Rule'],
+		
+	},
+	{
 		section: "Double Battles",
 	},
 	{
